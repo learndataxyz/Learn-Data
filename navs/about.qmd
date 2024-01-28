@@ -1,0 +1,14 @@
+---
+title: "About"
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    # (additional links excluded for brevity)
+---
+
+## About this blog
+
+This is the contents of the about page for my blog.
