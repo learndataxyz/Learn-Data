@@ -9,8 +9,10 @@ website:
     left:
       - text: "Home"
         file: navs/index.qmd
-      - sidebar:learn
-      - sidebar:resources
+      #- sidebar:learn
+      #- sidebar:resources
+      - text: "Courses"
+        file: courses.qmd
       - text: "Blog"
         file: blog.qmd
       - text: "About"
@@ -39,4 +41,5 @@ format:
     toc: true
 
 editor: visual
+
 
