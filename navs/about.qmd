@@ -5,10 +5,20 @@ about:
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/abuuAishaaa
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/adejumoridwan/
+    - icon: youtube
+      text: YouTube
+      href: https://www.youtube.com/channel/UC8nO02_aYrQOZp4mCmOOc0w
+    - icon: whatsapp
+      text: WhatsApp
+      href: https://whatsapp.com/channel/0029VaTJcmeFSAtAdG2SV02n 
     # (additional links excluded for brevity)
 ---
 
-## About this blog
+Master data science, analytics, and machine learning through our comprehensive online training programs designed for all skill levels. Whether you're a beginner or a seasoned professional, LearnData offers interactive courses, hands-on projects, and expert guidance** to empower you to transform data into actionable insights.
 
-This is the contents of the about page for my blog.
+**Start your journey today!**
+
