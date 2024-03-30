@@ -3,22 +3,35 @@ title: "About"
 about:
   template: jolla
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/abuuAishaaa
+    #- icon: twitter
+     # text: Twitter
+      #href: https://twitter.com/abuuAishaaa
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/adejumoridwan/
     - icon: youtube
       text: YouTube
       href: https://www.youtube.com/channel/UC8nO02_aYrQOZp4mCmOOc0w
-    - icon: whatsapp
-      text: WhatsApp
-      href: https://whatsapp.com/channel/0029VaTJcmeFSAtAdG2SV02n 
+    #- icon: whatsapp
+     # text: WhatsApp
+      #href: https://whatsapp.com/channel/0029VaTJcmeFSAtAdG2SV02n 
     # (additional links excluded for brevity)
 ---
 
-Master data science, analytics, and machine learning through our comprehensive online training programs designed for all skill levels. Whether you're a beginner or a seasoned professional, LearnData offers interactive courses, hands-on projects, and expert guidance** to empower you to transform data into actionable insights.
+In an era where there is a huge and vast amount of data, the need for professionals who can manage and make sense of this data is needed, either by describing, modelling or identifying patterns in data. 
+
+As someone who has worked as a freelance Data Scientist for over 5 years in the data industry, I aim to train and educate you on how you can become one of the best data professionals out there either as a Data Analyst, Data Scientist or Machine Learning Engineer.
+
+I graduated with a BSc in Statistics and currently working as a Biostatistician at a public hospital assisting medical researchers in analysing health data. As a technical writer, I have written various articles and have thousands of reads on medium.
+
+I am proficient in Mathematics, Statistics and Programming (R and Python) and have a strong domain knowledge of the health sector. 
+
+As a data scientist, my day-to-day activities range from performing exploratory data analysis to building machine learning or deep learning models. 
+
+My biggest happiness comes when students benefit from my courses and I hope as you are reading this, you have either enrolled or are about to enroll in one of my courses. 
+
+I wish you all the best in your path to becoming a world-class data professional!
+
+
 
 **Start your journey today!**
-

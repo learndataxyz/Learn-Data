@@ -12,7 +12,7 @@ website:
       #- sidebar:learn
       #- sidebar:resources
       - text: "Courses"
-        file: courses.qmd
+        file: navs/courses.qmd
       - text: "Blog"
         file: blog.qmd
       - text: "About"
