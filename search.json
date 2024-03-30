@@ -7,17 +7,17 @@
     "text": "No matching items"
   },
   {
-    "objectID": "courses.html",
-    "href": "courses.html",
-    "title": "Courses",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
     "objectID": "navs/about.html",
     "href": "navs/about.html",
     "title": "About",
     "section": "",
     "text": "Master data science, analytics, and machine learning through our comprehensive online training programs designed for all skill levels. Whether you’re a beginner or a seasoned professional, LearnData offers interactive courses, hands-on projects, and expert guidance** to empower you to transform data into actionable insights.\nStart your journey today!"
+  },
+  {
+    "objectID": "navs/courses.html",
+    "href": "navs/courses.html",
+    "title": "Courses",
+    "section": "",
+    "text": "ML Model Deployment with FastAPI and Streamlit\nData Wrangling and Exploratory Data Analysis with R\nBuilding Interactive Shiny Web Apps with R Programming\nPower BI DAX Practice Test and Solutions"
   }
 ]
