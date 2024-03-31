@@ -3,6 +3,7 @@ project:
 
 website:
   title: "LearnData"
+  margin-header: subscribe.html
   navbar:
     background: primary
     search: true
@@ -19,6 +20,7 @@ website:
         file: navs/about.qmd
      #- text: "Contact"
         #file: navs/contact.qmd
+    
 
   sidebar:
     - id: learn

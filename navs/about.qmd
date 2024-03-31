@@ -22,7 +22,7 @@ In an era where there is a huge and vast amount of data, the need for profession
 
 As someone who has worked as a freelance Data Scientist for over 5 years in the data industry, I aim to train and educate you on how you can become one of the best data professionals out there either as a Data Analyst, Data Scientist or Machine Learning Engineer.
 
-I graduated with a BSc in Statistics and currently working as a Biostatistician at a public hospital assisting medical researchers in analysing health data. As a technical writer, I have written various articles and have thousands of reads on medium.
+I graduated with a BSc in Statistics and currently working as a Biostatistician at a public hospital assisting medical researchers in analysing health data. As a technical writer, I have written various articles and have thousands of reads on medium.
 
 I am proficient in Mathematics, Statistics and Programming (R and Python) and have a strong domain knowledge of the health sector. 
 

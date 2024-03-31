@@ -1,6 +1,8 @@
 [
   {
     "listing": "/blog.html",
-    "items": []
+    "items": [
+      "/posts/From-Prototype-to-Production-A-Step-by-Step-Guide-to-Deploying-ML-Models/index.html"
+    ]
   }
 ]

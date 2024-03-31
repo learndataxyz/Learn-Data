@@ -4,20 +4,20 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "No matching items"
+    "text": "From Prototype to Production: A Step-by-Step Guide to Deploying ML Models\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\nMar 31, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "navs/about.html",
     "href": "navs/about.html",
     "title": "About",
     "section": "",
-    "text": "Master data science, analytics, and machine learning through our comprehensive online training programs designed for all skill levels. Whether you’re a beginner or a seasoned professional, LearnData offers interactive courses, hands-on projects, and expert guidance** to empower you to transform data into actionable insights.\nStart your journey today!"
+    "text": "In an era where there is a huge and vast amount of data, the need for professionals who can manage and make sense of this data is needed, either by describing, modelling or identifying patterns in data.\nAs someone who has worked as a freelance Data Scientist for over 5 years in the data industry, I aim to train and educate you on how you can become one of the best data professionals out there either as a Data Analyst, Data Scientist or Machine Learning Engineer.\nI graduated with a BSc in Statistics and currently working as a Biostatistician at a public hospital assisting medical researchers in analysing health data. As a technical writer, I have written various articles and have thousands of reads on medium.\nI am proficient in Mathematics, Statistics and Programming (R and Python) and have a strong domain knowledge of the health sector.\nAs a data scientist, my day-to-day activities range from performing exploratory data analysis to building machine learning or deep learning models.\nMy biggest happiness comes when students benefit from my courses and I hope as you are reading this, you have either enrolled or are about to enroll in one of my courses.\nI wish you all the best in your path to becoming a world-class data professional!\nStart your journey today!"
   },
   {
     "objectID": "navs/courses.html",
     "href": "navs/courses.html",
     "title": "Courses",
     "section": "",
-    "text": "ML Model Deployment with FastAPI and Streamlit\nData Wrangling and Exploratory Data Analysis with R\nBuilding Interactive Shiny Web Apps with R Programming\nPower BI DAX Practice Test and Solutions"
+    "text": "ML Model Deployment with FastAPI and Streamlit\nBuilding Interactive Shiny Web Apps with R Programming\nData Wrangling and Exploratory Data Analysis with R\nPower BI DAX Practice Test and Solutions"
   }
 ]
