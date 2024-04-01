@@ -9,6 +9,15 @@ draft: true
 Here's a comprehensive outline for the article titled "From Prototype to Production: A Step-by-Step Guide to Deploying ML Models":
 
 I. Introduction
+
+Have you ever wondered how youtube algorithm recommends videos to you or how you are able to ask Alexa or Siri for help. All these is thanks to deployed machine learning models. As a data scientist a model that is not deployed is as good as useless, on you the engineer that built the model understand it and all the metrics associated with it. To apply your model into the real world, you need to deploy that model and that is why youtube is able to recommend video to us.
+
+Building ML Models is not the core business problem, the core business problem is deploying these model into real world and allow the model work on untrained data, to monitor how it performs. This is one of the core benefit of deploying ML models. 
+
+While deploying ML models into production environment, there are various challenges one is likely to face such as a model performing poorly on real world data, scalability and how to keep the model up to date. 
+
+In this article I will explain to you how you can deploy a ML model from prototype to production.
+
    A. The importance of deploying machine learning models
    B. Challenges in transitioning from prototypes to production environments
    C. Overview of the deployment process
