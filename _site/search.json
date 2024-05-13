@@ -61,12 +61,5 @@
     "title": "Monitoring Model Performance and Data Drift for Diabetes Classification",
     "section": "Recommended Reads",
     "text": "Recommended Reads\n\nMonitoring a Hotel Booking Cancellation Model Part 1: Creating Reference and Analysis Set\nTutorial: Monitoring an ML Model with NannyML and Google Colab\nHow to Estimate Performance and Detect Drifting Images for a Computer Vision Model?"
-  },
-  {
-    "objectID": "posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html#linkedin-summary",
-    "href": "posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html#linkedin-summary",
-    "title": "Monitoring Model Performance and Data Drift for Diabetes Classification",
-    "section": "LinkedIn Summary",
-    "text": "LinkedIn Summary\nMonitoring machine learning models for performance and data drift is crucial to ensure accurate predictions. In this article you will learn how to use the open-source NannyML library to estimate model performance and detect data drift for a diabetes classification model."
   }
 ]
