@@ -1,7 +1,7 @@
 project:
   type: website
-
 website:
+  google-analytics: "G-N6FNR4EYSZ"
   title: "LearnData"
   margin-header: subscribe.html
   navbar:
@@ -20,7 +20,7 @@ website:
         file: navs/about.qmd
      #- text: "Contact"
         #file: navs/contact.qmd
-    
+
 
   sidebar:
     - id: learn
@@ -38,10 +38,11 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
 
 editor: visual
-
 

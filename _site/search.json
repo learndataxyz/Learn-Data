@@ -4,14 +4,14 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Monitoring Model Performance and Data Drift for Diabetes Classification\n\n\n\nmlops\n\n\ndata drift\n\n\nclassification\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Monitoring Model Performance and Data Drift for Diabetes Classification\n\n\n\nmlops\n\n\ndata drift\n\n\nclassification\n\n\ntutorial\n\n\npython\n\n\ndata science\n\n\nmachine learning\n\n\nhealthcare\n\n\ndeployment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "navs/about.html",
     "href": "navs/about.html",
     "title": "About",
     "section": "",
-    "text": "In an era where there is a huge and vast amount of data, the need for professionals who can manage and make sense of this data is needed, either by describing, modelling or identifying patterns in data.\nAs someone who has worked as a freelance Data Scientist for over 5 years in the data industry, I aim to train and educate you on how you can become one of the best data professionals out there either as a Data Analyst, Data Scientist or Machine Learning Engineer.\nI graduated with a BSc in Statistics and currently working as a Biostatistician at a public hospital assisting medical researchers in analysing health data. As a technical writer, I have written various articles and have thousands of reads on medium.\nI am proficient in Mathematics, Statistics and Programming (R and Python) and have a strong domain knowledge of the health sector.\nAs a data scientist, my day-to-day activities range from performing exploratory data analysis to building machine learning or deep learning models.\nMy biggest happiness comes when students benefit from my courses and I hope as you are reading this, you have either enrolled or are about to enroll in one of my courses.\nI wish you all the best in your path to becoming a world-class data professional!\nStart your journey today!"
+    "text": "Feeling lost in the world of data? Let LearnData be your guide. Our team lives and breathes all things data - from the fundamentals to cutting-edge techniques. We’ll break it down for you step-by-step with real examples and hands-on practice. By the time you’re done, you’ll be a data dynamo ready to take on any challenge."
   },
   {
     "objectID": "navs/courses.html",
@@ -61,5 +61,12 @@
     "title": "Monitoring Model Performance and Data Drift for Diabetes Classification",
     "section": "Recommended Reads",
     "text": "Recommended Reads\n\nMonitoring a Hotel Booking Cancellation Model Part 1: Creating Reference and Analysis Set\nTutorial: Monitoring an ML Model with NannyML and Google Colab\nHow to Estimate Performance and Detect Drifting Images for a Computer Vision Model?"
+  },
+  {
+    "objectID": "posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html#introduction",
+    "href": "posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html#introduction",
+    "title": "Monitoring Model Performance and Data Drift for Diabetes Classification",
+    "section": "Introduction",
+    "text": "Introduction\nAccording to WHO, the number of people with diabetes rose from 108 million in 1980 to 422 million in 2014. Diabetes is a serious disease that leads to blindness, kidney failure, heart attacks, strokes, and lower limb amputations. It is mostly prevalent in low- and middle-income countries.\nBuilding a healthcare system that uses machine learning to predict patients with diabetes will help in early detection making it easy for healthcare providers to screen patients with diabetes at an early stage, before diagnosis.\n\nMachine learning models tend to degrade with time, highlighting the need for effective and constant monitoring of the model to know when its performance is declining. Often, this arises as a result of the change in the distribution of the data compared to the data the model was trained upon, this phenomenon is known as Data Drift.\nIn this article, you will learn how to monitor a diabetes classifier and detect data drifts in the data received from patients in a health information management system or mobile application using NannyML.\nNannyML is an open-source library for monitoring machine learning model performance in production, even without the predicted values being ready. It allows you to track your machine-learning model over time and see checkpoints where the model degrades."
   }
 ]

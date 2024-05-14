@@ -1,9 +1,11 @@
 ---
 title: "Monitoring Model Performance and Data Drift for Diabetes Classification"
-categories: [mlops, data drift, classification, tutorial]
+categories: [mlops, data drift, classification, tutorial, python, data science, machine learning, healthcare, deployment]
 image: cover_image.png
 draft: false
 ---
+
+![](cover_image.png)
 
 ## Introduction
 
