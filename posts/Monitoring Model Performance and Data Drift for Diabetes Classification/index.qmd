@@ -1,5 +1,6 @@
 ---
 title: "Monitoring Model Performance and Data Drift for Diabetes Classification"
+author: Adejumo Ridwan Suleiman
 categories: [mlops, data drift, classification, tutorial, python, data science, machine learning, healthcare, deployment]
 image: cover_image.png
 draft: false

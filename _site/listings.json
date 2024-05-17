@@ -2,7 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html"
+      "/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
+      "/posts/The Engineer's Guide to Low Code/index.html"
     ]
   }
 ]
