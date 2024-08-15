@@ -193,6 +193,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
                 <div class="quarto-category">programming</div>
                 <div class="quarto-category">security</div>
                 <div class="quarto-category">fastapi</div>
+                <div class="quarto-category">python</div>
               </div>
                   </div>
   </div>
@@ -255,9 +256,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#securing-ml-apis-with-fastapi" id="toc-securing-ml-apis-with-fastapi" class="nav-link active" data-scroll-target="#securing-ml-apis-with-fastapi">Securing ML APIs with FastAPI</a>
-  <ul class="collapse">
-  <li><a href="#fundamentals-of-api-security" id="toc-fundamentals-of-api-security" class="nav-link" data-scroll-target="#fundamentals-of-api-security">Fundamentals of API Security</a></li>
+  <li><a href="#fundamentals-of-api-security" id="toc-fundamentals-of-api-security" class="nav-link active" data-scroll-target="#fundamentals-of-api-security">Fundamentals of API Security</a></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#setting-up-fastapi-for-ml-apis" id="toc-setting-up-fastapi-for-ml-apis" class="nav-link" data-scroll-target="#setting-up-fastapi-for-ml-apis">Setting Up FastAPI for ML APIs</a></li>
   <li><a href="#implementing-authentication-and-authorization" id="toc-implementing-authentication-and-authorization" class="nav-link" data-scroll-target="#implementing-authentication-and-authorization">Implementing Authentication and Authorization</a>
@@ -278,7 +277,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
   <li><a href="#rate-limiting-and-throttling" id="toc-rate-limiting-and-throttling" class="nav-link" data-scroll-target="#rate-limiting-and-throttling">Rate Limiting and Throttling</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -288,8 +286,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 
 
 
-<section id="securing-ml-apis-with-fastapi" class="level1">
-<h1>Securing ML APIs with FastAPI</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Securing ML APIs with FastAPI cad45294fbfa433e9cdd68f008538eb9/LearnData_Branding(1).png" class="img-fluid figure-img"></p>
@@ -305,7 +301,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p></p><figcaption class="figure-caption">ML Model API Workflow. Image by Author</figcaption><p></p>
 </figure>
 </div>
-<p>ML Model API Workflow. Image by Author</p>
 <section id="fundamentals-of-api-security" class="level2">
 <h2 class="anchored" data-anchor-id="fundamentals-of-api-security">Fundamentals of API Security</h2>
 <p>API is usually a target for data breaches and unauthorized access due to the information it contains, making it prone to security attacks, this is why API security is important. API security is a practice set to protect an API from unauthorized access. Here are some of the most common API security threats:</p>
@@ -390,7 +385,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p></p><figcaption class="figure-caption">Authentication vs Authorization. Source: <a href="https://medium.com/geekculture/authentication-and-authorization-a5a2eafdde16">Medium</a></figcaption><p></p>
 </figure>
 </div>
-<p>Authentication vs Authorization. Source: <a href="https://medium.com/geekculture/authentication-and-authorization-a5a2eafdde16">Medium</a></p>
 <p>API authentication is insufficient to protect your API, you also need to implement API authorization. API authentication is like giving someone a key to your house, while API authorization is like giving them access to specific rooms in the house.</p>
 <section id="api-key-based-authentication" class="level3">
 <h3 class="anchored" data-anchor-id="api-key-based-authentication">API Key-Based Authentication</h3>
@@ -436,7 +430,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p></p><figcaption class="figure-caption">OAuth2 Workflow: Source: <a href="https://www.geeksforgeeks.org/workflow-of-oauth-2-0/">GeeksforGeeks</a></figcaption><p></p>
 </figure>
 </div>
-<p>OAuth2 Workflow: Source: <a href="https://www.geeksforgeeks.org/workflow-of-oauth-2-0/">GeeksforGeeks</a></p>
 <p>Let’s implement a simple OAuth2 with JWT on our machine learning API, by updating the <a href="http://main.py"><code>main.py</code></a> file as follows.</p>
 <ol type="1">
 <li><p>Ensure you install <a href="https://pyjwt.readthedocs.io/en/stable/"><code>pyjwt</code></a> and import the following Python libraries.</p>
@@ -579,8 +572,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p><img src="Securing ML APIs with FastAPI cad45294fbfa433e9cdd68f008538eb9/Untitled 2.gif" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">How RBAC works in FastAPI.</figcaption><p></p>
 </figure>
-</div>
-<p>How RBAC works in FastAPI.</p></li>
+</div></li>
 </ul></li>
 </ol>
 </section>
@@ -616,7 +608,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p></p><figcaption class="figure-caption">HTTPS workflow. Source: <a href="https://www.geeksforgeeks.org/explain-working-of-https/">GeeksForGeeks</a></figcaption><p></p>
 </figure>
 </div>
-<p>HTTPS workflow. Source: <a href="https://www.geeksforgeeks.org/explain-working-of-https/">GeeksForGeeks</a></p>
 <ol type="1">
 <li><p>To secure data in the API endpoint we created earlier, let’s generate a self-signed certificate for testing. Copy and paste the following code into your terminal.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">openssl</span> req <span class="at">-x509</span> <span class="at">-newkey</span> rsa:4096 <span class="at">-keyout</span> key.pem <span class="at">-out</span> cert.pem <span class="at">-days</span> 365 <span class="at">-nodes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -706,8 +697,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p><img src="Securing ML APIs with FastAPI cad45294fbfa433e9cdd68f008538eb9/Animation1.gif" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Encrypting sensitive data in FastAPI</figcaption><p></p>
 </figure>
-</div>
-<p>Encrypting sensitive data in FastAPI</p></li>
+</div></li>
 </ol>
 </section>
 <section id="rate-limiting-and-throttling" class="level3">
@@ -753,7 +743,6 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

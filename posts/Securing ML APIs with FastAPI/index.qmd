@@ -6,7 +6,7 @@ image: Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/
 draft: false
 ---
 
-![LearnData Branding(1).png](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/LearnData_Branding(1).png)
+![](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/LearnData_Branding(1).png)
 
 The end goal of a machine learning model is to serve end users. Still, due to machine learning models requiring regular updates to improve model accuracy and use in other applications, they are exposed as an API. An ML API is an application that serves as a gateway between your client requests or needs and your machine learning model.
 
@@ -137,7 +137,6 @@ This is the most basic and popular form of implementing API security.
 
     ![How authentication works in FastAPI](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled.gif)
 
-    How authentication works in FastAPI
 
 ### **OAuth2 with JWT Tokens**
 
