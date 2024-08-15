@@ -16,7 +16,6 @@ Due to the sensitivity of training data in machine learning models, API security
 
 ![ML Model API Workflow. Image by Author](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled.png)
 
-ML Model API Workflow. Image by Author
 
 ## Fundamentals of API Security
 
@@ -104,8 +103,6 @@ Take API authentication like a passkey that allows a client to access your API, 
 
 ![Authentication vs Authorization. Source: [Medium](https://medium.com/geekculture/authentication-and-authorization-a5a2eafdde16)](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled%201.png)
 
-Authentication vs Authorization. Source: [Medium](https://medium.com/geekculture/authentication-and-authorization-a5a2eafdde16)
-
 API authentication is insufficient to protect your API, you also need to implement API authorization. API authentication is like giving someone a key to your house, while API authorization is like giving them access to specific rooms in the house.
 
 ### API Key-Based Authentication
@@ -151,8 +148,6 @@ A practical example is a client accessing your machine learning API using their 
 When a user wants to access a machine learning API through a client application, the process typically uses OAuth2 for secure authentication. The client application starts by redirecting the user to an authentication server, where the user grants permission for the application to access their resources. The authentication server then issues an access token, often, in the form of a [JWT (JSON Web Token)](https://jwt.io/introduction) to the client application. The application uses this token to make requests to the machine learning API. The API verifies the token to ensure the client is authorized to access the requested resources, thus providing secure and controlled access while protecting user data and privacy.
 
 ![OAuth2 Workflow: Source: [GeeksforGeeks](https://www.geeksforgeeks.org/workflow-of-oauth-2-0/)](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/ApplicationClient1-300x225.png)
-
-OAuth2 Workflow: Source: [GeeksforGeeks](https://www.geeksforgeeks.org/workflow-of-oauth-2-0/)
 
 Let's implement a simple OAuth2 with JWT on our machine learning API, by updating the [`main.py`](http://main.py) file as follows.
 
@@ -325,8 +320,6 @@ Let's implement a simple OAuth2 with JWT on our machine learning API, by updatin
 
         ![How RBAC works in FastAPI.](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled%202.gif)
 
-        How RBAC works in FastAPI.
-
 ## Input Validation and Sanitization
 
 Input validation involves checking all inputs in an API to ensure that they meet certain requirements, while sanitization is input modification to ensure validity. Validation checks involve checking for allowed characters, length, format, and range, at the same time, sanitization is the changing of the input to ensure it is valid, such as shortening an input, or the removal of HTML tags in an input.
@@ -359,8 +352,6 @@ When exchanging data between systems, it's important to use data transmission pr
 HTTPS is a secured version of HTTP, where the data is encrypted when data is exchanged between a client and an API. Especially, when confidential details are shared such as user login credentials or account details. Unlike HTTP which has no security layer and makes data vulnerable, HTTPS adds an [SSL/TLS layer](https://www.cloudflare.com/learning/ssl/what-is-ssl/) to ensure that data is encrypted and secured.
 
 ![HTTPS workflow. Source: [GeeksForGeeks](https://www.geeksforgeeks.org/explain-working-of-https/)](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/image.png)
-
-HTTPS workflow. Source: [GeeksForGeeks](https://www.geeksforgeeks.org/explain-working-of-https/)
 
 1.  To secure data in the API endpoint we created earlier, let's generate a self-signed certificate for testing. Copy and paste the following code into your terminal.
 
@@ -473,7 +464,6 @@ Encryption is simply the encoding of sensitive information, such that even if th
 
     ![Encrypting sensitive data in FastAPI](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Animation1.gif)
 
-    Encrypting sensitive data in FastAPI
 
 ### Rate Limiting and Throttling
 
