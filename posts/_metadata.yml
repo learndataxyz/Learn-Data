@@ -7,5 +7,5 @@ freeze: true
 # Enable banner style title blocks
 title-block-banner: true
 comments:
-  hypothesis: 
-    theme: clean
+  giscus: 
+    repo: adejumoridwan/Learn-Data

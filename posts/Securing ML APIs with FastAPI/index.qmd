@@ -396,7 +396,7 @@ HTTPS is a secured version of HTTP, where the data is encrypted when data is exc
     python main.py
     ```
 
-    ![Untitled](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled%202.png)
+    ![URL to the Model API displayed on terminal](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled%202.png)
 
     In a production environment, it is recommended to use a reverse proxy server like [Nginx](https://dylancastillo.co/posts/fastapi-nginx-gunicorn.html) to handle SSL termination and forwarded requests to the FastAPI application, to ensure better performance and security.
 
