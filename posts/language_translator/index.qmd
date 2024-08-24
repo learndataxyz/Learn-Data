@@ -1,0 +1,458 @@
+---
+title: "How to Build a Language Translator Application with Strapi, Streamlit, and Hugging Face Models"
+author: Adejumo Ridwan Suleiman
+categories: [api, data science, machine learning, programming, python, streamlit, strapi, headless cms, hugging face]
+image: Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/LearnData_Branding_(5).png
+draft: false
+---
+
+![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/LearnData_Branding_(5).png)
+
+
+If you're building a cool side project or an MVP, you must store user and application content. This article will teach you about Strapi, a headless CMS you can use as your application backend. You will build a language translator application using Streamlit and a language translation model from Hugging Face that allows users to translate text written in any language to English, using Strapi as a back-end to store user inputs and outputs.
+
+### Benefits of a Language Translator Application
+
+A language translator application is handy, especially when you come across texts online that you need help understanding because you are unfamiliar with the language. It can also serve as an educational tool, improving your understanding of foreign languages by learning through provided translations. Here is a demo of the language translator application you will build in this tutorial.
+
+![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/upload_b32d.gif)
+
+![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/upload_.gif)
+
+## Prerequisites
+
+Before starting, ensure you have;
+
+-   Installed [Python 3.9+](https://www.python.org/downloads/) or above.
+-   Installed [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+-   Installed [npm](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager#introduction-to-npm)
+-   Set up a [Hugging Face](https://huggingface.co/) account.
+-   Set up a [Strapi](https://cloud.strapi.io/login) account.
+-   Set up a [Streamlit Cloud](https://share.streamlit.io/) account.
+-   Set up a [Github Account](https://github.com/).
+
+## Set up the Project Directory
+
+1.  On your terminal, create a new project `language_translator`.
+
+    ```         
+    $ mkdir language_translator
+    ```
+
+2.  Inside the project directory, create a Python [virtual environment](https://www.notion.so/Language_Translator-3ba29b2dbeab41fea3b705b64e4fea05?pvs=21). This environment maintains the library versions used in your code, ensuring your code is reproducible every time it runs.
+
+    ```         
+    $ python -m venv venv
+    ```
+
+    The first `venv` command creates a virtual environment, while the second `venv` specifies the name of your virtual environment, which you can give any name you like. After running the above command, a `venv` folder should be created in your project directory.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image.png)
+
+3.  Run the following code to activate the virtual environment and start working on it.
+
+    ```         
+    $ ./venv/Scripts/Activate
+    ```
+
+    Upon activation, you should see the name of your virtual environment in green, signifying that you are already in a virtual environment.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%201.png)
+
+4.  Inside the project directory, create a `requirements.txt` file
+
+    ```         
+    nano requirements.txt
+    ```
+
+5.  Copy and paste the following Python Libraries into the `requirements.txt` file.
+
+    ```         
+    streamlit
+    python-dotenv
+    requests
+    ```
+
+    -   [`streamlit`](https://streamlit.io/) is a Python UI library for building interactive web applications.
+    -   [`python-dotenv`](https://pypi.org/project/python-dotenv/) is a Python library for working with environment variables.
+    -   `requests` is an HTTP client library that you can use to make requests from an API.
+
+6.  Install the above Python libraries using the following command
+
+    ```         
+    $ pip install -r requirements.txt
+    ```
+
+7.  Create a `.env` file to store environment variables such as API keys and secrets.
+
+    ```         
+    $ touch .env
+    ```
+
+8.  Inside your `language_translator` directory, create a folder `frontend` for the application frontend.
+
+    ```         
+    $ mkdir frontend
+    ```
+
+9.  In the folder `frontend`, create the files `main.py` and `utilis.py`
+
+    ```         
+    touch main.py utilis.py
+    ```
+
+10. In the project folder, create a `.gitignore` file, to ignore the `venv` and `.env` path when pushing to git.
+
+    ```         
+    /venv
+    .env
+    ```
+
+## Build the Front-end
+
+The front end is where users will interact with the application. You will build it using Streamlit and translate user inputs using a language translator model from Hugging Face.
+
+### Select a Model from Hugging Face
+
+1.  Log in to Hugging Face, go to the search bar, and search for [facebook/mbart-large-50-many-to-one-mmt](https://huggingface.co/facebook/mbart-large-50-many-to-one-mmt). This is the model you will use to allow users to give input in any language and translate it into English.
+
+2.  Click on **Deploy**, then **Inference API**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%202.png)
+
+3.  Copy the code displayed to you and paste it into `utilis.py`.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%203.png)
+
+    ``` python
+    import requests
+
+    API_URL = "<https://api-inference.huggingface.co/models/facebook/mbart-large-50-many-to-one-mmt>"
+    headers = {"Authorization": "Bearer <your-api-token>"}
+
+    def query(payload):
+        response = requests.post(API_URL, headers=headers, json=payload)
+        return response.json()
+
+    output = query({
+        "inputs": "The answer to the universe is",
+    })
+    ```
+
+    -   `API_URL` is the variable storing the link to the model API.
+    -   `headers` is the variable storing your Hugging Face authorization token to use the API.
+    -   The `query` function makes a POST request to the model API to translate a given input text and return the JSON output.
+
+4.  Copy your `API-TOKEN`, go to the `.env` file, and create the variable. `HUGGING_FACE_TOKEN`.
+
+    ```         
+    HUGGING_FACE_TOKEN="<your-api-token>"
+    ```
+
+5.  Go back to the `utilis.py` file, copy and paste the following code to create a function of **Step 3** that accepts a text in any language and translates it to English.
+
+    ``` python
+    import requests
+    import os
+    import json
+    from datetime import datetime
+    from dotenv import load_dotenv
+
+    load_dotenv(".env")
+
+    HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_TOKEN")
+
+    API_URL = "<https://api-inference.huggingface.co/models/facebook/mbart-large-50-many-to-one-mmt>"
+    headers = {"Authorization": f"Bearer {HUGGING_FACE_TOKEN}"}
+
+    def translate(inputs):
+        def query(payload):
+            response = requests.post(API_URL, headers=headers, json=payload)
+            return response.json()
+
+        output = query(
+            {
+                "inputs": inputs,
+            }
+        )
+        return output[0]["generated_text"]
+    ```
+
+    -   `load_dotenv(".env")` loads your `.env` file, making it visible for `os.getenv()` to get the environment variable specified.
+        -   The `translate()` function takes input text, while the `query` function processes it and returns it in JSON. Finally, the `translate()` function extracts the translated text.
+    -   Here is an example of how the `translate` function works. Copy and run the text below.
+
+    ``` python
+    text = "संयुक्त राष्ट्र के प्रमुख का कहना है कि सीरिया में कोई सैन्य समाधान नहीं है"
+    translate(text)
+
+    >>Output: 'The head of the UN says there is no military solution in Syria'
+    ```
+
+### Build the User Interface with Streamlit
+
+1.  Inside your `main.py` file, import the `translate` function and streamlit.
+
+    ```         
+    from utilis import translate
+    import streamlit as st
+    ```
+
+2.  Create a title and input area.
+
+    ``` python
+    st.title("Language Translator to English")
+
+    input_text = st.text_area("Enter the text you want to translate:", height=150)
+    ```
+
+    -   `st.title` sets a text in bold and large size.
+    -   `st.text_area` is a multi-line text input widget that allows users to give input.
+
+3.  Run the code below on your terminal to launch the Streamlit application.
+
+    ```         
+    streamlit run main.py
+    ```
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%204.png)
+
+4.  Create a button to process any input given in the text area.
+
+    ``` python
+    if st.button("Translate"):
+        if input_text:
+            translated_text = translate(input_text)
+            st.write("## Translated Text")
+            st.write(translated_text)
+        else:
+            st.warning("Please enter some text to translate.")
+    ```
+
+    -   `st.button` creates a button to translate a text.
+
+    -   I`f` there is an `input text`, the `translation` function is called on the `input_text` and saved as `translated_text`; otherwise, a warning is given.
+
+    -   Save your file and go to the Streamlit application to see the changes.
+
+        ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%205.png)
+
+5.  Paste the Hindi text given earlier into the text area and click on translate.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%206.png)
+
+    What is left is to set up a back-end on Strapi to save any translated text.
+
+## Build the Back-end
+
+### Set up Strapi
+
+1.  In your main directory `language_translator`, create a new Strapi project called `backend`.
+
+    ```         
+    npx create-strapi-app@latest backend --quickstart
+    ```
+
+    This will install Strapi and an SQLite database in your project directory.
+
+2.  Run the following code in your terminal to open the admin panel at <http://localhost:1337/admin>. Fill in your credentials, **Sign up,** and **Log in**.
+
+    ```         
+    npm run develop
+    ```
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%207.png)
+
+3.  Go to **Content Type Builder**, click **Create a new collection**, create a new collection **Translation**, then **Continue**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%208.png)
+
+4.  Create `input_text` and `translated_text` as **Text fields** while `translation_date` is a **Date field** and **Save**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%209.png)
+
+5.  Go to **Settings** on your admin menu, under **User & Permissions Plugin**, click on **Roles,** and edit the **Public** role.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2010.png)
+
+6.  In the **Public** role, set the **Translation** permission to **create** and **find**, then **Save**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2011.png)
+
+### Connect Strapi with Streamlit
+
+1.  Copy and paste the following code to create a function `save_translation` that saves both the `input_text` and `output_text` to Strapi.
+
+    ``` python
+    STRAPI_URL = "<http://localhost:1337/api>"
+
+    def save_translation(input_text, translated_text):
+        data = {
+            "data": {
+                "input_text": input_text,
+                "translated_text": translated_text,
+                "translation_date": datetime.now().isoformat(),
+            }
+        }
+
+        response = requests.post(
+            f"{STRAPI_URL}/translations",
+            headers={"Content-Type": "application/json"},
+            data=json.dumps(data),
+        )
+        return response.json()
+    ```
+
+    -   `STRAPI_URL` is the link to the Strapi backend API. You will use this to send and receive data from Strapi.
+    -   The `save_translation()` function receives the user `input_text`, `translated_text`, and `translation_date` as JSON in the variable data and sends it for storage in the Strapi back-end.
+    -   `datetime.now().isoformat()` saves the current date and time an `input_text` was translated as `"translation_date"` into data.
+    -   The `response` variable makes a `POST` request to save the values into the `Translation` collection in Strapi.
+
+2.  Go back to `main.py` and update the code just before the end of the inner `if` condition. This will ensure that anytime a user clicks the Translate button, the text displays, and the input and output text are saved to Strapi through the `save_translation()` function.
+
+``` python
+if st.button("Translate"):
+    if input_text:
+        #code to display text after input is given
+        #....
+        #code to update
+        #--------------
+        save_translation(input_text, translated_text)
+    else:
+        st.warning("Please enter some text to translate.")
+```
+
+1.  Try to translate a text, and go back to your dashboard under the **Content Manager** menu to see the saved text.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2012.png)
+
+2.  To output the history from latest to oldest, add the `get_history()` function to `utilis.py`.
+
+    ``` python
+    def get_history():
+        response = requests.get(f"{STRAPI_URL}/translations")
+        if response.status_code == 200:
+            return response.json()
+        return []
+    ```
+
+    -   This function gets all the items stored in the **Translation** collection using a `GET` request and saves it in the variable `response` as JSON.
+
+3.  Update `main.py` with the following code to create a History button where users can view previous translations.
+
+    ``` python
+    if st.button("History"):
+        history = get_history()
+        if history:
+            for item in reversed(history["data"]):
+                st.text(
+                    f"Date: {item['attributes']['translation_date']}\\nInput: {item['attributes']['input_text']}\\nTranslated: {item['attributes']['translated_text']}"
+                )
+        else:
+            st.write("No history found.")
+    ```
+
+    -   If the **History** button is clicked, the `get_history()` is called, fetching and displaying all items in the **Translation** collection.
+    -   The `reversed()` function loops the list `history[data]` in a reverse order to display recently added text first.
+    -   If no `history` is found, the application returns a warning.
+    -   If you click the `history` button, you should have something like this.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2013.png)
+
+## Deployment
+
+The application consists of two components: the back end and the front end. There are various ways to deploy these components, but for this tutorial, you will use Strapi Cloud to deploy the back end and Streamlit Cloud to deploy the front end.
+
+Strapi Cloud deployment is free for 14 days, but the Streamlit Cloud is completely free. Before proceeding, ensure you have already versioned your project on GitHub.
+
+### Deploy the Backend on Strapi Cloud
+
+1.  Go to **Deploy** on your admin dashboard menu, and click **Deploy to Strapi Cloud**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2014.png)
+
+2.  Sign in to Strapi Cloud.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2015.png)
+
+3.  Click on **Create Project** to create a new project.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2016.png)
+
+4.  Select the **Free trial** and click on **GitHub** to permit Strapi to authorize your **GitHub** account.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2017.png)
+
+5.  After completing the authorization steps, you should have something like this. Select the account you want Strapi to access and the project repository.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2018.png)
+
+6.  Give the application a display name, and leave other options as the default.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2019.png)
+
+7.  Under **Show Advanced Settings**, type the backend directory, which is `/backend`, leave other options as default, and click on **Create Project**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2020.png)
+
+8.  You can see the application build and deploy logs displayed while the application is being built.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2021.png)
+
+9.  Click on the **Visit app** to open up the live admin panel.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2022.png)
+
+10. Like before, when you open the admin panel locally, fill in your credentials and log in.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2023.png)
+
+11. Since the backend is deployed, change the `STRAPI_URL` variable in `utilis.py` to the live URL. Copy the URL of the live dashboard, excluding the part `/admin`, and include `/`API at the end.
+
+    ``` python
+    STRAPI_URL="<your-strapi-api-url>/api"
+    ```
+
+12. Ensure you cross-check your settings to see if all the roles are set. If not, you can set them back using **Step 6** in the **Set up Strapi** section.
+
+That's it, you now have your back-end live, let's deploy the frontend and the back-end.
+
+### Deploy the Frontend on Streamlit Cloud
+
+1.  Log in to Streamlit Cloud and [authorize](https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/connect-your-github-account) Streamlit to access your GitHub account.
+
+2.  Click on **Create app**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2024.png)
+
+3.  Please complete the form by providing the project repository and the path of the streamlet application, which is `/frontend/main.py`. If you have authorized Streamlit to access your GitHub repositories, it will list all the repositories in your GitHub account.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2025.png)
+
+4.  Click on **Advanced Settings**, type in your `HUGGING_FACE_TOKEN` as it is in your `.env` file, and **Save**.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2026.png)
+
+5.  Click on **Deploy!** to start building the application. This is going to take a while.
+
+6.  Now, you have successfully deployed the Streamlit application.
+
+    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2027.png)
+
+## Conclusion
+
+In this article, you have learned how to use a model from Hugging Face to build a Streamlit application and store your user inputs and outputs on a Strapi backend. You also learned how to deploy the back-end and front-end components on Strapi and Streamlit Cloud. Strapi has a fun and active [Discord community](http://discord.com/invite/strapi) to help answer your questions whenever you feel stuck.
+
+Here is the [GitHub repository](https://github.com/adejumoridwan/Language-Translator) for the language translator application. You can further extend the application by:
+
+-   Add [authorization](https://blog.streamlit.io/streamlit-authenticator-part-1-adding-an-authentication-component-to-your-app/) to your Streamlit front end and set various user [roles and permission](https://strapi.io/blog/a-beginners-guide-to-authentication-and-authorization-in-strapi)s for your Strapi backend.
+-   Exploring various language models on Hugging Face, such as English-to-many language translators or audio translators.
+
+## Recommended Reads
+
+-   [ML Model Deployment with FastAPI and Streamlit](https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0)
+-   [Using Python with Strapi](https://docs.strapi.io/dev-docs/integrations/python)
+-   [Deploying to Strapi Cloud](https://docs.strapi.io/dev-docs/deployment)
+-   [Admin Panel Customization](https://docs.strapi.io/dev-docs/admin-panel-customization)
+-   [Analyzing data from a Strapi API with Python](https://strapi.io/blog/analyzing-data-from-a-strapi-api-with-python)
+-   [Deploying to Streamlit Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app)
