@@ -47,7 +47,7 @@ Before starting, ensure you have;
 
     The first `venv` command creates a virtual environment, while the second `venv` specifies the name of your virtual environment, which you can give any name you like. After running the above command, a `venv` folder should be created in your project directory.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image.png)
 
 3.  Run the following code to activate the virtual environment and start working on it.
 
@@ -57,7 +57,7 @@ Before starting, ensure you have;
 
     Upon activation, you should see the name of your virtual environment in green, signifying that you are already in a virtual environment.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%201.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%201.png)
 
 4.  Inside the project directory, create a `requirements.txt` file
 
@@ -118,11 +118,11 @@ The front end is where users will interact with the application. You will build 
 
 2.  Click on **Deploy**, then **Inference API**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%202.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%202.png)
 
 3.  Copy the code displayed to you and paste it into `utilis.py`.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%203.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%203.png)
 
     ``` python
     import requests
@@ -215,7 +215,7 @@ The front end is where users will interact with the application. You will build 
     streamlit run main.py
     ```
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%204.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%204.png)
 
 4.  Create a button to process any input given in the text area.
 
@@ -235,11 +235,11 @@ The front end is where users will interact with the application. You will build 
 
     -   Save your file and go to the Streamlit application to see the changes.
 
-        ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%205.png)
+        ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%205.png)
 
 5.  Paste the Hindi text given earlier into the text area and click on translate.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%206.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%206.png)
 
     What is left is to set up a back-end on Strapi to save any translated text.
 
@@ -261,23 +261,23 @@ The front end is where users will interact with the application. You will build 
     npm run develop
     ```
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%207.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%207.png)
 
 3.  Go to **Content Type Builder**, click **Create a new collection**, create a new collection **Translation**, then **Continue**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%208.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%208.png)
 
 4.  Create `input_text` and `translated_text` as **Text fields** while `translation_date` is a **Date field** and **Save**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%209.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%209.png)
 
 5.  Go to **Settings** on your admin menu, under **User & Permissions Plugin**, click on **Roles,** and edit the **Public** role.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2010.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2010.png)
 
 6.  In the **Public** role, set the **Translation** permission to **create** and **find**, then **Save**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2011.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2011.png)
 
 ### Connect Strapi with Streamlit
 
@@ -324,7 +324,7 @@ if st.button("Translate"):
 
 1.  Try to translate a text, and go back to your dashboard under the **Content Manager** menu to see the saved text.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2012.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2012.png)
 
 2.  To output the history from latest to oldest, add the `get_history()` function to `utilis.py`.
 
@@ -357,7 +357,7 @@ if st.button("Translate"):
     -   If no `history` is found, the application returns a warning.
     -   If you click the `history` button, you should have something like this.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2013.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2013.png)
 
 ## Deployment
 
@@ -369,43 +369,43 @@ Strapi Cloud deployment is free for 14 days, but the Streamlit Cloud is complete
 
 1.  Go to **Deploy** on your admin dashboard menu, and click **Deploy to Strapi Cloud**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2014.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2014.png)
 
 2.  Sign in to Strapi Cloud.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2015.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2015.png)
 
 3.  Click on **Create Project** to create a new project.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2016.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2016.png)
 
 4.  Select the **Free trial** and click on **GitHub** to permit Strapi to authorize your **GitHub** account.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2017.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2017.png)
 
 5.  After completing the authorization steps, you should have something like this. Select the account you want Strapi to access and the project repository.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2018.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2018.png)
 
 6.  Give the application a display name, and leave other options as the default.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2019.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2019.png)
 
 7.  Under **Show Advanced Settings**, type the backend directory, which is `/backend`, leave other options as default, and click on **Create Project**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2020.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2020.png)
 
 8.  You can see the application build and deploy logs displayed while the application is being built.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2021.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2021.png)
 
 9.  Click on the **Visit app** to open up the live admin panel.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2022.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2022.png)
 
 10. Like before, when you open the admin panel locally, fill in your credentials and log in.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2023.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2023.png)
 
 11. Since the backend is deployed, change the `STRAPI_URL` variable in `utilis.py` to the live URL. Copy the URL of the live dashboard, excluding the part `/admin`, and include `/`API at the end.
 
@@ -423,21 +423,21 @@ That's it, you now have your back-end live, let's deploy the frontend and the ba
 
 2.  Click on **Create app**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2024.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2024.png)
 
 3.  Please complete the form by providing the project repository and the path of the streamlet application, which is `/frontend/main.py`. If you have authorized Streamlit to access your GitHub repositories, it will list all the repositories in your GitHub account.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2025.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2025.png)
 
 4.  Click on **Advanced Settings**, type in your `HUGGING_FACE_TOKEN` as it is in your `.env` file, and **Save**.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2026.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2026.png)
 
 5.  Click on **Deploy!** to start building the application. This is going to take a while.
 
 6.  Now, you have successfully deployed the Streamlit application.
 
-    ![image.png](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2027.png)
+    ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2027.png)
 
 ## Conclusion
 
