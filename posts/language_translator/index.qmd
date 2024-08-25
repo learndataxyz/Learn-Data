@@ -179,7 +179,7 @@ The front end is where users will interact with the application. You will build 
     ```
 
     -   `load_dotenv(".env")` loads your `.env` file, making it visible for `os.getenv()` to get the environment variable specified.
-        -   The `translate()` function takes input text, while the `query` function processes it and returns it in JSON. Finally, the `translate()` function extracts the translated text.
+    -   The `translate()` function takes input text, while the `query` function processes it and returns it in JSON. Finally, the `translate()` function extracts the translated text.
     -   Here is an example of how the `translate` function works. Copy and run the text below.
 
     ``` python
