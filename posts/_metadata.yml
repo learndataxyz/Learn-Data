@@ -8,4 +8,4 @@ freeze: true
 title-block-banner: true
 comments:
   giscus: 
-    repo: adejumoridwan/Learn-Data
+    repo: adejumoridwan/comments
