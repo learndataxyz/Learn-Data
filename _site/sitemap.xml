@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/blog.html</loc>
-    <lastmod>2024-08-15T20:58:04.218Z</lastmod>
+    <lastmod>2024-08-29T07:36:26.909Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/navs/about.html</loc>
-    <lastmod>2024-08-15T20:58:08.670Z</lastmod>
+    <lastmod>2024-08-29T07:36:29.472Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/navs/contact.html</loc>
-    <lastmod>2024-08-15T20:58:10.275Z</lastmod>
+    <lastmod>2024-08-29T07:36:30.628Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/navs/courses.html</loc>
-    <lastmod>2024-08-15T20:58:12.918Z</lastmod>
+    <lastmod>2024-08-29T07:36:31.870Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/navs/learn.html</loc>
-    <lastmod>2024-08-15T20:58:16.564Z</lastmod>
+    <lastmod>2024-08-29T07:36:34.282Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/navs/resources.html</loc>
-    <lastmod>2024-08-15T20:58:18.434Z</lastmod>
+    <lastmod>2024-08-29T07:36:35.450Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quartopub.com/sites/learndata/learndata/posts/language_translator/index.html</loc>
+    <lastmod>2024-08-29T07:36:40.330Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html</loc>
-    <lastmod>2024-08-15T20:58:22.313Z</lastmod>
+    <lastmod>2024-08-29T07:36:42.194Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/posts/Securing ML APIs with FastAPI/index.html</loc>
-    <lastmod>2024-08-15T20:58:25.206Z</lastmod>
+    <lastmod>2024-08-29T07:36:44.617Z</lastmod>
   </url>
   <url>
     <loc>https://quartopub.com/sites/learndata/learndata/posts/The Engineer's Guide to Low Code/index.html</loc>
-    <lastmod>2024-08-15T20:58:28.207Z</lastmod>
+    <lastmod>2024-08-29T07:36:46.800Z</lastmod>
   </url>
 </urlset>
