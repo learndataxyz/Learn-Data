@@ -6,7 +6,7 @@ image: cover_image.png
 draft: false
 ---
 
-![](cover_image.png)
+![](cover_image.png){.preview.image}
 
 ## Introduction
 

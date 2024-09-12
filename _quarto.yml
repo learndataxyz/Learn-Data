@@ -2,9 +2,14 @@ project:
   type: website
 website:
   google-analytics: "G-N6FNR4EYSZ"
-  title: "LearnData"
+  title: ""
   margin-header: subscribe.html
+  favicon: assets/learn_data.png
+  twitter-card: true
+  site-url: https://learndata.xyz
+  open-graph: true
   navbar:
+    logo: assets/learn_data.png
     background: primary
     search: true
     left:
@@ -41,8 +46,8 @@ website:
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
+      light: pulse
+      dark: slate
     css: styles.css
     toc: true
 

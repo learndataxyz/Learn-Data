@@ -1,1 +1,1 @@
-Sitemap: https://quartopub.com/sites/learndata/learndata/sitemap.xml
+Sitemap: https://learndata.xyz/sitemap.xml

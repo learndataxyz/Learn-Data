@@ -4,14 +4,14 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "How to Build a Language Translator Application with Strapi, Streamlit, and Hugging Face Models\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\npython\n\n\nstreamlit\n\n\nstrapi\n\n\nheadless cms\n\n\nhugging face\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonitoring Model Performance and Data Drift for Diabetes Classification\n\n\n\nmlops\n\n\ndata drift\n\n\nclassification\n\n\ntutorial\n\n\npython\n\n\ndata science\n\n\nmachine learning\n\n\nhealthcare\n\n\ndeployment\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecuring ML APIs with FastAPI\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\nsecurity\n\n\nfastapi\n\n\npython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Engineer’s Guide to Low Code/No Code ELT Tools\n\n\n\ndata engineering\n\n\nlow code\n\n\nguide\n\n\nno code\n\n\nELT\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "How to Build a Language Translator Application with Strapi, Streamlit, and Hugging Face Models\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\npython\n\n\nstreamlit\n\n\nstrapi\n\n\nheadless cms\n\n\nhugging face\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonitoring Model Performance and Data Drift for Diabetes Classification\n\n\n\nmlops\n\n\ndata drift\n\n\nclassification\n\n\ntutorial\n\n\npython\n\n\ndata science\n\n\nmachine learning\n\n\nhealthcare\n\n\ndeployment\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecuring ML APIs with FastAPI\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\nsecurity\n\n\nfastapi\n\n\npython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Engineer’s Guide to Low Code/No Code ELT Tools\n\n\n\ndata engineering\n\n\nlow code\n\n\nguide\n\n\nno code\n\n\nELT\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\nNo matching items\n\n© 2024 Guiding Tech Media | About | Contact | Advertise | Privacy | Terms of Service"
   },
   {
     "objectID": "navs/about.html",
     "href": "navs/about.html",
     "title": "About",
     "section": "",
-    "text": "Feeling lost in the world of data? Let LearnData be your guide. Our team lives and breathes all things data - from the fundamentals to cutting-edge techniques. We’ll break it down for you step-by-step with real examples and hands-on practice. By the time you’re done, you’ll be a data dynamo ready to take on any challenge."
+    "text": "Feeling lost in the world of data? Let LearnData be your guide. Our team lives and breathes all things data - from the fundamentals to cutting-edge techniques. We’ll break it down for you step-by-step with real examples and hands-on practice. By the time you’re done, you’ll be a data dynamo ready to take on any challenge.\n\n\n© 2024 Guiding Tech Media | About | Contact | Advertise | Privacy | Terms of Service"
   },
   {
     "objectID": "navs/courses.html",
@@ -243,5 +243,26 @@
     "title": "The Engineer’s Guide to Low Code/No Code ELT Tools",
     "section": "References",
     "text": "References\n\nUnleashing the power of ELT in AWS using Airbyte\nHow do you ensure data quality and governance in an ELT process?\n6 Best Practices to Scale and Optimize Data Pipelines"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "© 2024 Guiding Tech Media | About | Contact | Advertise | Privacy | Terms of Service"
+  },
+  {
+    "objectID": "posts/The Engineer's Guide to Low Code/index.html",
+    "href": "posts/The Engineer's Guide to Low Code/index.html",
+    "title": "The Engineer’s Guide to Low Code/No Code ELT Tools",
+    "section": "",
+    "text": "subscribe.html"
+  },
+  {
+    "objectID": "posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
+    "href": "posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
+    "title": "Monitoring Model Performance and Data Drift for Diabetes Classification",
+    "section": "",
+    "text": "© 2024 Guiding Tech Media | About | Contact | Advertise | Privacy | Terms of Service"
   }
 ]

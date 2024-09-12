@@ -6,7 +6,7 @@ image: Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/
 draft: false
 ---
 
-![](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/LearnData_Branding(1).png)
+![](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/LearnData_Branding(1).png){.preview.image}
 
 The end goal of a machine learning model is to serve end users. Still, due to machine learning models requiring regular updates to improve model accuracy and use in other applications, they are exposed as an API. An ML API is an application that serves as a gateway between your client requests or needs and your machine learning model.
 
@@ -15,7 +15,6 @@ Let's say you have a recommender model on an e-library platform, that recommends
 Due to the sensitivity of training data in machine learning models, API security is important to avoid data breaches and prevent malicious clients from accessing the model. In this article, I will show you how to secure your machine-learning APIs using [FastAPI](https://fastapi.tiangolo.com/) - an open-source Python framework that allows you to build secured and scalable APIs. As a Python library, the learning curve is low for data scientists and machine learning engineers with Python backgrounds. If you are new to FastAPI check out [this course](https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0) on ML deployment with FastAPI.
 
 ![ML Model API Workflow. Image by Author](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled.png)
-
 
 ## Fundamentals of API Security
 
@@ -136,7 +135,6 @@ This is the most basic and popular form of implementing API security.
     -   `Depends` function prevents access to the `/predict` endpoint without the API key.
 
     ![How authentication works in FastAPI](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Untitled.gif)
-
 
 ### **OAuth2 with JWT Tokens**
 
@@ -462,7 +460,6 @@ Encryption is simply the encoding of sensitive information, such that even if th
     This endpoint takes the `encrypted_item` and encodes it to `utf-8` before decrypting it to `plaintext` using the `cipher_suite` function. If the wrong `ciphertext` is provided, a [`400` status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) is returned with the detail `"Decryption failed"`.
 
     ![Encrypting sensitive data in FastAPI](Securing%20ML%20APIs%20with%20FastAPI%20cad45294fbfa433e9cdd68f008538eb9/Animation1.gif)
-
 
 ### Rate Limiting and Throttling
 

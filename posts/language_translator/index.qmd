@@ -2,12 +2,11 @@
 title: "How to Build a Language Translator Application with Strapi, Streamlit, and Hugging Face Models"
 author: Adejumo Ridwan Suleiman
 categories: [api, data science, machine learning, programming, python, streamlit, strapi, headless cms, hugging face]
-image: Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/LearnData_Branding_(5).png
+image: "Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/LearnData_Branding_(5).png"
 draft: false
 ---
 
-![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/LearnData_Branding_(5).png)
-
+![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/LearnData_Branding_(5).png){.preview-image}
 
 If you're building a cool side project or an MVP, you must store user and application content. This article will teach you about Strapi, a headless CMS you can use as your application backend. You will build a language translator application using Streamlit and a language translation model from Hugging Face that allows users to translate text written in any language to English, using Strapi as a back-end to store user inputs and outputs.
 
@@ -308,25 +307,25 @@ The front end is where users will interact with the application. You will build 
     -   `datetime.now().isoformat()` saves the current date and time an `input_text` was translated as `"translation_date"` into data.
     -   The `response` variable makes a `POST` request to save the values into the `Translation` collection in Strapi.
 
-2. Go back to `main.py` and update the code just before the end of the inner `if` condition. This will ensure that anytime a user clicks the Translate button, the text displays, and the input and output text are saved to Strapi through the `save_translation()` function.
+2.  Go back to `main.py` and update the code just before the end of the inner `if` condition. This will ensure that anytime a user clicks the Translate button, the text displays, and the input and output text are saved to Strapi through the `save_translation()` function.
 
-  ``` python
-  if st.button("Translate"):
-      if input_text:
-          #code to display text after input is given
-          #....
-          #code to update
-          #--------------
-          save_translation(input_text, translated_text)
-      else:
-          st.warning("Please enter some text to translate.")
-  ```
+``` python
+if st.button("Translate"):
+    if input_text:
+        #code to display text after input is given
+        #....
+        #code to update
+        #--------------
+        save_translation(input_text, translated_text)
+    else:
+        st.warning("Please enter some text to translate.")
+```
 
-3. Try to translate a text, and go back to your dashboard under the **Content Manager** menu to see the saved text.
+3.  Try to translate a text, and go back to your dashboard under the **Content Manager** menu to see the saved text.
 
     ![](Language_Translator%203ba29b2dbeab41fea3b705b64e4fea05/image%2012.png)
 
-4. To output the history from latest to oldest, add the `get_history()` function to `utilis.py`.
+4.  To output the history from latest to oldest, add the `get_history()` function to `utilis.py`.
 
     ``` python
     def get_history():
@@ -338,7 +337,7 @@ The front end is where users will interact with the application. You will build 
 
     -   This function gets all the items stored in the **Translation** collection using a `GET` request and saves it in the variable `response` as JSON.
 
-5. Update `main.py` with the following code to create a History button where users can view previous translations.
+5.  Update `main.py` with the following code to create a History button where users can view previous translations.
 
     ``` python
     if st.button("History"):

@@ -6,7 +6,7 @@ image: covere_image.png
 draft: false
 ---
 
-![](covere_image.png)
+![](covere_image.png){.preview-image}
 
 ## Introduction to Low-code/No-code ELT Tools
 
