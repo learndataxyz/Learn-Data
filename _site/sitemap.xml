@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-09-08T20:45:08.665Z</lastmod>
+    <lastmod>2024-09-14T20:38:36.412Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Securing ML APIs with FastAPI/index.html</loc>
-    <lastmod>2024-09-08T20:34:34.217Z</lastmod>
+    <lastmod>2024-09-14T21:11:20.787Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html</loc>
@@ -27,5 +27,9 @@
   <url>
     <loc>https://learndata.xyz/navs/courses.html</loc>
     <lastmod>2024-09-08T20:33:52.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html</loc>
+    <lastmod>2024-09-14T20:36:17.079Z</lastmod>
   </url>
 </urlset>
