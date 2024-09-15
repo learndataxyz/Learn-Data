@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-09-14T20:38:36.412Z</lastmod>
+    <lastmod>2024-09-15T08:05:39.277Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -30,6 +30,6 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html</loc>
-    <lastmod>2024-09-14T20:36:17.079Z</lastmod>
+    <lastmod>2024-09-15T08:05:26.364Z</lastmod>
   </url>
 </urlset>

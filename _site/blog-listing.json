@@ -1,0 +1,10 @@
+{
+  "listing": "/blog.html",
+  "items": [
+    "/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html",
+    "/posts/language_translator/index.html",
+    "/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
+    "/posts/Securing ML APIs with FastAPI/index.html",
+    "/posts/The Engineer's Guide to Low Code/index.html"
+  ]
+}

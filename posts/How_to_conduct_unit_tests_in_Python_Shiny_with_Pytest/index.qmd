@@ -1,8 +1,8 @@
 ---
 title: "How to Conduct Unit Tests in Python Shiny with Pytest"
 author: Adejumo Ridwan Suleiman
-categories: [python unit testing, pytest, python shiny, python testing frameworks]
-image: "LearnData Branding(2).png"
+categories: [python unit testing, pytest, python shiny, python testing frameworks, programming]
+image: "LearnData_Branding(2).png"
 draft: false
 ---
 
@@ -145,7 +145,7 @@ def test_total_profit():
     assert total_profit(data) == 16000
 ```
 
-![One successful test passed, and one failed . Image by Author.](image%201.png){fig-alt = "Image showing the result of the code execution, where one of the test passed and the other failed."}
+![One successful test passed, and one failed . Image by Author.](image%201.png){fig-alt="Image showing the result of the code execution, where one of the test passed and the other failed."}
 
 You will notice that not only did the test fail, but it also pointed out the function where it failed. This is very handy when your application has many functions.
 

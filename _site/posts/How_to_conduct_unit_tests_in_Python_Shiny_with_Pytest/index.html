@@ -139,10 +139,14 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="How to Conduct Unit Tests in Python Shiny with Pytest">
 <meta property="og:description" content="You are building a shiny application that processes and visualizes financial data, and a calculation function within the app for calculating financial ratios is incorrect; this could lead to…">
-<meta property="og:image" content="https://learndata.xyz/posts\How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest\LearnData Branding(2).png">
+<meta property="og:image" content="https://learndata.xyz/posts\How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest\LearnData_Branding(2).png">
+<meta property="og:image:height" content="720">
+<meta property="og:image:width" content="1280">
 <meta name="twitter:title" content="How to Conduct Unit Tests in Python Shiny with Pytest">
 <meta name="twitter:description" content="You are building a shiny application that processes and visualizes financial data, and a calculation function within the app for calculating financial ratios is incorrect; this could lead to…">
-<meta name="twitter:image" content="https://learndata.xyz/posts\How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest\LearnData Branding(2).png">
+<meta name="twitter:image" content="https://learndata.xyz/posts\How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest\LearnData_Branding(2).png">
+<meta name="twitter:image-height" content="720">
+<meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -193,6 +197,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
                 <div class="quarto-category">pytest</div>
                 <div class="quarto-category">python shiny</div>
                 <div class="quarto-category">python testing frameworks</div>
+                <div class="quarto-category">programming</div>
               </div>
                   </div>
   </div>
@@ -381,7 +386,12 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p>Change the <code>test_total_profit</code> value in the test function to <code>16000</code> and run the test again.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_total_profit():</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> total_profit(data) <span class="op">==</span> <span class="dv">16000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="image 1.png" class="img-fluid" alt="One successful test passed, and one failed . Image by Author.">{fig-alt = “Image showing the result of the code execution, where one of the test passed and the other failed.”}</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 1.png" class="img-fluid figure-img" alt="Image showing the result of the code execution, where one of the test passed and the other failed."></p>
+<p></p><figcaption class="figure-caption">One successful test passed, and one failed . Image by Author.</figcaption><p></p>
+</figure>
+</div>
 <p>You will notice that not only did the test fail, but it also pointed out the function where it failed. This is very handy when your application has many functions.</p>
 <p>Now, revert the <code>test_total_profit()</code>to its original value, change the name to <code>total_test_profit()</code>, and run the test.</p>
 <div class="quarto-figure quarto-figure-center">
