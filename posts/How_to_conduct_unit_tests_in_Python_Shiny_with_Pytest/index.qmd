@@ -13,7 +13,7 @@ You are building a shiny application that processes and visualizes financial dat
 
 Unit testing, also known as module or component testing, is the process of testing smaller components of an application to ensure they work as expected. Because unit tests are applied to various components and modules, they make it easy to identify and fix bugs in an application. They are also easy to write and don't require any input or output from your application for you to run them. In this article, you will learn about unit tests and how you can effectively implement unit tests in your Python Shiny applications.
 
-## **Separating Concerns**
+## Separating Concerns
 
 If you have ever been in a situation where you wrote some lines of code, only to come back months later and find it difficult to fix a bug in a component because you don't know which component controls which. You can solve this problem by writing good unit tests for your application, and you need to separate concerns to achieve that. That is why, in Python Shiny applications, it's important to separate business logic from reactive logic to ensure that the application is maintainable and scalable in the long run.
 
@@ -24,7 +24,7 @@ For example, look at the financial application you are building; the business lo
 -   **Testability:** Isolating each calculation in the business logic ensures that every function is tested independently and its value is computed before it is used in the Shiny environment.
 -   **Reusability:** One might want to use the business logic in one or more contexts or applications; this reduces redundancy and enhances code efficiency.
 
-## **Choosing a Python Unit Testing Framework**
+## Choosing a Python Unit Testing Framework
 
 Many Python unit testing frameworks exist, but you need to consider your project requirements, budget, and tech stack before choosing one. I recommend open-source unit testing frameworks, which are usually free and have strong, supportive communities with many resources to learn from.
 
@@ -103,7 +103,7 @@ shiny run --reload main.py
 
 If you are building a toy project, you could deploy the application straightaway, but in production, you need to test for each and every component, especially your business logic. If you run the tests in the future and it fails, the unit test will help you track which function has a bug.
 
-## Using Pytest with Shiny
+### Using Pytest with Shiny
 
 When writing tests with Pytest, your test files must start with either the prefix `test_` prefix or end with the suffix`_test`. This ensures that Pytest identifies the files and functions to run the unit tests.
 
