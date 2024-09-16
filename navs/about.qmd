@@ -14,7 +14,7 @@ about:
       href: https://www.youtube.com/channel/UC8nO02_aYrQOZp4mCmOOc0w
     - icon: github
       text: GitHUB
-      href: https:/www.github.com/learndataxyz
+      href: https://www.github.com/learndataxyz
 
     #- icon: whatsapp
      # text: WhatsApp
