@@ -260,10 +260,12 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#separating-concerns" id="toc-separating-concerns" class="nav-link active" data-scroll-target="#separating-concerns"><strong>Separating Concerns</strong></a></li>
-  <li><a href="#choosing-a-python-unit-testing-framework" id="toc-choosing-a-python-unit-testing-framework" class="nav-link" data-scroll-target="#choosing-a-python-unit-testing-framework"><strong>Choosing a Python Unit Testing Framework</strong></a></li>
-  <li><a href="#build-a-demo-application" id="toc-build-a-demo-application" class="nav-link" data-scroll-target="#build-a-demo-application">Build a Demo Application</a></li>
+  <li><a href="#separating-concerns" id="toc-separating-concerns" class="nav-link active" data-scroll-target="#separating-concerns">Separating Concerns</a></li>
+  <li><a href="#choosing-a-python-unit-testing-framework" id="toc-choosing-a-python-unit-testing-framework" class="nav-link" data-scroll-target="#choosing-a-python-unit-testing-framework">Choosing a Python Unit Testing Framework</a></li>
+  <li><a href="#build-a-demo-application" id="toc-build-a-demo-application" class="nav-link" data-scroll-target="#build-a-demo-application">Build a Demo Application</a>
+  <ul class="collapse">
   <li><a href="#using-pytest-with-shiny" id="toc-using-pytest-with-shiny" class="nav-link" data-scroll-target="#using-pytest-with-shiny">Using Pytest with Shiny</a></li>
+  </ul></li>
   <li><a href="#python-unit-testing-best-practices" id="toc-python-unit-testing-best-practices" class="nav-link" data-scroll-target="#python-unit-testing-best-practices">Python Unit Testing Best Practices</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -279,7 +281,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <p>You are building a shiny application that processes and visualizes financial data, and a calculation function within the app for calculating financial ratios is incorrect; this could lead to misleading results and poor user decision-making. Unit tests allow you, the developer, to isolate and validate these functions independently, catch errors early, and ensure that changes in other application parts do not unintentionally break a function’s functionality.</p>
 <p>Unit testing, also known as module or component testing, is the process of testing smaller components of an application to ensure they work as expected. Because unit tests are applied to various components and modules, they make it easy to identify and fix bugs in an application. They are also easy to write and don’t require any input or output from your application for you to run them. In this article, you will learn about unit tests and how you can effectively implement unit tests in your Python Shiny applications.</p>
 <section id="separating-concerns" class="level2">
-<h2 class="anchored" data-anchor-id="separating-concerns"><strong>Separating Concerns</strong></h2>
+<h2 class="anchored" data-anchor-id="separating-concerns">Separating Concerns</h2>
 <p>If you have ever been in a situation where you wrote some lines of code, only to come back months later and find it difficult to fix a bug in a component because you don’t know which component controls which. You can solve this problem by writing good unit tests for your application, and you need to separate concerns to achieve that. That is why, in Python Shiny applications, it’s important to separate business logic from reactive logic to ensure that the application is maintainable and scalable in the long run.</p>
 <p>For example, look at the financial application you are building; the business logic is the computations and data processing of the app’s user interface, such as data validation, financial calculations, and error handling. The reactive logic is user inputs and reactive outputs, such as file uploads and selecting the financial ratio to compute, display of calculated ratios, generating and updating graphs, etc. Separating the business logic from reactive logic ensures:</p>
 <ul>
@@ -290,7 +292,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 </ul>
 </section>
 <section id="choosing-a-python-unit-testing-framework" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-a-python-unit-testing-framework"><strong>Choosing a Python Unit Testing Framework</strong></h2>
+<h2 class="anchored" data-anchor-id="choosing-a-python-unit-testing-framework">Choosing a Python Unit Testing Framework</h2>
 <p>Many Python unit testing frameworks exist, but you need to consider your project requirements, budget, and tech stack before choosing one. I recommend open-source unit testing frameworks, which are usually free and have strong, supportive communities with many resources to learn from.</p>
 <p>Many Python unit testing frameworks are out there, such as <a href="https://docs.python.org/3/library/unittest.html">unitest</a>, <a href="https://behave.readthedocs.io/en/latest/">behave</a>, <a href="https://robotframework.org/">robot</a>, etc. However, one of the most popular and widely used is the <a href="https://docs.pytest.org/en/stable/">Pytest</a> framework. Pytest is simple, scalable, and powerful, especially when working on projects with external dependencies.</p>
 </section>
@@ -353,9 +355,8 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 </figure>
 </div>
 <p>If you are building a toy project, you could deploy the application straightaway, but in production, you need to test for each and every component, especially your business logic. If you run the tests in the future and it fails, the unit test will help you track which function has a bug.</p>
-</section>
-<section id="using-pytest-with-shiny" class="level2">
-<h2 class="anchored" data-anchor-id="using-pytest-with-shiny">Using Pytest with Shiny</h2>
+<section id="using-pytest-with-shiny" class="level3">
+<h3 class="anchored" data-anchor-id="using-pytest-with-shiny">Using Pytest with Shiny</h3>
 <p>When writing tests with Pytest, your test files must start with either the prefix <code>test_</code> prefix or end with the suffix<code>_test</code>. This ensures that Pytest identifies the files and functions to run the unit tests.</p>
 <p>Copy and paste the following into a file,</p>
 <p><code>test_main.py</code>.</p>
@@ -401,6 +402,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 </figure>
 </div>
 <p>You can see that only one of the tests ran, and this is due to the absence of the <code>test_</code> prefix or <code>_test</code> suffix.</p>
+</section>
 </section>
 <section id="python-unit-testing-best-practices" class="level2">
 <h2 class="anchored" data-anchor-id="python-unit-testing-best-practices">Python Unit Testing Best Practices</h2>

@@ -11,12 +11,12 @@ title: "Courses"
 #title-block-banner: true
 ---
 
--   [ML Model Deployment with FastAPI and Streamlit](https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0)
+## [ML Model Deployment with FastAPI and Streamlit](https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0)
 
--   [Advanced Data Wrangling with Pandas](https://www.udemy.com/course/advanced-data-wrangling-with-pandas/?referralCode=3AD7BB5C8CC0CBBF7D54)
+## [Advanced Data Wrangling with Pandas](https://www.udemy.com/course/advanced-data-wrangling-with-pandas/?referralCode=3AD7BB5C8CC0CBBF7D54)
 
--   [Building Interactive Shiny Web Apps with R Programming](https://www.udemy.com/course/building-interactive-shiny-web-apps-with-r-programming/?referralCode=D14E5F6ED868849C8504)
+## [Building Interactive Shiny Web Apps with R Programming](https://www.udemy.com/course/building-interactive-shiny-web-apps-with-r-programming/?referralCode=D14E5F6ED868849C8504)
 
--   [Data Wrangling and Exploratory Data Analysis with R](https://www.udemy.com/course/practical-data-analysis-with-r-programming/?referralCode=51DF29BB00C08C188480)
+## [Data Wrangling and Exploratory Data Analysis with R](https://www.udemy.com/course/practical-data-analysis-with-r-programming/?referralCode=51DF29BB00C08C188480)
 
--   [Power BI DAX Practice Test and Solutions](https://www.udemy.com/course/power-bi-dax-practice-test-and-solutions/?referralCode=ADCE2EFFBB1C7548B824)
+## [Power BI DAX Practice Test and Solutions](https://www.udemy.com/course/power-bi-dax-practice-test-and-solutions/?referralCode=ADCE2EFFBB1C7548B824)

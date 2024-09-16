@@ -3,18 +3,23 @@ title: "About"
 about:
   template: jolla
   links:
-    #- icon: twitter
-     # text: Twitter
-      #href: https://twitter.com/abuuAishaaa
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/learndata_xyz
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/adejumoridwan/
     - icon: youtube
       text: YouTube
       href: https://www.youtube.com/channel/UC8nO02_aYrQOZp4mCmOOc0w
+    - icon: github
+      text: GitHUB
+      href: https:/www.github.com/learndataxyz
+
     #- icon: whatsapp
      # text: WhatsApp
       #href: https://whatsapp.com/channel/0029VaTJcmeFSAtAdG2SV02n 
     # (additional links excluded for brevity)
 ---
+
 Feeling lost in the world of data? Let LearnData be your guide. Our team lives and breathes all things data - from the fundamentals to cutting-edge techniques. We'll break it down for you step-by-step with real examples and hands-on practice. By the time you're done, you'll be a data dynamo ready to take on any challenge.

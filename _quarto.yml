@@ -3,6 +3,7 @@ project:
 website:
   google-analytics: "G-N6FNR4EYSZ"
   title: ""
+  body-footer: "@learndata.xyz"
   margin-header: subscribe.html
   favicon: assets/learn_data.png
   twitter-card: true

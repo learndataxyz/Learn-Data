@@ -4,21 +4,21 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "How to Conduct Unit Tests in Python Shiny with Pytest\n\n\n\npython unit testing\n\n\npytest\n\n\npython shiny\n\n\npython testing frameworks\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Build a Language Translator Application with Strapi, Streamlit, and Hugging Face Models\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\npython\n\n\nstreamlit\n\n\nstrapi\n\n\nheadless cms\n\n\nhugging face\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonitoring Model Performance and Data Drift for Diabetes Classification\n\n\n\nmlops\n\n\ndata drift\n\n\nclassification\n\n\ntutorial\n\n\npython\n\n\ndata science\n\n\nmachine learning\n\n\nhealthcare\n\n\ndeployment\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecuring ML APIs with FastAPI\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\nsecurity\n\n\nfastapi\n\n\npython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Engineer’s Guide to Low Code/No Code ELT Tools\n\n\n\ndata engineering\n\n\nlow code\n\n\nguide\n\n\nno code\n\n\nELT\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "How to Conduct Unit Tests in Python Shiny with Pytest\n\n\n\npython unit testing\n\n\npytest\n\n\npython shiny\n\n\npython testing frameworks\n\n\nprogramming\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to Build a Language Translator Application with Strapi, Streamlit, and Hugging Face Models\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\npython\n\n\nstreamlit\n\n\nstrapi\n\n\nheadless cms\n\n\nhugging face\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonitoring Model Performance and Data Drift for Diabetes Classification\n\n\n\nmlops\n\n\ndata drift\n\n\nclassification\n\n\ntutorial\n\n\npython\n\n\ndata science\n\n\nmachine learning\n\n\nhealthcare\n\n\ndeployment\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecuring ML APIs with FastAPI\n\n\n\napi\n\n\ndata science\n\n\nmachine learning\n\n\nprogramming\n\n\nsecurity\n\n\nfastapi\n\n\npython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Engineer’s Guide to Low Code/No Code ELT Tools\n\n\n\ndata engineering\n\n\nlow code\n\n\nguide\n\n\nno code\n\n\nELT\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\nNo matching items\n\n@learndata.xyz"
   },
   {
     "objectID": "navs/about.html",
     "href": "navs/about.html",
     "title": "About",
     "section": "",
-    "text": "Feeling lost in the world of data? Let LearnData be your guide. Our team lives and breathes all things data - from the fundamentals to cutting-edge techniques. We’ll break it down for you step-by-step with real examples and hands-on practice. By the time you’re done, you’ll be a data dynamo ready to take on any challenge.\n\n\n© 2024 Guiding Tech Media | About | Contact | Advertise | Privacy | Terms of Service"
+    "text": "Feeling lost in the world of data? Let LearnData be your guide. Our team lives and breathes all things data - from the fundamentals to cutting-edge techniques. We’ll break it down for you step-by-step with real examples and hands-on practice. By the time you’re done, you’ll be a data dynamo ready to take on any challenge.\n\n\n@learndata.xyz"
   },
   {
     "objectID": "navs/courses.html",
     "href": "navs/courses.html",
     "title": "Courses",
     "section": "",
-    "text": "ML Model Deployment with FastAPI and Streamlit\nAdvanced Data Wrangling with Pandas\nBuilding Interactive Shiny Web Apps with R Programming\nData Wrangling and Exploratory Data Analysis with R\nPower BI DAX Practice Test and Solutions"
+    "text": "@learndata.xyz"
   },
   {
     "objectID": "posts/language_translator/index.html",
@@ -249,7 +249,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "© 2024 Guiding Tech Media | About | Contact | Advertise | Privacy | Terms of Service"
+    "text": "@learndata.xyz"
   },
   {
     "objectID": "posts/The Engineer's Guide to Low Code/index.html",
@@ -291,7 +291,7 @@
     "href": "posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html#build-a-demo-application",
     "title": "How to Conduct Unit Tests in Python Shiny with Pytest",
     "section": "Build a Demo Application",
-    "text": "Build a Demo Application\nLet me demonstrate how Pytest works by building a simple sales dashboard based on supermarket sales data. First, ensure you have installed Shiny and Pytest.\npip install shiny pytest\nPaste the following code into a file utilis.py.\nimport pandas as pd\n\n# Business Logic\ndef fetch_data():\n    data = pd.read_csv(\"supermarket_sales.csv\")\n    return data\n\ndef total_profit(data):\n    profit = sum(data[\"gross income\"])\n    return profit\n\ndef total_revenue(data):\n    revenue = sum(data[\"cogs\"])\n    return revenue\nThis is our business logic for the Python Shiny application. To keep it simple, let’s restrict it to three functions.\n\nfetch_data() to load the sales data.\ntotal_profit() to calculate the total profit.\ntotal_revenue() to calculate the total revenue.\n\nNext, let’s build the application’s user interface. Copy and paste the following code into a separate file, main.py.\nfrom shiny import reactive\n\nfrom shiny.express import input, render, ui\n\nfrom utilis import fetch_data, total_profit, total_revenue\n\nwith ui.card():\n    ui.h2(\"Sales Dashboard\"),\n    ui.input_select(\n        \"calculation\", \"Select calculation:\", choices=[\"Total Profit\", \"Total Revenue\"]\n    )\n    ui.input_action_button(\"compute\", \"Compute!\")\n\nwith ui.card():\n    with ui.h1():\n        @render.text\n        @reactive.event(input.compute)\n        def result():\n            if input.calculation() == \"Total Profit\":\n                value = total_profit(fetch_data())\n            else:\n                value = total_revenue(fetch_data())\n\n            return value\nRun this using the command.\nshiny run --reload main.py\n\n\n\nLive Application. Image by Author\n\n\nIf you are building a toy project, you could deploy the application straightaway, but in production, you need to test for each and every component, especially your business logic. If you run the tests in the future and it fails, the unit test will help you track which function has a bug."
+    "text": "Build a Demo Application\nLet me demonstrate how Pytest works by building a simple sales dashboard based on supermarket sales data. First, ensure you have installed Shiny and Pytest.\npip install shiny pytest\nPaste the following code into a file utilis.py.\nimport pandas as pd\n\n# Business Logic\ndef fetch_data():\n    data = pd.read_csv(\"supermarket_sales.csv\")\n    return data\n\ndef total_profit(data):\n    profit = sum(data[\"gross income\"])\n    return profit\n\ndef total_revenue(data):\n    revenue = sum(data[\"cogs\"])\n    return revenue\nThis is our business logic for the Python Shiny application. To keep it simple, let’s restrict it to three functions.\n\nfetch_data() to load the sales data.\ntotal_profit() to calculate the total profit.\ntotal_revenue() to calculate the total revenue.\n\nNext, let’s build the application’s user interface. Copy and paste the following code into a separate file, main.py.\nfrom shiny import reactive\n\nfrom shiny.express import input, render, ui\n\nfrom utilis import fetch_data, total_profit, total_revenue\n\nwith ui.card():\n    ui.h2(\"Sales Dashboard\"),\n    ui.input_select(\n        \"calculation\", \"Select calculation:\", choices=[\"Total Profit\", \"Total Revenue\"]\n    )\n    ui.input_action_button(\"compute\", \"Compute!\")\n\nwith ui.card():\n    with ui.h1():\n        @render.text\n        @reactive.event(input.compute)\n        def result():\n            if input.calculation() == \"Total Profit\":\n                value = total_profit(fetch_data())\n            else:\n                value = total_revenue(fetch_data())\n\n            return value\nRun this using the command.\nshiny run --reload main.py\n\n\n\nLive Application. Image by Author\n\n\nIf you are building a toy project, you could deploy the application straightaway, but in production, you need to test for each and every component, especially your business logic. If you run the tests in the future and it fails, the unit test will help you track which function has a bug.\n\nUsing Pytest with Shiny\nWhen writing tests with Pytest, your test files must start with either the prefix test_ prefix or end with the suffix_test. This ensures that Pytest identifies the files and functions to run the unit tests.\nCopy and paste the following into a file,\ntest_main.py.\nfrom utilis import fetch_data, total_profit, total_revenue\nimport pandas as pd\n\n# Business Logic\ndata = fetch_data()\n\ndef test_total_profit():\n    assert total_profit(data) == 15379.369\n\ndef test_total_revenue():\n    assert total_revenue(data) == 307587.38\n\nFirst of all, we have to import the data that loads the dataset and store it in the variable data\nThe test_total_profit() function tests if the total_profit function is giving the correct profit sum.\nThe same applies to the test_total_revenue() function, which must be checked to ensure that it returns the correct revenue sum.\n\nTo run the test, call pytest on your terminal.\npytest \n\n\n\nTwo unit tests successfully passed. Image by Author.\n\n\nChange the test_total_profit value in the test function to 16000 and run the test again.\ndef test_total_profit():\n    assert total_profit(data) == 16000\n\n\n\nOne successful test passed, and one failed . Image by Author.\n\n\nYou will notice that not only did the test fail, but it also pointed out the function where it failed. This is very handy when your application has many functions.\nNow, revert the test_total_profit()to its original value, change the name to total_test_profit(), and run the test.\n\n\n\nOne unit test ran and passed. Image by Author.\n\n\nYou can see that only one of the tests ran, and this is due to the absence of the test_ prefix or _test suffix."
   },
   {
     "objectID": "posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html#using-pytest-with-shiny",
@@ -313,5 +313,33 @@
     "title": "How to Conduct Unit Tests in Python Shiny with Pytest",
     "section": "Conclusion",
     "text": "Conclusion\nWriting tests, especially unit tests, might seem daunting initially, but it pays off in the long run. When a codebase grows large, it becomes difficult to debug, and these tests make it easy to pinpoint the location of bugs. As a developer who develops data applications, adopting sound software engineering principles, such as testing, is a good skill. In this article, you learned about Python unit testing and how to apply Pytest to your Python Shiny application. If you want to read more, here are some additional resources.\n\nA Beginner’s Guide to Unit Tests in Python (2023)\nPython’s unittest: Writing Unit Tests for Your Code\nA Gentle Introduction to Unit Testing in Python\nTop 9 Python Unit Testing Frameworks In 2024\nAssert statement for unit testing\nUnit testing: Python Shiny documentation."
+  },
+  {
+    "objectID": "navs/courses.html#advanced-data-wrangling-with-pandas",
+    "href": "navs/courses.html#advanced-data-wrangling-with-pandas",
+    "title": "Courses",
+    "section": "Advanced Data Wrangling with Pandas",
+    "text": "Advanced Data Wrangling with Pandas"
+  },
+  {
+    "objectID": "navs/courses.html#building-interactive-shiny-web-apps-with-r-programming",
+    "href": "navs/courses.html#building-interactive-shiny-web-apps-with-r-programming",
+    "title": "Courses",
+    "section": "Building Interactive Shiny Web Apps with R Programming",
+    "text": "Building Interactive Shiny Web Apps with R Programming"
+  },
+  {
+    "objectID": "navs/courses.html#data-wrangling-and-exploratory-data-analysis-with-r",
+    "href": "navs/courses.html#data-wrangling-and-exploratory-data-analysis-with-r",
+    "title": "Courses",
+    "section": "Data Wrangling and Exploratory Data Analysis with R",
+    "text": "Data Wrangling and Exploratory Data Analysis with R"
+  },
+  {
+    "objectID": "navs/courses.html#power-bi-dax-practice-test-and-solutions",
+    "href": "navs/courses.html#power-bi-dax-practice-test-and-solutions",
+    "title": "Courses",
+    "section": "Power BI DAX Practice Test and Solutions",
+    "text": "Power BI DAX Practice Test and Solutions"
   }
 ]
