@@ -9,9 +9,9 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/adejumoridwan/
-    - icon: youtube
-      text: YouTube
-      href: https://www.youtube.com/channel/UC8nO02_aYrQOZp4mCmOOc0w
+    - icon: LinkedIn
+      text: LinkedIn
+      href: https://www.linkedin.com/company/learndataxyz/about/
     - icon: github
       text: GitHUB
       href: https://www.github.com/learndataxyz
