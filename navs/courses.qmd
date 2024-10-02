@@ -11,6 +11,8 @@ title: "Courses"
 #title-block-banner: true
 ---
 
+## [Practical Biostatistics with R](navs/coming_soon.qmd)
+
 ## [ML Model Deployment with FastAPI and Streamlit](https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0)
 
 ## [Advanced Data Wrangling with Pandas](https://www.udemy.com/course/advanced-data-wrangling-with-pandas/?referralCode=3AD7BB5C8CC0CBBF7D54)

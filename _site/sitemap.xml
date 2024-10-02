@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-09-16T11:55:15.280Z</lastmod>
+    <lastmod>2024-10-02T10:33:49.021Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
-    <lastmod>2024-09-16T11:59:48.179Z</lastmod>
+    <lastmod>2024-10-02T10:32:28.097Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/language_translator/index.html</loc>
@@ -26,10 +26,30 @@
   </url>
   <url>
     <loc>https://learndata.xyz/navs/courses.html</loc>
-    <lastmod>2024-09-16T11:21:36.268Z</lastmod>
+    <lastmod>2024-10-02T10:36:10.707Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html</loc>
     <lastmod>2024-09-16T11:19:01.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/E2E/index.html</loc>
+    <lastmod>2024-10-02T10:22:21.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/services.html</loc>
+    <lastmod>2024-10-02T10:29:20.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/privacy.html</loc>
+    <lastmod>2024-10-02T10:30:45.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/tos.html</loc>
+    <lastmod>2024-10-02T10:36:50.096Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/coming_soon.html</loc>
+    <lastmod>2024-10-02T10:35:28.619Z</lastmod>
   </url>
 </urlset>

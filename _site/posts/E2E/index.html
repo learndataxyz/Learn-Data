@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Adejumo Ridwan Suleiman">
+
+<title>End-to-end Testing with Playwright and Python Shiny</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/learn_data.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N6FNR4EYSZ"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="End-to-end Testing with Playwright and Python Shiny">
+<meta property="og:description" content="When an application’s code base grows large, it becomes difficult to maintain. Anytime a change is made in the code, some app functionality can break and go unnoticed.">
+<meta property="og:image" content="https://learndata.xyz/posts\E2E\LearnData_Branding.png">
+<meta property="og:image:height" content="720">
+<meta property="og:image:width" content="1280">
+<meta name="twitter:title" content="End-to-end Testing with Playwright and Python Shiny">
+<meta name="twitter:description" content="When an application’s code base grows large, it becomes difficult to maintain. Anytime a change is made in the code, some app functionality can break and go unnoticed.">
+<meta name="twitter:image" content="https://learndata.xyz/posts\E2E\LearnData_Branding.png">
+<meta name="twitter:image-height" content="720">
+<meta name="twitter:image-width" content="1280">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/learn_data.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../navs/services.html">
+ <span class="menu-text">Services</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../navs/courses.html">
+ <span class="menu-text">Courses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../navs/about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">End-to-end Testing with Playwright and Python Shiny</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">E2E</div>
+                <div class="quarto-category">end-to-end testing</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">python shiny</div>
+                <div class="quarto-category">python testing frameworks</div>
+                <div class="quarto-category">programming</div>
+                <div class="quarto-category">playwright</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Adejumo Ridwan Suleiman </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<div id="mc_embed_shell">
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 200px;}
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+    <form action="https://wordpress.us8.list-manage.com/subscribe/post?u=865b300dc8073a91e930ee99e&amp;id=089032d26f&amp;f_id=00c0cee3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div id="mc_embed_signup_scroll"><h2>Subscribe to our Newsletter</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+        <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display: none;"></div>
+            <div class="response" id="mce-success-response" style="display: none;"></div>
+        </div>
+    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+        <input type="text" name="b_865b300dc8073a91e930ee99e_089032d26f" tabindex="-1" value="">
+    </div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                <p style="margin: 0px auto;"><a href="http://eepurl.com/iM-5G6" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-playwright" id="toc-what-is-playwright" class="nav-link active" data-scroll-target="#what-is-playwright">What is Playwright</a>
+  <ul class="collapse">
+  <li><a href="#benefits-of-end-to-end-testing-with-playwright." id="toc-benefits-of-end-to-end-testing-with-playwright." class="nav-link" data-scroll-target="#benefits-of-end-to-end-testing-with-playwright.">Benefits of End-to-end testing with Playwright.</a></li>
+  </ul></li>
+  <li><a href="#a-basic-python-shiny-example" id="toc-a-basic-python-shiny-example" class="nav-link" data-scroll-target="#a-basic-python-shiny-example">A Basic Python Shiny Example</a></li>
+  <li><a href="#integrating-playwright-with-python-shiny" id="toc-integrating-playwright-with-python-shiny" class="nav-link" data-scroll-target="#integrating-playwright-with-python-shiny">Integrating Playwright with Python Shiny</a></li>
+  <li><a href="#end-to-end-testing-best-practices" id="toc-end-to-end-testing-best-practices" class="nav-link" data-scroll-target="#end-to-end-testing-best-practices">End-to-end Testing Best Practices</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="LearnData_Branding.png" class="img-fluid figure-img" alt="end-to-end testing with Playwright and python shiny"></p>
+<p></p><figcaption class="figure-caption">LearnData Branding.png</figcaption><p></p>
+</figure>
+</div>
+<p>When an application’s code base grows large, it becomes difficult to maintain. Anytime a change is made in the code, some app functionality can break and go unnoticed. This is why writing tests in your Python Shiny applications is essential.</p>
+<p>One such test is end-to-end tests (E2E). End-to-end tests help mimic user interactions on an application, such as clicking buttons, file uploads, and browser variations, to ensure that the application’s user interface is working as expected.</p>
+<p>This article will teach you how to conduct end-to-end tests on your Python Shiny applications using <a href="https://playwright.dev/">Playwright</a>, an open-source automation framework for testing web applications.</p>
+<section id="what-is-playwright" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-playwright">What is Playwright</h2>
+<p>Playwright is an automation framework used to test web applications across different browsers. It automates browser interactions with an application, just as a user would if they were to use the application. Playwright was built on Node.js but is also available as a Python library.</p>
+<section id="benefits-of-end-to-end-testing-with-playwright." class="level3">
+<h3 class="anchored" data-anchor-id="benefits-of-end-to-end-testing-with-playwright.">Benefits of End-to-end testing with Playwright.</h3>
+<ul>
+<li><strong>Wide Support and Compatibility:</strong> Playwright works with almost all operating systems and major browsers and has libraries in major programming languages.</li>
+<li><strong>Resilience and Dynamic Wait Times:</strong> Some elements or interactions can take time to load. Playwright features auto-wait for these elements or interactions, hence preventing unnecessary timeouts.</li>
+<li><strong>Test Isolation:</strong> Playwright simulates a browser environment in a new tab. This allows you to run multiple tests on different sessions of the applications.</li>
+</ul>
+</section>
+</section>
+<section id="a-basic-python-shiny-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-basic-python-shiny-example">A Basic Python Shiny Example</h2>
+<p>Let’s build a simple web application using the <a href="https://www.statsmodels.org/dev/datasets/generated/fair.html">affairs dataset</a> from the <code>statsmodels</code> library. Ensure you have the following libraries installed.</p>
+<ul>
+<li><a href="https://www.statsmodels.org/stable/index.html"><code>statsmodels</code></a></li>
+<li><a href="https://pandas.pydata.org/"><code>pandas</code></a></li>
+<li><a href="https://shiny.posit.co/py/"><code>shiny</code></a></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install statsmodels pandas shiny</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In your project directory, create a new file called <a href="http://utilis.py"><code>utilis.py</code></a>. This file will contain the function that filters the affairs dataset based on an individual’s age and number of children.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset from statsmodels (Affair dataset on extramarital affairs)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> sm.datasets.fair.load_pandas().data</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to filter data based on inputs</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_data(age_range, kids_range):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data[(data[<span class="st">"age"</span>] <span class="op">&gt;=</span> age_range) <span class="op">&amp;</span> (data[<span class="st">"children"</span>] <span class="op">&lt;=</span> kids_range)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create another file, <a href="http://main.py"><code>main.py</code></a>, that will contain the code for the Python Shiny application.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny.express <span class="im">import</span> <span class="bu">input</span>, render, ui</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utilis <span class="im">import</span> filter_data</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add UI elements</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ui.card():</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    ui.h2(<span class="st">"Extramarital Affairs Dataset (Fair)"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    ui.input_slider(<span class="st">"age"</span>, <span class="st">"Age Filter"</span>, <span class="dv">15</span>, <span class="dv">60</span>, <span class="dv">20</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    ui.input_slider(<span class="st">"kids"</span>, <span class="st">"Number of Kids"</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Table output</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ui.card():</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">@render.table</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> filtered_table():</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        filtered <span class="op">=</span> filter_data(<span class="bu">input</span>.age(), <span class="bu">input</span>.kids())</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> filtered.head(<span class="dv">10</span>)  <span class="co"># Display first 10 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The code above creates a shiny application that takes in two user inputs: <code>age</code> and <code>kids</code>. This now returns the first ten rows of the filtered dataset. Run the following code to view the application</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">shiny</span> run <span class="at">--reload</span> main.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" alt="image of the live python shiny applciation"></p>
+<p></p><figcaption class="figure-caption">Live Python Shiny application. Image by Author</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="integrating-playwright-with-python-shiny" class="level2">
+<h2 class="anchored" data-anchor-id="integrating-playwright-with-python-shiny">Integrating Playwright with Python Shiny</h2>
+<p>To use Playwright, you must install the <a href="https://playwright.dev/python/docs/intro">Playwright Python library</a> and <a href="https://learndata.xyz/posts/how_to_conduct_unit_tests_in_python_shiny_with_pytest/">Pytest</a>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pytest pytest-playwright</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Just like <a href="https://learndata.xyz/posts/how_to_conduct_unit_tests_in_python_shiny_with_pytest/">unit tests</a>, all end-to-end test files must have a <code>test</code> prefix or suffix. Create a test file <code>test_app.py</code>, and paste the following code to see if the table output in the application appears as expected.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny.playwright <span class="im">import</span> controller</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny.run <span class="im">import</span> ShinyAppProc</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> playwright.sync_api <span class="im">import</span> Page</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny.pytest <span class="im">import</span> create_app_fixture</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utilis <span class="im">import</span> filter_data</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> create_app_fixture(<span class="st">"./main.py"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>test_data <span class="op">=</span> filter_data(<span class="dv">28</span>, <span class="dv">4</span>).head(<span class="dv">10</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>n_row <span class="op">=</span> test_data.shape[<span class="dv">0</span>]</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>n_col <span class="op">=</span> test_data.shape[<span class="dv">1</span>]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>columns_names <span class="op">=</span> [<span class="op">*</span>test_data.columns]</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_table(page: Page, app: ShinyAppProc):</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    page.goto(app.url)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    table <span class="op">=</span> controller.OutputTable(page, <span class="st">"filtered_table"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    slider_1 <span class="op">=</span> controller.InputSlider(page, <span class="st">"age"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    slider_2 <span class="op">=</span> controller.InputSlider(page, <span class="st">"kids"</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    slider_1.<span class="bu">set</span>(<span class="st">"28"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    slider_2.<span class="bu">set</span>(<span class="st">"4"</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    table.expect_column_labels(columns_names)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    table.expect_ncol(n_col)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    table.expect_nrow(n_row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is a breakdown of the above code:</p>
+<ol type="1">
+<li>First of all, the <code>controller</code> module is imported. This controls the shiny components and mimics browser interactions on the Python shiny application.</li>
+<li><code>page</code> is an instance of the <code>Page</code> class, representing a single tab on the browser.</li>
+<li><code>app</code> is an instance of the <code>ShinyAppProc</code> class, representing the Python Shiny application.</li>
+<li>The function <code>test_table</code> is designed to mimic user interaction with the inputs to generate an output table. It is always good practice to ensure that your tests cover a single functionality.</li>
+<li>The <code>controller.OutputTable</code> and <code>controller.InputSlider</code> are methods from the <code>controller</code> module that mimic human interaction. Here is a list of all the <a href="https://shiny.posit.co/py/api/testing/">available shiny <code>controller</code></a> classes and methods.</li>
+<li>The <code>.set</code> method sets a value for each controller, just like a user will set it on the browser.</li>
+<li>The <code>.expect_column_labels</code>, <code>expect_ncol</code>, and <code>.expect_nrow</code> methods are all specific to the <code>controller, InputSlider</code>. They check whether a table has the proper column labels and dimensions.</li>
+</ol>
+<p>Type <code>pytest</code> on the command line, and click enter to run.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 1.png" class="img-fluid figure-img" alt="image showing the test result passed for the python shiny application"></p>
+<p></p><figcaption class="figure-caption">Test result passed. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+<p>You can see that the test was successful. If the number of expected columns, rows, or label names provided does not match what the application is displaying, the test will fail and also give a reason for the failure.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 2.png" class="img-fluid figure-img" alt="image showing the test result fails for the python shiny application"></p>
+<p></p><figcaption class="figure-caption">Test result fails. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="end-to-end-testing-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="end-to-end-testing-best-practices">End-to-end Testing Best Practices</h2>
+<ul>
+<li><strong>Define Workflows to Test:</strong> When writing E2E tests, you need to define the parts of the application that you want to cover. It is unrealistic to say you want to write a test covering 100% of the application.</li>
+<li><strong>Simulate Real-World User Experience:</strong> Ensure that any test you write simulates what users will realistically do, such as button clicks, file uploads, and so on.</li>
+<li><strong>Use Descriptive Names:</strong> When creating test files and test functions, ensure you use descriptive names. This ensures anyone viewing the code understands what’s going on. Make sure the names of the test functions relate to the function of the application being tested.</li>
+<li><strong>Conduct Cross-browser Testing:</strong> Ensure you test all relevant browsers to ensure users can access your applications from various browsers.</li>
+<li><strong>Automate Tests:</strong> Ensure you integrate CI/CD workflows into your code, using tools like GitHub Actions, Jenkins, Circle CI, and others to run automated tests anytime a commit is made.</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In this article, you have learned about E2E tests and how to write E2E tests with Playwright in your Python Shiny applications. E2E tests only covers user interactions, what if you want to test your business logic, such as calculations in your applications. This is where unit tests come into place, Check out <a href="https://learndata.xyz/posts/how_to_conduct_unit_tests_in_python_shiny_with_pytest/">How to Conduct Unit Tests in Python Shiny with Pytest</a> to learn more.</p>
+<p>If you want to learn more about Playwright, here are some resources that are of help.</p>
+<ul>
+<li><a href="https://playwright.dev/docs/best-practices"><strong>Playwright Best Practices</strong></a></li>
+<li><a href="https://www.browserstack.com/guide/end-to-end-testing-using-playwright"><strong>How to perform End to End Testing using Playwright</strong></a></li>
+<li><a href="https://luxequality.com/blog/playwright-end-to-end-testing/"><strong>Playwright End to End Testing: Complete Guide</strong></a></li>
+<li><a href="https://playwright.dev/"><strong>Playwright: Fast and reliable end-to-end testing for modern web apps</strong></a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="adejumoridwan/comments" data-repo-id="R_kgDOMp4Jsg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">© 2024 learndata.xyz | <a href="navs/about.qmd">About</a> | Contact | <a href="navs/services.qmd">Services</a> | Privacy | Terms of Service</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/learndata_xyz">Twitter</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/company/learndataxyz">LinkedIn</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.github.com/learndataxyz">GitHUB</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

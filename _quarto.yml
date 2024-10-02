@@ -3,10 +3,22 @@ project:
 website:
   google-analytics: "G-N6FNR4EYSZ"
   title: ""
-  body-footer: "@learndata.xyz"
+  page-footer: 
+    center: © 2024 learndata.xyz | [About](navs/about.qmd) | [Contact](mailto:admin@learndata.xyz) | [Services](navs/services.qmd) | [Privacy](navs/privacy.qmd) | [Terms of Service](navs/tos.qmd)
+    right: 
+      - icon: twitter
+        text: Twitter
+        href: https://twitter.com/learndata_xyz
+      - icon: LinkedIn
+        text: LinkedIn
+        href: https://www.linkedin.com/company/learndataxyz
+      - icon: github
+        text: GitHUB
+        href: https://www.github.com/learndataxyz
   margin-header: subscribe.html
   favicon: assets/learn_data.png
   twitter-card: true
+  reader-mode: true
   site-url: https://learndata.xyz
   open-graph: true
   navbar:
@@ -18,14 +30,15 @@ website:
         #file: navs/index.qmd
       #- sidebar:learn
       #- sidebar:resources
-      - text: "Courses"
-        file: navs/courses.qmd
       - text: "Blog"
         file: blog.qmd
+      - text: "Services"
+        file: navs/services.qmd
+      - text: "Courses"
+        file: navs/courses.qmd
       - text: "About"
         file: navs/about.qmd
-     #- text: "Contact"
-        #file: navs/contact.qmd
+
 
 
   sidebar:
