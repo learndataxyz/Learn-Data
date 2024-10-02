@@ -1,8 +1,5 @@
----
-title: "Welcome to learndata.xyz"
----
 
-
+# Welcome to learndata.xyz
 
 ## Unlock the Power of Your Data
 

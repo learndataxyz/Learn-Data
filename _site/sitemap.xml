@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-10-02T10:33:49.021Z</lastmod>
+    <lastmod>2024-10-02T11:39:00.033Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -34,11 +34,11 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/E2E/index.html</loc>
-    <lastmod>2024-10-02T10:22:21.882Z</lastmod>
+    <lastmod>2024-10-02T11:35:51.606Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/services.html</loc>
-    <lastmod>2024-10-02T11:03:45.037Z</lastmod>
+    <lastmod>2024-10-02T11:40:12.611Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/privacy.html</loc>
@@ -55,5 +55,13 @@
   <url>
     <loc>https://learndata.xyz/navs/contact.html</loc>
     <lastmod>2024-10-02T11:03:12.437Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/home.html</loc>
+    <lastmod>2024-10-02T11:36:34.912Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/index.html</loc>
+    <lastmod>2024-10-02T11:38:42.073Z</lastmod>
   </url>
 </urlset>

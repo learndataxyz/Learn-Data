@@ -247,9 +247,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Blog",
+    "title": "Welcome to learndata.xyz",
     "section": "",
-    "text": "@learndata.xyz"
+    "text": "Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\n\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\n\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\n\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\n\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
   },
   {
     "objectID": "posts/The Engineer's Guide to Low Code/index.html",
@@ -347,7 +347,7 @@
     "href": "posts/E2E/index.html",
     "title": "End-to-end Testing with Playwright and Python Shiny",
     "section": "",
-    "text": "LearnData Branding.png\nWhen an application’s code base grows large, it becomes difficult to maintain. Anytime a change is made in the code, some app functionality can break and go unnoticed. This is why writing tests in your Python Shiny applications is essential.\nOne such test is end-to-end tests (E2E). End-to-end tests help mimic user interactions on an application, such as clicking buttons, file uploads, and browser variations, to ensure that the application’s user interface is working as expected.\nThis article will teach you how to conduct end-to-end tests on your Python Shiny applications using Playwright, an open-source automation framework for testing web applications."
+    "text": "When an application’s code base grows large, it becomes difficult to maintain. Anytime a change is made in the code, some app functionality can break and go unnoticed. This is why writing tests in your Python Shiny applications is essential.\nOne such test is end-to-end tests (E2E). End-to-end tests help mimic user interactions on an application, such as clicking buttons, file uploads, and browser variations, to ensure that the application’s user interface is working as expected.\nThis article will teach you how to conduct end-to-end tests on your Python Shiny applications using Playwright, an open-source automation framework for testing web applications."
   },
   {
     "objectID": "posts/E2E/index.html#what-is-playwright",
@@ -439,5 +439,12 @@
     "title": "Courses",
     "section": "ML Model Deployment with FastAPI and Streamlit",
     "text": "ML Model Deployment with FastAPI and Streamlit"
+  },
+  {
+    "objectID": "navs/home.html",
+    "href": "navs/home.html",
+    "title": "",
+    "section": "",
+    "text": "Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\n\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\n\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\n\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\n\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
   }
 ]
