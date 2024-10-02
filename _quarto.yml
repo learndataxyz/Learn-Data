@@ -4,7 +4,18 @@ website:
   google-analytics: "G-N6FNR4EYSZ"
   title: ""
   page-footer: 
-    center: © 2024 learndata.xyz | [About](navs/about.qmd) | [Contact](mailto:admin@learndata.xyz) | [Services](navs/services.qmd) | [Privacy](navs/privacy.qmd) | [Terms of Service](navs/tos.qmd)
+    left: © 2024 learndata.xyz 
+    center:
+      - text: About 
+        href: navs/about.qmd
+      - text: Contact 
+        href: mailto:admin@learndata.xyz
+      - text: Services 
+        href: navs/services.qmd
+      - text: Privacy 
+        href: navs/privacy.qmd
+      - text: Terms of Service 
+        href: navs/tos.qmd
     right: 
       - icon: twitter
         text: Twitter
