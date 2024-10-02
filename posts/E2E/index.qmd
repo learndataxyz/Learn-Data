@@ -6,7 +6,7 @@ image: "LearnData_Branding.png"
 draft: false
 ---
 
-![LearnData Branding.png](LearnData_Branding.png){fig-alt="end-to-end testing with Playwright and python shiny"}
+![](LearnData_Branding.png){fig-alt="end-to-end testing with Playwright and python shiny"}
 
 When an application's code base grows large, it becomes difficult to maintain. Anytime a change is made in the code, some app functionality can break and go unnoticed. This is why writing tests in your Python Shiny applications is essential.
 
