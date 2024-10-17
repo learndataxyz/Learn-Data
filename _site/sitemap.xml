@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-10-12T10:33:37.628Z</lastmod>
+    <lastmod>2024-10-17T14:48:59.936Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -62,10 +62,14 @@
   </url>
   <url>
     <loc>https://learndata.xyz/index.html</loc>
-    <lastmod>2024-10-12T10:30:21.199Z</lastmod>
+    <lastmod>2024-10-17T14:48:20.737Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
     <lastmod>2024-10-12T10:33:19.548Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
+    <lastmod>2024-10-17T14:49:19.999Z</lastmod>
   </url>
 </urlset>
