@@ -96,7 +96,7 @@ Alternatively, you can set the `binwidth` to `0.1`, you will still get the same 
 sns.histplot(data=tips, x='tip', binwidth=0.1)
 ```
 
-![Adjust the bin size or bandwidth to spread or thin the distribution. Image by Author.](image%202.png){fig-alt="image of a seaborn histogram with an adjusted number of bins or binwidth.}
+![Adjust the bin size or bandwidth to spread or thin the distribution. Image by Author.](image%202.png){fig-alt="image of a seaborn histogram with an adjusted number of bins or binwidth."}
 
 
 ### Changing the bin color
