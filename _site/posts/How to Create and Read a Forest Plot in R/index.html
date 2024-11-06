@@ -8,7 +8,7 @@
 
 <meta name="author" content="Adejumo Ridwan Suleiman">
 
-<title>A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn</title>
+<title>How to Create and Read a Forest Plot in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,14 +137,14 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn">
-<meta property="og:description" content="Working with numerical data helps us understand the distribution of values in a numerical variable. This gives us a sense of the frequently occurring values and how these values vary from each other.">
-<meta property="og:image" content="https://learndata.xyz/posts\A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn\LearnData Branding(2).png">
+<meta property="og:title" content="How to Create and Read a Forest Plot in R">
+<meta property="og:description" content="As a researcher trying to compare the results of a particular intervention or treatment from different studies, a forest plot makes it easy to view results from multiple studies.">
+<meta property="og:image" content="https://learndata.xyz/posts\How to Create and Read a Forest Plot in R\LearnData_Branding_(1).png">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn">
-<meta name="twitter:description" content="Working with numerical data helps us understand the distribution of values in a numerical variable. This gives us a sense of the frequently occurring values and how these values vary from each other.">
-<meta name="twitter:image" content="https://learndata.xyz/posts\A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn\LearnData Branding(2).png">
+<meta name="twitter:title" content="How to Create and Read a Forest Plot in R">
+<meta name="twitter:description" content="As a researcher trying to compare the results of a particular intervention or treatment from different studies, a forest plot makes it easy to view results from multiple studies.">
+<meta name="twitter:image" content="https://learndata.xyz/posts\How to Create and Read a Forest Plot in R\LearnData_Branding_(1).png">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
@@ -200,18 +200,13 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn</h1>
+      <h1 class="title">How to Create and Read a Forest Plot in R</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">python</div>
-                <div class="quarto-category">seaborn</div>
-                <div class="quarto-category">histogram</div>
-                <div class="quarto-category">density plot</div>
-                <div class="quarto-category">kde</div>
-                <div class="quarto-category">distribution</div>
-                <div class="quarto-category">statistics</div>
                 <div class="quarto-category">data visualization</div>
-                <div class="quarto-category">data science</div>
-                <div class="quarto-category">machine learning</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">data analysis</div>
+                <div class="quarto-category">data storytelling</div>
+                <div class="quarto-category">plot</div>
               </div>
                   </div>
   </div>
@@ -271,20 +266,20 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-a-histogram" id="toc-what-is-a-histogram" class="nav-link active" data-scroll-target="#what-is-a-histogram">What is a Histogram?</a></li>
-  <li><a href="#building-a-histogram-with-seaborn" id="toc-building-a-histogram-with-seaborn" class="nav-link" data-scroll-target="#building-a-histogram-with-seaborn">Building a Histogram with Seaborn</a>
+  <li><a href="#what-is-a-forest-plot" id="toc-what-is-a-forest-plot" class="nav-link active" data-scroll-target="#what-is-a-forest-plot">What is a Forest plot?</a>
   <ul class="collapse">
-  <li><a href="#creating-the-histogram" id="toc-creating-the-histogram" class="nav-link" data-scroll-target="#creating-the-histogram">Creating the histogram</a></li>
+  <li><a href="#components-of-a-forest-plot" id="toc-components-of-a-forest-plot" class="nav-link" data-scroll-target="#components-of-a-forest-plot">Components of a Forest plot</a></li>
   </ul></li>
-  <li><a href="#enhancing-the-histogram" id="toc-enhancing-the-histogram" class="nav-link" data-scroll-target="#enhancing-the-histogram">Enhancing the histogram</a>
+  <li><a href="#forestplot-package-in-r" id="toc-forestplot-package-in-r" class="nav-link" data-scroll-target="#forestplot-package-in-r"><code>forestplot</code> package in R</a></li>
+  <li><a href="#creating-a-forest-plot-in-r" id="toc-creating-a-forest-plot-in-r" class="nav-link" data-scroll-target="#creating-a-forest-plot-in-r">Creating a Forest plot in R</a></li>
+  <li><a href="#customizing-forest-plot" id="toc-customizing-forest-plot" class="nav-link" data-scroll-target="#customizing-forest-plot">Customizing Forest Plot</a>
   <ul class="collapse">
-  <li><a href="#adjusting-bin-sizes-and-width" id="toc-adjusting-bin-sizes-and-width" class="nav-link" data-scroll-target="#adjusting-bin-sizes-and-width">Adjusting bin sizes and width</a></li>
-  <li><a href="#changing-the-bin-color" id="toc-changing-the-bin-color" class="nav-link" data-scroll-target="#changing-the-bin-color">Changing the bin color</a></li>
-  <li><a href="#add-a-kernel-density-estimation-kde" id="toc-add-a-kernel-density-estimation-kde" class="nav-link" data-scroll-target="#add-a-kernel-density-estimation-kde">Add a Kernel Density Estimation (KDE)</a></li>
-  <li><a href="#add-grouping-variables" id="toc-add-grouping-variables" class="nav-link" data-scroll-target="#add-grouping-variables">Add grouping variables</a></li>
+  <li><a href="#add-column-labels" id="toc-add-column-labels" class="nav-link" data-scroll-target="#add-column-labels">Add column labels</a></li>
+  <li><a href="#add-a-summary" id="toc-add-a-summary" class="nav-link" data-scroll-target="#add-a-summary">Add a summary</a></li>
+  <li><a href="#add-colors-and-demarcate-lines" id="toc-add-colors-and-demarcate-lines" class="nav-link" data-scroll-target="#add-colors-and-demarcate-lines">Add colors and demarcate lines</a></li>
+  <li><a href="#add-a-theme" id="toc-add-a-theme" class="nav-link" data-scroll-target="#add-a-theme">Add a theme</a></li>
   </ul></li>
-  <li><a href="#interpreting-histograms" id="toc-interpreting-histograms" class="nav-link" data-scroll-target="#interpreting-histograms">Interpreting Histograms</a></li>
-  <li><a href="#best-practices-when-creating-histograms" id="toc-best-practices-when-creating-histograms" class="nav-link" data-scroll-target="#best-practices-when-creating-histograms">Best Practices when Creating Histograms</a></li>
+  <li><a href="#reading-a-forest-plot" id="toc-reading-a-forest-plot" class="nav-link" data-scroll-target="#reading-a-forest-plot">Reading a Forest Plot</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -295,186 +290,196 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 
 
 
-<p><img src="LearnData Branding(2).png" class="img-fluid" alt="seaborn histogram"></p>
-<p>Working with numerical data helps us understand the distribution of values in a numerical variable. This gives us a sense of the frequently occurring values and how these values vary from each other. It also highlights the presence of extreme values in a variable, if any.</p>
-<p>In this article, you will learn how to plot a histogram using <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://seaborn.pydata.org/&amp;ved=2ahUKEwjCydrV_pKJAxVpXEEAHfzvFSQQFnoECBgQAQ&amp;usg=AOvVaw0GhFbgBpk8OwHfgpvMyxJm">Seaborn</a>, a Python library built on Matplotlib for statistical data visualization. You will also learn how to customize and interpret your histogram plots to derive precise insights from your data.</p>
-<section id="what-is-a-histogram" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-histogram">What is a Histogram?</h2>
-<p>A histogram is used to plot numeric data. It splits a numeric variable into various equal ranges known as bins and plots the total number of observations that fall under each bin as bars. These bars are adjacent to each other, with no space between them. This differs from a bar plot that plots the frequency of categorical data, with space between the bars.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Bar-chart-versus-histogram-chart-elements-representation.png" class="img-fluid figure-img" alt="an image showing the difference between a histogram and a bar plot"></p>
-<p></p><figcaption class="figure-caption">Difference between histogram and bar chart. Source: <a href="https://www.syncfusion.com/blogs/post/difference-between-bar-graph-and-histogram-chart">Syncfusion</a></figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="building-a-histogram-with-seaborn" class="level2">
-<h2 class="anchored" data-anchor-id="building-a-histogram-with-seaborn">Building a Histogram with Seaborn</h2>
-<p>We will build our histogram using the <a href="https://www.kaggle.com/code/sanjanabasu/tips-dataset">tips</a> dataset in the seaborn library. This dataset contains information about tips received by a waiter over a period of months. Before proceeding, ensure you have imported the pandas, Seaborn, and Matplotib libraries.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Let’s view the columns in the dataset.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">'tips'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="image.png" class="img-fluid figure-img" alt="image showing a preview of the tips dataset"></p>
-<p></p><figcaption class="figure-caption">Preview of the <code>tips</code> dataset. Image by Author.</figcaption><p></p>
-</figure>
-</div>
-<p>We will use the histogram to answer questions from our dataset regarding the <code>tip</code> variable, such as:</p>
+<p><img src="LearnData_Branding_(1).png" class="img-fluid" alt="forest plot in R"></p>
+<p>As a researcher trying to compare the results of a particular intervention or treatment from different studies, a forest plot makes it easy to view results from multiple studies. This makes it easy to see variations and trends in an intervention or treatment. In this article, you will learn how to create and customize a forest plot in R using the <code>forestplot</code> package. I will also show you how to read a forest plot.</p>
+<section id="what-is-a-forest-plot" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-forest-plot">What is a Forest plot?</h2>
+<p>A forest plot is a type of graph used in research to show the results of a single topic from multiple studies line by line. Each study is represented by a line and a dot, where the dot shows the main result (how effective a treatment is) while the line shows the range of possible results, also known as the confidence intervals. The forest plot sometimes includes a diamond-shaped plot below, summarizing all the results of the studies. If all the lines are close to each other, then it means the studies agree on that particular topic or there are varying findings on that topic.</p>
+<section id="components-of-a-forest-plot" class="level3">
+<h3 class="anchored" data-anchor-id="components-of-a-forest-plot">Components of a Forest plot</h3>
 <ul>
-<li>What is the distribution of the tip?</li>
-<li>What is the highest and lowest tip amount received?</li>
-<li>What is the tip amount most frequently received by the waiter?</li>
-<li>Is there a difference between the distribution of tips from female and male customers?</li>
+<li><strong>Study Labels</strong>: Located at the left side of the plot, these labels identify each respective study and contain the study author and year.</li>
+<li><strong>Effect Size:</strong> This represents the observed effect of an outcome in each study, such as the prevalence of a disease. The position of the point on the plot indicates whether the effect is negative, neutral, or positive.</li>
+<li><strong>Confidence Intervals:</strong> Each study shows a horizontal line showing the range of possible outcomes. The narrower the line, the higher the precision of the effect Size.</li>
+<li><strong>No Effect Line:</strong> This vertical line is either zero or one, representing no effect. If a study confidence interval crosses this line, the study is not statistically significant.</li>
+<li><strong>Overall Effect (Diamond Shape):</strong> This represents the pooled effect from all studies at the plot’s bottom. The center of the diamond shows the overall effect, while the width of the diamond represents the confidence interval. The combined result is statistically significant if the diamond does not cross the no-effect line.</li>
 </ul>
-<section id="creating-the-histogram" class="level3">
-<h3 class="anchored" data-anchor-id="creating-the-histogram">Creating the histogram</h3>
-<p>To build a seaborn histogram, you need to use the <code>sns.histplot()</code> function. The following are the key arguments to provide:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" alt="Forest plot in R"></p>
+<p></p><figcaption class="figure-caption">Forest Plot. Image by Author</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="forestplot-package-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="forestplot-package-in-r"><code>forestplot</code> package in R</h2>
+<p><code>forest plot</code> is an r package for creating publication-ready forest plots and works seamlessly with the pipe (<code>|&gt;</code> or <code>%&gt;%</code>) operator. You can install the package by running the code below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install.packages(<span class="st">"forestplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here are some critical arguments for plotting a forest plot in R using the <code>forestplot</code> function from the <code>forestplot</code> package.</p>
 <ul>
-<li><code>data</code>: the pandas dataframe.</li>
-<li><code>x</code>: the variable of interest in the data.</li>
-<li><code>color</code>: the color of the bars.</li>
-<li><code>alpha</code>: the transparency of the bars.</li>
-<li><code>bins</code>: the number of bins in the histogram.</li>
-<li><code>binwidth</code>: the width of each bin.</li>
-<li><code>kde</code>: A boolean to add a kernel density estimation</li>
-<li><code>hue</code>: to differentiate data subset based on another variable</li>
+<li><code>mean</code>: This takes the column containing the effect size of each study.</li>
+<li><code>lower</code>: This takes the lower confidence interval of the effect Size.</li>
+<li><code>upper</code>: This takes the higher confidence interval of the effect Size.</li>
 </ul>
-<p>Use the following code to build a simple histogram for us to start with, adding title and axis labels to the plot.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">'tip'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of tips received by the waiter"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tip amount"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can check for additional arguments by running <code>?forestplot</code> on your R console.</p>
+</section>
+<section id="creating-a-forest-plot-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-forest-plot-in-r">Creating a Forest plot in R</h2>
+<p>In this tutorial, we will use fictional data from various studies studying the effect of a particular <a href="https://github.com/adejumoridwan/datasets/blob/main/cancer_data">cancer treatment</a>. First, load the <code>forest plot</code> package.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forestplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, we will load the dataset we will work with.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cancer <span class="op">&lt;-</span> read.csv(<span class="st">"https://raw.githubusercontent.com/adejumoridwan/datasets/refs/heads/main/cancer_data"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>head(cancer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image 1.png" class="img-fluid figure-img" alt="image of a simple seaborn histogram plot"></p>
-<p></p><figcaption class="figure-caption">A simple histogram that shows the distribution of tips given to the waiter. Image by Author.</figcaption><p></p>
+<p><img src="image 1.png" class="img-fluid figure-img" alt="Image showing top 6 items on the cancer study data"></p>
+<p></p><figcaption class="figure-caption">Top 6 rows of the cancer studies dataset. Image by Author.</figcaption><p></p>
 </figure>
 </div>
-</section>
-</section>
-<section id="enhancing-the-histogram" class="level2">
-<h2 class="anchored" data-anchor-id="enhancing-the-histogram">Enhancing the histogram</h2>
-<p>You can improve the histogram by providing some of the arguments explained in the previous section.</p>
-<section id="adjusting-bin-sizes-and-width" class="level3">
-<h3 class="anchored" data-anchor-id="adjusting-bin-sizes-and-width">Adjusting bin sizes and width</h3>
-<p>Currently, the default number of bins is set to <code>auto</code> based on the number of observations, and the bandwidth is set to <code>None</code> by default.</p>
+<p>Copy and paste the following code to create the forest plot and run.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cancer <span class="op">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  forestplot(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> cancer$EffectSize,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    lower <span class="op">=</span> cancer$CI_lower,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    upper <span class="op">=</span> cancer$CI_upper,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    labeltext <span class="op">=</span> c(Study, EffectSize, CI_lower, CI_upper),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    xlog <span class="op">=</span> TRUE,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    boxsize <span class="op">=</span> <span class="fl">0.25</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    vertices <span class="op">=</span> TRUE,) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here are the roles of the arguments specified in the <code>forestplot</code> function:</p>
 <ul>
-<li><p><strong>Note</strong></p>
-<p>Using a bin width overrides the <code>bins</code> argument.</p></li>
+<li><code>mean</code>: This argument takes the effect size of the outcome of interest from the dataset.</li>
+<li><code>lower</code>: This argument takes the lower confidence interval of the effect size.</li>
+<li><code>upper</code>: This takes the upper confidence interval from the effect size.</li>
+<li><code>labeltext</code>: This specifies the columns appearing on the forest plot’s left side.</li>
+<li><code>xlog</code> : If <code>TRUE</code>, the marks on the x-axis follow a logarithmic scale.</li>
+<li><code>boxsize</code>: Overrides the default size of the box used in the plot.</li>
+<li><code>vertices</code>: If <code>TRUE</code>, apply vertices to the end of the confidence intervals for each study.</li>
 </ul>
-<p>Let’s increase the number of bins by giving a higher value, say <code>100</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">'tip'</span>, bins<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, you can set the <code>binwidth</code> to <code>0.1</code>, you will still get the same plot.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">'tip'</span>, binwidth<span class="op">=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image 2.png" class="img-fluid figure-img" alt="image of a seaborn histogram with an adjusted number of bins or binwidth."></p>
-<p></p><figcaption class="figure-caption">Adjust the bin size or bandwidth to spread or thin the distribution. Image by Author.</figcaption><p></p>
+<p><img src="image 2.png" class="img-fluid figure-img" alt="Image showing a basic forest plot in R"></p>
+<p></p><figcaption class="figure-caption">Plot the forest plot. Image by Author</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="changing-the-bin-color" class="level3">
-<h3 class="anchored" data-anchor-id="changing-the-bin-color">Changing the bin color</h3>
-<p>To set the bin’s color, add a value to the <code>color</code> argument. Let’s give the histogram the color <code>green</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">'tip'</span>, color<span class="op">=</span><span class="st">"green"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of tips received by the waiter"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tip amount"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="customizing-forest-plot" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-forest-plot">Customizing Forest Plot</h2>
+<p>Adding headers, changing the colors, or changing the theme are various ways of improving the forest plot. All these are done by piping additional functions to the main <code>forestplot()</code> function.</p>
+<section id="add-column-labels" class="level3">
+<h3 class="anchored" data-anchor-id="add-column-labels">Add column labels</h3>
+<p>Let’s add column labels to the plot above to create an identification for the columns. Use the pipe operator and pass the following function to the plot.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fp_add_header</span>(<span class="at">Study =</span> <span class="fu">c</span>(<span class="st">"Study"</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">EffectSize =</span> <span class="fu">c</span>(<span class="st">"Effect Size"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">CI_lower  =</span> <span class="fu">c</span>(<span class="st">"Lower CI"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">CI_upper =</span> <span class="fu">c</span>(<span class="st">"Upper CI"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>fp_add_header()</code> function assigns new column labels to the dataset column names.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image 3.png" class="img-fluid figure-img" alt="image of a seaborn histogram with a green color"></p>
-<p></p><figcaption class="figure-caption">Add a color to the histogram. Image by Author.</figcaption><p></p>
+<p><img src="image 3.png" class="img-fluid figure-img" alt="image showing forest plot with column labels"></p>
+<p></p><figcaption class="figure-caption">Add column labels. Image by Author.</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="add-a-kernel-density-estimation-kde" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-kernel-density-estimation-kde">Add a Kernel Density Estimation (KDE)</h3>
-<p>To ease interpretation, we can set the <code>kde</code> argument to <code>True</code>. This will apply a <a href="https://en.wikipedia.org/wiki/Kernel_density_estimation">kernel density estimation</a> that smooths the histogram points, revealing the shape of the distribution.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">'tip'</span>, color<span class="op">=</span><span class="st">"green"</span>, kde<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of tips received by the waiter"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tip amount"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="image 4.png" class="img-fluid figure-img" alt="image of a seaborn histogram with the kde set to true"></p>
-<p></p><figcaption class="figure-caption">Set <code>kde</code> to <code>true</code>. Image by Author</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="add-grouping-variables" class="level3">
-<h3 class="anchored" data-anchor-id="add-grouping-variables">Add grouping variables</h3>
-<p>You can add a grouping variable to the histogram to see the distribution for each respective group. For example, let’s group the histogram by sex by adding a <code>sex</code> group to the <code>hue</code> argument to see the distribution of tips given by male and female customers.</p>
+<section id="add-a-summary" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-summary">Add a summary</h3>
+<p>You can add a summary at the bottom of the plot summarizing the whole plot by taking the mean of the effect sizes and the confidence intervals. This will also add a diamond-shaped overall effect below the plot.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fp_append_row</span>(<span class="at">mean  =</span> <span class="fu">mean</span>(cancer<span class="sc">$</span>EffectSize),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">lower =</span> <span class="fu">mean</span>(cancer<span class="sc">$</span>CI_lower),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">upper =</span> <span class="fu">mean</span>(cancer<span class="sc">$</span>CI_upper),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">Study =</span> <span class="st">"Summary"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">EffectSize =</span> <span class="fu">mean</span>(cancer<span class="sc">$</span>EffectSize),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">is.summary =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>fp_append_row()</code> adds another row to the forest plot, the mean of the effect size, lower, and upper lower are calculated, and a graph is plotted based on these values. The <code>EffectSize</code> argument adds the value of the overall effect size to the table; you can add the lower and upper confidence intervals by adding the following arguments to the <code>fp_append_row()</code> function.</p>
 <ul>
-<li><p><strong>Note</strong></p>
-<p>This is going to override the <code>color</code> argument you specified earlier.</p></li>
+<li><code>CI_lower = mean(cancer$CI_lower)</code></li>
+<li><code>CI_upper = mean(cancer$CI_upper)</code></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">'tip'</span>, color<span class="op">=</span><span class="st">"green"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"sex"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of tips received by the waiter"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tip amount"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image 5.png" class="img-fluid figure-img" alt="image showing the seaborn histogram grouped by sex"></p>
-<p></p><figcaption class="figure-caption">Add a group variable to the histogram. Image by Author.</figcaption><p></p>
+<p><img src="image 4.png" class="img-fluid figure-img" alt="Image showing forest plot with summary row"></p>
+<p></p><figcaption class="figure-caption">Add summary row. Image by Author.</figcaption><p></p>
 </figure>
 </div>
 </section>
-</section>
-<section id="interpreting-histograms" class="level2">
-<h2 class="anchored" data-anchor-id="interpreting-histograms">Interpreting Histograms</h2>
-<p>Interpreting a histogram is not difficult, especially once you use the kernel density estimation on the plot. The highest bars are the frequently occurring values and the highest points on the kernel density plot are the highest bars. We can deduce from our histogram that the most frequent amount of tips received by the waiter ranges from $2 to $3.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="image 6.png" class="img-fluid figure-img" alt="image showing frequently occuring values in the seaborn histogram"></p>
-<p></p><figcaption class="figure-caption">Identifying frequently occurring values through the plot peak. Image by Author.</figcaption><p></p>
-</figure>
-</div>
-<p>The tail of the kernel density plot indicates extreme values. The longer the tail, the more extreme values present in the data are. This tail is referred to as a <a href="https://en.wikipedia.org/wiki/Skewness">skew</a>. A long tail to the left means the distribution is left-skewed. A long tail to the right means the histogram distribution is right-skewed, just like in the case of our plot. This means the waiter received tips above $6 from a few customers.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="image 7.png" class="img-fluid figure-img" alt="image showing the skewness of the seaborn histogram"></p>
-<p></p><figcaption class="figure-caption">Identifying the skewness of the histogram plot. Image by Author.</figcaption><p></p>
-</figure>
-</div>
-<p>The difference between the two kernel density plots also tells us that male customers give higher tips to the waiter than female customers, though the number of male customers is greater than that of female customers. The minimum tip the waiter receives is $1, while the highest is $10.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="image 8.png" class="img-fluid figure-img" alt="image showing the difference between the two KDE plots in the seaborn histogram"></p>
-<p></p><figcaption class="figure-caption">Difference between the two KDE plots. Image by Author.</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="best-practices-when-creating-histograms" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices-when-creating-histograms">Best Practices when Creating Histograms</h2>
-<p>A histogram is a powerful plot that can tell you much about your numeric variables. Here are some best practices to ensure you craft accurate and precise histograms.</p>
+<section id="add-colors-and-demarcate-lines" class="level3">
+<h3 class="anchored" data-anchor-id="add-colors-and-demarcate-lines">Add colors and demarcate lines</h3>
+<p>Let’s add a line to the plot demarcating the column headers from the observations and change the dots’ colors to blue. Then, pass the following function to the forest plot code.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fp_add_lines</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fp_set_style</span>(<span class="at">box =</span> <span class="st">"royalblue"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">line =</span> <span class="st">"darkblue"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">summary =</span> <span class="st">"royalblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><strong>Choose an Appropriate Bin Size:</strong> When choosing a bin size, try various values and ensure that the selected bin size conveys as much information as possible.</li>
-<li><strong>Label Axes:</strong> Ensure you provide informative labels when labeling your axes to help your viewers understand the plot.</li>
-<li><strong>Use Contrasting Colors:</strong> When comparing groups, use contrasting colors to make it easy to identify group differences.</li>
-<li><strong>Use Legends:</strong> When working with group variables, it is advisable to have a legend to identify the group and their respective colors in the plot.</li>
-<li><strong>Use Consistent Bin Widths:</strong> When setting bin width size, ensure your bin width is consistent throughout to avoid distorting the information conveyed by the plot.</li>
+<li><code>fp_add_lines()</code> adds a line demarcating the headers and summary from the observation rows.</li>
+<li><code>fp_set_style</code> sets a color to the forest plot.</li>
+<li>The <code>box</code> argument gives a color to the forest plot boxes.</li>
+<li>The <code>line</code> argument gives a color to the confidence interval lines.</li>
+<li>The <code>summary</code> gives a color to the diamond-shaped plot under the summary row.</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 5.png" class="img-fluid figure-img" alt="Image showing forest plot with demarcation"></p>
+<p></p><figcaption class="figure-caption">Add colors and demarcate lines. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="add-a-theme" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-theme">Add a theme</h3>
+<p>You can add a theme to the forest plot to make it easy to read. Add a zebra-styled theme by passing the following function to the forest plot function.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fp_set_zebra_style</span>(<span class="st">"#EFEFEF"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 6.png" class="img-fluid figure-img" alt="image showing forest plot with zebra styled theme"></p>
+<p></p><figcaption class="figure-caption">Add a zebra-styled theme. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="reading-a-forest-plot" class="level2">
+<h2 class="anchored" data-anchor-id="reading-a-forest-plot">Reading a Forest Plot</h2>
+<p>Each study has a blue square that represents its effect size. An effect size greater than 1 means the study found a positive effect, while less than 1 means a negative effect. The horizontal lines around each square represent the range of values (“confidence interval”) within which we expect the actual effect size to fall 95% of the time. If this line crosses 1, the effect could be neutral (neither positive nor negative).</p>
+<p>Some studies, like (Smith et al.&nbsp;2015) and (Brown et al.&nbsp;2017), have effect sizes above 1, and their confidence intervals do not cross 1. This implies that they found a significant positive effect.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 7.png" class="img-fluid figure-img" alt="Image showing forest plot with effect sizes and confidence interval above 1"></p>
+<p></p><figcaption class="figure-caption">Effect size and CI above 1. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+<p>Studies like (Wilson et al.&nbsp;2020) have effect sizes below one and confidence intervals that do not cross 1, indicating a negative or weaker effect.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 8.png" class="img-fluid figure-img" alt="Image showing forest plot with effect size and confidence interval below 1"></p>
+<p></p><figcaption class="figure-caption">Effect size and CI below 1. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+<p>Studies such as (Davis et al.&nbsp;2018) and (Jackson et al.&nbsp;2023) have confidence intervals that cross 1, meaning the effect might not be significant.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 9.png" class="img-fluid figure-img" alt="Image showing forest plot with effect sizes and confidence intervals crossing 1"></p>
+<p></p><figcaption class="figure-caption">CI crossing 1. Image by Author.</figcaption><p></p>
+</figure>
+</div>
+<p>At the bottom, a diamond shape represents the “summary effect” of all studies combined. In this plot, the summary effect size is about 1.14, with a confidence interval that crosses 1. This means that, overall, when we look at all the studies together, there is no effect</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 10.png" class="img-fluid figure-img" alt="Image showing forest plot with diamond shaped summary in the last row"></p>
+<p></p><figcaption class="figure-caption">Diamond shaped summary. Image by Author</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>When conducting predictive analysis on a dataset with numerical variables, it is crucial to view the distribution of these variables to identify outliers. This is where a histogram comes into play. You can use a histogram to see how the values in a variable are dispersed from each other, making the histogram a very important plot for exploratory data analysis.</p>
-<p>In this article, you have learned about histograms and how to build and interpret them using the Seaborn library in Python. If you want to learn more about histograms, here are some valuable resources.</p>
-<p><a href="https://www.wikihow.com/Read-Histograms"><strong>How to Read Histograms: 9 Steps (with Pictures)</strong></a></p>
-<p><a href="https://flexbooks.ck12.org/cbook/ck-12-probability-and-statistics-concepts/section/4.6/primary/lesson/interpreting-histograms-pst/"><strong>Interpreting Histograms</strong></a></p>
-<p><a href="https://medium.com/@abhishekjainindore24/everything-about-density-plot-3e74bb664d98"><strong>Everything about Density Plot</strong></a></p>
-<p><a href="https://www.statisticshowto.com/shapes-of-distributions/"><strong>Shapes of Distributions: Definitions, Examples</strong></a></p>
-<p><a href="https://www.abs.gov.au/statistics/understanding-statistics/statistical-terms-and-concepts/measures-shape"><strong>Measures of shape</strong></a></p>
+<p>The forest plot is not limited to comparing results between studies. You can also use it to compare predictor variables in a regression analysis, where instead of study labels, you have predictor variables and their respective estimates and confidence intervals.</p>
+<p>In this article, you have learned how to create a forest plot in R using the <code>forest plot</code> package and how to customize and derive insights from it. To learn more, check out the package <a href="https://cran.r-project.org/web/packages/forestplot/vignettes/forestplot.html">vignette</a>. There are other packages such as <a href="https://cran.r-project.org/web/packages/forestploter/vignettes/forestploter-post.html">forestploter</a>, <a href="https://github.com/rdboyes/forester">forester</a>, and if you want a custom forestplot, you can build yours using <a href="https://ianasilver.com/making-a-forest-plot-with-ggplot2/">ggplot2</a>. Here are further resources that dive deep into interpreting a forest plot. Hope you find them helpful.</p>
+<p><a href="https://tilburgsciencehub.com/topics/visualization/data-visualization/regression-results/forest-plot-generation-r/#0"><strong>Forest Plot Generation in R</strong></a></p>
+<p><a href="https://s4be.cochrane.org/blog/2016/07/11/tutorial-read-forest-plot/"><strong>Tutorial: How to read a forest plot</strong></a></p>
+<p><a href="https://www.nature.com/articles/s41433-021-01867-6"><strong>The 5 min meta-analysis: understanding how to read and interpret a forest plot</strong></a></p>
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8119923/"><strong>Seeing the Forest by Looking at the Trees: How to Interpret a Meta-Analysis Forest Plot</strong></a></p>
 
 
 </section>

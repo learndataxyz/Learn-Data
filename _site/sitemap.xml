@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-10-17T14:48:59.936Z</lastmod>
+    <lastmod>2024-11-06T10:29:43.246Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -70,6 +70,10 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
-    <lastmod>2024-10-17T14:49:19.999Z</lastmod>
+    <lastmod>2024-11-06T10:26:39.319Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Create and Read a Forest Plot in R/index.html</loc>
+    <lastmod>2024-11-06T10:29:42.050Z</lastmod>
   </url>
 </urlset>
