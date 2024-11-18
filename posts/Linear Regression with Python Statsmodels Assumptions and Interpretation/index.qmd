@@ -2,7 +2,7 @@
 title: "Linear Regression with Python Statsmodels: Assumptions and Interpretation"
 author: Adejumo Ridwan Suleiman
 categories: [python, statsmodels, statistics, machine learning, data science, data visualization]
-image: "LearnData_Branding(2).png"
+image: "LearnData_Branding_(2).png"
 draft: false
 ---
 
