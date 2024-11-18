@@ -151,3 +151,11 @@ If you want to learn more about Playwright, here are some resources that are of 
 -   [**How to perform End to End Testing using Playwright**](https://www.browserstack.com/guide/end-to-end-testing-using-playwright)
 -   [**Playwright End to End Testing: Complete Guide**](https://luxequality.com/blog/playwright-end-to-end-testing/)
 -   [**Playwright: Fast and reliable end-to-end testing for modern web apps**](https://playwright.dev/)
+
+### **Need Help with Data? Let’s Make It Simple.**
+
+*At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*
+
+*📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
+
+## Your next breakthrough could be one email away. Let’s make it happen!

@@ -198,3 +198,21 @@ In this article, you have learned how to create a forest plot in R using the `fo
 [**The 5 min meta-analysis: understanding how to read and interpret a forest plot**](https://www.nature.com/articles/s41433-021-01867-6)
 
 [**Seeing the Forest by Looking at the Trees: How to Interpret a Meta-Analysis Forest Plot**](https://pmc.ncbi.nlm.nih.gov/articles/PMC8119923/)
+
+
+### **Need Help with Data? Let’s Make It Simple.**
+
+*At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*
+
+*📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
+
+## Your next breakthrough could be one email away. Let’s make it happen!
+
+
+### **Need Help with Data? Let’s Make It Simple.**
+
+*At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*
+
+*📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
+
+## Your next breakthrough could be one email away. Let’s make it happen!

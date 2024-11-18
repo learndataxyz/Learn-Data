@@ -6,7 +6,6 @@ image: "LearnData_Branding(2).png"
 draft: false
 ---
 
-
 ![](LearnData_Branding(2).png){.preview-image fig-alt="python unit testing with shiny and power shiny"}
 
 You are building a shiny application that processes and visualizes financial data, and a calculation function within the app for calculating financial ratios is incorrect; this could lead to misleading results and poor user decision-making. Unit tests allow you, the developer, to isolate and validate these functions independently, catch errors early, and ensure that changes in other application parts do not unintentionally break a function's functionality.
@@ -100,7 +99,6 @@ shiny run --reload main.py
 
 ![Live Application. Image by Author](Animation.gif){fig-alt="Image showing the Python shiny sales application running live."}
 
-
 If you are building a toy project, you could deploy the application straightaway, but in production, you need to test for each and every component, especially your business logic. If you run the tests in the future and it fails, the unit test will help you track which function has a bug.
 
 ### Using Pytest with Shiny
@@ -137,7 +135,6 @@ pytest
 
 ![Two unit tests successfully passed. Image by Author.](image.png){fig-alt="Image showing the results of two successul python unit tests passed"}
 
-
 Change the `test_total_profit` value in the test function to `16000` and run the test again.
 
 ``` python
@@ -152,7 +149,6 @@ You will notice that not only did the test fail, but it also pointed out the fun
 Now, revert the `test_total_profit()`to its original value, change the name to `total_test_profit()`, and run the test.
 
 ![One unit test ran and passed. Image by Author.](image%202.png){fig-alt="Image showing the code execution result, one unit test successfully ran and passed"}
-
 
 You can see that only one of the tests ran, and this is due to the absence of the `test_` prefix or `_test` suffix.
 
@@ -179,3 +175,11 @@ Writing tests, especially unit tests, might seem daunting initially, but it pays
 -   [Top 9 Python Unit Testing Frameworks In 2024](https://www.learnenough.com/blog/python-unit-testing-frameworks)
 -   [Assert statement for unit testing](https://discuss.python.org/t/assert-statement-for-unit-testing/39095)
 -   [Unit testing: Python Shiny documentation.](https://shiny.posit.co/py/docs/unit-testing.html)
+
+### **Need Help with Data? Let’s Make It Simple.**
+
+*At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*
+
+*📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
+
+## Your next breakthrough could be one email away. Let’s make it happen!
