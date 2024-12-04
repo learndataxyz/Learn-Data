@@ -2,8 +2,6 @@ project:
   type: website
 
 website:
-  cookie-consent:
-    tracking: head.html
   google-analytics: "G-N6FNR4EYSZ"
   title: ""
   page-footer: 
@@ -73,6 +71,8 @@ website:
 
 format:
   html:
+    include-in-header:
+      - file: head.html
     theme:
       light: pulse
       dark: slate
