@@ -72,6 +72,8 @@ website:
 format:
   html:
     include-in-header:
+      - text: |
+          <script defer data-domain="learndata.xyz" src="https://plausible.io/js/script.js"></script>
       - file: head.html
     theme:
       light: pulse
