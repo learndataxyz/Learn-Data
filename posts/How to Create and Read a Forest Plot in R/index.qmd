@@ -207,12 +207,3 @@ In this article, you have learned how to create a forest plot in R using the `fo
 *📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
 
 ## Your next breakthrough could be one email away. Let’s make it happen!
-
-
-### **Need Help with Data? Let’s Make It Simple.**
-
-*At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*
-
-*📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
-
-## Your next breakthrough could be one email away. Let’s make it happen!

@@ -1,5 +1,10 @@
 project:
   type: website
+  
+html:
+  head-content: |
+    <script defer data-domain="learndata.xyz" src="https://plausible.io/js/script.js"></script>
+
 website:
   google-analytics: "G-N6FNR4EYSZ"
   title: ""
