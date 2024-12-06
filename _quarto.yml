@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - ads.txt
 
 website:
   google-analytics: "G-N6FNR4EYSZ"
