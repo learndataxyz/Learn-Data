@@ -2,12 +2,12 @@
 title: "Forecasting Time Series Data With Facebook Prophet in R"
 author: Adejumo Ridwan Suleiman
 categories: [r, statistics, machine learning, data science, data visualization, time series, forecasting] 
-image: "LearnData_Branding_(3).png"
+image: "poster.png"
 draft: false
 ---
 
 
-![](LearnData_Branding_(3).png){fig-alt="forecasting time series data with facebook prophet, facebook prophet model"}
+![](poster.png){fig-alt="forecasting time series data with facebook prophet, facebook prophet model"}
 
 Have you ever wondered how future prices of currencies, cryptocurrencies, or any other measures are predicted and accurately obtained? Well, this is forecasting at large: forecasting lets you get future values of a measure based on historical data. This historical data is also referred to as time series data, and this article will explain how to use the [Facebook Prophet](https://facebook.github.io/prophet/) package in R to forecast future values of a measure.
 
