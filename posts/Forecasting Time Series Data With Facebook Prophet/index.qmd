@@ -58,7 +58,6 @@ print(head(climate_test))
 
 ![Preview of the training and testing set. Image by Author.](image.png){fig-alt="previe of the training and test dataset for the forecast"}
 
-Preview of the training and testing set. Image by Author.
 
 We will use the `climate_train` to train the model and the `climate_test` to test it. The `climate_train` model contains data from **2013-01-01** to **2017-01-01**, while the `climate_test` data ranges from **2017-01-01** to **2017-04-24**.
 
@@ -81,7 +80,6 @@ print(head(climate_test))
 
 ![Preview of the renamed training and test sets. Image by Author.](image%201.png){fig-alt="image showing the climate train and test data"}
 
-Preview of the renamed training and test sets. Image by Author.
 
 ## Visualizing Time Series Data
 
@@ -100,7 +98,6 @@ ggplot(climate_train, aes(x = ds, y = y)) +
 
 ![Average daily temperature, from 2013 - 2017. Image by Author.](image%202.png){fig-alt="image showing the change in daily temperature from 2013 - 2017"}
 
-Average daily temperature, from 2013 - 2017. Image by Author.
 
 The plot above shows temperatures ranging from around 10°C to 40°C. It shows a clear periodic pattern, indicating that temperatures rise and fall consistently yearly, typical of seasonal climate changes. Peaks represent summer months with higher temperatures around 30-40°C, while valleys represent winter months with lower temperatures around 10-15°C. The lowest temperature was recorded in the early months of 2013.
 
@@ -123,7 +120,6 @@ head(future)
 
 ![Create `future` dates variable to use for forecast. Image by Author.](image%203.png){fig-alt="image showing the future dates dataframe"}
 
-Create `future` dates variable to use for forecast. Image by Author.
 
 Then, we use the `predict()` function to predict future temperature values based on the `model` we built earlier.
 
@@ -140,7 +136,6 @@ head(forecast)
 
 ![Preview of the forecast values. Image by Author.](image%204.png){fig-alt="image showing the preview of forecast values"}
 
-Preview of the forecast values. Image by Author.
 
 `ds` - is the date column
 
@@ -158,7 +153,6 @@ plot(model, forecast)
 
 ![Visualization of the forecast values. Image by Author.](image%205.png){fig-alt="image showing the visualization of the forecast values from the facebook prophet model"}
 
-Visualization of the forecast values. Image by Author.
 
 The plot above shows that the forecast values exhibit a similar pattern to the trained values.
 
@@ -170,7 +164,6 @@ prophet_plot_components(model, forecast)
 
 ![Components of the forecast values. Image by Author.](image%206.png){fig-alt="forecast components from the facebook prophet model"}
 
-Components of the forecast values. Image by Author.
 
 The top panel in the plot above shows that the overall trend in average daily temperature increases from January to April, suggesting that the average temperature is gradually rising over this period.
 
@@ -198,7 +191,6 @@ head(comparison)
 
 ![Preview of the comparison dataframe. Image by Author.](image%207.png){fig-alt="preview of the comparison dataframe"}
 
-Preview of the comparison dataframe. Image by Author.
 
 We are going to use the formula above to calculate the RMSE.
 
