@@ -2,7 +2,7 @@
 title: "Forecasting Time Series Data With Facebook Prophet in R"
 author: Adejumo Ridwan Suleiman
 categories: [r, statistics, machine learning, data science, data visualization, time series, forecasting] 
-image: "LearnData_Branding_(3).png"
+image: LearnData_Branding_(3).png
 draft: false
 ---
 
