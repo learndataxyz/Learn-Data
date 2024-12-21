@@ -165,7 +165,7 @@ plt.tight_layout()
 ![Survival estimates by payment method. Image by Author.](image%205.png){fig-alt="image showing the kaplan-meier survival estimate by payment method"}
 
 
-## Add a Descriptive Table Below the Plot
+### Add a Descriptive Table Below the Plot
 
 When publishing results, following the plots with descriptive tables is encouraged. This table shows the number of customers who will churn at various time intervals, censored customers, and customers at risk of churning.
 
