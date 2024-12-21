@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-12-10T10:36:43.957Z</lastmod>
+    <lastmod>2024-12-21T09:30:14.104Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/index.html</loc>
-    <lastmod>2024-12-10T10:36:33.854Z</lastmod>
+    <lastmod>2024-12-21T09:30:38.038Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
@@ -83,5 +83,9 @@
   <url>
     <loc>https://learndata.xyz/posts/Forecasting Time Series Data With Facebook Prophet/index.html</loc>
     <lastmod>2024-12-10T10:16:02.974Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Introduction to Kaplan-Meier Survival Analysis Estimation with Python/index.html</loc>
+    <lastmod>2024-12-21T09:23:49.508Z</lastmod>
   </url>
 </urlset>
