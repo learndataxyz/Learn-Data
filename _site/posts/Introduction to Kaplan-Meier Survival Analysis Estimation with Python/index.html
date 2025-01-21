@@ -233,37 +233,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 200px;}
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-    <form action="https://wordpress.us8.list-manage.com/subscribe/post?u=865b300dc8073a91e930ee99e&amp;id=089032d26f&amp;f_id=00c0cee3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll"><h2>Subscribe to our Newsletter</h2>
-            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-        </div>
-    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_865b300dc8073a91e930ee99e_089032d26f" tabindex="-1" value="">
-    </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                <p style="margin: 0px auto;"><a href="http://eepurl.com/iM-5G6" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
-            </div>
-        </div>
-    </div>
-</form>
-</div>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
-
+<p>subscribe.html</p>
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
@@ -276,9 +246,7 @@ gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#kaplan-meier-estimation" id="toc-kaplan-meier-estimation" class="nav-link" data-scroll-target="#kaplan-meier-estimation">Kaplan-Meier Estimation</a></li>
   <li><a href="#survival-estimate-by-group" id="toc-survival-estimate-by-group" class="nav-link" data-scroll-target="#survival-estimate-by-group">Survival Estimate by Group</a></li>
-  </ul></li>
-  <li><a href="#add-a-descriptive-table-below-the-plot" id="toc-add-a-descriptive-table-below-the-plot" class="nav-link" data-scroll-target="#add-a-descriptive-table-below-the-plot">Add a Descriptive Table Below the Plot</a>
-  <ul class="collapse">
+  <li><a href="#add-a-descriptive-table-below-the-plot" id="toc-add-a-descriptive-table-below-the-plot" class="nav-link" data-scroll-target="#add-a-descriptive-table-below-the-plot">Add a Descriptive Table Below the Plot</a></li>
   <li><a href="#interpreting-kaplan-meier-plots" id="toc-interpreting-kaplan-meier-plots" class="nav-link" data-scroll-target="#interpreting-kaplan-meier-plots">Interpreting Kaplan-Meier Plots</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
@@ -436,9 +404,8 @@ S(t_i) = \prod_{j=1}^{i}(1-\frac{d_j}{n_j})
 </figure>
 </div>
 </section>
-</section>
-<section id="add-a-descriptive-table-below-the-plot" class="level2">
-<h2 class="anchored" data-anchor-id="add-a-descriptive-table-below-the-plot">Add a Descriptive Table Below the Plot</h2>
+<section id="add-a-descriptive-table-below-the-plot" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-descriptive-table-below-the-plot">Add a Descriptive Table Below the Plot</h3>
 <p>When publishing results, following the plots with descriptive tables is encouraged. This table shows the number of customers who will churn at various time intervals, censored customers, and customers at risk of churning.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>partner <span class="op">=</span> telco_df[<span class="st">"Partner"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ix <span class="op">=</span> (partner <span class="op">==</span> <span class="st">"Yes"</span>)</span>
@@ -460,6 +427,7 @@ S(t_i) = \prod_{j=1}^{i}(1-\frac{d_j}{n_j})
 <p></p><figcaption class="figure-caption">Survival estimate by partners with descriptive table. Image by Author.</figcaption><p></p>
 </figure>
 </div>
+</section>
 <section id="interpreting-kaplan-meier-plots" class="level3">
 <h3 class="anchored" data-anchor-id="interpreting-kaplan-meier-plots">Interpreting Kaplan-Meier Plots</h3>
 <p>Interpreting the Kaplan-Meier plot is easy since it’s a descriptive statistical methodology. Let’s take a look at the first plot we had.</p>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2024-12-21T09:30:14.104Z</lastmod>
+    <lastmod>2025-01-21T12:49:49.113Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -86,6 +86,10 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Introduction to Kaplan-Meier Survival Analysis Estimation with Python/index.html</loc>
-    <lastmod>2024-12-21T09:23:49.508Z</lastmod>
+    <lastmod>2025-01-21T12:49:07.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Model Deployment in R with Plumber/index.html</loc>
+    <lastmod>2025-01-21T12:49:13.617Z</lastmod>
   </url>
 </urlset>
