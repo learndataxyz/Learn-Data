@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2025-01-21T12:49:49.113Z</lastmod>
+    <lastmod>2025-01-24T21:06:41.603Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -91,5 +91,9 @@
   <url>
     <loc>https://learndata.xyz/posts/Model Deployment in R with Plumber/index.html</loc>
     <lastmod>2025-01-21T12:49:13.617Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/index.html</loc>
+    <lastmod>2025-01-24T21:06:10.996Z</lastmod>
   </url>
 </urlset>
