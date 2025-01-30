@@ -915,5 +915,12 @@
     "title": "20 Python Frameworks for Frontend Development: JavaScript Alternatives (2025)",
     "section": "Your next breakthrough could be one email away. Let’s make it happen!",
     "text": "Your next breakthrough could be one email away. Let’s make it happen!"
+  },
+  {
+    "objectID": "navs/chaos.html",
+    "href": "navs/chaos.html",
+    "title": "Chaos",
+    "section": "",
+    "text": "Real-world data is often messy and complex, quickly becoming overwhelming for individuals seeking to improve their data cleaning and management skills.\nAccessing authentic, messy datasets can be challenging, as most datasets available on platforms like Kaggle and other repositories are pre-cleaned, making them far removed from the realities of working with raw data.\nTo address this gap, we developed Chaos—a web application designed to generate messy datasets from clean data. Inspired by Nicola Rennie’s brilliant work in the messy R package, this tool is ideal for data scientists, educators, and developers who want to stress-test their data pipelines or teach data cleaning in a controlled environment."
   }
 ]

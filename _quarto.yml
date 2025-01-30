@@ -44,6 +44,7 @@ website:
         #file: navs/index.qmd
       #- sidebar:learn
       #- sidebar:resources
+      - sidebar:products
       - text: "Blog"
         file: blog.qmd
       - text: "Services"
@@ -52,8 +53,7 @@ website:
         file: navs/courses.qmd
       - text: "About"
         file: navs/about.qmd
-
-
+        
 
   sidebar:
     - id: learn
@@ -61,13 +61,17 @@ website:
       background: light
       collapse-level: 2
       contents: 
-        - navs/learn.qmd
+        - file: navs/learn.qmd
 
     - id: resources
       title: "Resources"
       contents:
         - navs/resources.qmd
         
+    - id: products
+      title: "Products"
+      contents:
+        - navs/chaos.qmd
     
 
 

@@ -74,8 +74,6 @@ telco_df.loc[:,["tenure","Churn"]].head()
 
 ![Preview of the `tenure` and `Churn` variables. Image by Author.](image.png){fig-alt="preview of the tenure and churn variables for the survival analysis estimation"}
 
-
-
 For a survival analysis, we are interested in two key variables, *event* and *time,* which are *Churn* and *tenure* in the dataset*,* where `tenure` is measured in months.
 
 Recode the `Churn` variable, so `1` represents *churn,* while `0` represents *censoring.* Censoring, in this case, means that a customer might churn in the future.
@@ -86,8 +84,6 @@ telco_df.loc[:,["tenure","Churn"]].head()
 ```
 
 ![Recode `Churn` variable into numeric format. Image by Author.](image%201.png){fig-alt="preview of the recoded churn variable for the kaplan-meier survival analysis method of estimation"}
-
-
 
 Rename the `tenure` and `Churn` variables to `time` and `event`. This is unnecessary, but it is just to make it easy to relate to the concepts discussed earlier.
 
@@ -115,7 +111,6 @@ kmf.survival_function_
 
 ![Kaplan-Meier estimate for each timeline. Image by Author.](image%202.png){fig-alt="kaplan-meier survival estimate for each timeline"}
 
-
 You can also get a plot of these values by calling the `plot_survival_function` method.
 
 ``` python
@@ -124,7 +119,6 @@ plt.title("Survival function of customer churn")
 ```
 
 ![Survival function of customer churn. Image by Author.](image%203.png){fig-alt="image showing the survival function of customer churn"}
-
 
 ### Survival Estimate by Group
 
@@ -142,7 +136,6 @@ ax = kmf.plot_survival_function()
 ```
 
 ![Survival plot based on if customers have partners or not. Image by Author.](image%204.png){fig-alt="image showing the survival plot based on if customers have partners or not"}
-
 
 For variables with more than two groups, you can follow the following approach. Let’s examine each group based on `PaymentMethod` and see which payment method group will have the highest retention.
 
@@ -163,7 +156,6 @@ plt.tight_layout()
 ```
 
 ![Survival estimates by payment method. Image by Author.](image%205.png){fig-alt="image showing the kaplan-meier survival estimate by payment method"}
-
 
 ### Add a Descriptive Table Below the Plot
 
@@ -188,20 +180,17 @@ plt.tight_layout()
 
 ![Survival estimate by partners with descriptive table. Image by Author.](image%206.png){fig-alt="image showing the survival estimate by partners with descriptive table"}
 
-
 ### Interpreting Kaplan-Meier Plots
 
 Interpreting the Kaplan-Meier plot is easy since it’s a descriptive statistical methodology. Let’s take a look at the first plot we had.
 
 ![Survival estimate at mid-duration and end of timeline. Image by Author.](image%207.png){fig-alt="image showing the kaplan-meier estimate at mid-duration and at the end of the timeline"}
 
-
 In the plot above, the y-axis represents the number of customers remaining at a given time. The survival probability starts at 1 (100%) at time 0, meaning all customers are present initially. As time progresses, the likelihood of customer retention decreases. The downward trend shows that customer retention is continuous over time.
 
 The shaded area indicates the confidence interval for the Kaplan-Meier survival analysis estimate, where a narrower band implies higher confidence and a wider band suggests more uncertainty. Around 75% of customers remain by mid-duration (1). At the end of the timeline, 60% of customers are still active (2), showing that the business retains a significant portion of customers over the period.
 
 ![Survival estimate by partners. Image by Author.](image%208.png){fig-alt="image showing the kaplan-meier survival estimate by partners"}
-
 
 The plot above groups the previous plot into two categories: those with and without partners. The orange curve represents those with partners, while the blue represents those without partners.
 
@@ -218,7 +207,6 @@ At the end of the timeline, 452 customers with partners are at risk of churning,
 These results show that customers with partners have a higher retention rate than those without partners. This could be due to shared decision-making or factors like excellent financial stability or dual service usage.
 
 ![Survival estimate by payment methods. Image by Author.](image%209.png){fig-alt="image showing the kaplan-meier survival estimate by payment methods "}
-
 
 The plot above also compares customer retention across four different payment methods. Electronic checks show the poorest retention rate, with a sharp initial and continuous decline. By timeline 50, with a customer retention rate of about 45%.
 
