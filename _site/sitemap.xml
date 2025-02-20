@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2025-01-30T10:47:55.917Z</lastmod>
+    <lastmod>2025-02-20T11:43:26.045Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/index.html</loc>
-    <lastmod>2025-01-31T09:25:14.426Z</lastmod>
+    <lastmod>2025-02-20T11:43:13.271Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
@@ -103,5 +103,9 @@
   <url>
     <loc>https://learndata.xyz/navs/learn.html</loc>
     <lastmod>2025-01-31T09:25:17.236Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html</loc>
+    <lastmod>2025-02-20T11:42:07.316Z</lastmod>
   </url>
 </urlset>

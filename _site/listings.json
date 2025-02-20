@@ -15,7 +15,8 @@
       "/posts/Model Deployment in R with Plumber/index.html",
       "/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
       "/posts/Securing ML APIs with FastAPI/index.html",
-      "/posts/The Engineer's Guide to Low Code/index.html"
+      "/posts/The Engineer's Guide to Low Code/index.html",
+      "/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html"
     ]
   }
 ]
