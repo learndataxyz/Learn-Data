@@ -92,15 +92,15 @@ Here are the steps to follow to find outliers in your dataset using the IQR:
 3.  Calculate IQR
 4.  Compute the lower and upper bound levels using the following formula.
 
-\$\$ Lower Bound = Q1 - 1.5\*IQR
-
-\$\$
+$$ 
+Lower Bound = Q1 - 1.5*IQR
+$$
 
 $$
 Upper Bound = Q3 +1.5*IQR
 $$
 
-1.  Identify outliers as data points not in the range between the lower and upper bound \[Lower Bound, Upper Bound\].
+5.  Identify outliers as data points not in the range between the lower and upper bound \[Lower Bound, Upper Bound\].
 
 The IQR works well when the sample size is small, and the data is skewed. Here is a table showing the pros and cons of IQR:
 

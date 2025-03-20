@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2025-03-18T10:28:50.924Z</lastmod>
+    <lastmod>2025-03-20T10:30:39.901Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/index.html</loc>
-    <lastmod>2025-03-18T10:30:15.158Z</lastmod>
+    <lastmod>2025-03-20T10:29:27.967Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html</loc>
-    <lastmod>2025-03-18T10:28:47.589Z</lastmod>
+    <lastmod>2025-03-20T10:30:53.780Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/correlateai.html</loc>
