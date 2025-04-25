@@ -222,7 +222,6 @@ Low-code/no-code have a lot of abstraction which when things go wrong it's diffi
 -   [**How do you ensure data quality and governance in an ELT process?**](https://www.linkedin.com/advice/0/how-do-you-ensure-data-quality-governance-elt)
 -   [**6 Best Practices to Scale and Optimize Data Pipeline**](https://www.latentview.com/blog/6-best-practices-to-scale-and-optimize-data-pipelines/)**s**
 
-
 ### **Need Help with Data? Let’s Make It Simple.**
 
 *At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*

@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2025-04-16T15:41:53.605Z</lastmod>
+    <lastmod>2024-09-08T21:45:13.567Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/index.html</loc>
-    <lastmod>2025-04-16T15:41:54.572Z</lastmod>
+    <lastmod>2025-01-30T14:30:50.562Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/about.html</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/index.html</loc>
-    <lastmod>2025-04-16T15:42:11.592Z</lastmod>
+    <lastmod>2025-01-24T21:02:29.247Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
@@ -113,8 +113,8 @@
     <lastmod>2025-04-16T15:42:47.127Z</lastmod>
   </url>
   <url>
-    <loc>https://learndata.xyz/posts/The Engineer's Guide to Low Code/index.html</loc>
-    <lastmod>2025-04-16T15:42:50.359Z</lastmod>
+    <loc>https://learndata.xyz/posts/The Engineer&amp;#39;s Guide to Low Code/index.html</loc>
+    <lastmod>2025-04-25T09:23:11.795Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html</loc>
@@ -123,5 +123,9 @@
   <url>
     <loc>https://learndata.xyz/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html</loc>
     <lastmod>2025-04-16T15:42:55.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/The Engineer&amp;#39;s Guide to Low Code/index.html</loc>
+    <lastmod>2025-04-25T09:23:11.795Z</lastmod>
   </url>
 </urlset>
