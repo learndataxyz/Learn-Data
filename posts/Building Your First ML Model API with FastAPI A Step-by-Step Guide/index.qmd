@@ -8,7 +8,7 @@ draft: false
 
 ![](LearnData_Branding.png){fig-alt="model deployment"}
 
-If you have built AI applications, you might have used an API from OpenAI or Anthrophonic. These are models that are made easily accessible to developers through APIs. Have you ever wondered how these APIs were built? This article will teach you how to build your first machine learning model API using FastAPI.
+If you have built AI applications, you might have used an API from OpenAI or Anthropic. These are models that are made easily accessible to developers through APIs. Have you ever wondered how these APIs were built? This article will teach you how to build your first machine learning model API using FastAPI.
 
 FastAPI is a Python library for building APIs, especially REST APIs. As a data scientist or machine learning engineer, you can make your machine learning model available to clients through an API. This API will fetch client input and return predictions, making it easy for anyone to use your model in their application.
 
