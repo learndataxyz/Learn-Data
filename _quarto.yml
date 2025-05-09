@@ -5,12 +5,12 @@ project:
 
 website:
   google-analytics: "G-N6FNR4EYSZ"
-  announcement: 
-      icon: info-circle
-      dismissable: true
-      content: 'Join us on 31st May, 2025 at 4:20PM for a live webinar: <strong>Secure ML Deployments: Protecting Your APIs and Applications</strong> ➡️ <a href="https://forms.gle/cPSaRSHARz9er1M56" target="_blank">Register Now</a> — Limited spots available!'
-      type: info
-      position: below-navbar
+  #announcement: 
+      #icon: info-circle
+      #dismissable: true
+      #content: 'Join us on 31st May, 2025 at 4:20PM for a live webinar: <strong>Secure ML Deployments: Protecting Your APIs and Applications</strong> ➡️ <a href="https://forms.gle/cPSaRSHARz9er1M56" target="_blank">Register Now</a> — Limited spots available!'
+      #type: info
+      #position: below-navbar
   title: ""
   page-footer: 
     left: © 2024 learndata.xyz 
