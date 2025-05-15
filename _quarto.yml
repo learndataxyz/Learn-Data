@@ -5,6 +5,12 @@ project:
 
 website:
   google-analytics: "G-N6FNR4EYSZ"
+  announcement: 
+      icon: info-circle
+      dismissable: true
+      content: 'Join our <strong><a href="https://discord.gg/yjtY8xJ2" target="_blank">Discord Community </a></strong> today to learn more on data science, machine learning, and AI'
+      type: info
+      position: below-navbar
   title: ""
   page-footer: 
     left: © 2024 learndata.xyz 
