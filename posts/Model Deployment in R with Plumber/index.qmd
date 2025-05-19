@@ -6,7 +6,7 @@ image: "LearnData Branding.png"
 draft: false
 ---
 
-![](LearnData Branding.png){fig-alt="model deployment what is model deployment ml model deployment"}
+![](LearnData%20Branding.png){fig-alt="model deployment what is model deployment ml model deployment"}
 
 The primary aim of machine learning is to learn certain patterns from available data and to make decisions based on reliable facts.
 
@@ -58,16 +58,13 @@ To run the newly created API, click *Run API* just above the R script to open th
 
 ![Example of an R API. Image by Author.](86adf634-0e2c-42be-ab50-d225b44fb148.png){fig-alt="Image showing example of an R API"}
 
-
 You can interact with the API's automatic documentation and see if they return valid results or errors.
 
 ![Automatic API docs. Image by Author.](Animation.gif){fig-alt="Image showing how an API docs looks like"}
 
-
 You can also assess the value of the area directly on your browser through the following URL `<your_local_host>/area_of_rectangle?length=5&breadth=12`. Because the endpoint is a `GET` verb, the function parameters are known as query parameters and are provided in the URL path after a question mark.
 
 ![Sample API URL. Image by endpoint.](image.png){fig-alt="Image showing how the sample API URL looks like"}
-
 
 ### Creating a Plumber project
 
@@ -192,7 +189,6 @@ Finally, the date, actual predictions of the input data, and confidence interval
 Let’s run the API to interact with the forecast model API docs.
 
 ![Run and open the API automatically generated docs. Image by Author.](Animation%201.gif){fig-alt="Image showing the automatically generated API docs"}
-
 
 ## Hosting
 

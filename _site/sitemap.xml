@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Model Deployment in R with Plumber/index.html</loc>
-    <lastmod>2025-04-16T15:42:41.511Z</lastmod>
+    <lastmod>2025-05-15T07:49:33.288Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html</loc>
@@ -131,5 +131,9 @@
   <url>
     <loc>https://learndata.xyz/posts/Building Your First ML Model API with FastAPI A Step-by-Step Guide/index.html</loc>
     <lastmod>2025-05-09T14:28:56.768Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html</loc>
+    <lastmod>2025-05-19T14:13:13.300Z</lastmod>
   </url>
 </urlset>
