@@ -16,7 +16,7 @@ That's where tools like R come in. With the proper practices and built-in featur
 
 In 2012, [JP Morgan Chase suffered a \$6 billion trading loss](https://www.theguardian.com/technology/2024/oct/28/microsoft-excels-bloopers-reel-40-years-of-spreadsheet-errors?utm_source=chatgpt.com), partly attributed to errors in an Excel risk model. The model contained manual copy-paste errors and formula mistakes, resulting in an underestimation of potential losses. This incident highlights the risks associated with relying on complex spreadsheets without rigorous checks and balances.
 
-## **Why R?**
+## Why R?
 
 ### R as a tool for data analysis and validation
 
@@ -38,7 +38,7 @@ Additionally, tools like `is.na()` help identify missing values, while functions
 
 For more advanced needs, R offers specialized packages such as `assert`, `validate`, and `testthat`, which formalize and automate error detection and testing routines.
 
-## **Common Error Types**
+## Common Error Types
 
 When working with data, mistakes can come from many sources. Recognizing standard error types is the first step toward preventing them from affecting your analysis:
 
@@ -46,9 +46,9 @@ When working with data, mistakes can come from many sources. Recognizing standar
 -   **Missing or Inconsistent Values:** Missing data is frequent, especially when combining datasets from multiple sources. Gaps can appear as `NA`, empty strings, or zero values, requiring different handling. Inconsistencies, like mixing "Yes/No" with "Y/N", can make grouping or summarizing data difficult.
 -   **Logical Inconsistencies:** These errors occur when data contradicts itself. For instance, a record showing a person’s birthdate after their date of death, or a student listed as "graduated" but with no courses completed. Such issues often go unnoticed until they cause problems in the analysis or report.
 
-## **Base R Functions for Preliminary Checks**
+## Base R Functions for Preliminary Checks
 
-### `summary()`
+#### `summary()`
 
 The `summary()` function gives a quick statistical summary of each column in a data frame, For factors, it shows the frequency of each level; for logical it shows the counts of TRUEs and FALSEs, while for numeric data it shows the:
 
@@ -68,7 +68,7 @@ summary(iris)
 ![`summary()` of the iris data. Image by Author.](image.png){fig-alt="image showing the results of the summary function on the iris dataset."}
 
 
-### **`str()`**
+#### **`str()`**
 
 The `str()` function reveals the internal structure of an R object, displaying information such as data types and sample values for each variable, as well as the number of observations and variables.
 
@@ -81,7 +81,7 @@ str(iris)
 ![`str()` revealing the structure of the iris dataset. Image by Author.](image%201.png){fig-alt="image showing the results of the str function on the iris dataset"}
 
 
-### **`is.na()`**
+#### **`is.na()`**
 
 `is.na()` function detects missing values (`NA`) in your data, returning a logical vector of `TRUE` where values are `NA`, and `FALSE` otherwise. It checks for incomplete data, which can affect analysis or model performance.
 
@@ -92,7 +92,7 @@ sum(is.na(iris))  # Count total missing values
 ![Total missing values in the iris dataset. Image by Author.](image%202.png){fig-alt="image showing the result of the total missing values in the iris dataset."}
 
 
-### **`duplicated()`**
+#### **`duplicated()`**
 
 The `duplicated()` function identifies duplicate rows or elements and returns a logical vector indicating which entries are duplicated. This is useful for cleaning datasets and flagging potential data entry issues.
 
@@ -108,7 +108,7 @@ iris[duplicated(iris), ]  # Displays duplicate rows
 
 Other external packages extend what R does in terms of detecting errors.
 
-### **`validate` package**
+#### **`validate`** package
 
 The [`validate`](https://github.com/data-cleaning/validate) package lets users define and apply custom validation rules to datasets. For example:
 
@@ -137,7 +137,7 @@ summary(confronted)
 
 This approach helps systematically identify records that violate predefined conditions, ensuring data consistency and reliability.
 
-### **`assertr` package**
+#### **`assertr`** package
 
 [`assertr`](https://docs.ropensci.org/assertr/) provides a pipeline-friendly syntax for asserting conditions on data frames. It integrates seamlessly with `dplyr` and checks assumptions within data processing workflows. For example:
 
@@ -164,7 +164,7 @@ iris |>
 ![Implementation of the `assert` package. Image by Author.](image%205.png){fig-alt="image showing the result of the assert package on the iris dataset"}
 
 
-### `checkmate` package
+#### **`checkmate`** package
 
 The [`checkmate`](https://mllg.github.io/checkmate/) package is designed for defensive programming, offering a suite of functions to validate function arguments and data structures. It ensures that inputs meet expected criteria before further processing, reducing the risk of runtime errors. Here is an example using the iris dataset:
 
@@ -193,7 +193,7 @@ process_iris_data(iris)
 
 ![Implementation of the `checkmate` package. Image by Author.](image%206.png){fig-alt="image showing the results of the checkmate package on the iris dataset"}
 
-### **`data.validator` package**
+#### **`data.validator`** package
 
 Developed by Appsilon, the [`data.validator`](https://appsilon.github.io/data.validator/) enables the creation of automated data quality reports. It facilitates the communication of data validation results to stakeholders, generating reports which you can export into HTML, CSV, and TXT formats. For example:
 
@@ -222,7 +222,7 @@ validate(iris) %>%
 ![Implementation of the `data.validator` package. Image by Author.](image%207.png){fig-alt="image showing the implementation of the data.validator package in the iris dataset."}
 
 
-## **Best Practices**
+## Best Practices
 
 To get the most out of R for data validation and error detection, follow these proven best practices:
 
@@ -234,7 +234,7 @@ To get the most out of R for data validation and error detection, follow these p
 -   **Log and Monitor Data Quality:** Set up periodic reports or dashboards that highlight rule violations using tools like `data.validator`.
 -   **Create Reusable Validation Templates:** Develop standardized validation templates that can be easily adapted to new datasets, particularly for recurring tasks.
 
-## **Real-World Examples**
+## Real-World Examples
 
 While high-profile failures, such as the JP Morgan Chase incident, remind us of what can go wrong without validation, many organizations quietly use R to **prevent** such problems. Here are a few real-world cases:
 
@@ -242,7 +242,7 @@ While high-profile failures, such as the JP Morgan Chase incident, remind us of 
 -   **Silent Data Corruption in RNA-Seq Analysis:** [A computational biologist encountered silent data corruption](https://www.reddit.com/r/Rlanguage/comments/g9352o/a_case_study_in_silent_data_corruption_in_an/) during differential gene expression analysis. The issue stemmed from a buggy error message in a package, a malformed input file, and unexpected behavior in R's conversion from factor to integer. Quality control functions within R helped identify and rectify these subtle errors.
 -   **Independent Quality Control in Clinical Studies:** In a [medical device study](https://www.gemprogramming.com/leadership-team/), R was used to perform independent quality control by generating reporting datasets and statistical outputs. Utilizing packages like `tidyverse`, [`admiral`](https://pharmaverse.github.io/admiral/articles/admiral.html), and [`Tplyr`](https://atorus-research.github.io/Tplyr/), this approach provided an additional layer of assurance by cross-validating results obtained through different programming languages.
 
-## **Conclusion**
+## Conclusion
 
 In a data-driven world, accuracy isn't just a technical requirement; it's a strategic necessity. Errors in datasets can lead to flawed decisions, eroded trust, and costly mistakes. However, with the right tools and practices, many of these issues can be prevented.
 
