@@ -1,7 +1,7 @@
 ---
 title: "Adding User Authentication to Python Shiny Applications using JWT" 
 author: Adejumo Ridwan Suleiman 
-categories: [python, statsmodels, statistics, machine learning, data science, data visualization] 
+categories: [python, shiny, authentication] 
 image: "LearnData_Branding.png" 
 draft: false
 ---
