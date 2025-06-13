@@ -1,0 +1,13 @@
+---
+title: "Data Wranging and Exploratory Data Analysis with R" 
+author: Adejumo Ridwan Suleiman 
+categories: [data analysis, data visualization, data cleaning, R, data wrangling, exploratory data analysis] 
+image: "LearnData_Branding_(1).png" 
+draft: false
+---
+
+![](course_landing_page.gif)
+
+### [Data Wranging and Exploratory Data Analysis with R.](https://www.udemy.com/course/practical-data-analysis-with-r-programming/?referralCode=51DF29BB00C08C188480)
+
+This course walks you through cleaning and exploring data using various libraries in R such as dplyr, tidyr, and so on.

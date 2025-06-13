@@ -24,5 +24,16 @@
       "/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html",
       "/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html"
     ]
+  },
+  {
+    "listing": "/courses.html",
+    "items": [
+      "/courses/Advanced Data Wrangling with Pandas/index.html",
+      "/courses/Building Interactive Shiny Web Apps with R Programming/index.html",
+      "/courses/Data Wrangling and Exploratory Data Analysis with R/index.html",
+      "/courses/ML Model Deployment with FastAPI and Streamlit/index.html",
+      "/courses/Power BI DAX Practice Test and Solutions/index.html",
+      "/courses/Practical Biostatistics with R/index.html"
+    ]
   }
 ]

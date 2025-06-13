@@ -1,0 +1,12 @@
+---
+title: "Power BI DAX Practice Test and Solutions" 
+author: Adejumo Ridwan Suleiman 
+categories: [power bi, dax, data visualization, data analysis] 
+image: "LearnData_Branding_(1).png" 
+draft: false
+---
+![](course_landing_page.gif)
+
+### [Power BI DAX Practice Test and Solutions](https://www.udemy.com/course/power-bi-dax-practice-test-and-solutions/?referralCode=ADCE2EFFBB1C7548B824)
+
+This is a practice test that allows you to practice your Power BI DAX test. 

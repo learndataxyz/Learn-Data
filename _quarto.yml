@@ -50,13 +50,11 @@ website:
         #file: navs/index.qmd
       #- sidebar:learn
       #- sidebar:resources
-      - sidebar:products
+      #- sidebar:products
       - text: "Blog"
         file: blog.qmd
-      - text: "Services"
-        file: navs/services.qmd
       - text: "Courses"
-        file: navs/courses.qmd
+        file: courses.qmd
       - text: "About"
         file: navs/about.qmd
         
@@ -88,6 +86,7 @@ format:
         - text: |
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4620938320652199" crossorigin="anonymous"></script>
             <script defer data-domain="learndata.xyz" src="https://plausible.io/js/script.js"></script>
+        - file: meta_pixel.html
     theme:
       light: pulse
       dark: slate

@@ -1,0 +1,13 @@
+---
+title: "Practical Biostatistics with R" 
+author: Adejumo Ridwan Suleiman 
+categories: [statistics, biostatistics, data analysis, R] 
+image: "LearnData_Branding_(1).png" 
+draft: false
+---
+
+![](course_landing_page.gif)
+
+### [Practical Biostatistics with R](https://www.udemy.com/course/practical-biostatistics-with-r/?referralCode=62235AEEDF809F66FEFA)
+
+This course walks you through the applications of biostatistics using the R software. 

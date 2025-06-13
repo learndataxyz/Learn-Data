@@ -67,7 +67,6 @@ summary(iris)
 
 ![`summary()` of the iris data. Image by Author.](image.png){fig-alt="image showing the results of the summary function on the iris dataset."}
 
-
 #### **`str()`**
 
 The `str()` function reveals the internal structure of an R object, displaying information such as data types and sample values for each variable, as well as the number of observations and variables.
@@ -80,7 +79,6 @@ str(iris)
 
 ![`str()` revealing the structure of the iris dataset. Image by Author.](image%201.png){fig-alt="image showing the results of the str function on the iris dataset"}
 
-
 #### **`is.na()`**
 
 `is.na()` function detects missing values (`NA`) in your data, returning a logical vector of `TRUE` where values are `NA`, and `FALSE` otherwise. It checks for incomplete data, which can affect analysis or model performance.
@@ -90,7 +88,6 @@ sum(is.na(iris))  # Count total missing values
 ```
 
 ![Total missing values in the iris dataset. Image by Author.](image%202.png){fig-alt="image showing the result of the total missing values in the iris dataset."}
-
 
 #### **`duplicated()`**
 
@@ -102,7 +99,6 @@ iris[duplicated(iris), ]  # Displays duplicate rows
 ```
 
 ![Number of duplicated values in each column of the iris dataset. Image by Author.](image%203.png){fig-alt="image showing the number of duplicated values in each column of the iris dataset"}
-
 
 ### External Packages
 
@@ -134,7 +130,6 @@ summary(confronted)
 
 ![Summary of the results validation using the `validator` package. Image by Author.](image%204.png){fig-alt="image showing the results of the validator package on the iris dataset"}
 
-
 This approach helps systematically identify records that violate predefined conditions, ensuring data consistency and reliability.
 
 #### **`assertr`** package
@@ -162,7 +157,6 @@ iris |>
 ```
 
 ![Implementation of the `assert` package. Image by Author.](image%205.png){fig-alt="image showing the result of the assert package on the iris dataset"}
-
 
 #### **`checkmate`** package
 
@@ -220,7 +214,6 @@ validate(iris) %>%
 ```
 
 ![Implementation of the `data.validator` package. Image by Author.](image%207.png){fig-alt="image showing the implementation of the data.validator package in the iris dataset."}
-
 
 ## Best Practices
 
