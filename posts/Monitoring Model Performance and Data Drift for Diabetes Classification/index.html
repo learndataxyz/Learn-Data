@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Adejumo Ridwan Suleiman">
+
+<title>Monitoring Model Performance and Data Drift for Diabetes Classification</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Monitoring Model Performance and Data Drift for Diabetes Classification</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">mlops</div>
+                <div class="quarto-category">data drift</div>
+                <div class="quarto-category">classification</div>
+                <div class="quarto-category">tutorial</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">data science</div>
+                <div class="quarto-category">machine learning</div>
+                <div class="quarto-category">healthcare</div>
+                <div class="quarto-category">deployment</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Adejumo Ridwan Suleiman </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1777048436181438');
+fbq('track', 'PageView');
+</script>
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1777048436181438&amp;ev=PageView&amp;noscript=1">
+
+
+
+
+
+<p><img src="cover_image.png" class="preview.image img-fluid"></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>According to WHO, the number of people with diabetes rose from 108 million in 1980 to 422 million in 2014. Diabetes is a serious disease that leads to blindness, kidney failure, heart attacks, strokes, and lower limb amputations. It is mostly prevalent in low- and middle-income countries.</p>
+<p>Building a healthcare system that uses machine learning to predict patients with diabetes will help in early detection making it easy for healthcare providers to screen patients with diabetes at an early stage, before diagnosis.</p>
+<p><img src="natural_history_of_disease.png" class="img-fluid"></p>
+<p>Machine learning models tend to degrade with time, highlighting the need for effective and constant monitoring of the model to know when its performance is declining. Often, this arises as a result of the change in the distribution of the data compared to the data the model was trained upon, this phenomenon is known as <a href="https://www.datacamp.com/tutorial/understanding-data-drift-model-drift">Data Drift</a>.</p>
+<p>In this article, you will learn how to monitor a diabetes classifier and detect data drifts in the data received from patients in a health information management system or mobile application using NannyML.</p>
+<p>NannyML is an open-source library for monitoring machine learning model performance in production, even without the predicted values being ready. It allows you to track your machine-learning model over time and see checkpoints where the model degrades.</p>
+<p><img src="model_performance.png" class="img-fluid"></p>
+</section>
+<section id="estimating-model-performance-with-nannyml" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-model-performance-with-nannyml">Estimating Model Performance with NannyML</h2>
+<p>NannyMl offers binary class classification that one could use to estimate the model’s performance, even without targets. Model estimation performance with NannyML involves:</p>
+<ol type="1">
+<li><strong>Getting the reference and analysis sets ready:</strong> The reference set is the data where the model behaves as expected, usually the test data. The analysis set is the latest production data, either with target features or not.</li>
+<li><strong>Training a performance estimator on the reference set:</strong> NannyML uses the reference set to train a performance estimator, it’s advisable to use the test data as reference data to prevent overfitting.</li>
+<li><strong>Using the estimator to predict performance on the analysis set (simulating real-world data):</strong> NannyML estimates the model performance on the analysis data using the trained performance estimator. One can use various classification metrics, such as accuracy or F1-score. Since misclassifying a patient (false negative) is more severe than misclassifying a healthy patient as diabetic (false positive), the AUC-ROC is the most appropriate metric to use in this case.</li>
+</ol>
+<p><img src="life_cycle.png" class="img-fluid"></p>
+</section>
+<section id="detecting-data-drift-with-nannyml" class="level2">
+<h2 class="anchored" data-anchor-id="detecting-data-drift-with-nannyml">Detecting Data Drift with NannyML</h2>
+<p>Let’s say you deployed a machine-learning model. As time goes on, the model tends to degrade, This is due to the nature of the data changing. If you have an application that you initially designed for kids and you train most of your machine learning models using your current user’s data, then all of a sudden middle-aged people and the elderly start using your application, and they become more of your users than the kids you designed it for. This will change the age distribution of your data, If age is one important feature in your machine learning model, your model will get worse with time. This is where you need to monitor when such changes happen in your data so that you can update the ML model.</p>
+<p><img src="data_drift.png" class="img-fluid"></p>
+<p>NannyML uses various algorithms to detect data drift, either using <a href="https://nannyml.readthedocs.io/en/stable/tutorials/detecting_data_drift/univariate_drift_detection.html">Univariate drift detection</a> or <a href="https://nannyml.readthedocs.io/en/stable/tutorials/detecting_data_drift/multivariate_drift_detection.html">Multivariate drift detection methods</a>.</p>
+<ul>
+<li><strong>Univariate drift detection:</strong> In this approach, NannyML looks at each feature used in classifying if a patient is diabetic, and compares the chunks with those created from the analysis period. The result of the comparison is called a drift metric, and it is the amount of drift between the reference and analysis chunks, which is calculated for each chunk.</li>
+<li><strong>Multivariate Drift Detection</strong> Instead of taking every feature one by one, NannyML provides a single summary metric explaining the drift between the reference and the analysis sets. Although this approach can detect slight changes in the data, it is difficult to explain compared to univariate drift.</li>
+</ul>
+<p>In the case of classifying diabetic patients, undetected drift is dangerous and can lead to wrong model classifications. This is worse if the number of false negatives is high, the classifier might not detect some patients with diabetes, this can lead to late diagnosis.</p>
+</section>
+<section id="estimating-model-performance-in-the-diabetes-classifier" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-model-performance-in-the-diabetes-classifier">Estimating Model Performance in the Diabetes Classifier</h2>
+<p>NannyML uses two main approaches to estimate model performance, <a href="https://nannyml.readthedocs.io/en/v0.4.1/how_it_works/performance_estimation.html">Confidence-based Performance estimation (CBPE)</a> and <a href="https://nannyml.readthedocs.io/en/stable/tutorials/performance_estimation/regression_performance_estimation.html">Direct Loss estimation (DLE</a>). In this case, we are interested in using the CBPE, since we are dealing with a classification task.</p>
+<p>The CBPE uses the confidence score of the predictions to estimate the model performance, the confidence score is a value that the diabetes classifier gives for each predicted observation, expressing its confidence in predicting if a patient is diabetic., with values ranging from 0 to 1 and the closer it is to 1, the more confident the classifier is with it’s prediction.</p>
+<p>The <a href="https://drive.google.com/file/d/1_OcgE4KY1EoLSPlAZwEuqFV63hjSwfAy/view?usp=sharing">diabetes data</a> contains 253,680 responses and 21 features. In this section, you will learn how to use this data to build an ML model, estimate your model’s performance, and detect data drift on updated data.</p>
+<section id="project-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="project-requirements">Project Requirements</h3>
+<p>To get started, ensure you have <a href="https://nannyml.readthedocs.io/en/stable/installing_nannyml.html">installed NannyML</a> on your JupyterNotebook. Download the <a href="https://drive.google.com/file/d/1_OI0iFsHrtgzbrM3hX-6sXSHKRxekh1q/view?usp=sharing">analysis</a> and <a href="https://drive.google.com/file/d/1_OcgE4KY1EoLSPlAZwEuqFV63hjSwfAy/view?usp=sharing">diabetes data</a>. The diabetes data is the data you will train the machine learning model on, and the analysis data is what you would take as the production data from the patients, which you will use to estimate model performance and detect data drift later on.</p>
+</section>
+<section id="building-the-ml-model" class="level3">
+<h3 class="anchored" data-anchor-id="building-the-ml-model">Building the ML Model</h3>
+<p>Let’s build a simple random forest classifier to classify respondents as diabetic.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your data</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>diabetes <span class="op">=</span> pd.read_csv(<span class="st">"binary_diabetes.csv"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into features (X) and target (y)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> diabetes.drop(<span class="st">'Diabetes_binary'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> diabetes[<span class="st">'Diabetes_binary'</span>]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into train and test sets</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and train the model</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> RandomForestClassifier()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the predicted probabilities</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>y_pred_proba <span class="op">=</span> model.predict_proba(X_test)[:, <span class="dv">1</span>]  </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the classification report</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with the test data, predicted classes, and predicted probabilities</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>test_results <span class="op">=</span> X_test.copy()</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>test_results[<span class="st">'y_true'</span>] <span class="op">=</span> y_test</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>test_results[<span class="st">'y_pred'</span>] <span class="op">=</span> y_pred</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>test_results[<span class="st">'y_pred_prob'</span>] <span class="op">=</span> y_pred_proba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is the output of the classification model.</p>
+<pre><code>                                precision    recall  f1-score   support
+
+         0.0       0.88      0.97      0.92     65605
+         1.0       0.48      0.18      0.26     10499
+
+    accuracy                           0.86     76104
+   macro avg       0.68      0.57      0.59     76104
+weighted avg       0.83      0.86      0.83     76104</code></pre>
+<p>From the report above, the classifier can classify those with diabetes with a precision of 0.88 accurately. This means the chances of the classifier missing a diabetic patient are low. An overall accuracy of 0.86 indicates the model is performing well.</p>
+</section>
+<section id="estimating-model-performance" class="level3">
+<h3 class="anchored" data-anchor-id="estimating-model-performance">Estimating Model Performance</h3>
+<p>Using CBPE, you can estimate the model performance when in production, and the analysis data does not necessarily have to contain the target feature.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nannyml <span class="im">as</span> nml</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>reference_df <span class="op">=</span> test_results</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>analysis_df <span class="op">=</span> pd.read_csv(<span class="st">"/content/analysis_df.csv"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>estimator <span class="op">=</span> nml.CBPE(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    y_pred_proba <span class="op">=</span><span class="st">"y_pred_prob"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> <span class="st">"y_pred"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    y_true <span class="op">=</span> <span class="st">"y_true"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    problem_type <span class="op">=</span> <span class="st">"classification_binary"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    metrics <span class="op">=</span> [<span class="st">"roc_auc"</span>],</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    chunk_size <span class="op">=</span> <span class="dv">3000</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>estimator.fit(reference_df)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> estimator.estimate(analysis_df)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>metric_fig <span class="op">=</span> results.plot()</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>metric_fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>nml.CBPE</code> calculates the CBPE and takes the argument, <code>y_pred_proba</code> the predicted probability, <code>y_pred</code> the predicted classification, <code>y_true</code> the actual classification.</li>
+<li>The <code>problem_type</code> argument takes the type of classification one is interested in, binary classification in this case.</li>
+<li>Results in NannyML are presented per <a href="https://nannyml.readthedocs.io/en/stable/tutorials/chunking.html">chunk</a>, by aggregating the data to a single data point on the monitoring results; here I used a chunk of 3000.</li>
+</ul>
+<p>You can use any other metric, but the roc-auc metric is preferred in this situation because this is a health problem and it tells us more about the ability of the classifier to detect true positives, to minimize the chance of missing any diabetic patient.</p>
+<p><img src="cbpe.png" class="img-fluid"></p>
+<p>The plot above shows that the model ROC-AUC metric started to fail at some point, which led to inaccurate predictions. The blue marker indicates the model metric, if this line exceeds the upper or lower threshold in red, it raises an alert signifying a drift.</p>
+<p>The next step is to see what causes the poor model performance in these chunks by applying various drift detection methods.</p>
+</section>
+<section id="detecting-data-drift" class="level3">
+<h3 class="anchored" data-anchor-id="detecting-data-drift">Detecting Data Drift</h3>
+<p>Let’s use a <a href="https://nannyml.readthedocs.io/en/stable/tutorials/detecting_data_drift/multivariate_drift_detection.html">multivariate drift detection method</a> to get a summary number that detects any changes in our data using the <a href="https://nannyml.readthedocs.io/en/stable/tutorials/detecting_data_drift/multivariate_drift_detection/dc.html">domain classifier</a> approach. This provides a measure of discriminating the reference data from the examined chunk data. If there is no data drift, the datasets are not different giving a value of 0.5. The higher the drift, the higher the returned measure, with a value as high as 1. This method provides a general overview of data drift in the analysis data.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>non_feature_columns <span class="op">=</span> [<span class="st">'y_pred_proba'</span>, <span class="st">'y_pred'</span>, <span class="st">'y_true'</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>feature_column_names <span class="op">=</span> [</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    col <span class="cf">for</span> col <span class="kw">in</span> reference_df.columns</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> non_feature_columns</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>cat_features <span class="op">=</span> [feature <span class="cf">for</span> feature <span class="kw">in</span> feature_column_names <span class="cf">if</span> feature <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'BMI'</span>, <span class="st">'MentHlth'</span>, <span class="st">'PhysHlth'</span>, <span class="st">'Age'</span>]]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>calc <span class="op">=</span> nml.DomainClassifierCalculator(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    feature_column_names<span class="op">=</span>feature_column_names,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    chunk_size<span class="op">=</span><span class="dv">3000</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>calc.fit(reference_df)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> calc.calculate(analysis_df)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>figure <span class="op">=</span> results.plot()</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>figure.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="domain_classifier.png" class="img-fluid"></p>
+<p>The plot above shows the domain classifier values in the reference data are either a little below or above 0.5, but that of the analysis data reaches a value of 1, indicating the presence of data drift in the analysis data. Now that we know we have data drift in the analysis data, let’s see which features are causing this drift.</p>
+</section>
+<section id="ranking" class="level3">
+<h3 class="anchored" data-anchor-id="ranking">Ranking</h3>
+<p>We need to know the features contributing to drift in the analysis data. The <a href="https://nannyml.readthedocs.io/en/stable/how_it_works/ranking.html">ranking method</a> uses the results of univariate drift detection to rank features based on alert counts or correlation ranking.</p>
+<p>Let’s use the alert count’s approach to know which features are causing the drift in data.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>univ_calc <span class="op">=</span> nml.UnivariateDriftCalculator(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    column_names<span class="op">=</span>feature_column_names,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    treat_as_categorical<span class="op">=</span>[<span class="st">'y_pred'</span>, <span class="op">*</span>cat_features],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    continuous_methods<span class="op">=</span>[<span class="st">'kolmogorov_smirnov'</span>, <span class="st">'jensen_shannon'</span>],</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    categorical_methods<span class="op">=</span>[<span class="st">'chi2'</span>, <span class="st">'jensen_shannon'</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    chunk_size<span class="op">=</span><span class="dv">3000</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>univ_calc.fit(reference_df)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>univariate_results <span class="op">=</span> univ_calc.calculate(analysis_df)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>alert_count_ranker <span class="op">=</span> nml.AertCountRanker()</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>alert_count_ranked_features <span class="op">=</span> alert_count_ranker.rank(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    univariate_results.<span class="bu">filter</span>(methods<span class="op">=</span>[<span class="st">'jensen_shannon'</span>]),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    only_drifting <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>display(alert_count_ranked_features)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>kolmogorov_smirnov</code>, <code>jensen_shannon</code>and <code>chi2</code> are various <a href="https://nannyml.readthedocs.io/en/stable/how_it_works/univariate_drift_comparison.html">univariate drift detection methods</a> you can always choose from.</p>
+<p><img src="ranking.png" class="img-fluid"></p>
+<p>The table above shows the top 10 features likely to cause drifts based on the alert counts. Next, let’s investigate further the contribution to data drift for each variable using the univariate drift detection method.</p>
+</section>
+<section id="univariate-drift-detection-method" class="level3">
+<h3 class="anchored" data-anchor-id="univariate-drift-detection-method">Univariate Drift Detection Method</h3>
+<p><a href="https://www.notion.so/Monitoring-Model-Performance-and-Data-Drift-for-Diabetes-Classification-3766d376e8ca423c81975a661e8de21b?pvs=21">Univariate drift detection</a> allows you to see the amount of drift in the suspected features, which was used earlier to rank the features.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>univ_calc <span class="op">=</span> nml.UnivariateDriftCalculator(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    column_names<span class="op">=</span>feature_column_names,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    treat_as_categorical<span class="op">=</span>[<span class="st">'y_pred'</span>, <span class="op">*</span>cat_features],</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    continuous_methods<span class="op">=</span>[<span class="st">'jensen_shannon'</span>],</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    categorical_methods<span class="op">=</span>[<span class="st">'jensen_shannon'</span>],</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    chunk_size<span class="op">=</span><span class="dv">3000</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>univ_calc.fit(reference_df)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>univariate_results <span class="op">=</span> univ_calc.calculate(analysis_df)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>figure <span class="op">=</span> univariate_results.<span class="bu">filter</span>(column_names<span class="op">=</span>univariate_results.continuous_column_names, methods<span class="op">=</span>[<span class="st">'jensen_shannon'</span>]).plot(kind<span class="op">=</span><span class="st">'drift'</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>figure.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="performance_plot.png" class="img-fluid"></p>
+<p>The plots above show the amount of drift in some of the features using Jensen-Shannon distance, which you can apply to both continuous and categorical features. You can also see that the red dotted points exceed the dotted line in each plot, this signifies drift in the variable.</p>
+<p>You can also go further into each feature to see the distribution, this lets you know how large this drift is Let’s take a critical look at <code>PhyHlth</code>, this is the first feature on the ranked list.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>figure <span class="op">=</span> univariate_results.<span class="bu">filter</span>(column_names<span class="op">=</span>[<span class="st">"PhysHlth"</span>], methods<span class="op">=</span>[<span class="st">'jensen_shannon'</span>]).plot(kind<span class="op">=</span><span class="st">'distribution'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>figure.show() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="joy_plot.png" class="img-fluid"></p>
+<p>From the plot, you can see in highlight chunks with data drift, the plot is wider and bigger compared to that of the reference data, the plot also tells the presence of negative values in the analysis data. You can follow this procedure for each feature in the model indicating data drift using the univariate drift detection method. From the above results, you can understand the change in model prediction and the cause of those changes.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In this article, you learned about NannyML an open-source tool for monitoring model performance and detecting data drifts. You also learned how to use NannyML on a diabetes classifier and how to apply both univariate and multivariate drift detection methods in detecting data drift using NannyML.</p>
+<p>What’s next after detecting data drift? Check out <a href="https://www.nannyml.com/blog/6-ways-to-address-data-distribution-shift">this</a> article, to know what to do when you detect drifts in your data.</p>
+</section>
+<section id="recommended-reads" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-reads">Recommended Reads</h2>
+<ul>
+<li><a href="https://www.nannyml.com/blog/nannyml-with-sagemaker-part-1"><strong>Monitoring a Hotel Booking Cancellation Model Part 1: Creating Reference and Analysis Set</strong></a></li>
+<li><a href="https://www.nannyml.com/blog/tutorial-monitoring-ml-model-with-nannyml-google-colab"><strong>Tutorial: Monitoring an ML Model with NannyML and Google Colab</strong></a></li>
+<li><a href="https://www.nannyml.com/blog/monitoring-computer-vision"><strong>How to Estimate Performance and Detect Drifting Images for a Computer Vision Model?</strong></a></li>
+</ul>
+<section id="need-help-with-data-lets-make-it-simple." class="level3">
+<h3 class="anchored" data-anchor-id="need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></h3>
+<p><em>At <strong>LearnData.xyz</strong>, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.</em></p>
+<p><em>📧 Shoot us an email at <strong>admin@learndata.xyz</strong>—let’s chat about how we can help you make smarter decisions with your data.</em></p>
+</section>
+</section>
+<section id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" class="level2">
+<h2 class="anchored" data-anchor-id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen">Your next breakthrough could be one email away. Let’s make it happen!</h2>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://giscus.app/client.js" data-repo="adejumoridwan/comments" data-repo-id="R_kgDOMp4Jsg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script type="application/javascript">
+  const giscusIframeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (addedNode) {
+        if (addedNode.matches && addedNode.matches('div.giscus')) {
+          const giscusIframe = addedNode.querySelector('iframe.giscus-frame');
+          if(giscusIframe) {
+            giscusIframe.addEventListener("load", function() {
+              window.setTimeout(() => {
+                toggleGiscusIfUsed(hasAlternateSentinel(), authorPrefersDark);
+              }, 100);
+            });
+            giscusIframeObserver.disconnect();
+          }
+        }
+      });
+    });
+  });
+  giscusIframeObserver.observe(document.body, { childList: true, subtree: true });
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+
+
+
+
+</body></html>

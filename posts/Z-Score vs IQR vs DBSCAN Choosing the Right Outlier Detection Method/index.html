@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Adejumo Ridwan Suleiman">
+
+<title>Z-Score vs IQR vs DBSCAN: Choosing the Right Outlier Detection Method</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Z-Score vs IQR vs DBSCAN: Choosing the Right Outlier Detection Method</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">statistics</div>
+                <div class="quarto-category">machine learning</div>
+                <div class="quarto-category">data cleaning</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Adejumo Ridwan Suleiman </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1777048436181438');
+fbq('track', 'PageView');
+</script>
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1777048436181438&amp;ev=PageView&amp;noscript=1">
+
+
+
+
+
+<p><img src="LearnData_Branding.png" class="img-fluid" alt=""></p>
+<p>Let’s say the mathematics test results for 10 students are 2, 5, 6, 3, 4, 15, 5, 4, 3, 5, on a scale of 15. Looking at the score closely, you will notice that a particular student had a perfect score of 15, although the test performance was low. This kind of situation happens in data and is usually called outliers.</p>
+<p>Outliers are extreme values that can affect our data in various ways. For example, the student scoring fifteen or above will inflate the average score when calculated.</p>
+<p>This is why it’s important to detect outliers when working with data. This article will teach you various outlier detection methods, use cases, pros and cons, and the right method to select when facing one.</p>
+<section id="understanding-outliers" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-outliers">Understanding Outliers</h2>
+<p>Outliers can result from measurement errors or data variability. Their presence can skew statistical measures like the mean and standard deviation, affect model accuracy, lead to biased parameter estimates, or indicate important events such as fraud detection.</p>
+<p>There are various types of outliers:</p>
+<ul>
+<li><strong>Global Outliers (Point Anomalies):</strong> These data points significantly deviate from the rest of the dataset. For example, a person with a height of 2.5 meters in a general population dataset.</li>
+<li><strong>Contextual Outliers (Conditional Anomalies):</strong> These data points are called outliers in a specific context. An example is a temperature of 20°C, which is normal in spring but abnormal in winter.</li>
+<li><strong>Collective Outiers:</strong> These are a group of data points that collectively deviate from expected patterns, though individual points may not appear unusual. For example, if many requests suddenly come from the same IP address in a short time frame, it could indicate a bot attack.</li>
+</ul>
+<p>Outlier detection is necessary as it can provide more insights depending on the data type you are working with, such as fraud detection, medical diagnosis, network security, etc.</p>
+<p>It’s also important to clean and process the data before applying statistical or machine learning models, as most models are sensitive to outliers. This ensures that the results are reliable and accurate.</p>
+</section>
+<section id="z-score-method" class="level2">
+<h2 class="anchored" data-anchor-id="z-score-method">Z-Score Method</h2>
+<p>The Z-score, also known as the standard score, measures how deviated a value is from the mean(<span class="math inline">\(\mu\)</span>) of a dataset. It compares individual data points to the overall distribution and determines how unusual a value is within a dataset.</p>
+<p>On the other hand, the standard deviation(<span class="math inline">\(\sigma\)</span>) is a measure of the dispersion or spread of a set of values. The formula for the Z-score is given as</p>
+<p><span class="math display">\[
+Z = \frac{X-\mu}{\sigma}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li>Z is the Z-score</li>
+<li>X is the individual data point</li>
+<li><span class="math inline">\(\mu\)</span> is the mean of the dataset</li>
+<li><span class="math inline">\(\sigma\)</span> is the standard deviation of the dataset.</li>
+</ul>
+<p>Here are the possible ways to interpret the Z-score:</p>
+<ul>
+<li>If a point has a Z-score of 0, the data point is exactly at the mean.</li>
+<li>If the Z-score is positive, the value is above the mean. For example, a Z-score of 2 means the data point is 2 standard deviations above the mean</li>
+<li>If the Z-score is negative, the value is below the mean. For example, a Z-score of -1.5 means the data point is 1.5 standard deviations below the mean.</li>
+</ul>
+<p>The Z-score works best when the sample size is large and is sensitive to unusual high or low values. It is mostly used in testing statistical hypotheses, confidence intervals, and regression analysis.</p>
+<p>It also standardizes a variable, allowing for comparison regarding its measurement. For example, using their Z-score, you can compare two weight variables measured in pounds and kilograms.</p>
+<p>The table below gives the pros and cons of the Z-score.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Easy to compare values from different datasets.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Helps detects anomalies in the data.</td>
+<td>Extreme value can distort mean and standard deviation, which are needed to calculate the Z-score.</td>
+</tr>
+<tr class="odd">
+<td>Most effective with normally distributed data.</td>
+<td>Not useful for skewed or non-normal distributions, because it assumes normality.</td>
+</tr>
+<tr class="even">
+<td>Useful for probability calculations.</td>
+<td>Statistical knowledge needed for interpretation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="interquartile-range-iqr-method" class="level2">
+<h2 class="anchored" data-anchor-id="interquartile-range-iqr-method"><strong>Interquartile Range (IQR) Method</strong></h2>
+<p>The IQR is a measure of spread that captures the middle 50% of a dataset. It helps detect outliers, and the boxplot is one of the best visualizations for explaining the IQR in a dataset.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" alt="Image showing the boxplot"></p>
+<figcaption>Boxplot. Image by SimplyPsychology</figcaption>
+</figure>
+</div>
+<p>The boxplot is a visual representation of the distribution of a variable, and it uses five key statistics.</p>
+<ul>
+<li>Minimum (excluding outliers)</li>
+<li>First quartile (Q1) - 25th percentile (lower quartile)</li>
+<li>Median (Q2) - 50th percentile (middle value)</li>
+<li>Third quartile (Q3) - 75th percentile (upper quartile)</li>
+<li>Maximum (excluding outliers)</li>
+</ul>
+<p>It’s important to know that outliers are often represented as points outside the whiskers of the boxplot. The formula for the IQR is given as</p>
+<p><span class="math display">\[
+IQR = Q3 - Q1
+\]</span></p>
+<p>Here are the steps to follow to find outliers in your dataset using the IQR:</p>
+<ol type="1">
+<li>Sort the dataset in ascending order.</li>
+<li>Find Q1 and Q3</li>
+<li>Calculate IQR</li>
+<li>Compute the lower and upper bound levels using the following formula.</li>
+</ol>
+<p><span class="math display">\[
+Lower Bound = Q1 - 1.5*IQR
+\]</span></p>
+<p><span class="math display">\[
+Upper Bound = Q3 +1.5*IQR
+\]</span></p>
+<ol start="5" type="1">
+<li>Identify outliers as data points not in the range between the lower and upper bound [Lower Bound, Upper Bound].</li>
+</ol>
+<p>The IQR works well when the sample size is small, and the data is skewed. Here is a table showing the pros and cons of IQR:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not sensitive to extreme values.</td>
+<td>Ignore the spread between Q1 and Q3, hence not capturing the full data distribution.</td>
+</tr>
+<tr class="even">
+<td>Works well with skewed data.</td>
+<td>You can’t use it with normally distributed data.</td>
+</tr>
+<tr class="odd">
+<td>Easy to interpret.</td>
+<td>In small datsets, IQR might misclassify important values.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dbscan-density-based-spatial-clustering-of-applications-with-noise" class="level2">
+<h2 class="anchored" data-anchor-id="dbscan-density-based-spatial-clustering-of-applications-with-noise"><strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</strong></h2>
+<p>DBSCAN is a density-based clustering algorithm that groups data points based on their density. This makes it effective for identifying clusters of varying shapes and sizes and detecting outliers. DBSCAN groups data based on two parameters:</p>
+<ul>
+<li><strong>Epsilon (</strong><span class="math inline">\(\epsilon\)</span> ): The radius within which points are considered neighbors.</li>
+<li><strong>MinPts (Minimum Points):</strong> The minimum number of points required within <span class="math inline">\(\epsilon\)</span> to form a dense region, that is, a cluster.</li>
+</ul>
+<p>DBSCAN classifies points into three categories:</p>
+<ul>
+<li><strong>Core Points:</strong> Points with at least <strong>MinPts</strong> neighbors within distance <span class="math inline">\(\epsilon\)</span>.</li>
+<li><strong>Border Points:</strong> Points with fewer than <strong>MinPts</strong> but within <span class="math inline">\(\epsilon\)</span> of a core point.</li>
+<li><strong>Noise (Outliers):</strong> Points that do not belong to any cluster and are not close enough to a core point.</li>
+</ul>
+<p>The image below explains the concept above:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image%201.png" class="img-fluid figure-img" alt="Image showing how DBSCAN works"></p>
+<figcaption>DBSCAN. Image by DataCamp.</figcaption>
+</figure>
+</div>
+<p>Core points (blue) form the center of clusters, border points (orange) are on the edges of clusters, and noise points (red) are isolated.</p>
+<p>DBSCAN identifies outliers as points that do not have enough neighboring points within to be core points. They are also unreachable from any other core point, existing in sparse regions with low density to form a cluster.</p>
+<p>Since DBSCAN does not force any point into a cluster, it naturally detects anomalies that don’t belong to any dense region.</p>
+<p>DBSCAN is particularly useful in spatial analysis. It can identify high-density areas such as traffic congestion zones and detect anomalies such as unusual weather patterns.</p>
+<p>Here are the pros and cons of using DBSCAN.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Can detect clusters of irregular shapes.</td>
+<td>If clusters have varying densities, a single epsilon may not caputre all clusters accurately.</td>
+</tr>
+<tr class="even">
+<td>Determines the number of clusters automatically.</td>
+<td>Sensitive to the epsilon and MinPts parameters, which if selected poorly can lead to incorrect clustering.</td>
+</tr>
+<tr class="odd">
+<td>Efficient when the sample size is large.</td>
+<td>Performs poorly in high-dimensional spaces due to the curse of dimensionality.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comparative-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="comparative-analysis"><strong>Comparative Analysis</strong></h2>
+<p>The table below compares the three outlier detection methods and the best scenario for using them.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Z-Score</strong></th>
+<th><strong>IQR</strong></th>
+<th><strong>DBSCAN</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Measures how many standard deviations a point is from the mean.</td>
+<td>Identifies outliers based on the spread of the middle 50% of the data.</td>
+<td>Detects outliers as noise points in low-density regions.</td>
+</tr>
+<tr class="even">
+<td>Statistical method</td>
+<td>Statistical Method</td>
+<td>Density-Based clustering</td>
+</tr>
+<tr class="odd">
+<td>Best suited for normally distributed data.</td>
+<td>Best suited for non-parametric data.</td>
+<td>Best suited for non-linear distributions with varying densitiies.</td>
+</tr>
+<tr class="even">
+<td>Suitable for small and medium datasets.</td>
+<td>Works well for small datasets.</td>
+<td>Best for large, complex, and high-dimensional datasets.</td>
+</tr>
+<tr class="odd">
+<td>Does not consider clusters.</td>
+<td>Does not consider clusters.</td>
+<td>Detects noise points as outliers based on density.</td>
+</tr>
+<tr class="even">
+<td>Use in financial fraud detection, and quality control.</td>
+<td>Used in boxplot-based analysis like medical and biological data.</td>
+<td>Used in anomaly detection in spatial or high-dimensional data.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-examples">Practical Examples</h2>
+<p>Here are some case studies of how these outlier methods are applied in real life.</p>
+<section id="example-1-financial-fraud-detection-z-score" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-financial-fraud-detection-z-score">Example 1: Financial Fraud Detection (Z-Score)</h3>
+<p>A bank wants to detect fraudulent transactions based on transaction amounts. The Z-score method is applied since the transaction amounts typically follow a normal distribution.</p>
+<p>Transactions with a Z-score &gt;3 or &lt; -3 are flagged as potential fraud; hence, several high-value fraudulent transactions are detected.</p>
+</section>
+<section id="example-2-medical-research-on-patient-heights-iqr" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-medical-research-on-patient-heights-iqr">Example 2: Medical research on patient heights (IQR)</h3>
+<p>Medical research analyzes height data to study growth patterns since the heights are often skewed. IQR is used to detect extremely short or tall patients</p>
+<p>Heights outside <span class="math inline">\([Q1-1.5*IQR, Q3+1.5*IQR]\)</span> are flagged as outliers, and patients with these extreme values are now identified for further analysis.</p>
+</section>
+<section id="example-3-anomaly-detection-in-gps-data-dbscan" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-anomaly-detection-in-gps-data-dbscan">Example 3: Anomaly detection in GPS data (DBSCAN)</h3>
+<p>A logistics company wants to identify erratic vehicle movement patterns. The GPS locations are clustered using DBSCAN, where vehicles that do not belong to any dense cluster are labeled anomalies. This ensures that vehicles deviating from usual routes are detected, helping identify potential theft or route violations.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
+<p>Even though most statistical analyses are sensitive to outliers, outliers can significantly give you information about a variable in your dataset.</p>
+<p>This article has explained how to handle an outlier in your dataset using the three methods discussed: Z-score, IQR, and DBSCAN. Each method has its pros and cons, and deciding which one to use depends on the nature of your dataset.</p>
+<p>If you are looking for dirty datasets to practice on, you can create one using the <a href="https://www.notion.so/Learndata-tips-132b607bb40d8000a900e4bbc35ea0bc?pvs=21">Chaos</a> web application that allows you to introduce various dirtiness into your dataset.</p>
+<p>Here are other tutorials also on outliers and data cleaning that you should find resourceful:</p>
+<ul>
+<li><a href="https://learndata.xyz/posts/types%20of%20missing%20data%20mcar,%20mar,%20and%20mnar%20explained/"><strong>Types of Missing Data: MCAR, MAR, and MNAR Explained</strong></a></li>
+<li><a href="https://www.datacamp.com/tutorial/dbscan-clustering-algorithm"><strong>A Guide to the DBSCAN Clustering Algorithm</strong></a></li>
+<li><a href="https://www.geeksforgeeks.org/dbscan-clustering-in-r-programming/"><strong>DBSCAN Clustering in R Programming</strong></a></li>
+<li><a href="https://www.geeksforgeeks.org/interquartile-range-and-quartile-deviation-using-numpy-and-scipy/"><strong>Interquartile Range and Quartile Deviation using NumPy and SciPy</strong></a></li>
+<li><a href="https://www.geeksforgeeks.org/calculate-the-interquartile-range-in-r-programming-iqr-function/"><strong>Calculate the Interquartile Range in R Programming – IQR() Function</strong></a></li>
+<li><a href="https://www.r-bloggers.com/2021/06/how-to-find-z-score-in-r-easy-calculation-quick-guide/"><strong>How to find z score in R-Easy Calculation-Quick Guide</strong></a></li>
+<li><a href="https://www.statology.org/z-score-python/"><strong>How to Calculate Z-Scores in Python</strong></a></li>
+</ul>
+<section id="need-help-with-data-lets-make-it-simple." class="level3">
+<h3 class="anchored" data-anchor-id="need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></h3>
+<p><em>At <strong>LearnData.xyz</strong>, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.</em></p>
+<p><em>📧 Shoot us an email at <strong>admin@learndata.xyz</strong>—let’s chat about how we can help you make smarter decisions with your data.</em></p>
+</section>
+</section>
+<section id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" class="level2">
+<h2 class="anchored" data-anchor-id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen">Your next breakthrough could be one email away. Let’s make it happen!</h2>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://giscus.app/client.js" data-repo="adejumoridwan/comments" data-repo-id="R_kgDOMp4Jsg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script type="application/javascript">
+  const giscusIframeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (addedNode) {
+        if (addedNode.matches && addedNode.matches('div.giscus')) {
+          const giscusIframe = addedNode.querySelector('iframe.giscus-frame');
+          if(giscusIframe) {
+            giscusIframe.addEventListener("load", function() {
+              window.setTimeout(() => {
+                toggleGiscusIfUsed(hasAlternateSentinel(), authorPrefersDark);
+              }, 100);
+            });
+            giscusIframeObserver.disconnect();
+          }
+        }
+      });
+    });
+  });
+  giscusIframeObserver.observe(document.body, { childList: true, subtree: true });
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+
+
+
+
+</body></html>
