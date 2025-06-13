@@ -515,7 +515,7 @@
     "href": "posts/Adding User Authentication to Python Shiny Applications using JWT/index.html",
     "title": "Adding User Authentication to Python Shiny Applications using JWT",
     "section": "",
-    "text": "LearnData Branding.png\nImagine a house without a lock, how safe do you think the individuals in the house are at night, or when no one is at home. That’s why we need locks also in our applications, and in software we refer to these locks as authentication.\nAuthentication let’s you prevent unauthorized access to sensitive information on your application, by letting users authenticate before using your application, you are able to identify each user, and block users trying to compromise the system.\nIn this tutorial, you will learn how to authenticate users into your Python Shiny applications using JWT. With JWT, you don’t need third party applications or any paid authentication service, once you grasp the concepts of JWT, you can easily handle authentication on your site."
+    "text": "Imagine a house without a lock, how safe do you think the individuals in the house are at night, or when no one is at home. That’s why we need locks also in our applications, and in software we refer to these locks as authentication.\nAuthentication let’s you prevent unauthorized access to sensitive information on your application, by letting users authenticate before using your application, you are able to identify each user, and block users trying to compromise the system.\nIn this tutorial, you will learn how to authenticate users into your Python Shiny applications using JWT. With JWT, you don’t need third party applications or any paid authentication service, once you grasp the concepts of JWT, you can easily handle authentication on your site."
   },
   {
     "objectID": "posts/Adding User Authentication to Python Shiny Applications using JWT/index.html#what-is-jwt",
@@ -602,123 +602,116 @@
     "text": "Your next breakthrough could be one email away. Let’s make it happen!"
   },
   {
-    "objectID": "navs/services.html",
-    "href": "navs/services.html",
-    "title": "Our Services",
-    "section": "",
-    "text": "At learndata.xyz, we offer a comprehensive suite of data-driven solutions to help businesses and individuals harness the power of their data. Our expertise in R, Python, and statistical analysis, combined with our proficiency in Shiny web applications, allows us to deliver tailored services that meet your unique needs.\n\n\n\nAdvanced statistical analysis using R and Python\nCustom data visualization and dashboards\nExploratory data analysis (EDA) to uncover insights\nTime series analysis and forecasting\n\n\n\n\n\nDevelopment of predictive models and algorithms\nImplementation of supervised and unsupervised learning techniques\nModel evaluation, validation, and optimization\nNatural Language Processing (NLP) solutions\n\n\n\n\n\nCreation of interactive, data-driven web applications\nCustom dashboard design and implementation\nReal-time data processing and visualization\nIntegration of statistical models into user-friendly interfaces\n\n\n\n\n\nExpert advice on experimental design and sampling methods\nHypothesis testing and statistical inference\nPower analysis and sample size determination\nInterpretation and reporting of statistical results\n\n\n\n\n\nCustomized R and Python programming workshops\nData analysis and visualization best practices\nIntroduction to machine learning and predictive modeling\nShiny app development training\n\n\n\n\n\nAssessment and improvement of existing R and Python code\nPerformance optimization for data processing pipelines\nBest practices implementation for maintainable code\nVersion control and collaborative development guidance\n\nWhether you’re looking to gain insights from your data, build predictive models, or create interactive web applications, our team at learndata.xyz is here to support your data science journey. Contact us today to discuss how we can help you transform your data into actionable intelligence."
-  },
-  {
     "objectID": "navs/services.html#data-analysis-and-visualization",
     "href": "navs/services.html#data-analysis-and-visualization",
     "title": "Our Services",
-    "section": "",
-    "text": "Advanced statistical analysis using R and Python\nCustom data visualization and dashboards\nExploratory data analysis (EDA) to uncover insights\nTime series analysis and forecasting"
+    "section": "Data Analysis and Visualization",
+    "text": "Data Analysis and Visualization\n\nAdvanced statistical analysis using R and Python\nCustom data visualization and dashboards\nExploratory data analysis (EDA) to uncover insights\nTime series analysis and forecasting"
   },
   {
     "objectID": "navs/services.html#machine-learning-and-predictive-modeling",
     "href": "navs/services.html#machine-learning-and-predictive-modeling",
     "title": "Our Services",
-    "section": "",
-    "text": "Development of predictive models and algorithms\nImplementation of supervised and unsupervised learning techniques\nModel evaluation, validation, and optimization\nNatural Language Processing (NLP) solutions"
+    "section": "Machine Learning and Predictive Modeling",
+    "text": "Machine Learning and Predictive Modeling\n\nDevelopment of predictive models and algorithms\nImplementation of supervised and unsupervised learning techniques\nModel evaluation, validation, and optimization\nNatural Language Processing (NLP) solutions"
   },
   {
     "objectID": "navs/services.html#shiny-web-application-development",
     "href": "navs/services.html#shiny-web-application-development",
     "title": "Our Services",
-    "section": "",
-    "text": "Creation of interactive, data-driven web applications\nCustom dashboard design and implementation\nReal-time data processing and visualization\nIntegration of statistical models into user-friendly interfaces"
+    "section": "Shiny Web Application Development",
+    "text": "Shiny Web Application Development\n\nCreation of interactive, data-driven web applications\nCustom dashboard design and implementation\nReal-time data processing and visualization\nIntegration of statistical models into user-friendly interfaces"
   },
   {
     "objectID": "navs/services.html#statistical-consulting",
     "href": "navs/services.html#statistical-consulting",
     "title": "Our Services",
-    "section": "",
-    "text": "Expert advice on experimental design and sampling methods\nHypothesis testing and statistical inference\nPower analysis and sample size determination\nInterpretation and reporting of statistical results"
+    "section": "Statistical Consulting",
+    "text": "Statistical Consulting\n\nExpert advice on experimental design and sampling methods\nHypothesis testing and statistical inference\nPower analysis and sample size determination\nInterpretation and reporting of statistical results"
   },
   {
     "objectID": "navs/services.html#training-and-workshops",
     "href": "navs/services.html#training-and-workshops",
     "title": "Our Services",
-    "section": "",
-    "text": "Customized R and Python programming workshops\nData analysis and visualization best practices\nIntroduction to machine learning and predictive modeling\nShiny app development training"
+    "section": "Training and Workshops",
+    "text": "Training and Workshops\n\nCustomized R and Python programming workshops\nData analysis and visualization best practices\nIntroduction to machine learning and predictive modeling\nShiny app development training"
   },
   {
     "objectID": "navs/services.html#code-review-and-optimization",
     "href": "navs/services.html#code-review-and-optimization",
     "title": "Our Services",
-    "section": "",
-    "text": "Assessment and improvement of existing R and Python code\nPerformance optimization for data processing pipelines\nBest practices implementation for maintainable code\nVersion control and collaborative development guidance\n\nWhether you’re looking to gain insights from your data, build predictive models, or create interactive web applications, our team at learndata.xyz is here to support your data science journey. Contact us today to discuss how we can help you transform your data into actionable intelligence."
-  },
-  {
-    "objectID": "navs/privacy.html",
-    "href": "navs/privacy.html",
-    "title": "Privacy Policy",
-    "section": "",
-    "text": "Last updated: 2nd October, 2024\n\n\nWelcome to learndata.xyz. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.\n\n\n\n\n\nThis privacy policy aims to give you information on how learndata.xyz collects and processes your personal data through your use of this website, including any data you may provide through this website when you sign up for our newsletter, purchase a product or service, or take part in a survey.\n\n\n\nlearndata.xyz is the controller and responsible for your personal data (collectively referred to as “learndata.xyz”, “we”, “us” or “our” in this privacy policy).\n\n\n\n\nWe may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:\n\nIdentity Data\nContact Data\nTechnical Data\nUsage Data\nMarketing and Communications Data\n\n\n\n\nWe will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:\n\nWhere we need to perform the contract we are about to enter into or have entered into with you.\nWhere it is necessary for our legitimate interests and your interests and fundamental rights do not override those interests.\nWhere we need to comply with a legal obligation.\n\n\n\n\nWe have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.\n\n\n\nWe will only retain your personal data for as long as reasonably necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.\n\n\n\nUnder certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:\n\nRequest access to your personal data\nRequest correction of your personal data\nRequest erasure of your personal data\nObject to processing of your personal data\nRequest restriction of processing your personal data\nRequest transfer of your personal data\nRight to withdraw consent\n\n\n\n\nWe may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page.\n\n\n\nIf you have any questions about this privacy policy or our privacy practices, please contact us at:\nEmail: admin@learndata.xyz"
+    "section": "Code Review and Optimization",
+    "text": "Code Review and Optimization\n\nAssessment and improvement of existing R and Python code\nPerformance optimization for data processing pipelines\nBest practices implementation for maintainable code\nVersion control and collaborative development guidance\n\nWhether you’re looking to gain insights from your data, build predictive models, or create interactive web applications, our team at learndata.xyz is here to support your data science journey. Contact us today to discuss how we can help you transform your data into actionable intelligence."
   },
   {
     "objectID": "navs/privacy.html#introduction",
     "href": "navs/privacy.html#introduction",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "Welcome to learndata.xyz. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you."
+    "section": "1. Introduction",
+    "text": "1. Introduction\nWelcome to learndata.xyz. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you."
   },
   {
     "objectID": "navs/privacy.html#important-information-and-who-we-are",
     "href": "navs/privacy.html#important-information-and-who-we-are",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "This privacy policy aims to give you information on how learndata.xyz collects and processes your personal data through your use of this website, including any data you may provide through this website when you sign up for our newsletter, purchase a product or service, or take part in a survey.\n\n\n\nlearndata.xyz is the controller and responsible for your personal data (collectively referred to as “learndata.xyz”, “we”, “us” or “our” in this privacy policy)."
+    "section": "2. Important Information and Who We Are",
+    "text": "2. Important Information and Who We Are\n\nPurpose of this privacy policy\nThis privacy policy aims to give you information on how learndata.xyz collects and processes your personal data through your use of this website, including any data you may provide through this website when you sign up for our newsletter, purchase a product or service, or take part in a survey.\n\n\nController\nlearndata.xyz is the controller and responsible for your personal data (collectively referred to as “learndata.xyz”, “we”, “us” or “our” in this privacy policy)."
   },
   {
     "objectID": "navs/privacy.html#the-data-we-collect-about-you",
     "href": "navs/privacy.html#the-data-we-collect-about-you",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:\n\nIdentity Data\nContact Data\nTechnical Data\nUsage Data\nMarketing and Communications Data"
+    "section": "3. The Data We Collect About You",
+    "text": "3. The Data We Collect About You\nWe may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:\n\nIdentity Data\nContact Data\nTechnical Data\nUsage Data\nMarketing and Communications Data"
   },
   {
     "objectID": "navs/privacy.html#how-we-use-your-personal-data",
     "href": "navs/privacy.html#how-we-use-your-personal-data",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:\n\nWhere we need to perform the contract we are about to enter into or have entered into with you.\nWhere it is necessary for our legitimate interests and your interests and fundamental rights do not override those interests.\nWhere we need to comply with a legal obligation."
+    "section": "4. How We Use Your Personal Data",
+    "text": "4. How We Use Your Personal Data\nWe will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:\n\nWhere we need to perform the contract we are about to enter into or have entered into with you.\nWhere it is necessary for our legitimate interests and your interests and fundamental rights do not override those interests.\nWhere we need to comply with a legal obligation."
   },
   {
     "objectID": "navs/privacy.html#data-security",
     "href": "navs/privacy.html#data-security",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed."
+    "section": "5. Data Security",
+    "text": "5. Data Security\nWe have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed."
   },
   {
     "objectID": "navs/privacy.html#data-retention",
     "href": "navs/privacy.html#data-retention",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "We will only retain your personal data for as long as reasonably necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements."
+    "section": "6. Data Retention",
+    "text": "6. Data Retention\nWe will only retain your personal data for as long as reasonably necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements."
   },
   {
     "objectID": "navs/privacy.html#your-legal-rights",
     "href": "navs/privacy.html#your-legal-rights",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:\n\nRequest access to your personal data\nRequest correction of your personal data\nRequest erasure of your personal data\nObject to processing of your personal data\nRequest restriction of processing your personal data\nRequest transfer of your personal data\nRight to withdraw consent"
+    "section": "7. Your Legal Rights",
+    "text": "7. Your Legal Rights\nUnder certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:\n\nRequest access to your personal data\nRequest correction of your personal data\nRequest erasure of your personal data\nObject to processing of your personal data\nRequest restriction of processing your personal data\nRequest transfer of your personal data\nRight to withdraw consent"
   },
   {
     "objectID": "navs/privacy.html#changes-to-the-privacy-policy",
     "href": "navs/privacy.html#changes-to-the-privacy-policy",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page."
+    "section": "8. Changes to the Privacy Policy",
+    "text": "8. Changes to the Privacy Policy\nWe may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page."
   },
   {
     "objectID": "navs/privacy.html#contact-us",
     "href": "navs/privacy.html#contact-us",
     "title": "Privacy Policy",
-    "section": "",
-    "text": "If you have any questions about this privacy policy or our privacy practices, please contact us at:\nEmail: admin@learndata.xyz"
+    "section": "9. Contact Us",
+    "text": "9. Contact Us\nIf you have any questions about this privacy policy or our privacy practices, please contact us at:\nEmail: admin@learndata.xyz"
+  },
+  {
+    "objectID": "navs/courses.html#practical-biostatistics-with-r",
+    "href": "navs/courses.html#practical-biostatistics-with-r",
+    "title": "Courses",
+    "section": "Practical Biostatistics with R",
+    "text": "Practical Biostatistics with R"
   },
   {
     "objectID": "navs/courses.html#ml-model-deployment-with-fastapi-and-streamlit",
@@ -766,18 +759,11 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to learndata.xyz",
-    "section": "",
-    "text": "Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\n\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\n\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\n\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\n\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
-  },
-  {
     "objectID": "index.html#unlock-the-power-of-your-data",
     "href": "index.html#unlock-the-power-of-your-data",
     "title": "Welcome to learndata.xyz",
-    "section": "",
-    "text": "Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\n\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\n\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\n\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\n\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
+    "section": "Unlock the Power of Your Data",
+    "text": "Unlock the Power of Your Data\nAre you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\nOur Expertise\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\nWhy Choose Us?\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\nOur Services\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\nReady to Start Your Data Journey?\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
   },
   {
     "objectID": "courses/Practical Biostatistics with R/index.html",
@@ -836,18 +822,11 @@
     "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAdvanced Data Wrangling with Pandas\n\n\n\ndata analysis\n\ndata cleaning\n\nPython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\nPower BI DAX Practice Test and Solutions\n\n\n\npower bi\n\ndax\n\ndata visualization\n\ndata analysis\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Wranging and Exploratory Data Analysis with R\n\n\n\ndata analysis\n\ndata visualization\n\ndata cleaning\n\nR\n\ndata wrangling\n\nexploratory data analysis\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\nML Model Deployment with FastAPI and Streamlit\n\n\n\nweb development\n\nmachine learning\n\nmlops\n\nPython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\nML Model Deployment with FastAPI and Streamlit\n\n\n\nweb development\n\nmachine learning\n\nmlops\n\nPython\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\n\n\n\n\n\n\n\nPractical Biostatistics with R\n\n\n\nstatistics\n\nbiostatistics\n\ndata analysis\n\nR\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "navs/about.html",
-    "href": "navs/about.html",
-    "title": "About",
-    "section": "",
-    "text": "learndata.xyz is a cutting-edge data science consulting firm specializing in R and Python programming, statistical analysis, and Shiny web application development. Founded by a team of passionate statisticians and data scientists, we bridge the gap between complex data and actionable insights."
-  },
-  {
     "objectID": "navs/about.html#who-we-are",
     "href": "navs/about.html#who-we-are",
     "title": "About",
-    "section": "",
-    "text": "learndata.xyz is a cutting-edge data science consulting firm specializing in R and Python programming, statistical analysis, and Shiny web application development. Founded by a team of passionate statisticians and data scientists, we bridge the gap between complex data and actionable insights."
+    "section": "Who We Are",
+    "text": "Who We Are\nlearndata.xyz is a cutting-edge data science consulting firm specializing in R and Python programming, statistical analysis, and Shiny web application development. Founded by a team of passionate statisticians and data scientists, we bridge the gap between complex data and actionable insights."
   },
   {
     "objectID": "navs/about.html#our-mission",
@@ -878,6 +857,13 @@
     "text": "Why Choose Us?\n\nExpertise: Our team combines academic rigor with practical industry experience.\nInnovation: We stay at the forefront of data science developments, constantly exploring new techniques and technologies.\nCustomization: We don’t believe in one-size-fits-all solutions. Every project is tailored to meet your specific needs.\nEducation: We’re committed to not just delivering results, but also to empowering our clients with knowledge and skills.\nResults-Driven: Our focus is always on delivering actionable insights and measurable outcomes.\n\nAt learndata.xyz, we’re more than just consultants – we’re your partners in navigating the complex world of data. Whether you’re looking to optimize your processes, predict market trends, or transform your data into compelling visualizations, we’re here to guide you every step of the way.\nReady to unlock the power of your data? Contact us today to start your data-driven journey."
   },
   {
+    "objectID": "navs/coming_soon.html#still-under-development",
+    "href": "navs/coming_soon.html#still-under-development",
+    "title": "",
+    "section": "Still under development!",
+    "text": "Still under development!"
+  },
+  {
     "objectID": "navs/correlateai.html",
     "href": "navs/correlateai.html",
     "title": "CorrelateAI",
@@ -888,88 +874,74 @@
     ]
   },
   {
-    "objectID": "navs/home.html",
-    "href": "navs/home.html",
-    "title": "Welcome to learndata.xyz",
-    "section": "",
-    "text": "Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\n\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\n\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\n\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\n\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
-  },
-  {
     "objectID": "navs/home.html#unlock-the-power-of-your-data",
     "href": "navs/home.html#unlock-the-power-of-your-data",
     "title": "Welcome to learndata.xyz",
-    "section": "",
-    "text": "Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\n\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\n\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\n\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\n\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
-  },
-  {
-    "objectID": "navs/tos.html",
-    "href": "navs/tos.html",
-    "title": "Terms of Service",
-    "section": "",
-    "text": "Last updated: 2nd October, 2024\nPlease read these Terms of Service (“Terms”, “Terms of Service”) carefully before using the https://learndata.xyz website (the “Service”) operated by learndata.xyz (“us”, “we”, or “our”).\nYour access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.\nBy accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.\n\n\nlearndata.xyz provides data science consulting services, including but not limited to data analysis, statistical modeling, machine learning, and Shiny web application development. The specific services to be provided will be agreed upon in separate contracts or statements of work.\n\n\n\nWhen you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.\nYou are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.\n\n\n\nThe Service and its original content, features and functionality are and will remain the exclusive property of learndata.xyz and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of learndata.xyz.\n\n\n\nOur Service may contain links to third-party web sites or services that are not owned or controlled by learndata.xyz.\nlearndata.xyz has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that learndata.xyz shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.\n\n\n\nWe may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.\nAll provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.\n\n\n\nYour use of the Service is at your sole risk. The Service is provided on an “AS IS” and “AS AVAILABLE” basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.\n\n\n\nThese Terms shall be governed and construed in accordance with the laws of [Your State/Country], without regard to its conflict of law provisions.\nOur failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.\n\n\n\nWe reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.\n\n\n\nIf you have any questions about these Terms, please contact us at:\nEmail: admin@learndata.xyz"
+    "section": "Unlock the Power of Your Data",
+    "text": "Unlock the Power of Your Data\nAre you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.\n\nOur Expertise\n\nR & Python Consulting: Harness the full potential of these leading data science languages.\nStatistical Analysis: Make informed decisions with robust statistical methodologies.\nShiny Web Applications: Create interactive, data-driven web apps that captivate and inform.\n\n\n\nWhy Choose Us?\n\nExpert Team: Our statisticians and data scientists bring years of experience to every project.\nTailored Solutions: We craft custom solutions that address your unique challenges.\nCutting-Edge Techniques: Stay ahead with the latest in machine learning and data visualization.\nEducation-Focused: We don’t just deliver results; we empower your team with knowledge.\n\n\n\nOur Services\n\nData Analysis and Visualization\nMachine Learning and Predictive Modeling\nShiny Web Application Development\nStatistical Consulting\nTraining and Workshops\nCode Review and Optimization\n\n\n\nReady to Start Your Data Journey?\nContact Us Now to discuss how we can elevate your data game.\nExplore Our Services to learn more about our offerings."
   },
   {
     "objectID": "navs/tos.html#services",
     "href": "navs/tos.html#services",
     "title": "Terms of Service",
-    "section": "",
-    "text": "learndata.xyz provides data science consulting services, including but not limited to data analysis, statistical modeling, machine learning, and Shiny web application development. The specific services to be provided will be agreed upon in separate contracts or statements of work."
+    "section": "1. Services",
+    "text": "1. Services\nlearndata.xyz provides data science consulting services, including but not limited to data analysis, statistical modeling, machine learning, and Shiny web application development. The specific services to be provided will be agreed upon in separate contracts or statements of work."
   },
   {
     "objectID": "navs/tos.html#user-accounts",
     "href": "navs/tos.html#user-accounts",
     "title": "Terms of Service",
-    "section": "",
-    "text": "When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.\nYou are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service."
+    "section": "2. User Accounts",
+    "text": "2. User Accounts\nWhen you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.\nYou are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service."
   },
   {
     "objectID": "navs/tos.html#intellectual-property",
     "href": "navs/tos.html#intellectual-property",
     "title": "Terms of Service",
-    "section": "",
-    "text": "The Service and its original content, features and functionality are and will remain the exclusive property of learndata.xyz and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of learndata.xyz."
+    "section": "3. Intellectual Property",
+    "text": "3. Intellectual Property\nThe Service and its original content, features and functionality are and will remain the exclusive property of learndata.xyz and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of learndata.xyz."
   },
   {
     "objectID": "navs/tos.html#links-to-other-web-sites",
     "href": "navs/tos.html#links-to-other-web-sites",
     "title": "Terms of Service",
-    "section": "",
-    "text": "Our Service may contain links to third-party web sites or services that are not owned or controlled by learndata.xyz.\nlearndata.xyz has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that learndata.xyz shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services."
+    "section": "4. Links To Other Web Sites",
+    "text": "4. Links To Other Web Sites\nOur Service may contain links to third-party web sites or services that are not owned or controlled by learndata.xyz.\nlearndata.xyz has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that learndata.xyz shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services."
   },
   {
     "objectID": "navs/tos.html#termination",
     "href": "navs/tos.html#termination",
     "title": "Terms of Service",
-    "section": "",
-    "text": "We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.\nAll provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability."
+    "section": "5. Termination",
+    "text": "5. Termination\nWe may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.\nAll provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability."
   },
   {
     "objectID": "navs/tos.html#disclaimer",
     "href": "navs/tos.html#disclaimer",
     "title": "Terms of Service",
-    "section": "",
-    "text": "Your use of the Service is at your sole risk. The Service is provided on an “AS IS” and “AS AVAILABLE” basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance."
+    "section": "6. Disclaimer",
+    "text": "6. Disclaimer\nYour use of the Service is at your sole risk. The Service is provided on an “AS IS” and “AS AVAILABLE” basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance."
   },
   {
     "objectID": "navs/tos.html#governing-law",
     "href": "navs/tos.html#governing-law",
     "title": "Terms of Service",
-    "section": "",
-    "text": "These Terms shall be governed and construed in accordance with the laws of [Your State/Country], without regard to its conflict of law provisions.\nOur failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect."
+    "section": "7. Governing Law",
+    "text": "7. Governing Law\nThese Terms shall be governed and construed in accordance with the laws of [Your State/Country], without regard to its conflict of law provisions.\nOur failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect."
   },
   {
     "objectID": "navs/tos.html#changes",
     "href": "navs/tos.html#changes",
     "title": "Terms of Service",
-    "section": "",
-    "text": "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion."
+    "section": "8. Changes",
+    "text": "8. Changes\nWe reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion."
   },
   {
     "objectID": "navs/tos.html#contact-us",
     "href": "navs/tos.html#contact-us",
     "title": "Terms of Service",
-    "section": "",
-    "text": "If you have any questions about these Terms, please contact us at:\nEmail: admin@learndata.xyz"
+    "section": "9. Contact Us",
+    "text": "9. Contact Us\nIf you have any questions about these Terms, please contact us at:\nEmail: admin@learndata.xyz"
   },
   {
     "objectID": "posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html",
