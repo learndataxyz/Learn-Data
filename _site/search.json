@@ -798,7 +798,7 @@
     "href": "courses/Building Interactive Shiny Web Apps with R Programming/index.html",
     "title": "Power BI DAX Practice Test and Solutions",
     "section": "",
-    "text": "Power BI DAX Practice Test and Solutions\nThis is a practice test that allows you to practice your Power BI DAX test."
+    "text": "Power BI DAX Practice Test and Solutions\nThis is a practice test that allows you to practice your Power BI DAX test. s"
   },
   {
     "objectID": "blog.html",
@@ -848,6 +848,13 @@
     "title": "About",
     "section": "",
     "text": "learndata.xyz is a cutting-edge data science consulting firm specializing in R and Python programming, statistical analysis, and Shiny web application development. Founded by a team of passionate statisticians and data scientists, we bridge the gap between complex data and actionable insights."
+  },
+  {
+    "objectID": "navs/about.html#about-founder",
+    "href": "navs/about.html#about-founder",
+    "title": "About",
+    "section": "About Founder",
+    "text": "About Founder\nGot it! Here’s the revised third-person “About Me” section without any mention of biostatistics or healthcare:\n\nAbout Ridwan Suleiman Adejumo\nRidwan Suleiman Adejumo is a skilled Data Scientist, Technical Writer, and Social Media Marketing Analytics specialist. He is the Founder of LearnData, a consulting firm that empowers businesses and individuals with data-driven insights, training, and tailored analytics solutions.\nWith deep expertise in data analysis, machine learning, and digital strategy, Ridwan helps organizations turn complex data into actionable insights that drive growth and performance, especially in the evolving landscape of social media and digital marketing.\nAs a Udemy Instructor, Ridwan has taught thousands of students around the world, creating accessible, practical courses in data science and analytics. His work as a Technical Writer showcases his ability to simplify complex concepts and make them clear, engaging, and useful to both technical and non-technical audiences.\nRidwan is passionate about transforming raw data into meaningful impact and continues to work at the intersection of analytics, education, and digital innovation."
   },
   {
     "objectID": "navs/about.html#our-mission",
