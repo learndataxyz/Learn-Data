@@ -10,4 +10,4 @@ draft: false
 
 ### [Advanced Data Wrangling with Pandas.](https://www.udemy.com/course/advanced-data-wrangling-with-pandas/?referralCode=3AD7BB5C8CC0CBBF7D54)
 
-This course walks you through cleaning dirty data using various advanced methods in Pandas. 
+This course walks you through cleaning dirty data using various advanced methods in Pandas.
