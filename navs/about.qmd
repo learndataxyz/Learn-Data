@@ -25,10 +25,6 @@ learndata.xyz is a cutting-edge data science consulting firm specializing in R a
 
 ## About Founder
 
-Got it! Here's the revised **third-person "About Me"** section without any mention of biostatistics or healthcare:
-
-### About Ridwan Suleiman Adejumo
-
 **Ridwan Suleiman Adejumo** is a skilled **Data Scientist**, **Technical Writer**, and **Social Media Marketing Analytics** specialist. He is the **Founder of LearnData**, a consulting firm that empowers businesses and individuals with data-driven insights, training, and tailored analytics solutions.
 
 With deep expertise in **data analysis**, **machine learning**, and **digital strategy**, Ridwan helps organizations turn complex data into actionable insights that drive growth and performance, especially in the evolving landscape of social media and digital marketing.
