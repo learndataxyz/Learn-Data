@@ -1,6 +1,6 @@
 # Our Services
 
-At learndata.xyz, we offer a comprehensive suite of data-driven solutions to help businesses and individuals harness the power of their data. Our expertise in R, Python, and statistical analysis, combined with our proficiency in Shiny web applications, allows us to deliver tailored services that meet your unique needs.
+At LearnData, we offer a comprehensive suite of data-driven solutions to help businesses and individuals harness the power of their data. Our expertise in R, Python, and statistical analysis, combined with our proficiency in Shiny web applications, allows us to deliver tailored services that meet your unique needs.
 
 ## Data Analysis and Visualization
 
@@ -44,4 +44,4 @@ At learndata.xyz, we offer a comprehensive suite of data-driven solutions to hel
 -   Best practices implementation for maintainable code
 -   Version control and collaborative development guidance
 
-Whether you're looking to gain insights from your data, build predictive models, or create interactive web applications, our team at learndata.xyz is here to support your data science journey. Contact us today to discuss how we can help you transform your data into actionable intelligence.
+Whether you're looking to gain insights from your data, build predictive models, or create interactive web applications, our team at LearnData is here to support your data science journey. Contact us today to discuss how we can help you transform your data into actionable intelligence.

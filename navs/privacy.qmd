@@ -4,17 +4,17 @@
 
 ## 1. Introduction
 
-Welcome to learndata.xyz. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+Welcome to LearnData. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
 
 ## 2. Important Information and Who We Are
 
 ### Purpose of this privacy policy
 
-This privacy policy aims to give you information on how learndata.xyz collects and processes your personal data through your use of this website, including any data you may provide through this website when you sign up for our newsletter, purchase a product or service, or take part in a survey.
+This privacy policy aims to give you information on how LearnData collects and processes your personal data through your use of this website, including any data you may provide through this website when you sign up for our newsletter, purchase a product or service, or take part in a survey.
 
 ### Controller
 
-learndata.xyz is the controller and responsible for your personal data (collectively referred to as "learndata.xyz", "we", "us" or "our" in this privacy policy).
+LearnData is the controller and responsible for your personal data (collectively referred to as "LearnData", "we", "us" or "our" in this privacy policy).
 
 ## 3. The Data We Collect About You
 
@@ -62,4 +62,4 @@ We may update our privacy policy from time to time. We will notify you of any ch
 
 If you have any questions about this privacy policy or our privacy practices, please contact us at:
 
-*Email: admin\@learndata.xyz*
+*Email: admin@learndata.xyz*

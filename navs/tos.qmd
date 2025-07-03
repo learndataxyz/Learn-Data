@@ -3,7 +3,7 @@
 
 *Last updated: 2nd October, 2024*
 
-Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the https://learndata.xyz website (the "Service") operated by learndata.xyz ("us", "we", or "our").
+Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the https://learndata.xyz website (the "Service") operated by LearnData ("us", "we", or "our").
 
 Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
 
@@ -11,7 +11,7 @@ By accessing or using the Service you agree to be bound by these Terms. If you d
 
 ## 1. Services
 
-learndata.xyz provides data science consulting services, including but not limited to data analysis, statistical modeling, machine learning, and Shiny web application development. The specific services to be provided will be agreed upon in separate contracts or statements of work.
+LearnData provides data science consulting services, including but not limited to data analysis, statistical modeling, machine learning, and Shiny web application development. The specific services to be provided will be agreed upon in separate contracts or statements of work.
 
 ## 2. User Accounts
 
@@ -21,13 +21,13 @@ You are responsible for safeguarding the password that you use to access the Ser
 
 ## 3. Intellectual Property
 
-The Service and its original content, features and functionality are and will remain the exclusive property of learndata.xyz and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of learndata.xyz.
+The Service and its original content, features and functionality are and will remain the exclusive property of LearnData and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of LearnData.
 
 ## 4. Links To Other Web Sites
 
-Our Service may contain links to third-party web sites or services that are not owned or controlled by learndata.xyz.
+Our Service may contain links to third-party web sites or services that are not owned or controlled by LearnData.
 
-learndata.xyz has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that learndata.xyz shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.
+LearnData has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that LearnData shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.
 
 ## 5. Termination
 

@@ -21,7 +21,7 @@ about:
 
 ## Who We Are
 
-learndata.xyz is a cutting-edge data science consulting firm specializing in R and Python programming, statistical analysis, and Shiny web application development. Founded by a team of passionate statisticians and data scientists, we bridge the gap between complex data and actionable insights.
+LearnData is a cutting-edge data science consulting firm specializing in R and Python programming, statistical analysis, and Shiny web application development. Founded by a team of passionate statisticians and data scientists, we bridge the gap between complex data and actionable insights.
 
 ## About Founder
 
@@ -39,7 +39,7 @@ Our mission is to empower businesses and individuals to harness the full potenti
 
 ## Our Expertise
 
-At the heart of learndata.xyz is our deep expertise in:
+At the heart of LearnData is our deep expertise in:
 
 -   **R and Python Programming**: We leverage the power of these leading data science languages to deliver robust, efficient, and scalable solutions.
 
@@ -61,6 +61,6 @@ We believe in a collaborative, client-centered approach. Every project begins wi
 4.  **Education**: We're committed to not just delivering results, but also to empowering our clients with knowledge and skills.
 5.  **Results-Driven**: Our focus is always on delivering actionable insights and measurable outcomes.
 
-At learndata.xyz, we're more than just consultants – we're your partners in navigating the complex world of data. Whether you're looking to optimize your processes, predict market trends, or transform your data into compelling visualizations, we're here to guide you every step of the way.
+At LearnData, we're more than just consultants – we're your partners in navigating the complex world of data. Whether you're looking to optimize your processes, predict market trends, or transform your data into compelling visualizations, we're here to guide you every step of the way.
 
 Ready to unlock the power of your data? Contact us today to start your data-driven journey.

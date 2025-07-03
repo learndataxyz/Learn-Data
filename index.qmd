@@ -1,10 +1,10 @@
 ---
-title: "Welcome to learndata.xyz"
+title: "Welcome to LearnData"
 ---
 
 ## Unlock the Power of Your Data
 
-Are you ready to transform your data into actionable insights? At learndata.xyz, we specialize in turning complex data into clear, powerful solutions.
+Are you ready to transform your data into actionable insights? At LearnData, we specialize in turning complex data into clear, powerful solutions.
 
 ### Our Expertise
 
