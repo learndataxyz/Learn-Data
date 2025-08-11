@@ -1,5 +1,18 @@
 [
   {
+    "listing": "/courses.html",
+    "items": [
+      "/courses/Advanced Data Wrangling with Pandas/index.html",
+      "/courses/Building Interactive Shiny Web Apps with R Programming/index.html",
+      "/courses/Building User Interfaces with R Shiny HTML CSS and JS/index.html",
+      "/courses/Creating Publication Ready Tables with R/index.html",
+      "/courses/Data Wrangling and Exploratory Data Analysis with R/index.html",
+      "/courses/ML Model Deployment with FastAPI and Streamlit/index.html",
+      "/courses/Power BI DAX Practice Test and Solutions/index.html",
+      "/courses/Practical Biostatistics with R/index.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/20 Python Frameworks for Frontend Development Java/index.html",
@@ -19,21 +32,11 @@
       "/posts/Model Deployment in R with Plumber/index.html",
       "/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
       "/posts/Securing ML APIs with FastAPI/index.html",
+      "/posts/Test Driven Development with Python Shiny/index.html",
       "/posts/The Engineer's Guide to Low Code/index.html",
       "/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html",
       "/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html",
       "/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html"
-    ]
-  },
-  {
-    "listing": "/courses.html",
-    "items": [
-      "/courses/Advanced Data Wrangling with Pandas/index.html",
-      "/courses/Building Interactive Shiny Web Apps with R Programming/index.html",
-      "/courses/Data Wrangling and Exploratory Data Analysis with R/index.html",
-      "/courses/ML Model Deployment with FastAPI and Streamlit/index.html",
-      "/courses/Power BI DAX Practice Test and Solutions/index.html",
-      "/courses/Practical Biostatistics with R/index.html"
     ]
   }
 ]

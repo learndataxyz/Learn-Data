@@ -9,159 +9,171 @@
     <lastmod>2025-02-20T11:40:42.158Z</lastmod>
   </url>
   <url>
-    <loc>https://learndata.xyz/posts/Securing ML APIs with FastAPI/index.html</loc>
-    <lastmod>2025-05-12T08:47:15.023Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/Model Deployment in R with Plumber/index.html</loc>
-    <lastmod>2025-05-15T07:49:33.288Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/language_translator/index.html</loc>
-    <lastmod>2024-11-18T08:38:04.819Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html</loc>
-    <lastmod>2024-11-18T08:38:16.807Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/How to Create and Read a Forest Plot in R/index.html</loc>
-    <lastmod>2024-11-20T10:17:00.327Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/Forecasting Time Series Data With Facebook Prophet/index.html</loc>
-    <lastmod>2025-05-28T11:26:28.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
-    <lastmod>2024-11-18T08:39:20.490Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/Adding User Authentication to Python Shiny Applications using JWT/index.html</loc>
-    <lastmod>2025-06-03T13:41:39.867Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/index.html</loc>
-    <lastmod>2025-07-03T07:19:53.698Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/services.html</loc>
-    <lastmod>2025-07-03T07:19:04.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/privacy.html</loc>
-    <lastmod>2025-07-03T07:16:51.056Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/courses.html</loc>
-    <lastmod>2025-05-15T07:00:46.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/contact.html</loc>
-    <lastmod>2024-03-04T21:32:03.283Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/chaos.html</loc>
-    <lastmod>2025-01-30T14:32:44.383Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/index.html</loc>
-    <lastmod>2025-07-03T07:15:19.710Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses/Practical Biostatistics with R/index.html</loc>
-    <lastmod>2025-06-13T10:03:33.939Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses/ML Model Deployment with FastAPI and Streamlit/index.html</loc>
-    <lastmod>2025-06-13T10:47:54.087Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses/Building Interactive Shiny Web Apps with R Programming/index.html</loc>
-    <lastmod>2025-06-18T11:29:34.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2025-06-13T08:08:32.950Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses/Advanced Data Wrangling with Pandas/index.html</loc>
-    <lastmod>2025-06-18T11:29:35.647Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses/Data Wrangling and Exploratory Data Analysis with R/index.html</loc>
-    <lastmod>2025-06-13T09:54:54.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses/Power BI DAX Practice Test and Solutions/index.html</loc>
-    <lastmod>2025-06-13T09:53:22.231Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/courses.html</loc>
-    <lastmod>2025-06-13T08:14:28.898Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/about.html</loc>
-    <lastmod>2025-07-03T07:43:02.279Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/coming_soon.html</loc>
-    <lastmod>2024-10-02T10:35:02.502Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/correlateai.html</loc>
-    <lastmod>2025-03-18T10:29:20.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/home.html</loc>
-    <lastmod>2025-07-03T07:18:24.648Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/learn.html</loc>
-    <lastmod>2025-01-30T14:30:52.119Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/resources.html</loc>
-    <lastmod>2024-03-04T21:32:03.286Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/navs/tos.html</loc>
-    <lastmod>2025-07-03T07:17:40.932Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
-    <lastmod>2024-11-18T08:39:28.750Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/Building Your First ML Model API with FastAPI A Step-by-Step Guide/index.html</loc>
-    <lastmod>2025-05-09T14:28:56.768Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/E2E/index.html</loc>
-    <lastmod>2024-11-18T08:29:03.511Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/How R Helps You Catch Errors Before They Become Headlines/index.html</loc>
-    <lastmod>2025-06-10T11:29:57.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/How to Forecast Your YouTube Channel Views for the Next 30 Days/index.html</loc>
-    <lastmod>2025-04-16T14:01:29.840Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/Introduction to Kaplan-Meier Survival Analysis Estimation with Python/index.html</loc>
-    <lastmod>2025-01-25T10:52:12.169Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/posts/Linear Regression with Python Statsmodels Assumptions and Interpretation/index.html</loc>
-    <lastmod>2024-11-20T13:59:37.074Z</lastmod>
+    <loc>https://learndata.xyz/posts/Test Driven Development with Python Shiny/index.html</loc>
+    <lastmod>2025-08-11T07:27:50.681Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html</loc>
     <lastmod>2024-11-18T08:37:48.246Z</lastmod>
   </url>
   <url>
-    <loc>https://learndata.xyz/posts/The Engineer&amp;#39;s Guide to Low Code/index.html</loc>
+    <loc>https://learndata.xyz/posts/Linear Regression with Python Statsmodels Assumptions and Interpretation/index.html</loc>
+    <lastmod>2024-11-20T13:59:37.074Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Introduction to Kaplan-Meier Survival Analysis Estimation with Python/index.html</loc>
+    <lastmod>2025-01-25T10:52:12.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Forecast Your YouTube Channel Views for the Next 30 Days/index.html</loc>
+    <lastmod>2025-04-16T14:01:29.840Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How R Helps You Catch Errors Before They Become Headlines/index.html</loc>
+    <lastmod>2025-08-11T07:33:33.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/E2E/index.html</loc>
+    <lastmod>2024-11-18T08:29:03.511Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Building Your First ML Model API with FastAPI A Step-by-Step Guide/index.html</loc>
+    <lastmod>2025-05-09T14:28:56.768Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
+    <lastmod>2024-11-18T08:39:28.750Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/tos.html</loc>
+    <lastmod>2025-07-03T07:17:40.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/resources.html</loc>
+    <lastmod>2024-03-04T21:32:03.286Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/learn.html</loc>
+    <lastmod>2025-01-30T14:30:52.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/home.html</loc>
+    <lastmod>2025-07-03T07:18:24.648Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/correlateai.html</loc>
+    <lastmod>2025-03-18T10:29:20.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/coming_soon.html</loc>
+    <lastmod>2024-10-02T10:35:02.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/about.html</loc>
+    <lastmod>2025-07-03T07:43:02.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses.html</loc>
+    <lastmod>2025-06-13T08:14:28.898Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Power BI DAX Practice Test and Solutions/index.html</loc>
+    <lastmod>2025-06-13T09:53:22.231Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Data Wrangling and Exploratory Data Analysis with R/index.html</loc>
+    <lastmod>2025-06-13T09:54:54.652Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Building User Interfaces with R Shiny HTML CSS and JS/index.html</loc>
+    <lastmod>2025-08-11T08:01:20.597Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Advanced Data Wrangling with Pandas/index.html</loc>
+    <lastmod>2025-08-11T08:00:10.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/blog.html</loc>
+    <lastmod>2025-06-13T08:08:32.950Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Building Interactive Shiny Web Apps with R Programming/index.html</loc>
+    <lastmod>2025-06-18T11:29:34.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Creating Publication Ready Tables with R/index.html</loc>
+    <lastmod>2025-08-11T08:00:56.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/ML Model Deployment with FastAPI and Streamlit/index.html</loc>
+    <lastmod>2025-06-13T10:47:54.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses/Practical Biostatistics with R/index.html</loc>
+    <lastmod>2025-06-13T10:03:33.939Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/index.html</loc>
+    <lastmod>2025-07-03T07:15:19.710Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/chaos.html</loc>
+    <lastmod>2025-01-30T14:32:44.383Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/contact.html</loc>
+    <lastmod>2024-03-04T21:32:03.283Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/courses.html</loc>
+    <lastmod>2025-05-15T07:00:46.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/privacy.html</loc>
+    <lastmod>2025-07-03T07:16:51.056Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/services.html</loc>
+    <lastmod>2025-07-03T07:19:04.376Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/index.html</loc>
+    <lastmod>2025-07-03T07:19:53.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Adding User Authentication to Python Shiny Applications using JWT/index.html</loc>
+    <lastmod>2025-06-03T13:41:39.867Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
+    <lastmod>2024-11-18T08:39:20.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Forecasting Time Series Data With Facebook Prophet/index.html</loc>
+    <lastmod>2025-05-28T11:26:28.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Create and Read a Forest Plot in R/index.html</loc>
+    <lastmod>2024-11-20T10:17:00.327Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html</loc>
+    <lastmod>2024-11-18T08:38:16.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/language_translator/index.html</loc>
+    <lastmod>2024-11-18T08:38:04.819Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Model Deployment in R with Plumber/index.html</loc>
+    <lastmod>2025-05-15T07:49:33.288Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Securing ML APIs with FastAPI/index.html</loc>
+    <lastmod>2025-05-12T08:47:15.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/The Engineer&#39;s Guide to Low Code/index.html</loc>
     <lastmod>2025-05-28T11:26:28.385Z</lastmod>
   </url>
   <url>
