@@ -48,13 +48,14 @@ website:
     left:
       #- text: "Home"
         #file: navs/index.qmd
-      #- sidebar:learn
-      #- sidebar:resources
-      #- sidebar:products
       - text: "Blog"
         file: blog.qmd
       - text: "Courses"
         file: courses.qmd
+      #- sidebar:learn
+      #- sidebar:resources
+      #- sidebar:products
+      - sidebar:open_source
       - text: "About"
         file: navs/about.qmd
         
@@ -75,10 +76,16 @@ website:
     - id: products
       title: "Products"
       contents:
-        - navs/chaos.qmd
-        - navs/correlateai.qmd
+        - text: "Chaos"
+          href: "https://chaos.learndata.xyz"  # or whatever your product URL is
+        - text: "CorrelateAI" 
+          href: "https://correlateai.learndata.xyz"
 
-
+    - id: open_source
+      title: "Open Source"
+      contents: 
+        - text: "pdhs"
+          href: "https://learndataxyz.github.io/pdhs/"
 
 format:
   html:

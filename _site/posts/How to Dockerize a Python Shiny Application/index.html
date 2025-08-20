@@ -8,7 +8,7 @@
 
 <meta name="author" content="Adejumo Ridwan Suleiman">
 
-<title>20 Python Frameworks for Frontend Development: JavaScript Alternatives (2025) – LearnData</title>
+<title>How to Dockerize a Python Shiny Application – LearnData</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,15 +132,15 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1227869158734119');
 fbq('track', 'PageView');
 </script>
-<noscript></noscript><meta property="og:title" content="20 Python Frameworks for Frontend Development: JavaScript Alternatives (2025) – LearnData">
+<noscript></noscript><meta property="og:title" content="How to Dockerize a Python Shiny Application – LearnData">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/image.png">
+<meta property="og:image" content="https://learndata.xyz/posts/How to Dockerize a Python Shiny Application/LearnData_Branding.png">
 <meta property="og:site_name" content="LearnData">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="20 Python Frameworks for Frontend Development: JavaScript Alternatives (2025) – LearnData">
+<meta name="twitter:title" content="How to Dockerize a Python Shiny Application – LearnData">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/image.png">
+<meta name="twitter:image" content="https://learndata.xyz/posts/How to Dockerize a Python Shiny Application/LearnData_Branding.png">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
@@ -335,11 +370,12 @@ fbq('track', 'PageView');
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">20 Python Frameworks for Frontend Development: JavaScript Alternatives (2025)</h1>
+      <h1 class="title">How to Dockerize a Python Shiny Application</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">python</div>
-                <div class="quarto-category">data applications</div>
-                <div class="quarto-category">web development</div>
+                <div class="quarto-category">shiny</div>
+                <div class="quarto-category">docker</div>
+                <div class="quarto-category">app development</div>
               </div>
                   </div>
   </div>
@@ -363,34 +399,60 @@ fbq('track', 'PageView');
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<iframe width="540" height="305" src="https://bdf7206c.sibforms.com/serve/MUIFAMUcj5rq_h1jyngwgUye-u72kLn4cmjZM6uFW1Pyx6lgdRrX8a7nDkDjIHJntUNVn9rgE_Xi3yIdi5ptO0cj6jXqRGSew_-avk_0kzCOKeKkUE9rnA_rSoP6BGfp83jRRtdM6cU8TmojCbqvKBRbxTsLNQppJyZzRCmCiODr_E4KnXaQcThM0jJImRcCmBjWaNO3QXK8fezW" frameborder="0" scrolling="auto" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+<div id="mc_embed_shell">
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 200px;}
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+    <form action="https://wordpress.us8.list-manage.com/subscribe/post?u=865b300dc8073a91e930ee99e&amp;id=089032d26f&amp;f_id=00c0cee3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div id="mc_embed_signup_scroll"><h2>Subscribe to our Newsletter</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+        <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display: none;"></div>
+            <div class="response" id="mce-success-response" style="display: none;"></div>
+        </div>
+    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+        <input type="text" name="b_865b300dc8073a91e930ee99e_089032d26f" tabindex="-1" value="">
+    </div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                <p style="margin: 0px auto;"><a href="http://eepurl.com/iM-5G6" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+
 </div></div>
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reflex" id="toc-reflex" class="nav-link active" data-scroll-target="#reflex">Reflex</a></li>
-  <li><a href="#flet" id="toc-flet" class="nav-link" data-scroll-target="#flet">Flet</a></li>
-  <li><a href="#solara" id="toc-solara" class="nav-link" data-scroll-target="#solara">Solara</a></li>
-  <li><a href="#taipy" id="toc-taipy" class="nav-link" data-scroll-target="#taipy">Taipy</a></li>
-  <li><a href="#anvil" id="toc-anvil" class="nav-link" data-scroll-target="#anvil">Anvil</a></li>
-  <li><a href="#trame" id="toc-trame" class="nav-link" data-scroll-target="#trame">Trame</a></li>
-  <li><a href="#gradio" id="toc-gradio" class="nav-link" data-scroll-target="#gradio">Gradio</a></li>
-  <li><a href="#shiny" id="toc-shiny" class="nav-link" data-scroll-target="#shiny">Shiny</a></li>
-  <li><a href="#unicorn" id="toc-unicorn" class="nav-link" data-scroll-target="#unicorn">Unicorn</a></li>
-  <li><a href="#pyscript" id="toc-pyscript" class="nav-link" data-scroll-target="#pyscript">PyScript</a></li>
-  <li><a href="#reactpy" id="toc-reactpy" class="nav-link" data-scroll-target="#reactpy">ReactPy</a></li>
-  <li><a href="#dash" id="toc-dash" class="nav-link" data-scroll-target="#dash">Dash</a></li>
-  <li><a href="#streamlit" id="toc-streamlit" class="nav-link" data-scroll-target="#streamlit">Streamlit</a></li>
-  <li><a href="#panel" id="toc-panel" class="nav-link" data-scroll-target="#panel">Panel</a></li>
-  <li><a href="#nicegui" id="toc-nicegui" class="nav-link" data-scroll-target="#nicegui">NiceGUI</a></li>
-  <li><a href="#pywebio" id="toc-pywebio" class="nav-link" data-scroll-target="#pywebio">PywebIO</a></li>
-  <li><a href="#pyjs" id="toc-pyjs" class="nav-link" data-scroll-target="#pyjs">PyJs</a></li>
-  <li><a href="#mesop" id="toc-mesop" class="nav-link" data-scroll-target="#mesop">Mesop</a></li>
-  <li><a href="#hyperdiv" id="toc-hyperdiv" class="nav-link" data-scroll-target="#hyperdiv">Hyperdiv</a></li>
-  <li><a href="#justpy" id="toc-justpy" class="nav-link" data-scroll-target="#justpy">JustPY</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites"><strong>Prerequisites</strong></a></li>
+  <li><a href="#step-by-step-process" id="toc-step-by-step-process" class="nav-link" data-scroll-target="#step-by-step-process"><strong>Step-by-Step Process</strong></a>
+  <ul class="collapse">
+  <li><a href="#step-1-create-a-dockerfile" id="toc-step-1-create-a-dockerfile" class="nav-link" data-scroll-target="#step-1-create-a-dockerfile"><strong>Step 1 – Create a Dockerfile</strong></a></li>
+  <li><a href="#step-2-build-the-docker-image" id="toc-step-2-build-the-docker-image" class="nav-link" data-scroll-target="#step-2-build-the-docker-image"><strong>Step 2 – Build the Docker Image</strong></a></li>
+  <li><a href="#step-3-run-the-container" id="toc-step-3-run-the-container" class="nav-link" data-scroll-target="#step-3-run-the-container"><strong>Step 3 – Run the Container</strong></a></li>
+  <li><a href="#step-4-push-to-docker-hub" id="toc-step-4-push-to-docker-hub" class="nav-link" data-scroll-target="#step-4-push-to-docker-hub"><strong>Step 4 – Push to Docker Hub</strong></a></li>
+  </ul></li>
+  <li><a href="#notes-when-building-docker-applications" id="toc-notes-when-building-docker-applications" class="nav-link" data-scroll-target="#notes-when-building-docker-applications"><strong>Notes When Building Docker Applications</strong></a>
+  <ul class="collapse">
+  <li><a href="#use-.dockerignore-to-keep-your-build-clean" id="toc-use-.dockerignore-to-keep-your-build-clean" class="nav-link" data-scroll-target="#use-.dockerignore-to-keep-your-build-clean"><strong>Use <code>.dockerignore</code> to keep your build clean</strong></a></li>
+  <li><a href="#use-multi-stage-builds-for-smaller-images" id="toc-use-multi-stage-builds-for-smaller-images" class="nav-link" data-scroll-target="#use-multi-stage-builds-for-smaller-images"><strong>Use multi-stage builds for smaller images</strong></a></li>
+  <li><a href="#ensure-your-app-binds-to-0.0.0.0-inside-docker." id="toc-ensure-your-app-binds-to-0.0.0.0-inside-docker." class="nav-link" data-scroll-target="#ensure-your-app-binds-to-0.0.0.0-inside-docker."><strong>Ensure your app binds to <code>0.0.0.0</code> inside Docker.</strong></a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a>
+  <ul class="collapse">
   <li><a href="#need-help-with-data-lets-make-it-simple." id="toc-need-help-with-data-lets-make-it-simple." class="nav-link" data-scroll-target="#need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></a></li>
+  </ul></li>
   <li><a href="#your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" id="toc-your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" class="nav-link" data-scroll-target="#your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen">Your next breakthrough could be one email away. Let’s make it happen!</a></li>
   </ul>
 </nav>
@@ -403,145 +465,192 @@ fbq('track', 'PageView');
 
 
 
-<p><img src="image.png" class="img-fluid"></p>
-<p>JavaScript has monopolized the field of front web development and has become what one will call the official language of the web. This is because it was built for that purpose.</p>
-<p>But not everyone knows JavaScript. Does this mean that you can’t build a fully functional site? No.</p>
-<p>As someone who started with Python programming, I wanted to build applications that users could interact with and see the visualization I have created. Thanks to these frameworks, I was able to achieve this.</p>
-<p>In this article, you will learn the frameworks to use when you want to build a cool application by writing Python code.</p>
-<p>This article is for Python developers who are not open to the steep learning curve of front-end development.</p>
-<section id="reflex" class="level3">
-<h3 class="anchored" data-anchor-id="reflex">Reflex</h3>
-<p><a href="https://reflex.dev/">Reflex</a>, formerly Pinecone, is an open-source framework with batteries included. This means you can build a full-stack application and deploy it with Reflex.</p>
-<p>The official Reflex documentation was built and deployed with Reflex. It’s easy to learn, and you don’t need web development knowledge to build apps.</p>
-<p>With Reflex inbuilt ORM, you can connect to any SQL database and build components that wrap around React, a popular JavaScript framework.</p>
+<p><img src="LearnData_Branding.png" class="img-fluid" alt="How to Dockerize a Python Shiny Application"></p>
+<p>Have you ever built a Shiny application, only to watch it fail when you try running it in a different environment?</p>
+<p>It’s frustrating, time-consuming, and, unfortunately, quite common. This is precisely the type of problem Docker was created to solve.</p>
+<p>Although the term Docker is not new to you, understanding its potential to streamline Shiny application development and deployment is a game-changer.</p>
+<p>You might wonder, “Why bother with Docker? Shiny applications aren’t that complex.”</p>
+<p>True, they are not the most complicated pieces of software, but that’s not the point. The real question is: how can you make deploying your application smoother, faster, and more reliable, no matter where it runs?</p>
+<p>When you view it from the angle of convenience and consistency, the benefits of Docker become much clearer.</p>
+<p>Docker brings three significant advantages to the table: portability, reproducibility, and simplified deployment. With Docker, you can package your Shiny application along with all its dependencies into a single container.</p>
+<p>This means you can run it on any system without worrying about missing packages, version mismatches, or other environmental issues. You can even switch hosting providers with minimal effort, sidestepping the pain of vendor lock-in.</p>
+<p>To help you get started, I’ve put together this practical and straightforward guide, designed to show you step-by-step how you can package, test, and launch your Shiny application using Docker.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites"><strong>Prerequisites</strong></h2>
+<p>Before proceeding, ensure you have the following ready.</p>
+<ul>
+<li><p><a href="https://www.python.org/downloads/">Python 3.9+</a> installed</p></li>
+<li><p><a href="https://docs.docker.com/desktop/">Docker Desktop</a></p></li>
+<li><p><a href="https://www.w3schools.com/whatis/whatis_cli.asp">Basic command line knowledge</a></p></li>
+<li><p>A sample Shiny project with the following file directory. Where <code>app</code> folder and <code>requirements.txt</code> contain your Shiny application and project dependencies, respectively.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">my_shiny_app/</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> app/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── app.py</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>A sample Shiny application in your <a href="http://app.py"><code>app.py</code></a> file, use the one below if you don’t have one.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny <span class="im">import</span> App, render, ui</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>app_ui <span class="op">=</span> ui.page_fluid(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    ui.h2(<span class="st">"Hello Shiny!"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ui.input_text(<span class="st">"name"</span>, <span class="st">"Enter your name:"</span>, value<span class="op">=</span><span class="st">"World"</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    ui.input_slider(<span class="st">"n"</span>, <span class="st">"Number of greetings:"</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">1</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">10</span>, value<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    ui.output_text(<span class="st">"greeting"</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> server(<span class="bu">input</span>, output, session):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">@render.text</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> greeting():</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Hello </span><span class="sc">{</span><span class="bu">input</span><span class="sc">.</span>name()<span class="sc">}</span><span class="ss">! "</span> <span class="op">*</span> <span class="bu">input</span>.n()</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> App(app_ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
 </section>
-<section id="flet" class="level3">
-<h3 class="anchored" data-anchor-id="flet">Flet</h3>
-<p>Have you heard of Flutter? It’s a popular framework developed by Google. <a href="https://flet.dev/">Flet</a> is based on Flutter. It allows you to build interactive web, desktop, and mobile applications using Python programming.</p>
-<p>Fleet flexibility allows you to add animations and authorization and build cross-platform applications.</p>
-<p>Flet supports routing, and with Flet controls, you can build basic to complex user interfaces.</p>
-<p>It’s easy to learn and start, like its parent framework, Flutter.</p>
-<p>Check out the <a href="https://flet.dev/gallery">Flet gallery</a> and see the awesome applications built with Flet.</p>
+<section id="step-by-step-process" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-process"><strong>Step-by-Step Process</strong></h2>
+<section id="step-1-create-a-dockerfile" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-create-a-dockerfile"><strong>Step 1 – Create a Dockerfile</strong></h3>
+<p>To containerize your application, you need to create a Dockerfile. This Dockerfile is what you will use to create an image.</p>
+<p>Take your Dockerfile as the blueprint for a building, while the final product, which is the Docker Image, is the completed building.</p>
+<p>Docker uses your Dockerfile as a step-by-step process in building your Shiny application Image.</p>
+<p>In your project directory, create a new file <code>Dockerfile</code> .Then, copy and paste the code below.</p>
+<pre class="docker"><code>FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["shiny", "run", "--host", "0.0.0.0", "--port", "8000", "app.py"]</code></pre>
+<p>Let’s break down the code above.</p>
+<ul>
+<li><code>FROM python:3.11-slim</code> instructs Docker to use a Python base image with version 3.11. The<code>-slim</code> tag tells Docker to use a lightweight Python version.</li>
+<li><code>WORKDIR /app</code> sets the working directory inside the container to <code>/app</code>.</li>
+<li><code>COPY requirements.txt .</code> copies the <code>requirements.txt</code> into the current directory within the container.</li>
+<li><code>RUN pip install --no-cache-dir -r requirements.txt</code> installs all Python dependencies into the container. The <code>-- no-cache-dir</code> avoids storing pip’s cache inside the image to reduce the image size.</li>
+<li><code>COPY . .</code> Copies the entire local project directory into the <code>/app</code> directory in the container.</li>
+<li><code>CMD ["shiny", "run", "--host", "0.0.0.0", "--port", "8000", "[app.py](http://app.py/)"]</code> sets the default command to run when the container starts on the host <code>0.0.0.0</code> and port <code>8000</code>.</li>
+</ul>
 </section>
-<section id="solara" class="level3">
-<h3 class="anchored" data-anchor-id="solara">Solara</h3>
-<p>Unlike Reflex, <a href="https://solara.dev/">Solara</a> is a library that allows you to build UI components for your application. You can have an application with a FastAPI, Django, or Flask backend and build the user interface with Solara.</p>
-<p>Another interesting feature of Solara is the ability to use it inside the Jupyter Notebook. Solara can handle state management, routing, and building simple to complex UI components and hooks without leaving your comfort zone — <em>Python</em>.</p>
-<p>However, Solara is a suitable choice if you are focused on building data applications.</p>
+<section id="step-2-build-the-docker-image" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-build-the-docker-image"><strong>Step 2 – Build the Docker Image</strong></h3>
+<p>Use the command below to build the Docker Image.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> shiny-python-app .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" alt="How to Dockerize a Python Shiny Application"></p>
+<figcaption>Build your Dockerfile. Image by Author.</figcaption>
+</figure>
+</div>
+<p>If the build was successful, you should see a message similar to the following.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 1.png" class="img-fluid figure-img" alt="How to Dockerize a Python Shiny Application"></p>
+<figcaption>Run the Docker Image. Image by Author.</figcaption>
+</figure>
+</div>
 </section>
-<section id="taipy" class="level3">
-<h3 class="anchored" data-anchor-id="taipy">Taipy</h3>
-<p>Does CSS scare you? <a href="https://www.taipy.io/">Taipy</a> allows you to build production-ready applications using Python without knowledge of web development. You can use Taipy either as Python Scripts or within Jupyter Notebooks.</p>
-<p>Frontend, Backend, and Deployment are all at your fingertips. Imagine you want to build a web app with user authentication, session, and caching, and all you need is just.</p>
-<pre><code>$ pip install taipy</code></pre>
+<section id="step-3-run-the-container" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-run-the-container"><strong>Step 3 – Run the Container</strong></h3>
+<p>A Container is an instance of an Image; this implies that an Image can spawn many containers.</p>
+<p>Run the command below to run the container.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-p</span> 8000:8000 shiny-python-app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will see your application available at <code>http://localhost:8000</code></p>
+<p><img src="image 2.png" class="img-fluid" alt="How to Dockerize a Python Shiny Application"></p>
 </section>
-<section id="anvil" class="level3">
-<h3 class="anchored" data-anchor-id="anvil">Anvil</h3>
-<p>Try <a href="https://anvil.works/library">Anvil</a> if you are more logical and find building user interfaces daunting.</p>
-<p>Anvil allows you to build your application UI using a drag-and-drop designer, allowing you to handle the client and server-side interactivity with Python code.</p>
-<p>You don’t need to worry about HTML or CSS; Anvil handles everything. It also has a built-in database on top of PostgreSQL to store your application information.</p>
-<p>That’s not all. Anvil also supports hosting and deployment, version control with git, email sending and receiving, API consumption, and integration with third-party applications.</p>
-<p>Congrats, you just got yourself a full-stack framework!</p>
+<section id="step-4-push-to-docker-hub" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-push-to-docker-hub"><strong>Step 4 – Push to Docker Hub</strong></h3>
+<p>First of all, you have to log in to Docker Hub if you are not logged in, run the command below.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 3.png" class="img-fluid figure-img" alt="How to Dockerize a Python Shiny Application"></p>
+<figcaption>Login to Docker. Image by Author.</figcaption>
+</figure>
+</div>
+<p>If you want to push an Image to Docker Hub, you need to specify your username and the Image tag using the following format during builds; <code>&lt;your-user-name&gt;/&lt;your-app-name&gt;:&lt;tag&gt;</code>.</p>
+<p>The tag is a label you give to various versions of your Image.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> adejumoridwan/shiny-python-app:latest .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, push the Image to Docker Hub.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> push adejumoridwan/shiny-python-app:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Go to the My Hub tab on your Docker Hub dashboard, and you should see your published Image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 4.png" class="img-fluid figure-img" alt="How to Dockerize a Python Shiny Application"></p>
+<figcaption>Go to Docker Hub. Image by Author.</figcaption>
+</figure>
+</div>
 </section>
-<section id="trame" class="level3">
-<h3 class="anchored" data-anchor-id="trame">Trame</h3>
-<p>I suggest Trame as a go-to option if you need to create a dashboard heavily based on data.</p>
-<p>It allows you to focus on your analysis while abstracting the complications of web development.</p>
-<p>Trame is built on <a href="https://vuetifyjs.com/en/">Vuetify</a>, a UI component framework built on Vue.</p>
 </section>
-<section id="gradio" class="level3">
-<h3 class="anchored" data-anchor-id="gradio">Gradio</h3>
-<p>If you are a machine learning engineer who wants to demo your model, <a href="https://www.gradio.app/">Gradio</a> is your best bet. You can build a working application without design skills and interact with your model in real time.</p>
-<p>Not everyone is technical or will understand your model metrics, but with Gradio, they can see the beautiful stuff you have built for humanity.</p>
+<section id="notes-when-building-docker-applications" class="level2">
+<h2 class="anchored" data-anchor-id="notes-when-building-docker-applications"><strong>Notes When Building Docker Applications</strong></h2>
+<p>There are some points you need to take note of when building your application:</p>
+<section id="use-.dockerignore-to-keep-your-build-clean" class="level3">
+<h3 class="anchored" data-anchor-id="use-.dockerignore-to-keep-your-build-clean"><strong>Use <code>.dockerignore</code> to keep your build clean</strong></h3>
+<p>A <code>.dockerignore</code> is just like <code>.gitignore</code>. It instructs Docker not to copy the specified files into the image.</p>
+<p>This is important because when you run <code>docker build .</code>, it will copy all files in your entire directory unless you explicitly exclude them.</p>
+<p>For your Shiny application, you would want to exclude things like; <code>__pycache__/</code>, <code>.pytest_cache/</code>, <code>.git</code> , <code>venv/</code> and so on.</p>
+<p>Most of the above files are usually huge and can increase the size of your image.</p>
+<p>Here is an example of a <code>.dockerignore</code> file.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">__pycache__/</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*.pyc</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">*.pyo</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">*.pyd</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">*.log</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">*.db</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.env</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.git</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="ex">.gitignore</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Dockerfile</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose.yml</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="shiny" class="level3">
-<h3 class="anchored" data-anchor-id="shiny">Shiny</h3>
-<p>This is my favorite because R programming was the first programming language I ever took seriously, even though I learned FORTRAN as an undergrad and BASIC during my secondary school days.</p>
-<p>I am talking of R because <a href="https://shiny.posit.co/py/">Shiny</a> was initially built in R, and the Shiny framework for Python was also recently developed.</p>
-<p>Shiny focuses on the principle of reactivity by structuring the user interface and interactivity separately and allowing dynamic changes in the user interface either by the client or on the server side.</p>
-<p>Shiny also supports routing and is a suitable choice for building data applications.</p>
+<section id="use-multi-stage-builds-for-smaller-images" class="level3">
+<h3 class="anchored" data-anchor-id="use-multi-stage-builds-for-smaller-images"><strong>Use multi-stage builds for smaller images</strong></h3>
+<p>In multi-stage builds, you separate your build environment from the runtime environment.</p>
+<p>In your Shiny applications, you can:</p>
+<ol type="1">
+<li>Install dependencies, compile wheels, or build your frontend assets if you have them.</li>
+<li>Copy only the necessary runtime files (app code + installed dependencies) into a slimmer base image like <code>python:3.11-slim</code>.</li>
+</ol>
+<p>Here is an example of a multi-stage build, where the runtime Python environment is a lightweight version of the build Python environment.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stage 1: Build environment</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> python:3.11 AS builder</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">WORKDIR</span> /app</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">COPY</span> requirements.txt .</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> pip install <span class="at">--user</span> <span class="at">-r</span> requirements.txt</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Stage 2: Final runtime</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> python:3.11-slim</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ex">WORKDIR</span> /app</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy dependencies from builder</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ex">COPY</span> <span class="at">--from</span><span class="op">=</span>builder /root/.local /root/.local</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Update PATH for installed packages</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="ex">ENV</span> PATH=/root/.local/bin:<span class="va">$PATH</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy only necessary app files</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="ex">COPY</span> app.py .</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Run shiny app</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="ex">CMD</span> [<span class="st">"shiny"</span>, <span class="st">"run"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>, <span class="st">"app.py"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="unicorn" class="level3">
-<h3 class="anchored" data-anchor-id="unicorn">Unicorn</h3>
-<p>If you are a Django developer, your application has various ways of handling interactivity.</p>
-<p>Some of these methods require leaving your comfort zone and learning one JavaScript framework or another.</p>
-<p>With <a href="https://www.django-unicorn.com/">Unicorn</a>, you can add interactions to your template and dynamically update your HTML DOM, all behind the scenes.</p>
-<p>You don’t need to call your backend API endpoints in applications like React, Angular, or Vue.</p>
+<section id="ensure-your-app-binds-to-0.0.0.0-inside-docker." class="level3">
+<h3 class="anchored" data-anchor-id="ensure-your-app-binds-to-0.0.0.0-inside-docker."><strong>Ensure your app binds to <code>0.0.0.0</code> inside Docker.</strong></h3>
+<p>By default, your Shiny application binds to <code>127.0.0.1</code> which is your localhost, but inside Docker, <code>127.0.0.1</code> means the content is only accessible inside the container, which implies your host machine won’t be able to reach it.</p>
+<p>To make your application accessible outside your container, bind it to all interfaces, using the command below.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">shiny</span> run <span class="at">--host</span> 0.0.0.0 <span class="at">--port</span> 8000 app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="pyscript" class="level3">
-<h3 class="anchored" data-anchor-id="pyscript">PyScript</h3>
-<p><a href="https://pyscript.net/">PyScript</a> is a framework that allows you to build web apps directly in your browser. Like JavaScript, it manipulates your DOM and can run many popular Python packages.</p>
-<p>With PyScript, you can create various UI components, such as buttons. It also integrates well with popular Python libraries like Pandas and Numpy.</p>
 </section>
-<section id="reactpy" class="level3">
-<h3 class="anchored" data-anchor-id="reactpy">ReactPy</h3>
-<p>I find it difficult for you to say you haven’t heard of React. It is so popular that some people think it’s a programming language — <em>Just kidding</em>.</p>
-<p><a href="https://reactpy.dev/docs/index.html">ReactPy</a> is a Python library that allows you to build user interfaces without having any knowledge of JavaScript while enjoying the benefits of React.</p>
-<p>With this library, you wield the same power as React developers, who think they are the best thing to have happened since <em>Slice Bread</em>.</p>
-</section>
-<section id="dash" class="level3">
-<h3 class="anchored" data-anchor-id="dash">Dash</h3>
-<p>This framework is for you if you want to build data apps, especially on an enterprise level.</p>
-<p><a href="https://dash.plotly.com/">Dash</a> integrates well with the graphing library Plotly and other Python data analytics libraries such as Pandas, Scikit-Learn, and Numpy.</p>
-<p>Dash allows you to build dashboards with interactive visualizations.</p>
-</section>
-<section id="streamlit" class="level3">
-<h3 class="anchored" data-anchor-id="streamlit">Streamlit</h3>
-<p>Another Python open-source framework for building data applications is <a href="https://streamlit.io/">Streamlit</a>. With zero or little knowledge of web development, you can get a full-stack website up and running.</p>
-<p>Streamlit has a very active community with <a href="https://streamlit.io/components">third-party modules</a> that can give your application superpowers. If you want to learn Streamlit, check out my <a href="https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0">course,</a> which covers some of the essentials to get you started. You can even check out a <a href="https://quick-stats.onrender.com/About">web app</a> I built with Streamlit.</p>
-</section>
-<section id="panel" class="level3">
-<h3 class="anchored" data-anchor-id="panel">Panel</h3>
-<p><a href="https://panel.holoviz.org/">Panel</a>, one of the libraries developed by <a href="https://holoviz.org/">HoloViz</a>, allows data professionals to develop dashboards and complex web applications within the Python ecosystem.</p>
-<p>Panel also allows you to build multipage applications, collaborate, and share your application with others. This library is for data professionals who frequently use Python.</p>
-</section>
-<section id="nicegui" class="level3">
-<h3 class="anchored" data-anchor-id="nicegui">NiceGUI</h3>
-<p>Built on <a href="https://fastapi.tiangolo.com/">FastAPI</a>, with simplicity just like Streamlit, This Python library can be used to build web or GUI applications. <a href="https://nicegui.io/">NiceGUI</a> offers great performance and ease of use.</p>
-<p>NiceGUI is great, especially if you are into robotics projects and smart home solutions. Their documentation is simple and easy to use, so check it out if you want to get started.</p>
-</section>
-<section id="pywebio" class="level3">
-<h3 class="anchored" data-anchor-id="pywebio">PywebIO</h3>
-<p>If you want to build an MVP or have just started learning Python, PyWebIO is your best bet.</p>
-<p><a href="https://www.pyweb.io/">PyWebIO</a> is a simple library that makes it easy to build a full-stack web application that can interact with databases and build AI applications.</p>
-<p>It’s a low-code tool, and anyone familiar with basic Python can use it.</p>
-</section>
-<section id="pyjs" class="level3">
-<h3 class="anchored" data-anchor-id="pyjs">PyJs</h3>
-<p><a href="http://pyjs.org/">PyJs</a> is another Python library that can be used to build desktop or web applications.</p>
-<p>It uses a Python-to-JavaScript compiler to compile Python to JavaScript and MSHTML for Windows applications.</p>
-<p>Its AJAX library covers various types, allowing it to focus on application development.</p>
-</section>
-<section id="mesop" class="level3">
-<h3 class="anchored" data-anchor-id="mesop">Mesop</h3>
-<p>Used at Google, <a href="https://google.github.io/mesop/">Mesop</a> is another Python library for rapid application development.</p>
-<p>No frontend knowledge, No HTML, JavaScript, or CSS. Just plain Python code to build a user interface of your choice.</p>
-<p>You can use existing UI components on Mesop docs to build faster.</p>
-<p>Mesop allows you to run small applications on Google Cloud for free.</p>
-</section>
-<section id="hyperdiv" class="level3">
-<h3 class="anchored" data-anchor-id="hyperdiv">Hyperdiv</h3>
-<p>If you want to build AI applications, you should try out <a href="https://hyperdiv.io/">Hyperdiv</a>.</p>
-<p>With your existing knowledge, you can build AI web applications rapidly.</p>
-<p>It is easy to deploy and provides many tutorial articles to learn.</p>
-</section>
-<section id="justpy" class="level3">
-<h3 class="anchored" data-anchor-id="justpy">JustPY</h3>
-<p><a href="https://justpy.io/">JustPy</a> is another Python web framework that creates web applications and GUIs with a few lines of code. You don’t need to know front-end development.</p>
-<p>JustPy creates and combines components to form larger components or a web application. It integrates nicely with popular Python visualization libraries like matplotlib, plotly, and Highcharts.</p>
-<p>JustPy handles both the front and back end, removing the need to decouple your web application. It uses Vue at the front and <a href="https://www.starlette.io/">Starlette</a> and <a href="https://www.uvicorn.org/">Uvicorn</a> at the back.</p>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<p>Does this mean we don’t need JavaScript? No!</p>
-<p>JavaScript remains the king of the web, but sometimes, if you plan on building a simple user interface, these frameworks are your best bet.</p>
-<p>Without web development experience, these libraries will save you a lot of stress.</p>
-<p>Please let me know if you have any libraries not included on the list, and I will gladly add them.</p>
-</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
+<p>Although setting up Docker to deploy your applications may seem daunting, the effort is worth it in the long run.</p>
+<p>Especially if your application grows and you are collaborating with others, Docker makes it easy to share the same environment without the fear of the application breaking from a collaborator’s end.</p>
+<p>You can extend your learning by reading more on <a href="https://www.datacamp.com/tutorial/docker-compose-guide">Docker Compose</a>, a tool designed to run multiple Docker containers on a single host. This is particularly useful if your application interacts with various services, such as backends, databases, and others.</p>
+<p>You can also read more on <a href="https://learndata.xyz/posts/cicd%20with%20python%20shiny%20and%20github%20actions/">CI/CD integration with Shiny</a> to avoid manually deploying your application every time you make changes.</p>
 <section id="need-help-with-data-lets-make-it-simple." class="level3">
 <h3 class="anchored" data-anchor-id="need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></h3>
 <p><em>At <strong>LearnData.xyz</strong>, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.</em></p>
 <p><em>📧 Shoot us an email at <strong>admin@learndata.xyz</strong>—let’s chat about how we can help you make smarter decisions with your data.</em></p>
+</section>
 </section>
 <section id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" class="level2">
 <h2 class="anchored" data-anchor-id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen">Your next breakthrough could be one email away. Let’s make it happen!</h2>
