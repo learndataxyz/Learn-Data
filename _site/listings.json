@@ -26,6 +26,7 @@
       "/posts/How to Create and Read a Forest Plot in R/index.html",
       "/posts/How to Dockerize a Python Shiny Application/index.html",
       "/posts/How to Forecast Your YouTube Channel Views for the Next 30 Days/index.html",
+      "/posts/How to Plot a Time Series Plot with Python Plotnine/index.html",
       "/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html",
       "/posts/Introduction to Kaplan-Meier Survival Analysis Estimation with Python/index.html",
       "/posts/language_translator/index.html",
@@ -39,5 +40,13 @@
       "/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html",
       "/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html"
     ]
+  },
+  {
+    "listing": "/posts/How to Plot a Time Series Plot with Python Plotnine/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/Power BI Countif/index.html",
+    "items": []
   }
 ]

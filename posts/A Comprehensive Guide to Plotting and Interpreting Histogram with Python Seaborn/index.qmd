@@ -6,7 +6,7 @@ image: "LearnData Branding(2).png"
 draft: false
 ---
 
-![](LearnData Branding(2).png){fig-alt="seaborn histogram"}
+![](LearnData%20Branding(2).png){fig-alt="seaborn histogram"}
 
 Working with numerical data helps us understand the distribution of values in a numerical variable. This gives us a sense of the frequently occurring values and how these values vary from each other. It also highlights the presence of extreme values in a variable, if any.
 
@@ -17,7 +17,6 @@ In this article, you will learn how to plot a histogram using [Seaborn](https://
 A histogram is used to plot numeric data. It splits a numeric variable into various equal ranges known as bins and plots the total number of observations that fall under each bin as bars. These bars are adjacent to each other, with no space between them. This differs from a bar plot that plots the frequency of categorical data, with space between the bars.
 
 ![Difference between histogram and bar chart. Source: [Syncfusion](https://www.syncfusion.com/blogs/post/difference-between-bar-graph-and-histogram-chart)](Bar-chart-versus-histogram-chart-elements-representation.png){fig-alt="an image showing the difference between a histogram and a bar plot"}
-
 
 ## Building a Histogram with Seaborn
 
@@ -37,7 +36,6 @@ tips.head()
 ```
 
 ![Preview of the `tips` dataset. Image by Author.](image.png){fig-alt="image showing a preview of the tips dataset"}
-
 
 We will use the histogram to answer questions from our dataset regarding the `tip` variable, such as:
 
@@ -71,7 +69,6 @@ plt.show()
 
 ![A simple histogram that shows the distribution of tips given to the waiter. Image by Author.](image%201.png){fig-alt="image of a simple seaborn histogram plot"}
 
-
 ## Enhancing the histogram
 
 You can improve the histogram by providing some of the arguments explained in the previous section.
@@ -98,7 +95,6 @@ sns.histplot(data=tips, x='tip', binwidth=0.1)
 
 ![Adjust the bin size or bandwidth to spread or thin the distribution. Image by Author.](image%202.png){fig-alt="image of a seaborn histogram with an adjusted number of bins or binwidth."}
 
-
 ### Changing the bin color
 
 To set the bin's color, add a value to the `color` argument. Let’s give the histogram the color `green`.
@@ -114,7 +110,6 @@ plt.show()
 
 ![Add a color to the histogram. Image by Author.](image%203.png){fig-alt="image of a seaborn histogram with a green color"}
 
-
 ### Add a Kernel Density Estimation (KDE)
 
 To ease interpretation, we can set the `kde` argument to `True`. This will apply a [kernel density estimation](https://en.wikipedia.org/wiki/Kernel_density_estimation) that smooths the histogram points, revealing the shape of the distribution.
@@ -129,7 +124,6 @@ plt.show()
 ```
 
 ![Set `kde` to `true`. Image by Author](image%204.png){fig-alt="image of a seaborn histogram with the kde set to true"}
-
 
 ### Add grouping variables
 
@@ -150,23 +144,19 @@ plt.show()
 
 ![Add a group variable to the histogram. Image by Author.](image%205.png){fig-alt="image showing the seaborn histogram grouped by sex"}
 
-
 ## Interpreting Histograms
 
 Interpreting a histogram is not difficult, especially once you use the kernel density estimation on the plot. The highest bars are the frequently occurring values and the highest points on the kernel density plot are the highest bars. We can deduce from our histogram that the most frequent amount of tips received by the waiter ranges from \$2 to \$3.
 
 ![Identifying frequently occurring values through the plot peak. Image by Author.](image%206.png){fig-alt="image showing frequently occuring values in the seaborn histogram"}
 
-
 The tail of the kernel density plot indicates extreme values. The longer the tail, the more extreme values present in the data are. This tail is referred to as a [skew](https://en.wikipedia.org/wiki/Skewness). A long tail to the left means the distribution is left-skewed. A long tail to the right means the histogram distribution is right-skewed, just like in the case of our plot. This means the waiter received tips above \$6 from a few customers.
 
 ![Identifying the skewness of the histogram plot. Image by Author.](image%207.png){fig-alt="image showing the skewness of the seaborn histogram"}
 
-
 The difference between the two kernel density plots also tells us that male customers give higher tips to the waiter than female customers, though the number of male customers is greater than that of female customers. The minimum tip the waiter receives is \$1, while the highest is \$10.
 
 ![Difference between the two KDE plots. Image by Author.](image%208.png){fig-alt="image showing the difference between the two KDE plots in the seaborn histogram"}
-
 
 ## Best Practices when Creating Histograms
 
@@ -201,7 +191,6 @@ In this article, you have learned about histograms and how to build and interpre
 *📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
 
 ## Your next breakthrough could be one email away. Let’s make it happen!
-
 
 ### **Need Help with Data? Let’s Make It Simple.**
 

@@ -1,5 +1,5 @@
 ---
-title: "How R Helps You Catch Errors Before They Become Headlines" 
+title: "How R Helps You Catch Errors Before They Become Headlines"
 author: Adejumo Ridwan Suleiman 
 categories: [R, data cleaning] 
 image: "LearnData_Branding_(2).png" 

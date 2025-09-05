@@ -1,7 +1,46 @@
 ---
 title: "Blog"
 listing:
-  contents: posts
+  contents:
+    - posts
+    - path: https://www.datacamp.com/tutorial/dotfiles
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/10.png"
+      title: "Learn how to create, customize, and interpret Gantt charts in Power BI to track project timelines and tasks. Follow our detailed instructions and look at real examples."
+      description: "Learn to manage dotfiles for a consistent configuration across systems and for an improved workflow. Ensure compatibility with Unix-based systems."
+      categories: [terminal, productivity]
+    - path: https://www.datacamp.com/tutorial/power-bi-gantt-chart
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/11.png"
+      title: "Power BI Gantt Chart: A Complete How-To"
+      description: "Learn how to create, customize, and interpret Gantt charts in Power BI to track project timelines and tasks. Follow our detailed instructions and look at real examples."
+      categories: [power bi, data visualization, data analysis, data storytelling]
+    - path: https://www.datacamp.com/tutorial/github-codespaces
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/12.png"
+      title: "Introduction to GitHub Codespaces"
+      description: "Discover GitHub Codespaces, the development environment that allows you to write, run, and deploy your code anywhere."
+      categories: [version control, github, productivity]
+    - path: https://www.datacamp.com/blog/serverless-computing
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/13.png"
+      title: "What is Serverless Computing?"
+      description: "Learn about serverless computing, a cloud model where cloud providers manage infrastructure and allow software developers to ship applications quickly."
+      categories: [devops, mlops, cloud computings]    
+    - path: https://www.datacamp.com/blog/kafka-certifications
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/15.png"
+      title: "The Kafka Certification Guide for Data Professionals"
+      description: "Learn how to advance your career with the Confluent Certified Developer (CCDAK) and Administrator (CCAAK) certifications, gaining the expertise and recognition needed to excel in data streaming and management."
+      categories: [certification, kafka] 
+    - path: https://www.datacamp.com/de/tutorial/pandas-iterate-over-rows
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/4.png"
+      title: "Pandas Iterate Over Rows: Handle Row-by-Row Operations"
+      description: "Learn the various methods of iterating over rows in Pandas DataFrame, exploring best practices, performance considerations, and everyday use cases."
+      categories: [python, pandas, data analysis, data wrangling] 
+      
+      
   sort: "date desc"
   type: grid
   categories: true

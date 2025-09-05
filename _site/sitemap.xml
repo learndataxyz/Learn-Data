@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/How R Helps You Catch Errors Before They Become Headlines/index.html</loc>
-    <lastmod>2025-08-11T07:33:33.282Z</lastmod>
+    <lastmod>2025-08-21T07:47:08.675Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/E2E/index.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
-    <lastmod>2024-11-18T08:39:28.750Z</lastmod>
+    <lastmod>2025-08-21T07:46:49.729Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/navs/tos.html</loc>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/courses/Building User Interfaces with R Shiny HTML CSS and JS/index.html</loc>
-    <lastmod>2025-08-11T08:01:20.597Z</lastmod>
+    <lastmod>2025-08-21T07:47:21.246Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/courses/Advanced Data Wrangling with Pandas/index.html</loc>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/blog.html</loc>
-    <lastmod>2025-06-13T08:08:32.950Z</lastmod>
+    <lastmod>2025-09-05T18:27:43.543Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/courses/Building Interactive Shiny Web Apps with R Programming/index.html</loc>
@@ -183,5 +183,13 @@
   <url>
     <loc>https://learndata.xyz/posts/How to Dockerize a Python Shiny Application/index.html</loc>
     <lastmod>2025-08-20T07:45:33.295Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Plot a Time Series Plot with Python Plotnine/index.html</loc>
+    <lastmod>2025-09-05T18:01:18.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Power BI Countif/index.html</loc>
+    <lastmod>2025-09-05T17:57:02.156Z</lastmod>
   </url>
 </urlset>
