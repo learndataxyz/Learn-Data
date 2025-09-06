@@ -69,6 +69,24 @@ listing:
       title: "Python Dependency Injection: Build Modular and Testable Code"
       description: "Learn how to make your code modular, testable, and maintainable by understanding and implementing various Python dependency injection frameworks."
       categories: [python, api, testing] 
+    - path: https://www.freecodecamp.org/news/extract-youtube-analytics-data-and-analyze-in-python/
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/18.png"
+      title: "How to Extract YouTube Analytics Data and Analyze in Python"
+      description: "Learn how to extract and analyze your YouTube data in Python."
+      categories: [python, data analysis, youtube analytics, pandas] 
+    - path: https://www.freecodecamp.org/news/how-to-create-a-deepseek-r1-api-in-r-with-plumber/
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/16.png"
+      title: "How to Create a DeepSeek R1 API in R with Plumber"
+      description: "Learn how to use create your own AI chatbot in R using DeepSeek R1 API."
+      categories: [R, plumber, deepseek, ai]
+    - path: https://www.freecodecamp.org/news/how-to-build-a-whatsapp-dictionary-chatbot-using-twilio-fast-api-and-mongodb/
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/17.png"
+      title: "How to Build a WhatsApp Dictionary Chatbot using Twilio, FastAPI, and MongoDB"
+      description: "Learn how to use create a whatsapp dictionary chatbot using Twilio, FastAPI, and MongoDB."
+      categories: [api development, fastapi]
       
       
   sort: "date desc"
