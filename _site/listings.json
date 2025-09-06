@@ -1,16 +1,7 @@
 [
   {
     "listing": "/courses.html",
-    "items": [
-      "/courses/Advanced Data Wrangling with Pandas/index.html",
-      "/courses/Building Interactive Shiny Web Apps with R Programming/index.html",
-      "/courses/Building User Interfaces with R Shiny HTML CSS and JS/index.html",
-      "/courses/Creating Publication Ready Tables with R/index.html",
-      "/courses/Data Wrangling and Exploratory Data Analysis with R/index.html",
-      "/courses/ML Model Deployment with FastAPI and Streamlit/index.html",
-      "/courses/Power BI DAX Practice Test and Solutions/index.html",
-      "/courses/Practical Biostatistics with R/index.html"
-    ]
+    "items": []
   },
   {
     "listing": "/blog.html",

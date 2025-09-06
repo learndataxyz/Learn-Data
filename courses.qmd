@@ -1,7 +1,57 @@
 ---
 title: "Courses"
 listing:
-  contents: courses
+  contents: 
+    - path: https://www.udemy.com/course/power-bi-dax-practice-test-and-solutions/?referralCode=ADCE2EFFBB1C7548B824
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/dax.png"
+      title: "Power BI DAX Practice Test and Solutions"
+      description: "This is a comprehensive practice test for Power BI DAX, designed to help you assess and improve your skills in data analysis and modeling using DAX functions. The test includes a variety of questions covering key concepts and techniques in Power BI DAX, along with detailed solutions to help you understand the correct answers."
+      categories: [power bi, dax, data visualization, data storytelling, data analysis]
+    - path: https://www.udemy.com/course/building-user-interfaces-with-r-shiny-html-js-and-css/?referralCode=6A61833497008D5A53AF
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/shiny_css.png"
+      title: "Building User Interfaces with HTML, CSS and JS"
+      description: "This course walks you through on how to use web development technologies such as JS, CSS and HTML to build Shiny applications."
+      categories: [R, Shiny, app development]
+    - path: https://www.udemy.com/course/practical-data-analysis-with-r-programming/?referralCode=51DF29BB00C08C188480
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/wrangle_data_with_r.png"
+      title: "Data Wrangling and Exploratory Data Analysis with R"
+      description: "This course walks you through cleaning and exploring data using various libraries in R such as dplyr, tidyr, and so on."
+      categories: [R, data visualization, data storytelling]
+    - path: https://www.udemy.com/course/creating-publication-ready-tables-in-r/?referralCode=1981766BDF5C9F1A5B4D
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/pub_tables.png"
+      title: "Creating Publication Ready Tables with R"
+      description: "This course walks you through on how you can create various complex tables, and beautify your tables using various libraries in R."
+      categories: [R, data visualization, data storytelling]
+    - path: https://www.udemy.com/course/ml-model-deployment-with-fastapi-and-streamlit/?referralCode=F5A92CE034F17099C9F0
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/streamlit_with_fastapi.png"
+      title: "ML Model Deployment with FastAPI and Streamlit."
+      description: "This course walks you through building and deploying real ML applications using the tools you already know: Python, FastAPI, and Streamlit. So, you can stop waiting for engineers and start deploying your solutions."
+      categories: [python, mlops, machine learning, data science, app development]
+    - path: https://www.udemy.com/course/practical-biostatistics-with-r/?referralCode=62235AEEDF809F66FEFA
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/biostats_with_r.png"
+      title: "Practical Biostatistics with R"
+      description: "This course walks you through the applications of biostatistics using the R software."
+      categories: [statistics, R, data analysis]
+    - path: https://www.udemy.com/course/practical-biostatistics-with-r/?referralCode=62235AEEDF809F66FEFA
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/biostats_with_r.png"
+      title: "Practical Biostatistics with R"
+      description: "This course walks you through the applications of biostatistics using the R software."
+      categories: [statistics, R, data analysis]
+    - path: https://www.udemy.com/course/building-interactive-shiny-web-apps-with-r-programming/?referralCode=D14E5F6ED868849C8504
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/apps_with_r.png"
+      title: "Building Interactive Shiny Web Apps with R Programming"
+      description: "This course walks you how to build web applications using the R Shiny framework."
+      categories: [R, Shiny, app development]
+      
+  
   sort: "date desc"
   type: grid
   categories: true

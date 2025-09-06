@@ -14,7 +14,7 @@ listing:
       image: "blog_images/11.png"
       title: "Power BI Gantt Chart: A Complete How-To"
       description: "Learn how to create, customize, and interpret Gantt charts in Power BI to track project timelines and tasks. Follow our detailed instructions and look at real examples."
-      categories: [power bi, data visualization, data analysis, data storytelling]
+      categories: [business intelligence, power bi, data visualization, data analysis, data storytelling]
     - path: https://www.datacamp.com/tutorial/github-codespaces
       author: Adejumo Ridwan Suleiman
       image: "blog_images/12.png"
@@ -39,6 +39,36 @@ listing:
       title: "Pandas Iterate Over Rows: Handle Row-by-Row Operations"
       description: "Learn the various methods of iterating over rows in Pandas DataFrame, exploring best practices, performance considerations, and everyday use cases."
       categories: [python, pandas, data analysis, data wrangling] 
+    - path: https://www.datacamp.com/tutorial/power-bi-countif
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/5.png"
+      title: "Mastering COUNTIF() in Power BI: A DAX-Based Approach"
+      description: "Power BI users from Excel always find out that Power BI does not have a native COUNTIF() function. This article will show various ways to implement COUNTIF() in Power BI and its practical use cases."
+      categories: [power bi, data visualization, data storytelling, business intelligence]   
+    - path: https://www.datacamp.com/tutorial/power-bi-tooltips
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/6.png"
+      title: "Power BI Tooltips: Enhance Reports with Interactive Insights"
+      description: "Learn how to create and customize Power BI tooltips to reveal deeper insights and improve the report's user experience."
+      categories: [power bi, data visualization, data storytelling, business intelligence]      
+    - path: https://www.datacamp.com/tutorial/power-bi-paginated-reports
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/7.png"
+      title: "Creating Paginated Reports in Power BI: A Step-by-Step Guide"
+      description: "Learn how to create pixel-perfect paginated reports in Power BI, from setup to design and publishing, using Power BI Report Builder."
+      categories: [power bi, data visualization, data storytelling, business intelligence]   
+    - path: https://www.datacamp.com/tutorial/power-bi-waterfall-chart
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/8.png"
+      title: "How to Create a Power BI Waterfall Chart: 5 Easy Steps"
+      description: "Learn how to create a Power BI waterfall chart, including how to customize the chart to make it look nice. Follow best practices and avoid common mistakes."
+      categories: [power bi, data visualization, data storytelling, business intelligence]   
+    - path: https://www.datacamp.com/tutorial/python-dependency-injection
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/9.png"
+      title: "Python Dependency Injection: Build Modular and Testable Code"
+      description: "Learn how to make your code modular, testable, and maintainable by understanding and implementing various Python dependency injection frameworks."
+      categories: [python, api, testing] 
       
       
   sort: "date desc"

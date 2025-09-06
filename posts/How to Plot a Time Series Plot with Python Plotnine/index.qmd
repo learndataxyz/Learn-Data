@@ -51,7 +51,6 @@ df.head()
 
 ![Netflix stock history. Image by author.](image.png)
 
-Netflix stock history. Image by author.
 
 Ensure the `Date` column is in `datetime` format.
 
@@ -74,7 +73,6 @@ df_weekly.head()
 
 ![Weekly frequency. Image by Author.](image%201.png)
 
-Weekly frequency. Image by Author.
 
 For monthly,
 
@@ -89,7 +87,6 @@ df_monthly.head()
 
 ![Monthly frequency. Image by Author.](image%202.png)
 
-Monthly frequency. Image by Author.
 
 For yearly,
 
@@ -104,7 +101,6 @@ df_yearly.head()
 
 ![Yearly frequency. Image by Author.](image%203.png)
 
-Yearly frequency. Image by Author.
 
 ## **Creating a Basic Time Series Plot**
 
@@ -126,7 +122,6 @@ basic_plot
 
 ![Line plot showing Netflix closing stock price history. Image by Author.](image%204.png)
 
-Line plot showing Netflix closing stock price history. Image by Author.
 
 First of all, you specify your dataset inside the `ggplot()` function, then add the axis in the `aes()` function to it, then finally the `geom_line()` function to create a line plot.
 
@@ -145,7 +140,6 @@ The `geom_line()` has arguments where you can specify the `color`, `size`, and `
 
 ![Color the line. Image by Author.](image%205.png)
 
-Color the line. Image by Author.
 
 ## **Enhancing the Plot**
 
@@ -165,7 +159,6 @@ multi_category_plot
 
 ![Add colors to your line plot. Image by Author.](image%206.png)
 
-Add colors to your line plot. Image by Author.
 
 You can use the `labs()` function to add titles and axes labels to your plots.
 
@@ -187,7 +180,6 @@ enhanced_plot
 
 ![Add title and axis labels. Image by author.](image%207.png)
 
-Add title and axis labels. Image by author.
 
 You can also add a smoothing line to show the trend on the plot.
 
@@ -217,7 +209,6 @@ advanced_plot
 
 ![Add a smoothing line to the plot. Image by Author.](image%208.png)
 
-Add a smoothing line to the plot. Image by Author.
 
 ## **Conclusion**
 
