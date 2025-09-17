@@ -39,5 +39,12 @@
   {
     "listing": "/posts/Power BI Countif/index.html",
     "items": []
+  },
+  {
+    "listing": "/reports.html",
+    "items": [
+      "/reports/daily_crude_oil_price/crude_oil_prices.html",
+      "/reports/job_creation_survey/job_creation.html"
+    ]
   }
 ]

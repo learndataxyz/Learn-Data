@@ -1726,5 +1726,26 @@
     "title": "LearnData",
     "section": "",
     "text": "Version Badge\n\n\n\nQuarto\n\nExtension\n\nHTML\n\n\n\nVersion Badge is an extension for Quarto to provide a shortcode to display software version.\n\n\n\n\n\nJun 20, 2023\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "reports.html",
+    "href": "reports.html",
+    "title": "Reports",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nRead data and correctly parse the date\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "reports/daily_crude_oil_price/crude_oil_prices.html",
+    "href": "reports/daily_crude_oil_price/crude_oil_prices.html",
+    "title": "LearnData",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(lubridate)\n\n\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(lubridate)\n\n# Read data and correctly parse the date\ndaily_oil_prices &lt;- read_excel(\"Export.xlsx\") |&gt;\n  mutate(Date = dmy(Date)) |&gt;\n  rename(Price = `Crude Oil Price`) |&gt; \n  mutate(Price = as.numeric(Price)) |&gt;\n  arrange(Date)\n\n# Plot\ndaily_oil_prices |&gt; \n  ggplot(aes(x = Date, y = Price)) +\n  geom_line(color = \"darkgreen\") +\n  geom_smooth(method = \"loess\", color = \"blue\", se = FALSE) +\n  labs(title = \"Daily Crude Oil Prices\",\n       x = \"Date\",\n       y = \"Price (USD)\") +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(lubridate)\nlibrary(ggplot2)\n\n# Read data and correctly parse the date\nyearly_oil_prices &lt;- daily_oil_prices |&gt;\n  mutate(Year = floor_date(Date, \"year\")) |&gt;\n  group_by(Year) |&gt;\n  summarise(Avg_Price = mean(Price, na.rm = TRUE))\n\n# Plot monthly average prices\nyearly_oil_prices |&gt; \n  ggplot(aes(x = Year, y = Avg_Price)) +\n  geom_line(color = \"blue\", size = 1) +\n  geom_point(color = \"darkblue\", size = 2) +\n  labs(title = \"Yearly Average Crude Oil Prices\",\n       x = \"Year\",\n       y = \"Average Price (USD)\") +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+  },
+  {
+    "objectID": "reports/job_creation_survey/job_creation.html",
+    "href": "reports/job_creation_survey/job_creation.html",
+    "title": "LearnData",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nlibrary(haven)\nq1_2025_1 &lt;- read_sav(\"JCS_q4 2024-q1_2025_Round_2/JCS_q4 2024-q1 2025 Round 2/JCS_Pub_Inst_Q4 2024-Q1 2025/MERGED COVER & SECTION Ee_qtr1_2025new_emplo.sav\")\nq1_2025_2 &lt;- read_sav(\"JCS_q4 2024-q1_2025_Round_2/JCS_q4 2024-q1 2025 Round 2/JCS_Pub_Inst_Q4 2024-Q1 2025/MERGED COVER & SECTION F_q1_2025_newem_OccN.sav\")\nq1_2025_3 &lt;- read_sav(\"JCS_q4 2024-q1_2025_Round_2/JCS_q4 2024-q1 2025 Round 2/JCS_Pub_Inst_Q4 2024-Q1 2025/MERGED COVER & SECTION Hd_qtr1_2025_new_sip.sav\")\nq1_2025_4 &lt;- read_sav(\"JCS_q4 2024-q1_2025_Round_2/JCS_q4 2024-q1 2025 Round 2/JCS_Pub_Inst_Q4 2024-Q1 2025/MERGED COVER & SECTION Ie_qtr1_2025_exit_staff.sav\")"
   }
 ]

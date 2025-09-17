@@ -1,0 +1,59 @@
+```{r}
+library(tidyverse)
+library(lubridate)
+
+```
+
+
+
+```{r}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+
+# Read data and correctly parse the date
+daily_oil_prices <- read_excel("Export.xlsx") |>
+  mutate(Date = dmy(Date)) |>
+  rename(Price = `Crude Oil Price`) |> 
+  mutate(Price = as.numeric(Price)) |>
+  arrange(Date)
+
+# Plot
+daily_oil_prices |> 
+  ggplot(aes(x = Date, y = Price)) +
+  geom_line(color = "darkgreen") +
+  geom_smooth(method = "loess", color = "blue", se = FALSE) +
+  labs(title = "Daily Crude Oil Prices",
+       x = "Date",
+       y = "Price (USD)") +
+  theme_minimal()
+
+```
+
+
+
+```{r}
+library(readxl)
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+
+# Read data and correctly parse the date
+yearly_oil_prices <- daily_oil_prices |>
+  mutate(Year = floor_date(Date, "year")) |>
+  group_by(Year) |>
+  summarise(Avg_Price = mean(Price, na.rm = TRUE))
+
+# Plot monthly average prices
+yearly_oil_prices |> 
+  ggplot(aes(x = Year, y = Avg_Price)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(color = "darkblue", size = 2) +
+  labs(title = "Yearly Average Crude Oil Prices",
+       x = "Year",
+       y = "Average Price (USD)") +
+  theme_minimal()
+
+```
+
