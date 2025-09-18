@@ -679,10 +679,93 @@ ggplot(oil_data, aes(x = Daily_Pct_Change)) +
    | ---------- | -------- | -------------- |
    | 2020-04-20 | \$19.20  | -15.7%         |
    | 2008-07-11 | \$132.50 | +10.5%         |
+```{r}
+library(dplyr)
+library(gt)
+library(scales)
+
+# Prepare top 10 daily swings
+top_swings <- oil_data %>%
+  filter(!is.na(Daily_Pct_Change)) %>%
+  arrange(desc(abs(Daily_Pct_Change))) %>%
+  slice_head(n = 10) %>%
+  select(Date, Price, Daily_Pct_Change) %>%
+  mutate(
+    Price = dollar(Price),
+    Daily_Pct_Change = round(Daily_Pct_Change, 2)
+  )
+
+# Create a gt table with heatmap coloring
+top_swings_gt <- top_swings %>%
+  gt() %>%
+  tab_header(
+    title = md("**Top 10 Largest Daily Swings in Nigeria Crude Oil Prices**")
+  ) %>%
+  cols_label(
+    Date = "Date",
+    Price = "Price (USD per Barrel)",
+    Daily_Pct_Change = "Daily % Change"
+  ) %>%
+  fmt_number(
+    columns = vars(Daily_Pct_Change),
+    decimals = 2,
+    pattern = "{x}%"
+  ) %>%
+  data_color(
+    columns = vars(Daily_Pct_Change),
+    colors = scales::col_numeric(
+      palette = c("#d73027", "#ffffbf", "#1f77b4"), # Red → Yellow → Blue
+      domain = c(min(top_swings$Daily_Pct_Change),
+                 max(top_swings$Daily_Pct_Change))
+    )
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.font.size = 14,
+    table.width = pct(80),
+    heading.align = "left",
+    column_labels.border.bottom.color = "black",
+    data_row.padding = px(6)
+  ) %>%
+  tab_source_note(
+    source_note = "Source: Nigeria Oil Market Data"
+  )
+
+top_swings_gt
+
+
+```
 
 3. **Volatility Timeline Plot**
 
    * Rolling 30-day volatility curve.
+```{r}
+ggplot(oil_data, aes(x = Date, y = Volatility_30d)) +
+  geom_line(color = "purple", size = 1) +
+  labs(
+    title = "30-Day Rolling Volatility of Nigeria Crude Oil Prices",
+    subtitle = "Higher values indicate more price instability",
+    x = "Date",
+    y = "30-Day Rolling Volatility (USD)",
+    caption = "Source: Nigeria Oil Market Data"
+  ) +
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
+  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    plot.subtitle = element_text(size = 13, color = "gray40"),
+    axis.title = element_text(face = "bold"),
+    panel.grid.major = element_line(color = "gray85"),
+    panel.grid.minor = element_blank(),
+    plot.caption = element_text(size = 10, color = "gray50", hjust = 0)
+  )
+```
+   
+   
 
 ---
 
@@ -697,6 +780,68 @@ ggplot(oil_data, aes(x = Daily_Pct_Change)) +
 | 2008 | 103.45    | 132.50    | 45.20     | -            |
 | 2009 | 70.35     | 90.00     | 38.50     | -31.96%      |
 | 2010 | 82.14     | 92.40     | 68.50     | +16.78%      |
+```{r}
+yearly_summary <- oil_data %>%
+  group_by(Year = format(Date, "%Y")) %>%
+  summarise(
+    Avg_Price = round(mean(Price, na.rm = TRUE), 2),
+    Max_Price = max(Price, na.rm = TRUE),
+    Min_Price = min(Price, na.rm = TRUE),
+    YoY_Change = (last(Price) - first(Price)) / first(Price) * 100,
+    .groups = "drop"
+  ) %>%
+  mutate(
+    YoY_Change = ifelse(is.na(lag(Avg_Price)), NA, YoY_Change),
+    YoY_Change = round(YoY_Change, 2)
+  )
+yearly_summary_gt <- yearly_summary %>%
+  gt() %>%
+  tab_header(
+    title = md("**Yearly Summary of Nigeria Crude Oil Prices**")
+  ) %>%
+  cols_label(
+    Year = "Year",
+    Avg_Price = "Avg Price (USD)",
+    Max_Price = "Max Price (USD)",
+    Min_Price = "Min Price (USD)",
+    YoY_Change = "YoY % Change"
+  ) %>%
+  fmt_number(
+    columns = vars(Avg_Price, Max_Price, Min_Price),
+    decimals = 2,
+    pattern = "${x}"
+  ) %>%
+  fmt_number(
+    columns = vars(YoY_Change),
+    decimals = 2,
+    pattern = "{x}%",
+    use_seps = TRUE
+  ) %>%
+  data_color(
+    columns = vars(YoY_Change),
+    colors = scales::col_numeric(
+      palette = c("#d73027", "#ffffbf", "#1f77b4"), # Red → Yellow → Blue
+      domain = c(min(yearly_summary$YoY_Change, na.rm = TRUE),
+                 max(yearly_summary$YoY_Change, na.rm = TRUE))
+    )
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.font.size = 14,
+    table.width = pct(80),
+    heading.align = "left",
+    column_labels.border.bottom.color = "black",
+    data_row.padding = px(6)
+  ) %>%
+  tab_source_note(
+    source_note = "Source: Nigeria Oil Market Data"
+  )
+yearly_summary_gt
+```
+
 
 #### **Monthly Summary Table** (for latest year)
 
@@ -704,6 +849,71 @@ ggplot(oil_data, aes(x = Daily_Pct_Change)) +
 | ----- | --------- | --------- | --------- |
 | Jan   | 92.31     | 96.20     | 88.45     |
 | Feb   | 91.50     | 94.00     | 89.10     |
+```{r}
+library(dplyr)
+library(gt)
+library(scales)
+library(lubridate)
+
+# Determine latest year
+latest_year <- max(year(oil_data$Date), na.rm = TRUE)
+
+# Prepare monthly summary
+monthly_summary <- oil_data %>%
+  filter(year(Date) == latest_year) %>%
+  mutate(Month = factor(month(Date, label = TRUE, abbr = TRUE), levels = month.abb)) %>%
+  group_by(Month) %>%
+  summarise(
+    Avg_Price = round(mean(Price, na.rm = TRUE), 2),
+    Max_Price = round(max(Price, na.rm = TRUE), 2),
+    Min_Price = round(min(Price, na.rm = TRUE), 2),
+    .groups = "drop"
+  ) %>%
+  arrange(Month)
+
+# Create GT table with heatmap for Avg_Price
+monthly_summary_gt <- monthly_summary %>%
+  gt() %>%
+  tab_header(
+    title = md(paste0("**Monthly Summary of Nigeria Crude Oil Prices for ", latest_year, "**"))
+  ) %>%
+  cols_label(
+    Month = "Month",
+    Avg_Price = "Avg Price (USD)",
+    Max_Price = "Max Price (USD)",
+    Min_Price = "Min Price (USD)"
+  ) %>%
+  fmt_number(
+    columns = vars(Avg_Price, Max_Price, Min_Price),
+    decimals = 2,
+    pattern = "${x}"
+  ) %>%
+  data_color(
+    columns = vars(Avg_Price),
+    colors = scales::col_numeric(
+      palette = c("#ffffd9", "#081d58"),  # Light yellow → Dark blue
+      domain = c(min(monthly_summary$Avg_Price), max(monthly_summary$Avg_Price))
+    )
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.font.size = 14,
+    table.width = pct(70),
+    heading.align = "left",
+    column_labels.border.bottom.color = "black",
+    data_row.padding = px(6)
+  ) %>%
+  tab_source_note(
+    source_note = paste0("Source: Nigeria Oil Market Data | Year: ", latest_year)
+  )
+
+monthly_summary_gt
+
+  
+```
 
 ---
 
@@ -714,6 +924,7 @@ ggplot(oil_data, aes(x = Daily_Pct_Change)) +
   * 2008 Global Financial Crisis
   * 2014 Oil Glut
   * 2020 COVID-19 Demand Collapse
+  
 
 **Plot:**
 
