@@ -180,8 +180,8 @@ summary_table <- tibble(
 summary_table_gt <- summary_table %>%
   gt() %>%
   tab_header(
-    title = md("**Summary of Nigeria Crude Oil Data**"),
-    subtitle = "Key statistics calculated from the daily dataset"
+    title = md("**Summary of Nigeria Daily Crude Oil Data**"),
+    subtitle = "Key statistics"
   ) %>%
   cols_label(
     Metric = "Statistic",
@@ -201,10 +201,11 @@ summary_table_gt <- summary_table %>%
     table.border.bottom.color = "black"
   ) %>%
   tab_source_note(
-    source_note = "Source: Nigeria Oil Market Data"
+    source_note = "Source: Central Bank of Nigeria (CBN)"
   )
 
 summary_table_gt
+gtsave(summary_table_gt,"reports/daily_crude_oil_price/images/summary_table_gt.png")
 
 ```
 
