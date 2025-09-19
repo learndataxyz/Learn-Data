@@ -107,7 +107,7 @@ docker build -t shiny-python-app .
 
 If the build was successful, you should see a message similar to the following.
 
-![Run the Docker Image. Image by Author.](image 1.png){fig-alt="How to Dockerize a Python Shiny Application"}
+![Run the Docker Image. Image by Author.](image%201.png){fig-alt="How to Dockerize a Python Shiny Application"}
 
 ### **Step 3 – Run the Container**
 
@@ -121,7 +121,7 @@ docker run -p 8000:8000 shiny-python-app
 
 You will see your application available at `http://localhost:8000`
 
-![](image 2.png){fig-alt="How to Dockerize a Python Shiny Application"}
+![](image%202.png){fig-alt="How to Dockerize a Python Shiny Application"}
 
 ### **Step 4 – Push to Docker Hub**
 
@@ -131,7 +131,7 @@ First of all, you have to log in to Docker Hub if you are not logged in, run the
 docker login
 ```
 
-![Login to Docker. Image by Author.](image 3.png){fig-alt="How to Dockerize a Python Shiny Application"}
+![Login to Docker. Image by Author.](image%203.png){fig-alt="How to Dockerize a Python Shiny Application"}
 
 If you want to push an Image to Docker Hub, you need to specify your username and the Image tag using the following format during builds; `<your-user-name>/<your-app-name>:<tag>`.
 
@@ -149,7 +149,7 @@ docker push adejumoridwan/shiny-python-app:latest
 
 Go to the My Hub tab on your Docker Hub dashboard, and you should see your published Image.
 
-![Go to Docker Hub. Image by Author.](image 4.png){fig-alt="How to Dockerize a Python Shiny Application"}
+![Go to Docker Hub. Image by Author.](image%204.png){fig-alt="How to Dockerize a Python Shiny Application"}
 
 ## **Notes When Building Docker Applications**
 
