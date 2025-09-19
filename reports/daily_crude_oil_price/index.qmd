@@ -389,7 +389,7 @@ moving_average <- ggplot(oil_data, aes(x = Date)) +
   geom_line(aes(y = Price), color = "#1f77b4", size = 0.7, alpha = 0.6) + # Daily prices
   geom_line(aes(y = MA30), color = "orange", size = 1) + # 30-day moving average
   labs(
-    title = "Daily Nigeria Crude Oil Prices with 30-Day Moving Average",
+    title = "Daily Nigeria Crude Oil Prices\nwith 30-Day Moving Average",
     subtitle = "Orange line represents the 30-day moving average",
     x = "Date",
     y = "Price (USD per Barrel)",
