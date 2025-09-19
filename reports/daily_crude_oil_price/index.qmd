@@ -16,16 +16,14 @@ library(dplyr)
 library(tidyr)
 
 # Read data and correctly parse the date
-oil_data_raw <- read_excel("reports/daily_crude_oil_price/Export.xlsx") |>
-  mutate(Date = dmy(Date)) |>
-  rename(Price = `Crude Oil Price`) |> 
-  mutate(Price = as.numeric(Price)) |>
+oil_data_raw <- read_csv("reports/daily_crude_oil_price/Export.csv") |>
+  mutate(Date = dmy(Date),
+         Price = as.numeric(Price)) |>
   arrange(Date)
 
-oil_data <- read_excel("reports/daily_crude_oil_price/Export.xlsx") |>
-  mutate(Date = dmy(Date)) |>
-  rename(Price = `Crude Oil Price`) |> 
-  mutate(Price = as.numeric(Price)) |>
+oil_data <- read_csv("reports/daily_crude_oil_price/Export.csv") |>
+  mutate(Date = dmy(Date),
+         Price = as.numeric(Price)) |>
   arrange(Date)
 
 
