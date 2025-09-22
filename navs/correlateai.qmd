@@ -1,6 +1,0 @@
----
-title: CorrelateAI
----
-
-At [CorrelateAI](https://correlateai.xyz), we believe that data should work for you—not the other way around. That’s why we created CorrelateAI, a cutting-edge SaaS platform that seamlessly connects to various data sources, including CSV files, databases, and Google Sheets. Powered by AI, our platform transforms raw data into actionable insights, empowering businesses to make smarter, data-driven decisions with ease.
-
