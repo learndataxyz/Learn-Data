@@ -1,0 +1,219 @@
+---
+title: "Model Deployment in R with Plumber" 
+author: Adejumo Ridwan Suleiman 
+categories: [machine learning, R, API, model deployment, data science, mlops] 
+image: "LearnData Branding.png" 
+draft: false
+---
+
+![](LearnData%20Branding.png){fig-alt="model deployment what is model deployment ml model deployment"}
+
+The primary aim of machine learning is to learn certain patterns from available data and to make decisions based on reliable facts.
+
+Imagine building a machine learning model, and you get good accuracy. That does not end there; you must deploy this model for clients to interact with. Maybe it’s a classification or a regression model. What use do you think the model is if it’s just on your PC?
+
+Deploying machine learning models puts them into real-life scenarios, allowing you to monitor them in real-time. This is also important as you can easily track anomalies through the model's accuracy metrics.
+
+In this article, you will learn how to deploy a machine-learning model using [Plumber](https://www.rplumber.io/), an R package for developing APIs. You will build a Facebook prophet model forecasting the closing price of Bitcoin and deploy it as a Plumber API such that when a date is given, you can get the closing price for that particular date.
+
+## Prerequisites
+
+To follow this tutorial, download the [Bitcoin dataset](https://www.kaggle.com/datasets/roopahegde/cryptocurrency-timeseries-2020) containing Bitcoin's closing price information from January 1st, 2020, to April 19th, 2021. You also need to install the following Python libraries.
+
+-   `plumber` - for generating APIs
+-   `prophet` - for time series analysis
+-   `lubridate` - for date manipulation
+-   `dplyr` - for data manipulation
+
+## What is Plumber?
+
+R plumber is an R package for creating web APIs by decorating your R functions. For example, you can have a normal function that calculates the area of a rectangle.
+
+``` r
+area_of_rectangle <- function(length, breadth) {
+  return(length * breadth)
+}
+```
+
+And convert the function into an API by decorating it with `roxygen2`comments `#*`.
+
+``` r
+library(plumber)
+
+#* Return the Area of a rectangle
+#* @param length numeric
+#* @param breadth numeric
+#* @get /area_of_rectangle
+function(length, breadth) {
+  return(as.numeric(length) * as.numeric(breadth))
+}
+```
+
+-   `#* Return the Area of a rectangle` is a comment describing what the function does.
+-   `#* @param length numeric` indicates that the function takes a numeric parameter called length.
+-   `#* @param length numeric` also shows that the function takes another numeric parameter called breadth.
+-   `#* @get/area_of_rectangle` tells Plumber to create a web endpoint at the URL path `/area_of_rectangle`. The function is triggered when this URL is visited with the correct parameters.
+
+To run the newly created API, click *Run API* just above the R script to open the API endpoint docs automatically.
+
+![Example of an R API. Image by Author.](86adf634-0e2c-42be-ab50-d225b44fb148.png){fig-alt="Image showing example of an R API"}
+
+You can interact with the API's automatic documentation and see if they return valid results or errors.
+
+![Automatic API docs. Image by Author.](Animation.gif){fig-alt="Image showing how an API docs looks like"}
+
+You can also assess the value of the area directly on your browser through the following URL `<your_local_host>/area_of_rectangle?length=5&breadth=12`. Because the endpoint is a `GET` verb, the function parameters are known as query parameters and are provided in the URL path after a question mark.
+
+![Sample API URL. Image by endpoint.](image.png){fig-alt="Image showing how the sample API URL looks like"}
+
+### Creating a Plumber project
+
+To create a plumber project, go to **File**, then **New Project.** Under the **New Project Wizard**, select **New Directory** and the **New Plumber API Project.**
+
+![Create a Plumber project. Image by Author.](image%201.png){fig-alt="Image showing how to create a Plumber R project"}
+
+Once you have created the Plumber API Project, you will see a file called `plumber.R` . This is where you will write all the logic needed to create the API.
+
+## Building the Forecasting Model
+
+Run the following code in the `plumber.R` to load the libraries and data.
+
+``` r
+library(plumber)
+library(prophet)
+library(dplyr)
+library(lubridate)
+
+# Load and preprocess the data
+bitcoin_data <- read.csv("gemini_BTCUSD_2020_1min.csv")
+
+head(bitcoin_data)
+```
+
+![image.png](image%202.png){fig-alt="image showing the top 5 rows for the Bitcoin data"}
+
+Copy and paste the following code below to build the forecasting model.
+
+``` r
+# Ensure the Date column is in datetime format
+bitcoin_data$Date <- mdy_hm(bitcoin_data$Date)
+
+# Extract only the date part (ignoring time)
+bitcoin_data$Date <- floor_date(bitcoin_data$Date, unit = "day")
+
+# Calculate the daily average of the 'Close' prices
+daily_data <- bitcoin_data |>
+  group_by(Date) |>
+  summarise(Close = mean(Close))
+
+# Prepare the data for Prophet
+prophet_data <- data.frame(ds = daily_data$Date, y = daily_data$Close)
+
+# Train the Prophet model
+model <- prophet(prophet_data)
+```
+
+Check out the following [article](https://learndata.xyz/posts/forecasting%20time%20series%20data%20with%20facebook%20prophet/) to learn more about building forecasting models with the Facebook Prophet.
+
+## Creating the Plumber API
+
+Inside the `plumber.R` file, copy and paste the following code.
+
+``` r
+#* Predict closing prices for a given date
+#* @param date A future date (format: YYYY-MM-DD) to predict closing price for
+#* @get /predict
+function(date) {
+  # Convert the input date to a Date object
+  input_date <- ymd(date)
+
+  # Get the last available date in the dataset
+  last_date <- ymd(max(prophet_data$ds))
+
+  # Validate the input date
+  if (is.na(input_date)) {
+    return(list(
+      error = "Invalid date format. Please provide a date in YYYY-MM-DD format."
+    ))
+  }
+
+  if (input_date <= last_date) {
+    return(list(
+      error = "Please provide a future date beyond the last available date in the dataset.",
+      last_available_date = as.character(last_date)
+    ))
+  }
+
+  # Calculate the number of days to forecast
+  days_to_forecast <- input_date - last_date
+
+  # Check if the number of days to forecast is valid
+  if (days_to_forecast <= 0) {
+    return(list(
+      error = "The calculated forecast period is negative. Please check your input."
+    ))
+  }
+
+  # Generate future predictions
+  future <- make_future_dataframe(model, periods = days_to_forecast)
+  forecast <- predict(model, future)
+
+  # Find the prediction for the input date
+  forecast_for_date <- forecast |>
+    filter(ds == input_date) |>
+    select(ds, yhat, yhat_lower, yhat_upper)
+
+  # Return the prediction for the given date
+  if (nrow(forecast_for_date) == 0) {
+    return(list(
+      error = "Unable to generate forecast for the given date. Please try a valid future date."
+    ))
+  } else {
+    return(forecast_for_date)
+  }
+}
+```
+
+The above function predicts the closing price of Bitcoin for a specified future date. It uses a `GET` verb at the endpoint `/predict` and takes the argument `date` in the format *YYYY-MM-DD.*
+
+First, `input_date` is converted to a date-time object using the `lubridate` function `ymd()`. The same is done for the `last_date` in the dataset.
+
+The `input_date` is also validated in case no date was given, or the date given is less than or equal to the `last_date` in the dataset.
+
+The `days_to_forecast` is calculated by subtracting the `last date` from the `input date`, which is validated if it is less than or equal to `0`.
+
+The `predict` function makes `future` predictions by taking the `model` and the `future` data frame as arguments.
+
+Finally, the date, actual predictions of the input data, and confidence intervals are filtered from the `forecast` data frame and returned.
+
+Let’s run the API to interact with the forecast model API docs.
+
+![Run and open the API automatically generated docs. Image by Author.](Animation%201.gif){fig-alt="Image showing the automatically generated API docs"}
+
+## Hosting
+
+R Plumber provides various ways to host your API. You can use [Posit Connect](https://docs.posit.co/connect/how-to/publish-plumber-api/), which is recommended as the most straightforward deployment method, [Digital Ocean](https://www.r-bloggers.com/2017/06/deploying-a-minimal-api-using-plumber-on-digitalocean/), or deploy using [Docker](https://www.rplumber.io/articles/hosting.html). Once you have hosted your API, clients can interact with it to get real-time predictions. You can further set up [tests and CI/CD](https://jafaraziz.com/blog/rest-api-with-r-part-4/) for automated testing to ensure that as your application grows large, it does not break.
+
+## Conclusion
+
+In this article, you have learned how to use R Plumber to deploy your machine-learning models as an API. You can integrate these APIs into web applications and allow users to interact with the model. This way, you solve business problems and see how your model performs on real-world data. If you want to dive more into developing machine learning APIs, here are useful resources from which you can learn.
+
+[**Recreating the Shiny App tutorial with a Plumber API + React**](https://www.jumpingrivers.com/blog/r-shiny-plumber-react-part-1/)
+
+[**How to put an R model in production**](https://anderfernandez.com/en/blog/how-to-put-an-r-model-in-production/)
+
+[**Deploying a Machine Learning Model Using Plumber and Docker**](https://nicd.org.uk/knowledge-hub/deploying-a-machine-learning-model-using-plumber-and-docker)
+
+[**How to deploy a Tensorflow Model in R with Plumber**](https://tensorflow.rstudio.com/guides/deploy/plumber)
+
+[**Deploying to RStudio Connect: A Beginner's Guide**](https://www.appsilon.com/post/deploying-to-rstudio-connect)
+
+[\*\*How to Make an R REST API: A Beginners Guide to Plumber](https://www.appsilon.com/post/r-rest-api)\*\*
+
+### **Need Help with Data? Let’s Make It Simple.**
+
+*At **LearnData.xyz**, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.*
+
+*📧 Shoot us an email at **admin\@learndata.xyz**—let’s chat about how we can help you make smarter decisions with your data.*
+
+## Your next breakthrough could be one email away. Let’s make it happen!
