@@ -3,7 +3,7 @@ title: "Daily Nigeria Crude Oil Prices (2009 - 2025)"
 author: Adejumo Ridwan Suleiman 
 categories: [nigeria, oil price, time series, forecast]
 image: "image_1.png" 
-draft: true
+draft: false
 ---
 
 ![](image_1.png){fig-alt="nigeria crude oil price nigeria oil price today nigeria oil price history nigeria oil price per barrel nigeria oil price forecast"}
