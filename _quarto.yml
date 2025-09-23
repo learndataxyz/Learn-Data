@@ -60,6 +60,8 @@ website:
         file: reports.qmd
       - text: "Visuals"
         file: visuals.qmd
+      - text: "Store"
+        href: "https://payhip.com/LearnData"
       - text: "About"
         file: navs/about.qmd
         

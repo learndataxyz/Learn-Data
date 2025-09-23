@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>crude_oil_prices – LearnData</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/learn_data.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6f3d3dfbc72573049d14ab583433dc0d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-fb39f70bc41e3ea72a488519c6b5fa07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-6f3d3dfbc72573049d14ab583433dc0d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N6FNR4EYSZ"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-N6FNR4EYSZ', { 'anonymize_ip': true});
+</script>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4620938320652199" crossorigin="anonymous"></script>
+<script defer="" data-domain="learndata.xyz" src="https://plausible.io/js/script.js"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1227869158734119');
+fbq('track', 'PageView');
+</script>
+<noscript></noscript><meta property="og:title" content="LearnData">
+<meta property="og:site_name" content="LearnData">
+<meta name="twitter:title" content="LearnData">
+<meta name="twitter:card" content="summary">
+</head><body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1227869158734119&amp;ev=PageView&amp;noscript=1">
+<!-- End Meta Pixel Code -->
+<meta name="facebook-domain-verification" content="nyj27aoc6q8ilea1r9pkqz65w4179t">
+
+
+<link rel="stylesheet" href="../../styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">LearnData</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../courses.html"> 
+<span class="menu-text">Courses</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-open-source" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Open Source</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-open-source">    
+        <li>
+    <a class="dropdown-item" href="https://learndataxyz.github.io/pdhs/">
+ <span class="dropdown-text">pdhs</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../reports.html"> 
+<span class="menu-text">Reports</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../visuals.html"> 
+<span class="menu-text">Visuals</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://payhip.com/LearnData"> 
+<span class="menu-text">Store</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../navs/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<iframe width="540" height="305" src="https://bdf7206c.sibforms.com/serve/MUIFAMUcj5rq_h1jyngwgUye-u72kLn4cmjZM6uFW1Pyx6lgdRrX8a7nDkDjIHJntUNVn9rgE_Xi3yIdi5ptO0cj6jXqRGSew_-avk_0kzCOKeKkUE9rnA_rSoP6BGfp83jRRtdM6cU8TmojCbqvKBRbxTsLNQppJyZzRCmCiODr_E4KnXaQcThM0jJImRcCmBjWaNO3QXK8fezW" frameborder="0" scrolling="auto" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+</div></div>
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<!-- ```{r} -->
+<!-- library(readxl) -->
+<!-- library(dplyr) -->
+<!-- library(ggplot2) -->
+<!-- library(lubridate) -->
+<!-- library(dplyr) -->
+<!-- library(tidyr) -->
+<!-- library(tidyverse) -->
+<!-- # Read data and correctly parse the date -->
+<!-- oil_data_raw <- read_csv("Export.csv") |> -->
+<!--   mutate( -->
+<!--     Date = dmy(Date), -->
+<!--     Price = as.numeric(Price) -->
+<!--   ) |> -->
+<!--   arrange(Date) -->
+<!-- oil_data <- read_csv("Export.csv") |> -->
+<!--   mutate( -->
+<!--     Date = dmy(Date), -->
+<!--     Price = as.numeric(Price) -->
+<!--   ) |> -->
+<!--   arrange(Date) -->
+<!-- # Assume your original data is `oil_data` with columns Date and Price -->
+<!-- oil_data$Date <- as.Date(oil_data$Date) -->
+<!-- # Create a complete sequence of daily dates -->
+<!-- all_dates <- data.frame(Date = seq(min(oil_data$Date), -->
+<!--   max(oil_data$Date), -->
+<!--   by = "day" -->
+<!-- )) -->
+<!-- # Merge with original data -->
+<!-- oil_data_full <- all_dates %>% -->
+<!--   left_join(oil_data, by = "Date") %>% -->
+<!--   arrange(Date) -->
+<!-- library(zoo) -->
+<!-- # Carry last non-missing value forward -->
+<!-- oil_data_full$Price <- na.locf(oil_data_full$Price, na.rm = FALSE) -->
+<!-- library(dplyr) -->
+<!-- library(zoo) -->
+<!-- oil_data <- oil_data %>% -->
+<!--   arrange(Date) %>% -->
+<!--   mutate( -->
+<!--     # Daily absolute change -->
+<!--     Daily_Change = Price - lag(Price), -->
+<!--     # Daily % change -->
+<!--     Daily_Pct_Change = (Price - lag(Price)) / lag(Price) * 100, -->
+<!--     # 7-day and 30-day rolling averages -->
+<!--     MA7 = rollmean(Price, 7, fill = NA, align = "right"), -->
+<!--     MA30 = rollmean(Price, 30, fill = NA, align = "right"), -->
+<!--     # 30-day rolling volatility (standard deviation) -->
+<!--     Volatility_30d = rollapply(Price, 30, sd, fill = NA, align = "right"), -->
+<!--     # Normalized price index (base = first date) -->
+<!--     Price_Index = (Price / first(Price)) * 100, -->
+<!--     # Cumulative change since start -->
+<!--     Cumulative_Change = (Price / first(Price) - 1) * 100, -->
+<!--     # Year and Month for aggregation -->
+<!--     Year = format(Date, "%Y"), -->
+<!--     Month = format(Date, "%Y-%m") -->
+<!--   ) -->
+<!-- ``` -->
+<!-- ## **1. Report Outline** -->
+<!-- ### **Section 1: Executive Summary** -->
+<!-- -   Brief overview of: -->
+<!--     -   Total number of data points (e.g., "16 years of daily price data analyzed"). -->
+<!--     ```{r} -->
+<!--     total_days <- nrow(oil_data) -->
+<!--     total_days -->
+<!--     ``` -->
+<!--     -   Time range covered (first date → last date). -->
+<!--     ```{r} -->
+<!--     date_range <- paste(min(oil_data$Date), "→", max(oil_data$Date)) -->
+<!--     date_range -->
+<!--     ``` -->
+<!--     -   High-level insights: -->
+<!--         -   Highest and lowest price during the period. -->
+<!--         ```{r} -->
+<!--         highest_price <- oil_data %>% -->
+<!--           filter(Price == max(Price, na.rm = TRUE)) %>% -->
+<!--           select(Date, Price) -->
+<!--         highest_price -->
+<!--         ``` -->
+<!--         -   Average price. -->
+<!--         ```{r} -->
+<!--         average_price <- round(mean(oil_data$Price, na.rm = TRUE), 2) -->
+<!--         average_price -->
+<!--         ``` -->
+<!--         -   Biggest single-day increase and decrease. -->
+<!--         ```{r} -->
+<!--         max_increase <- oil_data %>% -->
+<!--           filter(Daily_Pct_Change == max(Daily_Pct_Change, na.rm = TRUE)) %>% -->
+<!--           select(Date, Daily_Pct_Change) -->
+<!--         max_increase -->
+<!--         max_decrease <- oil_data %>% -->
+<!--           filter(Daily_Pct_Change == min(Daily_Pct_Change, na.rm = TRUE)) %>% -->
+<!--           select(Date, Daily_Pct_Change) -->
+<!--         max_decrease -->
+<!--         ``` -->
+<!--         -   Observed long-term trends. -->
+<!--     -   Short paragraph on why this matters to Nigeria's economy. -->
+<!-- **Table:** -->
+<!-- | Metric               | Value                   | -->
+<!-- |----------------------|-------------------------| -->
+<!-- | Total Days of Data   | 5,460                   | -->
+<!-- | Date Range           | 2008-03-15 → 2024-09-15 | -->
+<!-- | Highest Price        | \$132.50 (2008-07-03)   | -->
+<!-- | Lowest Price         | \$18.75 (2020-04-22)    | -->
+<!-- | Average Price        | \$74.32                 | -->
+<!-- | Max Daily % Increase | +15.8%                  | -->
+<!-- | Max Daily % Decrease | -17.2%                  | -->
+<!-- ```{r} -->
+<!-- library(dplyr) -->
+<!-- library(gt) -->
+<!-- library(scales) # for dollar and percentage formatting -->
+<!-- # Create the summary table with improved formatting -->
+<!-- summary_table <- tibble( -->
+<!--   Metric = c( -->
+<!--     "Total Days of Data", -->
+<!--     "Date Range", -->
+<!--     "Highest Price", -->
+<!--     "Lowest Price", -->
+<!--     "Average Price", -->
+<!--     "Max Daily % Increase", -->
+<!--     "Max Daily % Decrease" -->
+<!--   ), -->
+<!--   Value = c( -->
+<!--     format(total_days, big.mark = ","), # adds comma for thousands -->
+<!--     paste0( -->
+<!--       format(min(oil_data$Date), "%b %d, %Y"), " to ", -->
+<!--       format(max(oil_data$Date), "%b %d, %Y") -->
+<!--     ), -->
+<!--     paste0(dollar(highest_price$Price), " (", format(highest_price$Date, "%b %d, %Y"), ")"), -->
+<!--     paste0( -->
+<!--       dollar(min(oil_data$Price, na.rm = TRUE)), " (", -->
+<!--       format(oil_data$Date[which.min(oil_data$Price)], "%b %d, %Y"), ")" -->
+<!--     ), -->
+<!--     dollar(round(average_price, 2)), -->
+<!--     paste0( -->
+<!--       percent(max_increase$Daily_Pct_Change / 100, accuracy = 0.01), -->
+<!--       " (", format(max_increase$Date, "%b %d, %Y"), ")" -->
+<!--     ), -->
+<!--     paste0( -->
+<!--       percent(max_decrease$Daily_Pct_Change / 100, accuracy = 0.01), -->
+<!--       " (", format(max_decrease$Date, "%b %d, %Y"), ")" -->
+<!--     ) -->
+<!--   ) -->
+<!-- ) -->
+<!-- # Use gt for a report-ready table -->
+<!-- summary_table_gt <- summary_table %>% -->
+<!--   gt() %>% -->
+<!--   tab_header( -->
+<!--     title = md("**Summary of Nigeria Daily Crude Oil Data**"), -->
+<!--     subtitle = "Key statistics" -->
+<!--   ) %>% -->
+<!--   cols_label( -->
+<!--     Metric = "Statistic", -->
+<!--     Value = "Value" -->
+<!--   ) %>% -->
+<!--   tab_style( -->
+<!--     style = cell_text(weight = "bold"), -->
+<!--     locations = cells_column_labels(everything()) -->
+<!--   ) %>% -->
+<!--   tab_options( -->
+<!--     table.font.size = 14, -->
+<!--     table.width = pct(80), -->
+<!--     heading.align = "left", -->
+<!--     data_row.padding = px(6), -->
+<!--     column_labels.border.bottom.color = "black", -->
+<!--     table.border.top.color = "black", -->
+<!--     table.border.bottom.color = "black" -->
+<!--   ) %>% -->
+<!--   tab_source_note( -->
+<!--     source_note = "Source: Central Bank of Nigeria" -->
+<!--   ) -->
+<!-- summary_table_gt -->
+<!-- gtsave(summary_table_gt, "images/summary_table_gt.png") -->
+<!-- ``` -->
+<!-- ### **Section 2: Data Overview** -->
+<!-- **Goal:** Explain what data is being analyzed. -->
+<!-- -   Description of dataset: -->
+<!--     -   Number of records -->
+<!--     -   Columns: `Date` and `Price` -->
+<!--     -   Missing data handling steps -->
+<!-- -   Mention any preprocessing steps (e.g., filling missing values, interpolation). -->
+<!-- **Plots:** -->
+<!-- 1.  **Histogram of Daily Prices** -->
+<!--     -   Shows distribution of oil prices over time. -->
+<!--     ```{r} -->
+<!--     library(ggplot2) -->
+<!--     library(scales) # for dollar_format -->
+<!--     # Calculate the median price -->
+<!--     median_price <- median(oil_data$Price, na.rm = TRUE) -->
+<!--     median_price_hist <- ggplot(oil_data, aes(x = Price)) + -->
+<!--       geom_histogram( -->
+<!--         binwidth = 5, -->
+<!--         fill = "#1f77b4", # professional blue -->
+<!--         color = "white", -->
+<!--         alpha = 0.8 -->
+<!--       ) + -->
+<!--       # Add median line -->
+<!--       geom_vline( -->
+<!--         xintercept = median_price, -->
+<!--         linetype = "dashed", -->
+<!--         color = "red", -->
+<!--         size = 1 -->
+<!--       ) + -->
+<!--       # Add text annotation for the median -->
+<!--       annotate( -->
+<!--         "text", -->
+<!--         x = median_price + 5, -->
+<!--         y = max(table(cut(oil_data_full$Price, breaks = seq(min(oil_data_full$Price), max(oil_data_full$Price), by = 5)))), -->
+<!--         label = paste0("Median: $", round(median_price, 2)), -->
+<!--         color = "red", -->
+<!--         hjust = 0, -->
+<!--         size = 5, -->
+<!--         fontface = "bold" -->
+<!--       ) + -->
+<!--       labs( -->
+<!--         title = "Distribution of Daily Nigeria Crude Oil Prices", -->
+<!--         subtitle = "The red dashed line represents the median daily price", -->
+<!--         x = "Price (USD per Barrel)", -->
+<!--         y = "Number of Days", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       scale_x_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         panel.grid.major = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0) -->
+<!--       ) -->
+<!--     median_price_hist -->
+<!--     ggsave("images/median_price_hist.png", median_price_hist) -->
+<!--     ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Section 3: Historical Price Trends** -->
+<!-- **Goal:** Show long-term evolution of oil prices. -->
+<!-- **Plots:** -->
+<!-- 1.  **Line Chart of Daily Prices (Full Period)** -->
+<!--     -   Highlight global events: -->
+<!--         -   2008 oil crash -->
+<!--         -   2014 price drop -->
+<!--         -   2020 COVID shock -->
+<!--         ```{r} -->
+<!--         library(ggplot2) -->
+<!--         library(scales) # for dollar formatting and date scales -->
+<!--         # Define shaded periods for prolonged disruptions -->
+<!--         event_periods <- data.frame( -->
+<!--           start = as.Date(c("2014-06-01", "2020-03-01")), -->
+<!--           end = as.Date(c("2015-01-31", "2020-12-31")), -->
+<!--           Label = c("2014–2015 Oil Price Collapse", "2020 COVID-19 Shock") -->
+<!--         ) -->
+<!--         # Create the plot -->
+<!--         daily_line_chart <- ggplot(oil_data, aes(x = Date, y = Price)) + -->
+<!--           # Shaded areas for event periods -->
+<!--           geom_rect( -->
+<!--             data = event_periods, -->
+<!--             aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf), -->
+<!--             fill = "red", -->
+<!--             alpha = 0.1, -->
+<!--             inherit.aes = FALSE -->
+<!--           ) + -->
+<!--           # Main oil price trend -->
+<!--           geom_line(color = "#1f77b4", size = 1) + -->
+<!--           # Vertical labels centered inside shaded regions -->
+<!--           geom_text( -->
+<!--             data = event_periods, -->
+<!--             aes( -->
+<!--               x = start + (end - start) / 2, # Center horizontally -->
+<!--               y = max(oil_data_full$Price, na.rm = TRUE) / 2, # Center vertically -->
+<!--               label = Label -->
+<!--             ), -->
+<!--             color = "red", -->
+<!--             size = 4, -->
+<!--             fontface = "bold", -->
+<!--             angle = 90, # Vertical orientation -->
+<!--             vjust = 0.5, # Perfect vertical centering -->
+<!--             hjust = 0.5 # Perfect horizontal centering for rotated text -->
+<!--           ) + -->
+<!--           # Titles and labels -->
+<!--           labs( -->
+<!--             title = "Daily Nigeria Crude Oil Prices (2009–2025)", -->
+<!--             subtitle = "Shaded regions highlight periods of prolonged disruption", -->
+<!--             x = "Date", -->
+<!--             y = "Price (USD per Barrel)", -->
+<!--             caption = "Source: Central Bank of Nigeria" -->
+<!--           ) + -->
+<!--           # X-axis formatting -->
+<!--           scale_x_date( -->
+<!--             date_breaks = "2 years", -->
+<!--             date_labels = "%Y" -->
+<!--           ) + -->
+<!--           # Y-axis formatting -->
+<!--           scale_y_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--           # Professional theme -->
+<!--           theme_minimal(base_size = 14) + -->
+<!--           theme( -->
+<!--             plot.title = element_text(face = "bold", size = 18), -->
+<!--             plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--             axis.title = element_text(face = "bold"), -->
+<!--             axis.text = element_text(color = "gray20"), -->
+<!--             panel.grid.major = element_line(color = "gray85"), -->
+<!--             panel.grid.minor = element_blank(), -->
+<!--             plot.caption = element_text(size = 10, color = "gray50", hjust = 0), -->
+<!--             plot.margin = margin(15, 15, 15, 15) -->
+<!--           ) -->
+<!--         daily_line_chart -->
+<!--         ggsave("images/daily_line_chart.png", daily_line_chart) -->
+<!--         ``` -->
+<!-- 2.  **Overlay 30-Day Moving Average** -->
+<!--     -   Smooths out volatility for a clear trend view. -->
+<!--     ```{r} -->
+<!--     moving_average <- ggplot(oil_data, aes(x = Date)) + -->
+<!--       geom_line(aes(y = Price), color = "#1f77b4", size = 0.7, alpha = 0.6) + # Daily prices -->
+<!--       geom_line(aes(y = MA30), color = "orange", size = 1) + # 30-day moving average -->
+<!--       labs( -->
+<!--         title = "Daily Nigeria Crude Oil Prices\nwith 30-Day Moving Average", -->
+<!--         subtitle = "Orange line represents the 30-day moving average", -->
+<!--         x = "Date", -->
+<!--         y = "Price (USD per Barrel)", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       scale_x_date(date_breaks = "2 years", date_labels = "%Y") + -->
+<!--       scale_y_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         panel.grid.major = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0) -->
+<!--       ) -->
+<!--     moving_average -->
+<!--     ggsave("images/moving_average.png", moving_average) -->
+<!--     ``` -->
+<!-- 3.  **Yearly Average Price Bar Chart** -->
+<!--     -   One bar per year showing annual average. -->
+<!--     ```{r} -->
+<!--     library(dplyr) -->
+<!--     library(ggplot2) -->
+<!--     library(scales) -->
+<!--     # Calculate yearly averages -->
+<!--     yearly_avg <- oil_data %>% -->
+<!--       group_by(Year) %>% -->
+<!--       summarise(Avg_Price = mean(Price, na.rm = TRUE), .groups = "drop") -->
+<!--     # Create the improved horizontal bar chart -->
+<!--     yearly_average <- ggplot(yearly_avg, aes( -->
+<!--       x = reorder(as.factor(Year), Avg_Price), -->
+<!--       y = Avg_Price, fill = Avg_Price -->
+<!--     )) + -->
+<!--       geom_bar(stat = "identity", width = 0.7) + -->
+<!--       # Color gradient based on price levels -->
+<!--       scale_fill_gradient( -->
+<!--         low = "#c6dbef", # light blue for lower prices -->
+<!--         high = "#08306b", # dark navy for higher prices -->
+<!--         name = "Avg Price" -->
+<!--       ) + -->
+<!--       # Flip coordinates to make bars horizontal -->
+<!--       coord_flip() + -->
+<!--       # Labels and titles -->
+<!--       labs( -->
+<!--         title = "Average Yearly Nigeria Crude Oil Prices", -->
+<!--         subtitle = "Higher prices shown in darker shades of blue", -->
+<!--         x = "Year", -->
+<!--         y = "Average Price (USD per Barrel)", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       # Format y-axis as currency -->
+<!--       scale_y_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--       # Theme customization for a professional look -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 12, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         axis.text = element_text(color = "gray20"), -->
+<!--         panel.grid.major.y = element_blank(), # Clean background for bars -->
+<!--         panel.grid.major.x = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         legend.position = "right", -->
+<!--         legend.title = element_text(face = "bold"), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0), -->
+<!--         plot.margin = margin(15, 15, 15, 15) -->
+<!--       ) -->
+<!--     yearly_average -->
+<!--     ggsave("images/yearly_average.png",yearly_average) -->
+<!--     ``` -->
+<!-- 4.  **Rolling Volatility Line Plot** -->
+<!--     -   30-day rolling standard deviation of prices to show stability periods. -->
+<!--     ```{r} -->
+<!--     rolling_volatility <- ggplot(oil_data, aes(x = Date, y = Volatility_30d)) + -->
+<!--       geom_line(color = "purple", size = 1) + -->
+<!--       labs( -->
+<!--         title = "30-Day Rolling Volatility of\nNigeria Crude Oil Prices", -->
+<!--         subtitle = "Higher values indicate more price instability", -->
+<!--         x = "Date", -->
+<!--         y = "30-Day Rolling Volatility (USD)", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       scale_x_date(date_breaks = "2 years", date_labels = "%Y") + -->
+<!--       scale_y_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         panel.grid.major = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0) -->
+<!--       ) -->
+<!--     rolling_volatility -->
+<!--     ggsave("images/rolling_volatility.png",rolling_volatility) -->
+<!--     ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Section 4: Seasonality & Cyclic Behavior** -->
+<!-- **Goal:** Identify recurring patterns. -->
+<!-- **Plots:** -->
+<!-- 1.  **Monthly Average Heatmap** -->
+<!--     -   X-axis = Year -->
+<!--     -   Y-axis = Month -->
+<!--     -   Color = Average price -->
+<!--     -   Helps identify seasonal trends or specific months with extreme prices. -->
+<!--     ```{r} -->
+<!--     library(ggplot2) -->
+<!--     library(lubridate) -->
+<!--     library(scales) -->
+<!--     # Prepare data for heatmap -->
+<!--     monthly_avg <- oil_data %>% -->
+<!--       mutate( -->
+<!--         Month = month(Date, label = TRUE, abbr = TRUE), -->
+<!--         Year = year(Date) -->
+<!--       ) %>% -->
+<!--       group_by(Year, Month) %>% -->
+<!--       summarise(Avg_Price = mean(Price, na.rm = TRUE), .groups = "drop") -->
+<!--     # Create the heatmap -->
+<!--     monthly_average_heatmap <- ggplot(monthly_avg, aes(x = as.factor(Year), y = Month, fill = Avg_Price)) + -->
+<!--       geom_tile(color = "white") + -->
+<!--       scale_fill_gradient(low = "lightyellow", high = "darkblue", name = "Avg Price") + -->
+<!--       labs( -->
+<!--         title = "Monthly Average Nigeria\nCrude Oil Prices Heatmap", -->
+<!--         subtitle = "Darker colors indicate higher average prices", -->
+<!--         x = "Year", -->
+<!--         y = "Month", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         axis.text.x = element_text(angle = 45, hjust = 1), -->
+<!--         panel.grid.major = element_blank(), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0) -->
+<!--       ) -->
+<!--     monthly_average_heatmap -->
+<!--     ggsave("images/monthly_average_heatmap.png",monthly_average_heatmap) -->
+<!--     ``` -->
+<!-- 2.  **Boxplot by Month** -->
+<!--     -   Compares distribution of prices across months. -->
+<!--     ```{r} -->
+<!--     library(ggplot2) -->
+<!--     library(scales) -->
+<!--     library(dplyr) -->
+<!--     library(lubridate) -->
+<!--     # Prepare data with month order -->
+<!--     oil_data <- oil_data %>% -->
+<!--       mutate(Month = factor(month(Date, label = TRUE, abbr = TRUE), -->
+<!--         levels = month.abb -->
+<!--       )) -->
+<!--     # Calculate median price per month for color scaling -->
+<!--     month_medians <- oil_data %>% -->
+<!--       group_by(Month) %>% -->
+<!--       summarise(Median_Price = median(Price, na.rm = TRUE), .groups = "drop") -->
+<!--     # Merge back for plotting -->
+<!--     oil_data_with_median <- oil_data %>% -->
+<!--       left_join(month_medians, by = "Month") -->
+<!--     # Create the improved boxplot -->
+<!--     median_plot <- ggplot(oil_data_with_median, aes(x = Month, y = Price, fill = Median_Price)) + -->
+<!--       geom_boxplot(alpha = 0.8, color = "gray40", outlier.color = "red", outlier.size = 2) + -->
+<!--       # Highlight median points for emphasis -->
+<!--       stat_summary( -->
+<!--         fun = median, geom = "point", -->
+<!--         shape = 21, size = 3, fill = "white", color = "black" -->
+<!--       ) + -->
+<!--       # Gradient fill based on median prices -->
+<!--       scale_fill_gradient( -->
+<!--         low = "#c6dbef", # Light blue for lower median prices -->
+<!--         high = "#08306b", # Dark blue for higher median prices -->
+<!--         name = "Median Price" -->
+<!--       ) + -->
+<!--       # Format Y-axis with dollar signs -->
+<!--       scale_y_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--       # Labels and title -->
+<!--       labs( -->
+<!--         title = "Monthly Distribution of Nigeria Crude Oil Prices", -->
+<!--         subtitle = "Boxplots show median, quartiles, and outliers for each month", -->
+<!--         x = "Month", -->
+<!--         y = "Price (USD per Barrel)", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       # Theme for a clean, professional look -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18, hjust = 0.5), -->
+<!--         plot.subtitle = element_text(size = 12, color = "gray40", hjust = 0.5), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         axis.text.x = element_text(color = "gray20"), -->
+<!--         panel.grid.major.x = element_blank(), -->
+<!--         panel.grid.major.y = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         legend.position = "right", -->
+<!--         legend.title = element_text(face = "bold"), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0), -->
+<!--         plot.margin = margin(15, 15, 15, 15) -->
+<!--       ) -->
+<!--     median_plot -->
+<!--     ggsave("images/median_plot.png",median_plot) -->
+<!--     ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Section 5: Price Dynamics & Volatility** -->
+<!-- **Goal:** Focus on changes and risk. -->
+<!-- **Metrics & Plots:** -->
+<!-- 1.  **Daily Percentage Change Histogram** -->
+<!--     -   Distribution of daily returns (% change). -->
+<!--     ```{r} -->
+<!--     library(ggplot2) -->
+<!--     library(scales) -->
+<!--     # Calculate dynamic x-axis limits with a small buffer -->
+<!--     x_min <- min(oil_data$Daily_Pct_Change, na.rm = TRUE) -->
+<!--     x_max <- max(oil_data$Daily_Pct_Change, na.rm = TRUE) -->
+<!--     buffer <- 1 # extra space on each side -->
+<!--     x_limits <- c(floor(x_min) - buffer, ceiling(x_max) + buffer) -->
+<!--     # Create the histogram of daily percentage changes -->
+<!--     perc_change_distr <- ggplot(oil_data, aes(x = Daily_Pct_Change)) + -->
+<!--       geom_histogram( -->
+<!--         binwidth = 1, -->
+<!--         fill = "#1f77b4", # professional blue -->
+<!--         color = "white", -->
+<!--         alpha = 0.8, -->
+<!--         boundary = 0 # keep bins aligned nicely -->
+<!--       ) + -->
+<!--       # Add vertical line at 0% -->
+<!--       geom_vline( -->
+<!--         xintercept = 0, -->
+<!--         linetype = "dashed", -->
+<!--         color = "red", -->
+<!--         size = 1 -->
+<!--       ) + -->
+<!--       # Add text annotation for the zero line -->
+<!--       annotate( -->
+<!--         "text", -->
+<!--         x = 0.5, -->
+<!--         y = max(table(cut(oil_data$Daily_Pct_Change, breaks = seq(x_min, x_max, by = 1)))), -->
+<!--         label = "0% Change", -->
+<!--         color = "red", -->
+<!--         hjust = 0, -->
+<!--         size = 5, -->
+<!--         fontface = "bold" -->
+<!--       ) + -->
+<!--       labs( -->
+<!--         title = "Distribution of Daily Percentage Changes in Nigeria Crude Oil Prices", -->
+<!--         subtitle = "The red dashed line represents no change (0%)", -->
+<!--         x = "Daily % Change", -->
+<!--         y = "Number of Days", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       # Dynamically set x-axis limits to reduce empty space -->
+<!--       scale_x_continuous( -->
+<!--         labels = function(x) paste0(x, "%"), -->
+<!--         limits = x_limits -->
+<!--       ) + -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         panel.grid.major = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0) -->
+<!--       ) -->
+<!--     perc_change_distr -->
+<!--     ggsave("images/perc_change_distr.png",perc_change_distr) -->
+<!--     ``` -->
+<!-- 2.  **Top 10 Biggest Daily Price Swings Table** -->
+<!--     | Date       | Price    | Daily % Change | -->
+<!--     |------------|----------|----------------| -->
+<!--     | 2020-04-20 | \$19.20  | -15.7%         | -->
+<!--     | 2008-07-11 | \$132.50 | +10.5%         | -->
+<!--     ```{r} -->
+<!--     library(dplyr) -->
+<!--     library(gt) -->
+<!--     library(scales) -->
+<!--     # Prepare top 10 daily swings -->
+<!--     top_swings <- oil_data %>% -->
+<!--       filter(!is.na(Daily_Pct_Change)) %>% -->
+<!--       arrange(desc(abs(Daily_Pct_Change))) %>% -->
+<!--       slice_head(n = 10) %>% -->
+<!--       select(Date, Price, Daily_Pct_Change) %>% -->
+<!--       mutate( -->
+<!--         Price = dollar(Price), -->
+<!--         Daily_Pct_Change = round(Daily_Pct_Change, 2) -->
+<!--       ) -->
+<!--     # Create a gt table with heatmap coloring -->
+<!--     top_swings_gt <- top_swings %>% -->
+<!--       gt() %>% -->
+<!--       tab_header( -->
+<!--         title = md("**Top 10 Largest Daily Swings in Nigeria Crude Oil Prices**") -->
+<!--       ) %>% -->
+<!--       cols_label( -->
+<!--         Date = "Date", -->
+<!--         Price = "Price (USD per Barrel)", -->
+<!--         Daily_Pct_Change = "Daily % Change" -->
+<!--       ) %>% -->
+<!--       fmt_number( -->
+<!--         columns = vars(Daily_Pct_Change), -->
+<!--         decimals = 2, -->
+<!--         pattern = "{x}%" -->
+<!--       ) %>% -->
+<!--       data_color( -->
+<!--         columns = vars(Daily_Pct_Change), -->
+<!--         colors = scales::col_numeric( -->
+<!--           palette = c("#d73027", "#ffffbf", "#1f77b4"), # Red → Yellow → Blue -->
+<!--           domain = c( -->
+<!--             min(top_swings$Daily_Pct_Change), -->
+<!--             max(top_swings$Daily_Pct_Change) -->
+<!--           ) -->
+<!--         ) -->
+<!--       ) %>% -->
+<!--       tab_style( -->
+<!--         style = cell_text(weight = "bold"), -->
+<!--         locations = cells_column_labels(everything()) -->
+<!--       ) %>% -->
+<!--       tab_options( -->
+<!--         table.font.size = 14, -->
+<!--         table.width = pct(80), -->
+<!--         heading.align = "left", -->
+<!--         column_labels.border.bottom.color = "black", -->
+<!--         data_row.padding = px(6) -->
+<!--       ) %>% -->
+<!--       tab_source_note( -->
+<!--         source_note = "Source: Central Bank of Nigeria" -->
+<!--       ) -->
+<!--     top_swings_gt -->
+<!--     gtsave(top_swings_gt, "images/top_swings_gt.png") -->
+<!--     ``` -->
+<!-- 3.  **Volatility Timeline Plot** -->
+<!--     -   Rolling 30-day volatility curve. -->
+<!--     ```{r} -->
+<!--     volatility_curve <- ggplot(oil_data, aes(x = Date, y = Volatility_30d)) + -->
+<!--       geom_line(color = "purple", size = 1) + -->
+<!--       labs( -->
+<!--         title = "30-Day Rolling Volatility of Nigeria Crude Oil Prices", -->
+<!--         subtitle = "Higher values indicate more price instability", -->
+<!--         x = "Date", -->
+<!--         y = "30-Day Rolling Volatility (USD)", -->
+<!--         caption = "Source: Central Bank of Nigeria" -->
+<!--       ) + -->
+<!--       scale_x_date(date_breaks = "2 years", date_labels = "%Y") + -->
+<!--       scale_y_continuous(labels = dollar_format(prefix = "$")) + -->
+<!--       theme_minimal(base_size = 14) + -->
+<!--       theme( -->
+<!--         plot.title = element_text(face = "bold", size = 18), -->
+<!--         plot.subtitle = element_text(size = 13, color = "gray40"), -->
+<!--         axis.title = element_text(face = "bold"), -->
+<!--         panel.grid.major = element_line(color = "gray85"), -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         plot.caption = element_text(size = 10, color = "gray50", hjust = 0) -->
+<!--       ) -->
+<!--     volatility_curve -->
+<!--     ggsave("images/volatility_curve.png", volatility_curve) -->
+<!--     ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Section 6: Aggregated Yearly and Monthly Summaries** -->
+<!-- **Tables:** -->
+<!-- #### **Yearly Summary Table** -->
+<!-- | Year | Avg Price | Max Price | Min Price | YoY % Change | -->
+<!-- |------|-----------|-----------|-----------|--------------| -->
+<!-- | 2008 | 103.45    | 132.50    | 45.20     | \-           | -->
+<!-- | 2009 | 70.35     | 90.00     | 38.50     | -31.96%      | -->
+<!-- | 2010 | 82.14     | 92.40     | 68.50     | +16.78%      | -->
+<!-- ```{r} -->
+<!-- yearly_summary <- oil_data %>% -->
+<!--   group_by(Year = format(Date, "%Y")) %>% -->
+<!--   summarise( -->
+<!--     Avg_Price = round(mean(Price, na.rm = TRUE), 2), -->
+<!--     Max_Price = max(Price, na.rm = TRUE), -->
+<!--     Min_Price = min(Price, na.rm = TRUE), -->
+<!--     YoY_Change = (last(Price) - first(Price)) / first(Price) * 100, -->
+<!--     .groups = "drop" -->
+<!--   ) %>% -->
+<!--   mutate( -->
+<!--     YoY_Change = ifelse(is.na(lag(Avg_Price)), NA, YoY_Change), -->
+<!--     YoY_Change = round(YoY_Change, 2) -->
+<!--   ) -->
+<!-- yearly_summary_gt <- yearly_summary %>% -->
+<!--   gt() %>% -->
+<!--   tab_header( -->
+<!--     title = md("**Yearly Summary of Nigeria Crude Oil Prices**") -->
+<!--   ) %>% -->
+<!--   cols_label( -->
+<!--     Year = "Year", -->
+<!--     Avg_Price = "Avg Price (USD)", -->
+<!--     Max_Price = "Max Price (USD)", -->
+<!--     Min_Price = "Min Price (USD)", -->
+<!--     YoY_Change = "YoY % Change" -->
+<!--   ) %>% -->
+<!--   fmt_number( -->
+<!--     columns = vars(Avg_Price, Max_Price, Min_Price), -->
+<!--     decimals = 2, -->
+<!--     pattern = "${x}" -->
+<!--   ) %>% -->
+<!--   fmt_number( -->
+<!--     columns = vars(YoY_Change), -->
+<!--     decimals = 2, -->
+<!--     pattern = "{x}%", -->
+<!--     use_seps = TRUE -->
+<!--   ) %>% -->
+<!--   data_color( -->
+<!--     columns = vars(YoY_Change), -->
+<!--     colors = scales::col_numeric( -->
+<!--       palette = c("#d73027", "#ffffbf", "#1f77b4"), # Red → Yellow → Blue -->
+<!--       domain = c( -->
+<!--         min(yearly_summary$YoY_Change, na.rm = TRUE), -->
+<!--         max(yearly_summary$YoY_Change, na.rm = TRUE) -->
+<!--       ) -->
+<!--     ) -->
+<!--   ) %>% -->
+<!--   tab_style( -->
+<!--     style = cell_text(weight = "bold"), -->
+<!--     locations = cells_column_labels(everything()) -->
+<!--   ) %>% -->
+<!--   tab_options( -->
+<!--     table.font.size = 14, -->
+<!--     table.width = pct(80), -->
+<!--     heading.align = "left", -->
+<!--     column_labels.border.bottom.color = "black", -->
+<!--     data_row.padding = px(6) -->
+<!--   ) %>% -->
+<!--   tab_source_note( -->
+<!--     source_note = "Source: Central Bank of Nigeria" -->
+<!--   ) -->
+<!-- yearly_summary_gt -->
+<!-- gtsave(yearly_summary_gt, "images/yearly_summary_gt.png") -->
+<!-- ``` -->
+<!-- #### **Monthly Summary Table** (for latest year) -->
+<!-- | Month | Avg Price | Max Price | Min Price | -->
+<!-- |-------|-----------|-----------|-----------| -->
+<!-- | Jan   | 92.31     | 96.20     | 88.45     | -->
+<!-- | Feb   | 91.50     | 94.00     | 89.10     | -->
+<!-- ```{r} -->
+<!-- library(dplyr) -->
+<!-- library(gt) -->
+<!-- library(scales) -->
+<!-- library(lubridate) -->
+<!-- # Determine latest year -->
+<!-- latest_year <- max(year(oil_data$Date), na.rm = TRUE) -->
+<!-- # Prepare monthly summary -->
+<!-- monthly_summary <- oil_data %>% -->
+<!--   filter(year(Date) == latest_year) %>% -->
+<!--   mutate(Month = factor(month(Date, label = TRUE, abbr = TRUE), levels = month.abb)) %>% -->
+<!--   group_by(Month) %>% -->
+<!--   summarise( -->
+<!--     Avg_Price = round(mean(Price, na.rm = TRUE), 2), -->
+<!--     Max_Price = round(max(Price, na.rm = TRUE), 2), -->
+<!--     Min_Price = round(min(Price, na.rm = TRUE), 2), -->
+<!--     .groups = "drop" -->
+<!--   ) %>% -->
+<!--   arrange(Month) -->
+<!-- # Create GT table with heatmap for Avg_Price -->
+<!-- monthly_summary_gt <- monthly_summary %>% -->
+<!--   gt() %>% -->
+<!--   tab_header( -->
+<!--     title = md(paste0("**Monthly Summary of Nigeria Crude Oil Prices for ", latest_year, "**")) -->
+<!--   ) %>% -->
+<!--   cols_label( -->
+<!--     Month = "Month", -->
+<!--     Avg_Price = "Avg Price (USD)", -->
+<!--     Max_Price = "Max Price (USD)", -->
+<!--     Min_Price = "Min Price (USD)" -->
+<!--   ) %>% -->
+<!--   fmt_number( -->
+<!--     columns = vars(Avg_Price, Max_Price, Min_Price), -->
+<!--     decimals = 2, -->
+<!--     pattern = "${x}" -->
+<!--   ) %>% -->
+<!--   data_color( -->
+<!--     columns = vars(Avg_Price), -->
+<!--     colors = scales::col_numeric( -->
+<!--       palette = c("#d73027", "#ffffbf", "#1f77b4"), # Light yellow → Dark blue -->
+<!--       domain = c(min(monthly_summary$Avg_Price), max(monthly_summary$Avg_Price)) -->
+<!--     ) -->
+<!--   ) %>% -->
+<!--   tab_style( -->
+<!--     style = cell_text(weight = "bold"), -->
+<!--     locations = cells_column_labels(everything()) -->
+<!--   ) %>% -->
+<!--   tab_options( -->
+<!--     table.font.size = 14, -->
+<!--     table.width = pct(70), -->
+<!--     heading.align = "left", -->
+<!--     column_labels.border.bottom.color = "black", -->
+<!--     data_row.padding = px(6) -->
+<!--   ) %>% -->
+<!--   tab_source_note( -->
+<!--     source_note = paste0("Source: Central Bank of Nigeria | Year: ", latest_year) -->
+<!--   ) -->
+<!-- monthly_summary_gt -->
+<!-- gtsave(monthly_summary_gt, "images/monthly_summary_gt.png") -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Section 7: Key Events Timeline** -->
+<!-- -   Annotated timeline of price movements with key global and local events. -->
+<!--     -   2008 Global Financial Crisis -->
+<!--     -   2014 Oil Glut -->
+<!--     -   2020 COVID-19 Demand Collapse -->
+<!-- **Plot:** -->
+<!-- -   Line chart with **vertical markers** for events. -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Section 8: Conclusions** -->
+<!-- -   Summarize main findings: -->
+<!--     -   "Oil prices peaked in 2008 and experienced significant volatility in 2020." -->
+<!--     -   "Average price over the last decade stabilized between \$60–\$80." -->
+<!--     -   "Seasonal trends indicate higher prices during Q3 each year." -->
+<!-- -   Recommendations for future analysis: -->
+<!--     -   Include production/export volume. -->
+<!--     -   Compare with Brent or WTI benchmarks. -->
+<!--     -   Incorporate currency exchange rates for Naira-adjusted analysis. -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Appendix** -->
+<!-- -   Data cleaning steps. -->
+<!-- -   Code snippets for reproducibility. -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ## **Key Plots Summary** -->
+<!-- | **Plot**                         | **Purpose**                      | -->
+<!-- |----------------------------------|----------------------------------| -->
+<!-- | Line chart of daily prices       | Core view of historical movement | -->
+<!-- | 30-day moving average line chart | Smooth out volatility            | -->
+<!-- | Histogram of daily prices        | Distribution of price levels     | -->
+<!-- | Yearly average price bar chart   | Compare across years             | -->
+<!-- | Monthly average heatmap          | Detect seasonal effects          | -->
+<!-- | Boxplot by month                 | Monthly distribution             | -->
+<!-- | Daily % change histogram         | Volatility distribution          | -->
+<!-- | Rolling volatility line plot     | Track stability over time        | -->
+<!-- | Timeline with event annotations  | Connect prices to global events  | -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ## **Example R Code Snippets** -->
+<!-- ### **Line Plot with Moving Average** -->
+<!-- ``` r -->
+<!-- library(ggplot2) -->
+<!-- library(zoo) -->
+<!-- ggplot(oil_data_full, aes(x = Date, y = Price)) + -->
+<!--   geom_line(color = "steelblue") + -->
+<!--   geom_line(aes(y = MA30), color = "red", linetype = "dashed") + -->
+<!--   labs(title = "Daily Nigeria Crude Oil Price with 30-Day Moving Average", -->
+<!--        y = "Price (USD/barrel)", x = "Date") -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Yearly Summary Table** -->
+<!-- ``` r -->
+<!-- yearly_summary <- oil_data_full %>% -->
+<!--   group_by(Year = format(Date, "%Y")) %>% -->
+<!--   summarise( -->
+<!--     Avg_Price = round(mean(Price, na.rm = TRUE), 2), -->
+<!--     Max_Price = max(Price, na.rm = TRUE), -->
+<!--     Min_Price = min(Price, na.rm = TRUE), -->
+<!--     YoY_Change = (last(Price) - first(Price)) / first(Price) * 100 -->
+<!--   ) -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### **Generating PDF** -->
+<!-- You can create a polished PDF using **R Markdown**: -->
+<!-- ``` yaml -->
+<!-- --- -->
+<!-- title: "Nigeria Crude Oil Price Report" -->
+<!-- author: "Your Name" -->
+<!-- date: "`r Sys.Date()`" -->
+<!-- output: pdf_document -->
+<!-- --- -->
+<!-- ``` -->
+<!-- Run: -->
+<!-- ``` r -->
+<!-- rmarkdown::render("oil_report.Rmd") -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ## **Final Structure Recap** -->
+<!-- The final PDF should read like a **story**: -->
+<!-- 1.  **Introduction & context** -->
+<!-- 2.  **What the data says (tables + plots)** -->
+<!-- 3.  **Analysis of trends and volatility** -->
+<!-- 4.  **Summary of insights** -->
+<!-- 5.  **Recommendations and future analysis** -->
+<!-- This approach ensures your report is **clear, professional, and actionable**. -->
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/learndata\.xyz");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://giscus.app/client.js" data-repo="adejumoridwan/comments" data-repo-id="R_kgDOMp4Jsg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script type="application/javascript">
+  const giscusIframeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (addedNode) {
+        if (addedNode.matches && addedNode.matches('div.giscus')) {
+          const giscusIframe = addedNode.querySelector('iframe.giscus-frame');
+          if(giscusIframe) {
+            giscusIframe.addEventListener("load", function() {
+              window.setTimeout(() => {
+                toggleGiscusIfUsed(hasAlternateSentinel(), authorPrefersDark);
+              }, 100);
+            });
+            giscusIframeObserver.disconnect();
+          }
+        }
+      });
+    });
+  });
+  giscusIframeObserver.observe(document.body, { childList: true, subtree: true });
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 LearnData</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../navs/about.html">
+<p>About</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="mailto:admin@learndata.xyz">
+<p>Contact</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../navs/services.html">
+<p>Services</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../navs/privacy.html">
+<p>Privacy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../navs/tos.html">
+<p>Terms of Service</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/learndata_xyz">
+<p>Twitter</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/company/learndataxyz">
+<p>LinkedIn</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.github.com/learndataxyz">
+<p>GitHUB</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

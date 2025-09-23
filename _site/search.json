@@ -4,7 +4,7 @@
     "href": "reports.html",
     "title": "Reports",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html",
@@ -1666,10 +1666,10 @@
     "text": "No matching items"
   },
   {
-    "objectID": "reports/daily_crude_oil_price/index.html",
-    "href": "reports/daily_crude_oil_price/index.html",
-    "title": "Nigeria’s Daily Crude Oil Price Report",
+    "objectID": "visuals/daily_crude_price_trend/index.html",
+    "href": "visuals/daily_crude_price_trend/index.html",
+    "title": "Daily Nigeria Crude Oil Prices (2009 - 2025)",
     "section": "",
-    "text": "Nigeria’s crude oil prices have dropped by approximately 15% since 2009, driven by a range of global and domestic factors.\nThese include fluctuations in global oil demand, production cuts by OPEC, geopolitical tensions, exchange rate volatility, and shifts towards renewable energy.\nDomestically, challenges such as pipeline vandalism, oil theft, and regulatory uncertainty have also impacted the stability of crude oil prices over time.\nFrom October 23, 2009, to September 9, 2025, a total of 3,695 days of data were analyzed. During this period, Nigeria’s crude oil prices exhibited significant volatility:\nThe highest recorded price was $139.41 on March 8, 2022, reflecting post-pandemic recovery and global supply disruptions.\nThe lowest recorded price was $7.15 on April 21, 2020, during the COVID-19 pandemic when global demand collapsed.\nThe average price over the period was $79.13, showing a long-term trend of gradual stabilization despite short-term swings.\nThe overall downward trend in prices since 2009 highlights the need for strategic economic diversification in Nigeria, as heavy reliance on crude oil revenue exposes the country to external shocks.\nFor policymakers, investors, and businesses, these insights underscore the importance of hedging strategies, forward-looking planning, and robust energy policies to mitigate the impact of price swings.\nLooking forward, preliminary forecasts suggest that crude oil prices may experience continued fluctuations over the next five years, with potential periods of decline followed by gradual recovery.\nThis report provides timely and accurate data to help stakeholders make informed decisions in navigating Nigeria’s dynamic energy market.\nRead the full report on here."
+    "text": "Data Source: Central Bank of Nigeria\nRead the full report on here.\nClick here for more visuals."
   }
 ]
