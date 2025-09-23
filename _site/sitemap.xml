@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://learndata.xyz/visuals.html</loc>
+    <lastmod>2025-09-23T08:16:21.431Z</lastmod>
+  </url>
+  <url>
     <loc>https://learndata.xyz/reports.html</loc>
     <lastmod>2025-09-22T11:46:41.440Z</lastmod>
   </url>
@@ -153,16 +157,12 @@
     <lastmod>2025-05-12T08:47:15.023Z</lastmod>
   </url>
   <url>
-    <loc>https://learndata.xyz/posts/The Engineer&amp;#39;s Guide to Low Code/index.html</loc>
+    <loc>https://learndata.xyz/posts/The Engineer&#39;s Guide to Low Code/index.html</loc>
     <lastmod>2025-05-28T11:26:28.385Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html</loc>
     <lastmod>2025-05-28T11:26:28.023Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/visuals.html</loc>
-    <lastmod>2025-09-23T08:16:21.431Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/reports/daily_crude_oil_price/crude_oil_prices.html</loc>
@@ -171,9 +171,5 @@
   <url>
     <loc>https://learndata.xyz/reports/gsm_market_share/gsm_market_share.html</loc>
     <lastmod>2025-09-23T08:21:33.370Z</lastmod>
-  </url>
-  <url>
-    <loc>https://learndata.xyz/visuals/daily_crude_price_trend/index.html</loc>
-    <lastmod>2025-09-23T09:25:34.192Z</lastmod>
   </url>
 </urlset>

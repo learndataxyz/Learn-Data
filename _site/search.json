@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "visuals.html",
+    "href": "visuals.html",
+    "title": "Visuals",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "reports.html",
     "href": "reports.html",
     "title": "Reports",
@@ -1657,19 +1664,5 @@
     "title": "Why Traditional Web Development Skills Matter for Modern ML Engineers",
     "section": "Your next breakthrough could be one email away. Let’s make it happen!",
     "text": "Your next breakthrough could be one email away. Let’s make it happen!"
-  },
-  {
-    "objectID": "visuals.html",
-    "href": "visuals.html",
-    "title": "Visuals",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "visuals/daily_crude_price_trend/index.html",
-    "href": "visuals/daily_crude_price_trend/index.html",
-    "title": "Daily Nigeria Crude Oil Prices (2009 - 2025)",
-    "section": "",
-    "text": "Data Source: Central Bank of Nigeria\nRead the full report on here.\nClick here for more visuals."
   }
 ]
