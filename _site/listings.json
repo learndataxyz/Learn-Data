@@ -5,10 +5,7 @@
   },
   {
     "listing": "/reports.html",
-    "items": [
-      "/reports/daily_crude_oil_price/crude_oil_prices.html",
-      "/reports/gsm_market_share/gsm_market_share.html"
-    ]
+    "items": []
   },
   {
     "listing": "/courses.html",
