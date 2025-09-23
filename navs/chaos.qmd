@@ -1,0 +1,9 @@
+---
+title: Chaos
+---
+
+Real-world data is often messy and complex, quickly becoming overwhelming for individuals seeking to improve their data cleaning and management skills.
+
+Accessing authentic, messy datasets can be challenging, as most datasets available on platforms like Kaggle and other repositories are pre-cleaned, making them far removed from the realities of working with raw data.
+
+To address this gap, we developed [Chaos](https://chaos.learndata.xyz)—a web application designed to generate messy datasets from clean data. Inspired by Nicola Rennie's brilliant work in the messy R package, this tool is ideal for data scientists, educators, and developers who want to stress-test their data pipelines or teach data cleaning in a controlled environment.

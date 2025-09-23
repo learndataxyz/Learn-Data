@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://learndata.xyz/reports.html</loc>
+    <lastmod>2025-09-22T11:46:41.440Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html</loc>
+    <lastmod>2025-03-20T10:31:54.744Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html</loc>
+    <lastmod>2025-09-22T11:46:16.458Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Test Driven Development with Python Shiny/index.html</loc>
+    <lastmod>2025-08-11T07:27:50.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html</loc>
+    <lastmod>2024-11-18T08:37:48.246Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Linear Regression with Python Statsmodels Assumptions and Interpretation/index.html</loc>
+    <lastmod>2024-11-20T13:59:37.074Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Introduction to Kaplan-Meier Survival Analysis Estimation with Python/index.html</loc>
+    <lastmod>2025-01-25T10:52:12.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Plot a Time Series Plot with Python Plotnine/index.html</loc>
+    <lastmod>2025-09-06T09:58:40.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Dockerize a Python Shiny Application/index.html</loc>
+    <lastmod>2025-09-19T19:42:45.424Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How R Helps You Catch Errors Before They Become Headlines/index.html</loc>
+    <lastmod>2025-08-21T07:47:08.675Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/E2E/index.html</loc>
+    <lastmod>2024-11-18T08:29:03.511Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Building Your First ML Model API with FastAPI A Step-by-Step Guide/index.html</loc>
+    <lastmod>2025-05-09T14:28:56.768Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html</loc>
+    <lastmod>2025-08-21T07:46:49.729Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/tos.html</loc>
+    <lastmod>2025-07-03T07:17:40.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/resources.html</loc>
+    <lastmod>2024-03-04T21:32:03.286Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/learn.html</loc>
+    <lastmod>2025-01-30T14:30:52.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/home.html</loc>
+    <lastmod>2025-07-03T07:18:24.648Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/correlateai.html</loc>
+    <lastmod>2025-03-18T10:29:20.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/coming_soon.html</loc>
+    <lastmod>2024-10-02T10:35:02.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/about.html</loc>
+    <lastmod>2025-07-03T07:43:02.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/courses.html</loc>
+    <lastmod>2025-09-06T11:02:02.707Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/blog.html</loc>
+    <lastmod>2025-09-22T11:46:09.439Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/index.html</loc>
+    <lastmod>2025-07-03T07:15:19.710Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/chaos.html</loc>
+    <lastmod>2025-01-30T14:32:44.383Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/contact.html</loc>
+    <lastmod>2024-03-04T21:32:03.283Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/courses.html</loc>
+    <lastmod>2025-05-15T07:00:46.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/privacy.html</loc>
+    <lastmod>2025-07-03T07:16:51.056Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/navs/services.html</loc>
+    <lastmod>2025-07-03T07:19:04.376Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/20 Python Frameworks for Frontend Development Java/index.html</loc>
+    <lastmod>2025-07-03T07:19:53.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Adding User Authentication to Python Shiny Applications using JWT/index.html</loc>
+    <lastmod>2025-06-03T13:41:39.867Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/CICD with Python Shiny and GitHub Actions/index.html</loc>
+    <lastmod>2024-11-18T08:39:20.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Forecasting Time Series Data With Facebook Prophet/index.html</loc>
+    <lastmod>2025-05-28T11:26:28.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Create and Read a Forest Plot in R/index.html</loc>
+    <lastmod>2024-11-20T10:17:00.327Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How to Forecast Your YouTube Channel Views for the Next 30 Days/index.html</loc>
+    <lastmod>2025-04-16T14:01:29.840Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/How_to_conduct_unit_tests_in_Python_Shiny_with_Pytest/index.html</loc>
+    <lastmod>2024-11-18T08:38:16.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/language_translator/index.html</loc>
+    <lastmod>2024-11-18T08:38:04.819Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Model Deployment in R with Plumber/index.html</loc>
+    <lastmod>2025-05-15T07:49:33.288Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Securing ML APIs with FastAPI/index.html</loc>
+    <lastmod>2025-05-12T08:47:15.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/The Engineer&amp;#39;s Guide to Low Code/index.html</loc>
+    <lastmod>2025-05-28T11:26:28.385Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html</loc>
+    <lastmod>2025-05-28T11:26:28.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/visuals.html</loc>
+    <lastmod>2025-09-23T08:16:21.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/reports/daily_crude_oil_price/index.html</loc>
+    <lastmod>2025-09-22T13:50:09.433Z</lastmod>
+  </url>
+</urlset>

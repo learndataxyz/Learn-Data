@@ -1,0 +1,734 @@
+<!-- Yes, you **should create new metrics** to make your report more insightful and actionable. While NCC provides the raw subscriber counts by operator, **custom metrics** will help uncover deeper trends, performance benchmarks, and strategic insights for stakeholders. -->
+
+<!-- Here’s a guide to the **new metrics** you can create, grouped by category: -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **1. Growth Metrics** -->
+
+<!-- These measure how operators are expanding or shrinking over time. -->
+
+<!-- | **Metric** | **Formula** | **Purpose** | -->
+<!-- |-----------------|--------------------------------------|------------------| -->
+<!-- | **Monthly Growth Rate (MGR)** | $(Subscribers_{current} - Subscribers_{previous}) \div Subscribers_{previous} \times 100$ | Identify short-term growth or decline trends. | -->
+<!-- | **Year-over-Year Growth (YoY)** | $(Subscribers_{current\_year} - Subscribers_{same\_month\_last\_year}) \div Subscribers_{same\_month\_last\_year} \times 100$ | Compare growth seasonally and account for cyclical trends. | -->
+<!-- | **Compound Annual Growth Rate (CAGR)** | $\big(\frac{Subscribers_{end}}{Subscribers_{start}}\big)^{\frac{1}{Years}} - 1$ | Show long-term growth sustainability (2014–2025). | -->
+<!-- | **Net Adds** | $Subscribers_{current} - Subscribers_{previous}$ | Highlight actual change in subscribers for a given period. | -->
+
+<!-- **Visualization:** -->
+
+<!-- -   Line chart of net adds by operator over time. -->
+<!-- -   Bar chart of yearly YoY growth rates. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **2. Market Share Metrics** -->
+
+<!-- These measure competitiveness and dominance among operators. -->
+
+<!-- | **Metric** | **Formula** | **Purpose** | -->
+<!-- |------------------|----------------------------|--------------------------| -->
+<!-- | **Market Share (MS)** | $\frac{Subscribers_{operator}}{Total\_Subscribers} \times 100$ | Determine each operator’s proportion of total market. | -->
+<!-- | **Market Share Change (MSΔ)** | $MS_{current} - MS_{previous}$ | Measure gains or losses in market power. | -->
+<!-- | **Herfindahl-Hirschman Index (HHI)** | $HHI = \sum (MS^2)$ | Assess market concentration (high HHI = less competition). | -->
+<!-- | **Subscriber Leadership Gap** | $MS_{Leader} - MS_{Second}$ | Understand competitive pressure on market leader. | -->
+
+<!-- **Visualization:** -->
+
+<!-- -   Stacked area chart of market share evolution (2014–2025). -->
+<!-- -   Line chart comparing market share gap between top two operators. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **3. Retention & Stability Metrics** -->
+
+<!-- These evaluate subscriber loyalty and market stability. *(Requires porting/churn data if available.)* -->
+
+<!-- | **Metric** | **Formula** | **Purpose** | -->
+<!-- |------------------|---------------------------|---------------------------| -->
+<!-- | **Churn Rate** | $\frac{Subscribers_{lost}}{Subscribers_{start}} \times 100$ | Measure customer turnover per month or quarter. | -->
+<!-- | **Stability Index (SI)** | $1 - Churn\_Rate$ | Indicate operator subscriber base stability. | -->
+<!-- | **Net Subscriber Retention (NSR)** | $Net Adds - Subscribers_{lost}$ | Show how well an operator retains and grows simultaneously. | -->
+
+<!-- If porting data isn’t available, you can estimate churn using dips in subscriber counts over rolling periods. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **4. Regulatory & External Impact Metrics** -->
+
+<!-- These show how external factors (e.g., NIN-SIM linkage, fines) affect the sector. -->
+
+<!-- | **Metric** | **Formula / Method** | **Purpose** | -->
+<!-- |-----------------|-------------------------------|------------------------| -->
+<!-- | **SIM Ban Impact Factor (SIF)** | Compare average net adds 6 months **before** vs. **after** regulation event | Quantify the effect of major policies like NIN-SIM linkage. | -->
+<!-- | **COVID-19 Impact Index** | Deviation from expected growth trend during 2020–2021 | Measure pandemic disruption to telecom growth. | -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **5. Efficiency Metrics (Performance per Resource)** -->
+
+<!-- If you have revenue, ARPU, or BTS data, link subscribers to network efficiency. -->
+
+<!-- | **Metric** | **Formula** | **Purpose** | -->
+<!-- |---------------------------|-----------------------|-----------------------| -->
+<!-- | **Subscribers per BTS (Tower Density)** | $\frac{Subscribers_{operator}}{Number\_of\_BTS}$ | Gauge network load and infrastructure sufficiency. | -->
+<!-- | **Subscribers per 1M Capex (if Capex data is available)** | $\frac{Subscribers_{added}}{Capex/1,000,000}$ | Show return on network investments. | -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **6. Forecast Metrics** -->
+
+<!-- Prepare forward-looking indicators for 2025–2027. -->
+
+<!-- | **Metric** | **Formula / Method** | **Purpose** | -->
+<!-- |------------------|----------------------------|--------------------------| -->
+<!-- | **Projected Subscribers** | Time-series forecasting models (ARIMA, Prophet, or regression) | Predict future subscriber levels. | -->
+<!-- | **Projected Market Share** | Extrapolate growth rates by operator | Estimate future competitive landscape. | -->
+<!-- | **Subscriber Saturation Index (SSI)** | $\frac{Active\_Subscribers}{Population}\times 100$ | Evaluate potential for future growth by penetration level. | -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **7. Key Indices to Include in the Report** -->
+
+<!-- These combine multiple metrics into simple indicators for executives: -->
+
+<!-- 1.  **Telecom Growth Health Index (TGHI):** Weighted combination of YoY Growth, Net Adds, and Stability Index. -->
+<!-- 2.  **Competition Intensity Index (CII):** Derived from HHI and Market Share Gap. -->
+<!-- 3.  **Digital Inclusion Index:** Based on rural vs. urban penetration (if location data is available). -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **Implementation Plan for Metrics** -->
+
+<!-- 1.  **Stage 1 – Baseline Metrics:** Start with core numbers: total subscribers, net adds, market share. -->
+<!-- 2.  **Stage 2 – Advanced Metrics:** Add growth rates, churn, HHI, and event-impact analysis. -->
+<!-- 3.  **Stage 3 – Predictive Metrics:** Build forecasting models and composite indices for strategy planning. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- Would you like me to help you **calculate these metrics automatically** in Excel or Python using your NCC dataset? This would make it easier to generate the visuals and tables for the report. -->
+
+<!-- Here’s a **new, data-driven outline** for your report on Nigeria’s telecom subscriber base (May 2014 – July 2025), fully integrating **custom metrics** to deliver deeper insights for operators, regulators, and investors. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # **Comprehensive Telecom Subscriber Report (Nigeria: May 2014 – July 2025)** -->
+
+<!-- **Powered by Advanced Metrics & Analytics** -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **1. Executive Summary** -->
+
+<!-- -   **Purpose:** -->
+
+<!--     -   Analyze subscriber growth, market dynamics, and competition across Nigerian telecom operators. -->
+<!--     -   Highlight the effects of major regulatory and external events (e.g., NIN-SIM linkage, COVID-19, 5G launch). -->
+
+<!-- -   **Top Findings:** -->
+
+<!--     -   Total subscriber growth and CAGR (2014–2025). -->
+<!--     -   Leading operator and competitive landscape changes. -->
+<!--     -   Key disruptions and recovery trends. -->
+<!--     -   Forecast outlook for 2025–2027. -->
+
+<!-- -   **Key Metrics Presented:** -->
+
+<!--     -   Telecom Growth Health Index (TGHI). -->
+<!--     -   Competition Intensity Index (CII). -->
+<!--     -   Subscriber Saturation Index (SSI). -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **2. Introduction** -->
+
+<!-- -   **Background:** -->
+
+<!--     -   Overview of Nigeria’s telecom sector evolution. -->
+<!--     -   Role of the Nigerian Communications Commission (NCC) in data collection and oversight. -->
+
+<!-- -   **Scope of Analysis:** -->
+
+<!--     -   Timeframe: May 2014 – July 2025. -->
+<!--     -   Operators included: MTN, Airtel, Globacom, 9mobile, and emerging players. -->
+
+<!-- -   **Methodology:** -->
+
+<!--     -   Data cleaning and normalization steps. -->
+<!--     -   Calculation of derived metrics: growth, market share, churn, competition indices. -->
+<!--     -   Forecast modeling approach (ARIMA/Prophet). -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **3. Industry Context & External Drivers** -->
+
+<!-- -   **Historical Sector Milestones (2014–2025):** -->
+
+<!--     -   Introduction of 4G (2016–2018). -->
+<!--     -   NIN-SIM policy enforcement (2020–2022). -->
+<!--     -   Entry of 5G services (2023 onward). -->
+
+<!-- -   **Regulatory & Policy Events:** -->
+
+<!--     -   SIM registration regulations. -->
+<!--     -   Spectrum auctions and their effect on growth. -->
+
+<!-- -   **External Macroeconomic Factors:** -->
+
+<!--     -   Population growth vs. subscriber penetration. -->
+<!--     -   Economic downturns and their impact on telecom adoption. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **4. Total Subscriber Base Trends** -->
+
+<!-- ### **4.1 Overall Growth** -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   Total subscribers by month. -->
+<!--     -   **CAGR** for 2014–2025. -->
+<!--     -   **Monthly Growth Rate (MGR)** and **Net Adds** trends. -->
+
+<!-- -   **Visuals:** -->
+
+<!--     -   Line chart showing total subscriber growth. -->
+<!--     -   Bar chart of yearly net adds. -->
+
+<!-- -   **Key Insights:** -->
+
+<!--     -   Periods of rapid growth vs. contraction. -->
+<!--     -   Impact of external shocks like NIN-SIM deactivation or COVID-19. -->
+
+<!-- ### **4.2 Subscriber Saturation Index (SSI)** -->
+
+<!-- -   Definition: $\frac{Active Subscribers}{Population} \times 100$ -->
+<!-- -   **Purpose:** Identify when the market is nearing maturity. -->
+<!-- -   **Visual:** SSI trend line compared to population growth. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **5. Operator-Level Performance Analysis** -->
+
+<!-- This section breaks down each operator’s growth trajectory. -->
+
+<!-- ### **5.1 Individual Operator Growth** -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   Monthly subscriber count trends. -->
+<!--     -   **YoY Growth Rate**, **Net Adds**, and **Stability Index (SI)**. -->
+
+<!-- -   **Visual:** Line charts for each operator. -->
+
+<!-- ### **5.2 Operator Comparisons** -->
+
+<!-- -   Compare growth rates side-by-side to highlight performance gaps. -->
+<!-- -   Identify periods when one operator outperformed competitors. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **6. Market Share Dynamics** -->
+
+<!-- ### **6.1 Current Market Share** -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   Monthly **Market Share (MS)** by operator. -->
+<!--     -   **Market Share Change (MSΔ)** for month-on-month competitiveness. -->
+
+<!-- -   **Visual:** Stacked area chart showing market share evolution. -->
+
+<!-- ### **6.2 Competitive Intensity** -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   **Herfindahl-Hirschman Index (HHI)** to measure market concentration. -->
+<!--     -   **Subscriber Leadership Gap**: Difference between top two operators’ shares. -->
+<!--     -   **Competition Intensity Index (CII):** Combines HHI and Leadership Gap. -->
+
+<!-- -   **Visual:** -->
+
+<!--     -   Line chart of HHI trends. -->
+<!--     -   Highlight periods of increasing or decreasing competition. -->
+
+<!-- ### **6.3 Major Market Share Shifts** -->
+
+<!-- -   Identify events where one operator overtook another. -->
+<!-- -   Root cause analysis: promotions, network improvements, or regulatory impact. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **7. Subscriber Retention & Churn** -->
+
+<!-- *(If porting/churn data is limited, estimated churn can be modeled from subscriber dips.)* -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   **Churn Rate:** $\frac{Subscribers_{lost}}{Subscribers_{start}} \times 100$ -->
+<!--     -   **Stability Index (SI):** $1 - Churn Rate$ -->
+<!--     -   **Net Subscriber Retention (NSR):** $Net Adds - Subscribers_{lost}$ -->
+
+<!-- -   **Visual:** -->
+
+<!--     -   Line graph showing churn rate trends by operator. -->
+<!--     -   Stability heatmap across years. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **8. Impact of Regulatory & External Events** -->
+
+<!-- ### **8.1 NIN-SIM Policy Effect** -->
+
+<!-- -   **Metric:** SIM Ban Impact Factor (SIF) Compare average net adds 6 months before vs. after the policy implementation. -->
+<!-- -   **Visual:** Before-and-after bar chart. -->
+
+<!-- ### **8.2 COVID-19 Impact** -->
+
+<!-- -   **Metric:** Deviation from projected growth during 2020–2021. -->
+
+<!-- -   **Visual:** -->
+
+<!--     -   Actual vs. projected subscriber counts. -->
+
+<!-- ### **8.3 5G Introduction** -->
+
+<!-- -   Analyze the initial effect on subscriber numbers and market share shifts. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **9. Regional & Demographic Insights** *(If geo-data available)* -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   Rural vs. urban subscriber ratios. -->
+<!--     -   Regional penetration levels. -->
+
+<!-- -   **Visual:** -->
+
+<!--     -   Heatmap of subscribers by state or geopolitical zone. -->
+<!--     -   Rural penetration growth chart. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **10. Forecast and Future Projections (2025–2027)** -->
+
+<!-- -   **Models Used:** -->
+
+<!--     -   Time-series forecasting (ARIMA or Prophet). -->
+<!--     -   Growth scenarios: conservative, moderate, aggressive. -->
+
+<!-- -   **Metrics:** -->
+
+<!--     -   **Projected Subscribers** for each operator. -->
+<!--     -   **Projected Market Share**. -->
+<!--     -   Updated **Subscriber Saturation Index (SSI)**. -->
+
+<!-- -   **Visual:** -->
+
+<!--     -   Forecast line graph with confidence intervals. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **11. Composite Indices** -->
+
+<!-- Summarize complex data into simple, decision-friendly metrics. -->
+
+<!-- | **Index** | **Purpose** | -->
+<!-- |-------------------------|----------------------------------------------| -->
+<!-- | **Telecom Growth Health Index (TGHI)** | Overall sector vitality, combining YoY Growth, Net Adds, and Stability. | -->
+<!-- | **Competition Intensity Index (CII)** | Competitive landscape health, based on HHI and Leadership Gap. | -->
+<!-- | **Digital Inclusion Index (DII)** | Measures rural-urban penetration progress. | -->
+
+<!-- Visuals: Gauge charts or index scorecards. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **12. Key Strategic Insights** -->
+
+<!-- -   **For Operators:** -->
+
+<!--     -   Market opportunities for growth. -->
+<!--     -   Subscriber retention strategies. -->
+
+<!-- -   **For Regulators (NCC):** -->
+
+<!--     -   Policy improvements for healthy competition. -->
+<!--     -   Rural coverage incentives. -->
+
+<!-- -   **For Investors:** -->
+
+<!--     -   High-potential areas for infrastructure investment. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **13. Recommendations** -->
+
+<!-- -   **Short-Term (2025–2026):** -->
+
+<!--     -   Address churn and retention challenges. -->
+<!--     -   Expand coverage in underserved regions. -->
+
+<!-- -   **Long-Term (2027+):** -->
+
+<!--     -   Prepare for next wave of digital services and 6G readiness. -->
+<!--     -   Policy harmonization for global competitiveness. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **14. Appendices** -->
+
+<!-- -   **Raw Data Snapshot:** Key figures from NCC dataset. -->
+<!-- -   **Metric Definitions:** Glossary of all derived metrics and formulas. -->
+<!-- -   **Supplementary Visuals:** Additional charts not included in the main report. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **15. Conclusion** -->
+
+<!-- -   Recap of major findings and sector trajectory. -->
+<!-- -   Final thought on Nigeria’s path toward full digital inclusion. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- Would you like me to help you **design a dashboard layout** for visualizing these metrics interactively, so you can track trends continuously instead of only in static reports? -->
+
+<!-- Here’s a **step-by-step guide** for creating the new telecom subscriber metrics in **R** using your NCC dataset (May 2014 – July 2025). I’ll cover the full workflow: **data preparation → metric calculation → visualization**. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **1. Load Required Libraries** -->
+
+<!-- These packages handle data wrangling, date manipulation, and visualizations. -->
+
+<!-- ``` r -->
+<!-- # Core libraries -->
+<!-- library(tidyverse)    # For data wrangling and visualization -->
+<!-- library(lubridate)    # For handling dates -->
+<!-- library(zoo)          # For rolling averages -->
+<!-- library(scales)       # For formatting numbers in plots -->
+<!-- library(forecast)     # For time series modeling and projections -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **2. Import and Prepare Your Dataset** -->
+
+<!-- Assume your data is in a CSV called `ncc_subscribers.csv` with these columns: -->
+
+<!-- -   `Date` (Monthly) -->
+<!-- -   `Operator` (e.g., MTN, Airtel, Glo, 9mobile) -->
+<!-- -   `Subscribers` (numeric) -->
+
+<!-- ``` r -->
+<!-- # Load dataset -->
+<!-- ncc_data <- read_csv("ncc_subscribers.csv") -->
+
+<!-- # Ensure proper date format -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   mutate(Date = as.Date(Date, format = "%Y-%m-%d")) -->
+
+<!-- # Verify structure -->
+<!-- glimpse(ncc_data) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **3. Total Subscribers Per Month** -->
+
+<!-- Before creating metrics, calculate **total market subscribers** per month. -->
+
+<!-- ``` r -->
+<!-- total_subscribers <- ncc_data %>% -->
+<!--   group_by(Date) %>% -->
+<!--   summarise(Total_Subscribers = sum(Subscribers, na.rm = TRUE)) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **4. Growth Metrics** -->
+
+<!-- ### **4.1 Monthly Growth Rate (MGR)** -->
+
+<!-- $$ -->
+<!-- MGR = \frac{Subscribers_{current} - Subscribers_{previous}}{Subscribers_{previous}} \times 100 -->
+<!-- $$ -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   group_by(Operator) %>% -->
+<!--   arrange(Date) %>% -->
+<!--   mutate( -->
+<!--     Prev_Subscribers = lag(Subscribers), -->
+<!--     MGR = ((Subscribers - Prev_Subscribers) / Prev_Subscribers) * 100 -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **4.2 Year-over-Year Growth (YoY)** -->
+
+<!-- Compares current month with the **same month last year**. -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   group_by(Operator) %>% -->
+<!--   arrange(Date) %>% -->
+<!--   mutate( -->
+<!--     YoY_Growth = ((Subscribers - lag(Subscribers, 12)) / lag(Subscribers, 12)) * 100 -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **4.3 Net Adds** -->
+
+<!-- Simple difference between current and previous month. -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   mutate(Net_Adds = Subscribers - Prev_Subscribers) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **4.4 Compound Annual Growth Rate (CAGR)** -->
+
+<!-- For the **entire period (2014–2025)**: -->
+
+<!-- $$ -->
+<!-- CAGR = \left(\frac{Subscribers_{end}}{Subscribers_{start}}\right)^{\frac{1}{Years}} - 1 -->
+<!-- $$ -->
+
+<!-- ``` r -->
+<!-- cagr_data <- ncc_data %>% -->
+<!--   group_by(Operator) %>% -->
+<!--   summarise( -->
+<!--     Start_Subs = first(Subscribers), -->
+<!--     End_Subs = last(Subscribers), -->
+<!--     Years = as.numeric(difftime(max(Date), min(Date), units = "days")) / 365, -->
+<!--     CAGR = ((End_Subs / Start_Subs)^(1 / Years) - 1) * 100 -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **5. Market Share Metrics** -->
+
+<!-- ### **5.1 Market Share (MS)** -->
+
+<!-- $$ -->
+<!-- MS = \frac{Subscribers_{operator}}{Total\_Subscribers} \times 100 -->
+<!-- $$ -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   left_join(total_subscribers, by = "Date") %>% -->
+<!--   mutate(Market_Share = (Subscribers / Total_Subscribers) * 100) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **5.2 Market Share Change (MSΔ)** -->
+
+<!-- $$ -->
+<!-- MS\Delta = MS_{current} - MS_{previous} -->
+<!-- $$ -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   group_by(Operator) %>% -->
+<!--   arrange(Date) %>% -->
+<!--   mutate(MS_Change = Market_Share - lag(Market_Share)) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **5.3 Herfindahl-Hirschman Index (HHI)** -->
+
+<!-- $$ -->
+<!-- HHI = \sum(Market\_Share^2) -->
+<!-- $$ -->
+
+<!-- ``` r -->
+<!-- hhi_data <- ncc_data %>% -->
+<!--   group_by(Date) %>% -->
+<!--   summarise(HHI = sum((Market_Share)^2)) -->
+<!-- ``` -->
+
+<!-- > **Interpretation:** -->
+<!-- > -->
+<!-- > -   HHI \< 1500 → Competitive market -->
+<!-- > -->
+<!-- > -   1500–2500 → Moderate concentration -->
+<!-- > -->
+<!-- > -    -->
+<!-- > -->
+<!-- >     > 2500 → Highly concentrated -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **6. Stability & Retention Metrics** -->
+
+<!-- *(If churn data is missing, estimate from dips in subscriber counts)* -->
+
+<!-- ### **6.1 Churn Rate** -->
+
+<!-- $$ -->
+<!-- Churn = \frac{Subscribers_{lost}}{Subscribers_{start}} \times 100 -->
+<!-- $$ -->
+
+<!-- Assume a negative net add equals subscriber loss: -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   mutate( -->
+<!--     Lost_Subscribers = ifelse(Net_Adds < 0, abs(Net_Adds), 0), -->
+<!--     Churn_Rate = (Lost_Subscribers / Prev_Subscribers) * 100 -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **6.2 Stability Index (SI)** -->
+
+<!-- $$ -->
+<!-- SI = 1 - Churn\_Rate -->
+<!-- $$ -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   mutate(Stability_Index = 1 - (Churn_Rate / 100)) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **7. Subscriber Saturation Index (SSI)** -->
+
+<!-- $$ -->
+<!-- SSI = \frac{Active\_Subscribers}{Population} \times 100 -->
+<!-- $$ -->
+
+<!-- If you have monthly population data: -->
+
+<!-- ``` r -->
+<!-- # Assuming you have a population dataset with columns Date and Population -->
+<!-- population_data <- read_csv("population_estimates.csv") -->
+
+<!-- ncc_data <- ncc_data %>% -->
+<!--   left_join(population_data, by = "Date") %>% -->
+<!--   mutate(SSI = (Total_Subscribers / Population) * 100) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **8. Composite Indices** -->
+
+<!-- ### **8.1 Telecom Growth Health Index (TGHI)** -->
+
+<!-- Weighted index combining YoY Growth, Net Adds, and Stability Index. -->
+
+<!-- ``` r -->
+<!-- ncc_data <- ncc_data %>% -->
+<!--   mutate( -->
+<!--     TGHI = (0.4 * scale(YoY_Growth) +  -->
+<!--             0.4 * scale(Net_Adds) +  -->
+<!--             0.2 * scale(Stability_Index)) -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### **8.2 Competition Intensity Index (CII)** -->
+
+<!-- Based on HHI and Leadership Gap. -->
+
+<!-- ``` r -->
+<!-- # Leadership Gap = Market share of leader - second place -->
+<!-- leadership_gap <- ncc_data %>% -->
+<!--   group_by(Date) %>% -->
+<!--   arrange(desc(Market_Share)) %>% -->
+<!--   summarise(Leadership_Gap = first(Market_Share) - nth(Market_Share, 2)) -->
+
+<!-- cii_data <- hhi_data %>% -->
+<!--   left_join(leadership_gap, by = "Date") %>% -->
+<!--   mutate(CII = scale(-HHI) + scale(-Leadership_Gap)) # Lower HHI + smaller gap = higher competition -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **9. Forecasting Future Subscribers** -->
+
+<!-- Use **ARIMA** to predict subscribers for 2025–2027. -->
+
+<!-- ``` r -->
+<!-- # Create time series for total subscribers -->
+<!-- subscriber_ts <- ts(total_subscribers$Total_Subscribers,  -->
+<!--                     start = c(2014, 5),  -->
+<!--                     frequency = 12) -->
+
+<!-- # Fit ARIMA model -->
+<!-- fit <- auto.arima(subscriber_ts) -->
+
+<!-- # Forecast next 24 months -->
+<!-- forecast_subs <- forecast(fit, h = 24) -->
+
+<!-- # Plot -->
+<!-- plot(forecast_subs) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **10. Visualization Examples** -->
+
+<!-- ### Total Subscribers Trend -->
+
+<!-- ``` r -->
+<!-- ggplot(total_subscribers, aes(x = Date, y = Total_Subscribers)) + -->
+<!--   geom_line(color = "blue") + -->
+<!--   labs(title = "Total Subscriber Growth in Nigeria", -->
+<!--        y = "Subscribers", x = "Date") + -->
+<!--   scale_y_continuous(labels = comma) -->
+<!-- ``` -->
+
+<!-- ### Market Share Evolution -->
+
+<!-- ``` r -->
+<!-- ggplot(ncc_data, aes(x = Date, y = Market_Share, color = Operator)) + -->
+<!--   geom_line() + -->
+<!--   labs(title = "Market Share by Operator", y = "Market Share (%)") + -->
+<!--   scale_y_continuous(labels = percent_format(scale = 1)) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **11. Save Processed Dataset** -->
+
+<!-- After calculating all metrics, save the enriched dataset for reporting or dashboard use. -->
+
+<!-- ``` r -->
+<!-- write_csv(ncc_data, "ncc_metrics_processed.csv") -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## **Summary of Metrics Created in R** -->
+
+<!-- | **Metric**                        | **Code Section** | -->
+<!-- |-----------------------------------|------------------| -->
+<!-- | Monthly Growth Rate (MGR)         | 4.1              | -->
+<!-- | Year-over-Year Growth (YoY)       | 4.2              | -->
+<!-- | Net Adds                          | 4.3              | -->
+<!-- | CAGR                              | 4.4              | -->
+<!-- | Market Share (MS)                 | 5.1              | -->
+<!-- | Market Share Change (MSΔ)         | 5.2              | -->
+<!-- | Herfindahl-Hirschman Index (HHI)  | 5.3              | -->
+<!-- | Churn Rate                        | 6.1              | -->
+<!-- | Stability Index (SI)              | 6.2              | -->
+<!-- | Subscriber Saturation Index (SSI) | 7                | -->
+<!-- | TGHI                              | 8.1              | -->
+<!-- | CII                               | 8.2              | -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- Would you like me to create a **starter R script template** that includes these steps, so you can run it directly with your dataset? -->

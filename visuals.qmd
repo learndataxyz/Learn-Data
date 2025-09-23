@@ -1,0 +1,13 @@
+---
+title: "Visuals"
+listing:
+  contents: 
+    - visuals
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+title-block-banner: true
+---

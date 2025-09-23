@@ -1,0 +1,33 @@
+---
+title: "Nigeria's Daily Crude Oil Price Report"
+author: Adejumo Ridwan Suleiman 
+categories: [nigeria, oil price, time series, forecast]
+image: "images/daily_line_chart.png" 
+draft: true
+---
+
+![](images/daily_line_chart.png){fig-alt="nigeria crude oil price nigeria oil price today nigeria oil price history nigeria oil price per barrel nigeria oil price forecast"}
+
+Nigeria’s crude oil prices have dropped by approximately 15% since 2009, driven by a range of global and domestic factors.
+
+These include fluctuations in global oil demand, production cuts by OPEC, geopolitical tensions, exchange rate volatility, and shifts towards renewable energy.
+
+Domestically, challenges such as pipeline vandalism, oil theft, and regulatory uncertainty have also impacted the stability of crude oil prices over time.
+
+From October 23, 2009, to September 9, 2025, a total of 3,695 days of data were analyzed. During this period, Nigeria’s crude oil prices exhibited significant volatility:
+
+The highest recorded price was \$139.41 on March 8, 2022, reflecting post-pandemic recovery and global supply disruptions.
+
+The lowest recorded price was \$7.15 on April 21, 2020, during the COVID-19 pandemic when global demand collapsed.
+
+The average price over the period was \$79.13, showing a long-term trend of gradual stabilization despite short-term swings.
+
+The overall downward trend in prices since 2009 highlights the need for strategic economic diversification in Nigeria, as heavy reliance on crude oil revenue exposes the country to external shocks.
+
+For policymakers, investors, and businesses, these insights underscore the importance of hedging strategies, forward-looking planning, and robust energy policies to mitigate the impact of price swings.
+
+Looking forward, preliminary forecasts suggest that crude oil prices may experience continued fluctuations over the next five years, with potential periods of decline followed by gradual recovery.
+
+This report provides timely and accurate data to help stakeholders make informed decisions in navigating Nigeria’s dynamic energy market.
+
+Read the full report on [here](https://learndataxyz.gumroad.com/l/nigeria-crude-oil-report).
