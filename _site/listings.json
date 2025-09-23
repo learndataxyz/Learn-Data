@@ -1,11 +1,15 @@
 [
   {
     "listing": "/visuals.html",
-    "items": []
+    "items": [
+      "/visuals/daily_crude_price_trend/index.html"
+    ]
   },
   {
     "listing": "/reports.html",
-    "items": []
+    "items": [
+      "/reports/daily_crude_oil_price/index.html"
+    ]
   },
   {
     "listing": "/courses.html",

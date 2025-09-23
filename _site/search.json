@@ -4,14 +4,14 @@
     "href": "visuals.html",
     "title": "Visuals",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nDaily Nigeria Crude Oil Prices (2009 - 2025)\n\n\n\nnigeria\n\noil price\n\ntime series\n\nforecast\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "reports.html",
     "href": "reports.html",
     "title": "Reports",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNigeria’s Daily Crude Oil Price Report\n\n\n\nnigeria\n\noil price\n\ntime series\n\nforecast\n\n\n\n\n\n\n\nAdejumo Ridwan Suleiman\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html",
@@ -1664,5 +1664,12 @@
     "title": "Why Traditional Web Development Skills Matter for Modern ML Engineers",
     "section": "Your next breakthrough could be one email away. Let’s make it happen!",
     "text": "Your next breakthrough could be one email away. Let’s make it happen!"
+  },
+  {
+    "objectID": "visuals/daily_crude_price_trend/index.html",
+    "href": "visuals/daily_crude_price_trend/index.html",
+    "title": "Daily Nigeria Crude Oil Prices (2009 - 2025)",
+    "section": "",
+    "text": "Data Source: Central Bank of Nigeria\nRead the full report on here.\nClick here for more visuals."
   }
 ]
