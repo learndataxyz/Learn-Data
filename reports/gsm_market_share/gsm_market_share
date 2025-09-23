@@ -1,19 +1,23 @@
 ```{r}
 library(tidyverse)
+library(lubridate)
+library(gt)
+
 gsm <- read_csv("gsm_market.csv") |> 
-  select(-Visafone) |> 
-    mutate(
-    Date = my(paste0("01-", NTH)),  # Add day to make a full date
-    Year = year(Date),              # Extract Year
+  select(-Visafone,TOTAL) |> 
+  mutate(
+    Date = dmy(paste0("01-", NTH)),  # Convert "01-Month-Year" into a proper date
+    Year = year(Date),               # Extract Year
     Month = month(Date, label = TRUE, abbr = TRUE) # Extract Month name
   ) |> 
   arrange(Date)
+
 ```
 
 ```{r}
 gsm <- gsm |> 
   pivot_longer(
-    cols = c(MTN, Airtel, Globacom, `9mobile`,TOTAL),
+    cols = c(MTN, Airtel, Globacom, `9mobile`),
     names_to = "Operator",
     values_to = "Subscribers"
   )
@@ -57,9 +61,11 @@ gsm_new <- gsm %>%
 -   Line chart of net adds by operator over time.
 
 ```{r}
-# Professional Example: Faceted Monthly Growth Rate (MGR) Plot
+# Professional Example: Yearly Growth Rate (MGR) Plot (No Faceting)
+library(dplyr)
 library(ggplot2)
 library(scales)
+library(lubridate)
 
 # Define custom brand colors for each operator
 operator_colors <- c(
@@ -69,32 +75,37 @@ operator_colors <- c(
   "Airtel" = "#FF0000"     # Red
 )
 
-gsm_new |>
-  ggplot(aes(x = Date, y = MGR, color = Operator)) +
-  geom_line(size = 1) +
-  geom_point(size = 2, alpha = 0.8) +
-  facet_wrap(~Operator, scales = "free_y") +  # Facet each operator
-  scale_color_manual(values = operator_colors) +
+# Step 1: Aggregate data to yearly level
+gsm_yearly <- gsm_new %>%
+  mutate(Year = year(Date)) %>%   # Extract year from Date
+  group_by(Year, Operator) %>%
+  summarise(MGR = mean(MGR, na.rm = TRUE), .groups = "drop")
+
+# Step 2: Plot yearly MGR by Operator (no faceting)
+ggplot(gsm_yearly, aes(x = Year, y = MGR, color = Operator, group = Operator)) +
+  geom_line(size = 1.2) +                        # Lines connecting yearly points
+  geom_point(size = 3, alpha = 0.9) +            # Highlight yearly points
+  scale_color_manual(values = operator_colors) + # Custom brand colors
   labs(
-    title = "Monthly Growth Rate of GSM Subscribers (MGR) by Operator",
-    subtitle = "Trends segmented by operator",
-    x = "Date",
-    y = "Monthly Growth Rate (%)",
-    color = "Operator"
+    title = "Yearly Growth Rate (MGR) by Operator",
+    subtitle = "Average yearly MGR for each operator",
+    x = "Year",
+    y = "Yearly Growth Rate (%)",
+    color = "Operator",
+    caption = "Source: Nigerian Communications Commission"
   ) +
-  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_x_continuous(breaks = pretty(gsm_yearly$Year)) +  # Clean yearly ticks
+  scale_y_continuous(labels = percent_format(scale = 1)) + # Format as percentages
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(face = "bold", size = 16),
     plot.subtitle = element_text(size = 12, color = "gray40"),
     axis.title = element_text(face = "bold"),
     axis.text.x = element_text(angle = 45, hjust = 1),
-    strip.text = element_text(face = "bold", size = 12), # Facet label styling
-    legend.position = "none",  # Legend not needed since facets are labeled
+    legend.position = "bottom",       # Legend placed at bottom
+    legend.title = element_text(face = "bold"),
     panel.grid.minor = element_blank()
   )
-
-
 ```
 
 -   Bar chart of yearly YoY growth rates.
@@ -114,7 +125,8 @@ gsm_new %>%
     subtitle = "Annual comparison of subscriber growth",
     x = "Year",
     y = "Average YoY Growth Rate (%)",
-    fill = "Operator"
+    fill = "Operator",
+    caption = "Source: Nigerian Communications Commission"
   ) +
   scale_y_continuous(labels = percent_format(scale = 1)) +
   theme_minimal(base_size = 14) +
@@ -146,27 +158,24 @@ These measure competitiveness and dominance among operators.
 | **Subscriber Leadership Gap** | $MS_{Leader} - MS_{Second}$ | Understand competitive pressure on market leader. |
 
 ```{r}
-# Example: Calculate Market Share and HHI
-total_subscribers <- gsm_new %>%
-  group_by(Date) %>%
-  summarise(Total_Subscribers = sum(Subscribers, na.rm = TRUE))
+
 gsm_new <- gsm_new %>%
-  left_join(total_subscribers, by = "Date") %>%
+  left_join(
+    gsm_new %>%
+      group_by(Date) %>%
+      summarise(Total_Subscribers = sum(Subscribers, na.rm = TRUE)),
+    by = "Date"
+  ) %>%
   mutate(
-    Market_Share = (Subscribers / Total_Subscribers) * 100,
-    MS_Change = Market_Share - lag(Market_Share)
+    Market_Share = (Subscribers / Total_Subscribers) * 100
+  ) |> 
+  group_by(Operator) %>%
+  arrange(Date) %>%
+  mutate(
+    Prev_Market_Share = lag(Market_Share),
+    MS_Change = Market_Share - Prev_Market_Share
   )
-hhi_data <- gsm_new %>%
-  group_by(Date) %>%
-  summarise(HHI = sum((Market_Share)^2))
-leadership_gap <- gsm_new %>%
-  group_by(Date) %>%
-  arrange(desc(Market_Share)) %>%
-  summarise(Leadership_Gap = first(Market_Share) - nth(Market_Share, 2))
-# join all
-gsm_new <- gsm_new %>%
-  left_join(hhi_data, by = "Date") %>%
-  left_join(leadership_gap, by = "Date")
+
 ```
 
 **Visualization:**
