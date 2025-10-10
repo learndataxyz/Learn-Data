@@ -99,7 +99,6 @@ website:
 format:
   html:
     include-in-header:
-        - file: "_includes/head.html"
         - text: |
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4620938320652199" crossorigin="anonymous"></script>
             <script defer data-domain="learndata.xyz" src="https://plausible.io/js/script.js"></script>
@@ -121,6 +120,18 @@ format:
             /></noscript>
             <!-- End Meta Pixel Code -->
             <meta name="facebook-domain-verification" content="nyj27aoc6q8ilea1r9pkqz65w4179t" />
+            <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+            <script>
+                // Version: 2.0
+                window.Brevo = window.Brevo || [];
+                Brevo.push([
+                    "init",
+                    {
+                    client_key: "34ebn9s94uouyz2kqjgq275c"
+                    }
+                ]);
+            </script>
+
 
 
     theme:
