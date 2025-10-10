@@ -99,6 +99,7 @@ website:
 format:
   html:
     include-in-header:
+        - file: "_includes/head.html"
         - text: |
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4620938320652199" crossorigin="anonymous"></script>
             <script defer data-domain="learndata.xyz" src="https://plausible.io/js/script.js"></script>
