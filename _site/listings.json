@@ -7,12 +7,6 @@
   },
   {
     "listing": "/reports.html",
-    "items": [
-      "/reports/daily_crude_oil_price/index.html"
-    ]
-  },
-  {
-    "listing": "/courses.html",
     "items": []
   },
   {
@@ -44,5 +38,9 @@
       "/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html",
       "/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html"
     ]
+  },
+  {
+    "listing": "/courses.html",
+    "items": []
   }
 ]

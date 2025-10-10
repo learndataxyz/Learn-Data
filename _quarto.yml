@@ -2,6 +2,8 @@ project:
   type: website
   resources:
     - ads.txt
+    - brevo-frame.html
+    - sw.js
 
 website:
   google-analytics: "G-N6FNR4EYSZ"
