@@ -87,6 +87,12 @@ listing:
       title: "How to Build a WhatsApp Dictionary Chatbot using Twilio, FastAPI, and MongoDB"
       description: "Learn how to use create a whatsapp dictionary chatbot using Twilio, FastAPI, and MongoDB."
       categories: [api development, fastapi]
+    - path: https://www.freecodecamp.org/news/how-to-forecast-time-series-data-with-python-darts/
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/darts.png"
+      title: "How to Forecast Time Series Data with Python Darts"
+      description: "Learn how to forecast time series data using darts."
+      categories: [machine learning, data science, statistics, python, time series]
       
       
   sort: "date desc"

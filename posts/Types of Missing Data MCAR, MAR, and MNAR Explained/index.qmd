@@ -72,7 +72,7 @@ Unlike MCAR and MAR, which one can handle using traditional imputation methods, 
 ## Differences between MCAR, MNAR, and MAR
 
 | **MCAR** | **MAR** | **MNAR** |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Missing values occur completely at random, unrelated to any data. | Missing values depend on observed data but not on the missing values themselves. | Missing values depend on the unobserved/missing data itself |
 | No systematic pattern in missingness. | Systematic pattern based on observed variables. | Systematic pattern based on unobserved variables. |
 | Least biased if missingness is handled properly. | Can be handled using statistical methods like multiple imputation. | Can lead to serious bias if not properly addressed. |

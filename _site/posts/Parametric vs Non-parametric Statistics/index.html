@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adejumo Ridwan Suleiman">
 
-<title>Welcome to LearnData – LearnData</title>
+<title>When Not To Use Parametric or Non-Parametric Statistics – LearnData</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +24,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/learn_data.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6f3d3dfbc72573049d14ab583433dc0d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-fb39f70bc41e3ea72a488519c6b5fa07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6f3d3dfbc72573049d14ab583433dc0d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/learn_data.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6f3d3dfbc72573049d14ab583433dc0d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-fb39f70bc41e3ea72a488519c6b5fa07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-6f3d3dfbc72573049d14ab583433dc0d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -96,12 +97,18 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1227869158734119');
 fbq('track', 'PageView');
 </script>
-<noscript></noscript><meta property="og:title" content="Welcome to LearnData – LearnData">
+<noscript></noscript><meta property="og:title" content="When Not To Use Parametric or Non-Parametric Statistics – LearnData">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://learndata.xyz/posts/Parametric vs Non-parametric Statistics/2.png">
 <meta property="og:site_name" content="LearnData">
-<meta name="twitter:title" content="Welcome to LearnData – LearnData">
+<meta property="og:image:height" content="720">
+<meta property="og:image:width" content="1280">
+<meta name="twitter:title" content="When Not To Use Parametric or Non-Parametric Statistics – LearnData">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://learndata.xyz/posts/Parametric vs Non-parametric Statistics/2.png">
+<meta name="twitter:image-height" content="720">
+<meta name="twitter:image-width" content="1280">
+<meta name="twitter:card" content="summary_large_image">
 </head><body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -268,17 +275,17 @@ fbq('track', 'PageView');
 <meta name="facebook-domain-verification" content="nyj27aoc6q8ilea1r9pkqz65w4179t">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 
 
 
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">LearnData</span>
     </a>
   </div>
@@ -289,11 +296,11 @@ fbq('track', 'PageView');
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./courses.html"> 
+    <a class="nav-link" href="../../courses.html"> 
 <span class="menu-text">Courses</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -308,11 +315,11 @@ fbq('track', 'PageView');
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./reports.html"> 
+    <a class="nav-link" href="../../reports.html"> 
 <span class="menu-text">Reports</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./visuals.html"> 
+    <a class="nav-link" href="../../visuals.html"> 
 <span class="menu-text">Visuals</span></a>
   </li>  
   <li class="nav-item">
@@ -320,7 +327,7 @@ fbq('track', 'PageView');
 <span class="menu-text">Store</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./navs/about.html"> 
+    <a class="nav-link" href="../../navs/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -335,12 +342,36 @@ fbq('track', 'PageView');
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <div id="quarto-announcement" data-announcement-id="10cd5b683c221cd20e7b3239b8ce0e56" class="alert alert-info hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>The Uber Eats Google Play Store 2025 Report is out, click <strong><a href="https://payhip.com/b/fzrRx" target="_blank"> here </a></strong> to read</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">When Not To Use Parametric or Non-Parametric Statistics</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">statistics</div>
+                <div class="quarto-category">data analysis</div>
+                <div class="quarto-category">data science</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Adejumo Ridwan Suleiman </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
@@ -350,77 +381,203 @@ fbq('track', 'PageView');
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#unlock-the-power-of-your-data" id="toc-unlock-the-power-of-your-data" class="nav-link active" data-scroll-target="#unlock-the-power-of-your-data">Unlock the Power of Your Data</a>
+  <li><a href="#what-are-parametric-statistics" id="toc-what-are-parametric-statistics" class="nav-link active" data-scroll-target="#what-are-parametric-statistics"><strong>What are Parametric Statistics</strong></a>
   <ul class="collapse">
-  <li><a href="#our-expertise" id="toc-our-expertise" class="nav-link" data-scroll-target="#our-expertise">Our Expertise</a></li>
-  <li><a href="#why-choose-us" id="toc-why-choose-us" class="nav-link" data-scroll-target="#why-choose-us">Why Choose Us?</a></li>
-  <li><a href="#our-services" id="toc-our-services" class="nav-link" data-scroll-target="#our-services">Our Services</a></li>
-  <li><a href="#ready-to-start-your-data-journey" id="toc-ready-to-start-your-data-journey" class="nav-link" data-scroll-target="#ready-to-start-your-data-journey">Ready to Start Your Data Journey?</a></li>
+  <li><a href="#key-assumptions" id="toc-key-assumptions" class="nav-link" data-scroll-target="#key-assumptions"><strong>Key assumptions</strong></a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages">Advantages</a></li>
   </ul></li>
+  <li><a href="#what-are-non-parametric-statistics" id="toc-what-are-non-parametric-statistics" class="nav-link" data-scroll-target="#what-are-non-parametric-statistics"><strong>What are Non-Parametric Statistics?</strong></a>
+  <ul class="collapse">
+  <li><a href="#key-assumptions-1" id="toc-key-assumptions-1" class="nav-link" data-scroll-target="#key-assumptions-1">Key assumptions</a></li>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">Examples</a></li>
+  <li><a href="#advantages-1" id="toc-advantages-1" class="nav-link" data-scroll-target="#advantages-1">Advantages</a></li>
+  </ul></li>
+  <li><a href="#key-differences" id="toc-key-differences" class="nav-link" data-scroll-target="#key-differences"><strong>Key Differences</strong></a></li>
+  <li><a href="#when-to-use-which" id="toc-when-to-use-which" class="nav-link" data-scroll-target="#when-to-use-which"><strong>When to Use Which</strong></a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a>
+  <ul class="collapse">
+  <li><a href="#need-help-with-data-lets-make-it-simple." id="toc-need-help-with-data-lets-make-it-simple." class="nav-link" data-scroll-target="#need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></a></li>
+  </ul></li>
+  <li><a href="#your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" id="toc-your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" class="nav-link" data-scroll-target="#your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen">Your next breakthrough could be one email away. Let’s make it happen!</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to LearnData</h1>
+
+
+
+
+<p><img src="2.png" class="img-fluid" alt=""></p>
+<p>Data comes in various forms, and understanding the structure of your data helps you select the most suitable methodology for your analysis.</p>
+<p>For example, you collected data on income from 10,000 samples from two different countries: Country A and Country B.</p>
+<p>Country A is a country where most individuals in the sample fall within the average income category, whereas in Country B, most individuals are in the low-income category.</p>
+<p>If you are to plot a histogram of Country A incomes, you will find out that it is normally distributed, while Country B is skewed to the left.</p>
+<p>If you are to calculate the difference in income between genders, the statistical methodology for Country A would be different from Country B, due to the distribution of the income variable.</p>
+<p>These differences are why we have parametric and non-parametric statistical techniques, and this is what you will learn in this article.</p>
+<section id="what-are-parametric-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-parametric-statistics"><strong>What are Parametric Statistics</strong></h2>
+<p>Parametric statistics is a branch of statistics that assumes the data follows an underlying population distribution, usually the normal distribution.</p>
+<p>It uses parameters such as the mean, standard deviation, variance, and correlation, among others, to make inferences about the population.</p>
+<section id="key-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="key-assumptions"><strong>Key assumptions</strong></h3>
+<p>These are the assumptions your data have to meet for you to use parametric statistics:</p>
+<ul>
+<li><strong>Normality:</strong> The data should be approximately normally distributed. When the density plot is plotted, it should have a bell-shaped curve.</li>
+<li><strong>Equal Variance:</strong> Parametric statistics expect the data to have equal variances. For example, if you want to compare men’s vs women’s reaction times with a t-test, both groups should have a similar spread in reaction times.</li>
+<li><strong>Independence of Observations:</strong> Each observation should not depend on another observation. For example, in a drug trial, one patient’s response should not affect another patient’s response.</li>
+<li><strong>Scale of Measurement:</strong> The data used should be on a quantitative scale, either interval or ratio. You can’t use parametric statistics for data that are categorical in nature.</li>
+<li><strong>Random Sampling:</strong> Data is obtained from a random sample of a population to ensure the results can be generalized. If you want to know the average blood pressure in a city, you shouldn’t just pick the patients from one clinic, but pick randomly from different clinics across the city.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" alt="image showing normal distribution and equal variance"></p>
+<figcaption>Normal distribution. Source: Image generated by Nano Banana.</figcaption>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="unlock-the-power-of-your-data" class="level2">
-<h2 class="anchored" data-anchor-id="unlock-the-power-of-your-data">Unlock the Power of Your Data</h2>
-<p>Are you ready to transform your data into actionable insights? At LearnData, we specialize in turning complex data into clear, powerful solutions.</p>
-<section id="our-expertise" class="level3">
-<h3 class="anchored" data-anchor-id="our-expertise">Our Expertise</h3>
+</section>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<p>There are various examples of parametric tests, some of which are:</p>
 <ul>
-<li><strong>R &amp; Python Consulting</strong>: Harness the full potential of these leading data science languages.</li>
-<li><strong>Statistical Analysis</strong>: Make informed decisions with robust statistical methodologies.</li>
-<li><strong>Shiny Web Applications</strong>: Create interactive, data-driven web apps that captivate and inform.</li>
+<li><strong>t-test:</strong> Also known as the <a href="https://www.scribbr.com/statistics/t-test/">Student t-test</a>, is used when you are interested in comparing two groups. For example, a pharmaceutical company who are interested in knowing if a new painkiller works better than the standard one.</li>
+<li><strong>ANOVA:</strong> The <a href="https://www.datacamp.com/tutorial/anova-test">Analysis of Variance (ANOVA)</a> is used to compare three or more groups. For example, a teacher wants to compare four different teaching methods and see if they lead to the same exam score.</li>
+<li><a href="https://www.scribbr.com/statistics/pearson-correlation-coefficient/"><strong>Pearson Correlation</strong></a>: This is one of the various types of correlation in statistics, used to test the strength and relationship between two variables. For example, a researcher wants to test the relationship between income and education.</li>
+<li><a href="https://www.datacamp.com/tutorial/t-test-vs-z-test"><strong>Z-test:</strong></a> Mostly used in quality control to see if the sample mean equals the population mean. For example, a manufacturing company interested in determining if light bulbs are supposed to last 1,000 hours on average, randomly tests 50 bulbs and compares the sample mean to 1,000 hours.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 1.png" class="img-fluid figure-img" alt="Image showing the application of z-test in light bulb manufacturing"></p>
+<figcaption>Application of Z-test in lilght bulb manufacturing. Source: Image generated by Nano Banana.</figcaption>
+</figure>
+</div>
+</section>
+<section id="advantages" class="level3">
+<h3 class="anchored" data-anchor-id="advantages">Advantages</h3>
+<p>Parametric statistics are widely used in research due to the advantages they offer, some of which are:</p>
+<ul>
+<li><strong>More Statistical Power:</strong> They tend to detect a real effect if it exists. A medical researcher using a t-test to check if a new drug lowers blood pressure will have a better chance of detecting a real improvement by using parametric statistics.</li>
+<li><strong>Ability to Estimate Parameters:</strong> They provide estimates of population characteristics like mean, variance, and standard deviation. A factory doesn’t just want to know if bulbs differ; it also wants to know the average lifespan and the spread, which is one of the use cases of parametric statistics.</li>
+<li><strong>Wider Range of Tests Available:</strong> There are a lot of parametric tests covering both simple and complex scenarios, giving researchers many tools to work with and compare.</li>
+<li><strong>Flexibility and Efficiency with Large Samples:</strong> With larger datasets, parametric methods handle data efficiently, and assumptions are less strict due to the <a href="https://medium.com/codex/how-you-can-understand-clt-d5d811a1c02a">central limit theorem</a>.</li>
+<li><strong>Results are Easier to Interpret:</strong> The outputs of parametric tests are intuitive and directly tied to real-world quantities.</li>
 </ul>
 </section>
-<section id="why-choose-us" class="level3">
-<h3 class="anchored" data-anchor-id="why-choose-us">Why Choose Us?</h3>
-<ol type="1">
-<li><strong>Expert Team</strong>: Our statisticians and data scientists bring years of experience to every project.</li>
-<li><strong>Tailored Solutions</strong>: We craft custom solutions that address your unique challenges.</li>
-<li><strong>Cutting-Edge Techniques</strong>: Stay ahead with the latest in machine learning and data visualization.</li>
-<li><strong>Education-Focused</strong>: We don’t just deliver results; we empower your team with knowledge.</li>
-</ol>
 </section>
-<section id="our-services" class="level3">
-<h3 class="anchored" data-anchor-id="our-services">Our Services</h3>
+<section id="what-are-non-parametric-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-non-parametric-statistics"><strong>What are Non-Parametric Statistics?</strong></h2>
+<p>Unlike parametric statistics, non-parametric statistics do not rely on assumptions about the population distribution. They do not require the data to follow a normal distribution.</p>
+<p>Instead of estimating parameters like means and variances, non-parametric statistics rely on medians, ranks, or counts.</p>
+<p>They come in handy when the data is skewed, categorical, or has a small sample size</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 2.png" class="img-fluid figure-img" alt="image showing the difference between normal and skewed data"></p>
+<figcaption>Normal vs Skewed data. Source: Image generated by Nano Banana.</figcaption>
+</figure>
+</div>
+<p>Image generated by Nano Banana.</p>
+<section id="key-assumptions-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-assumptions-1">Key assumptions</h3>
+<p>Here is what your data needs to have for applying non-parametric statistics.</p>
 <ul>
-<li>Data Analysis and Visualization</li>
-<li>Machine Learning and Predictive Modeling</li>
-<li>Shiny Web Application Development</li>
-<li>Statistical Consulting</li>
-<li>Training and Workshops</li>
-<li>Code Review and Optimization</li>
+<li><strong>Independence of Observations:</strong> Just like parametric statistics, non-parametric statistics also expect the observations to be independent of each other.</li>
+<li><strong>Appropriate Measurement Scale:</strong> Non-parametric statistics can handle data that is on either an interval, ratio, or ordinal scale.</li>
+<li><strong>Random Sampling:</strong> Non-parametric statistics expect the data to come randomly from a population, just like parametric statistics.</li>
 </ul>
 </section>
-<section id="ready-to-start-your-data-journey" class="level3">
-<h3 class="anchored" data-anchor-id="ready-to-start-your-data-journey">Ready to Start Your Data Journey?</h3>
-<p><a href="mailto:admin@learndata.qmd">Contact Us Now</a> to discuss how we can elevate your data game.</p>
-<p><a href="./navs/services.html">Explore Our Services</a> to learn more about our offerings.</p>
-
-
+<section id="examples-1" class="level3">
+<h3 class="anchored" data-anchor-id="examples-1">Examples</h3>
+<p>Most of the tests under parametric statistics have their non-parametric alternatives, in case the data you want to apply it to violates any of the parametric assumptions.</p>
+<ul>
+<li><a href="https://numiqo.com/tutorial/mann-whitney-u-test"><strong>Mann-Whitney U Test:</strong></a> This is an alternative to the independent t-test, and is used to compare two groups when the data is not normally distributed. For example, comparing the customer satisfaction ratings between two restaurants.</li>
+<li><a href="https://numiqo.com/tutorial/wilcoxon-test"><strong>Wilcoxon Signed-Rank Test:</strong></a> A non-parametric alternative to the paired t-test that compares two related samples. For example, measuring stress levels before and after yoga sessions, if the data is skewed.</li>
+<li><a href="https://numiqo.com/tutorial/kruskal-wallis-test"><strong>Kruskal-Wallis Test:</strong></a> Non-parametric alternative to the ANOVA for comparing three or more groups without assuming normality. An example is comparing median waiting times across three banks.</li>
+<li><a href="https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php"><strong>Spearman’s Rank Correlation:</strong></a> Measures association based on ranks and not raw values. It’s an alternative to Pearson’s Correlation Coefficient.</li>
+<li><a href="https://www.scribbr.com/statistics/chi-square-tests/"><strong>Chi-Square Test:</strong></a> It is used to test the relationship between two categorical variables. For example, testing if gender is related to preferred smartphone brand.</li>
+</ul>
 </section>
+<section id="advantages-1" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-1">Advantages</h3>
+<ul>
+<li><strong>Fewer Assumptions:</strong> Non-parametric statistics are suitable when the data is not normal, skewed, or ordinal. Customer satisfaction surveys often use ranks or ratings, which are perfect for non-parametric statistics.</li>
+<li><strong>Suitable for Small Samples:</strong> When you don’t have sufficient data to check for normality, you can use the non-parametric tests to analyze your data.</li>
+<li><strong>Not Affected by Outliers:</strong> Means are sensitive to outliers, which makes any data with outliers not a good fit for parametric statistics. Non-parametric statistics use the median because they are more robust. For example, income data where a few billionaires distort the mean is better analyzed with medians.</li>
+<li><strong>Work with different data types:</strong> You can use non-parametric statistics to analyze different types of data, such as interval, ratio, and ordinal.</li>
+</ul>
+</section>
+</section>
+<section id="key-differences" class="level2">
+<h2 class="anchored" data-anchor-id="key-differences"><strong>Key Differences</strong></h2>
+<p>The following table summarizes the major differences between the parametric and non-parametric statistics.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Aspect</strong></th>
+<th><strong>Parametric</strong></th>
+<th><strong>Non-Parametric</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Assumptions</strong></td>
+<td>Requires normal distribution &amp; equality of variance</td>
+<td>Minimal assumptions about data</td>
+</tr>
+<tr class="even">
+<td><strong>Data Type</strong></td>
+<td>Interval/ratio</td>
+<td>Ordinal, nominal, or non-normal data</td>
+</tr>
+<tr class="odd">
+<td><strong>Examples</strong></td>
+<td>t-test, ANOVA, Pearson correlation</td>
+<td>Mann-Whitney U, Kruskal-Wallis, Spearman correlation</td>
+</tr>
+<tr class="even">
+<td><strong>Power</strong></td>
+<td>More powerful if assumptions are met</td>
+<td>Less powerful but more flexible</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="when-to-use-which" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-which"><strong>When to Use Which</strong></h2>
+<p>A medical researcher interested in comparing the response of patients to a new intervention when compared to an old one might not have sufficient samples for the study.</p>
+<p>In such a case, the best alternative is to go for a non-parametric test. Many such cases researchers face, which is one of the reasons for the development of non-parametric statistics.</p>
+<p>Although non-parametric statistics are not as strong as their parametric counterparts, they are useful in situations where the assumptions of parametric statistics are not met.</p>
+<p>Almost all parametric tests have their non-parametric counterparts, and the image below summarizes when to use them.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image 3.png" class="img-fluid figure-img" alt="Image showing when to apply various statistical tests"></p>
+<figcaption>When to apply various statistical tests. Source: <a href="https://medium.com/@abhishekjainindore24/understanding-parametric-and-nonparametric-tests-a-comprehensive-guide-0d922dc571c2">Understanding Parametric and Nonparametric Tests: A Comprehensive Guide</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
+<p>Many researchers, when analyzing their data, fail to check for the assumptions of the statistical test they use on their data, which can lead to wrong results.</p>
+<p>These assumptions serve as a guide to determine the right statistical test to use based on the characteristics of the data.</p>
+<p>Although parametric tests are strict, non-parametric tests are flexible and are usually considered the last option when the data fails to meet the assumptions of parametric tests.</p>
+<p>Understanding the differences between parametric and non-parametric will ensure you achieve realistic results, making a lot of difference in your analysis.</p>
+<section id="need-help-with-data-lets-make-it-simple." class="level3">
+<h3 class="anchored" data-anchor-id="need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></h3>
+<p><em>At <strong>LearnData.xyz</strong>, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.</em></p>
+<p><em>📧 Shoot us an email at <strong>admin@learndata.xyz</strong>—let’s chat about how we can help you make smarter decisions with your data.</em></p>
+</section>
+</section>
+<section id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen" class="level2">
+<h2 class="anchored" data-anchor-id="your-next-breakthrough-could-be-one-email-away.-lets-make-it-happen">Your next breakthrough could be one email away. Let’s make it happen!</h2>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -836,6 +993,30 @@ fbq('track', 'PageView');
     }
   });
   </script>
+<script src="https://giscus.app/client.js" data-repo="adejumoridwan/comments" data-repo-id="R_kgDOMp4Jsg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script type="application/javascript">
+  const giscusIframeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (addedNode) {
+        if (addedNode.matches && addedNode.matches('div.giscus')) {
+          const giscusIframe = addedNode.querySelector('iframe.giscus-frame');
+          if(giscusIframe) {
+            giscusIframe.addEventListener("load", function() {
+              window.setTimeout(() => {
+                toggleGiscusIfUsed(hasAlternateSentinel(), authorPrefersDark);
+              }, 100);
+            });
+            giscusIframeObserver.disconnect();
+          }
+        }
+      });
+    });
+  });
+  giscusIframeObserver.observe(document.body, { childList: true, subtree: true });
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -845,7 +1026,7 @@ fbq('track', 'PageView');
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./navs/about.html">
+    <a class="nav-link" href="../../navs/about.html">
 <p>About</p>
 </a>
   </li>  
@@ -855,17 +1036,17 @@ fbq('track', 'PageView');
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./navs/services.html">
+    <a class="nav-link" href="../../navs/services.html">
 <p>Services</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./navs/privacy.html">
+    <a class="nav-link" href="../../navs/privacy.html">
 <p>Privacy</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./navs/tos.html">
+    <a class="nav-link" href="../../navs/tos.html">
 <p>Terms of Service</p>
 </a>
   </li>  

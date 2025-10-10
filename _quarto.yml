@@ -5,12 +5,12 @@ project:
 
 website:
   google-analytics: "G-N6FNR4EYSZ"
-  # announcement: 
-  #     icon: info-circle
-  #     dismissable: true
-  #     content: 'Join our <strong><a href="https://discord.gg/yjtY8xJ2" target="_blank">Discord Community </a></strong> today to learn more on data science, machine learning, and AI'
-  #     type: info
-  #     position: below-navbar
+  announcement:
+      icon: info-circle
+      dismissable: true
+      content: 'The Uber Eats Google Play Store 2025 Report is out, click <strong><a href="https://payhip.com/b/fzrRx" target="_blank"> here </a></strong> to read'
+      type: info
+      position: below-navbar
   title: "LearnData"
   page-footer: 
     left: © 2024 LearnData
@@ -18,7 +18,7 @@ website:
       - text: About 
         href: navs/about.qmd
       - text: Contact 
-        href: mailto:admin@learndata.xyz
+        href: "mailto:admin@learndata.xyz"
       - text: Services 
         href: navs/services.qmd
       - text: Privacy 
