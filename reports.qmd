@@ -3,12 +3,6 @@ title: "Reports"
 listing:
   contents: 
     - reports
-    - path: https://payhip.com/b/fzrRx
-      author: Adejumo Ridwan Suleiman
-      image: "report_images/3.png"
-      title: "Uber Eats Google Play Store 2025 Report"
-      categories: [market research, business intelligence, data analysis, data storytelling]
-      description: "This report provides an in-depth analysis of the Uber Eats app on the Google Play Store as of 2025. It covers various aspects such as user ratings, reviews, download statistics, and market trends. The report aims to offer valuable insights for stakeholders, including app developers, marketers, and business analysts, to understand the app's performance and user engagement in the competitive food delivery market."
 
   sort: "date desc"
   type: grid
