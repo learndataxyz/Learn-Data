@@ -101,7 +101,9 @@ Data cleaning is a time consuming task, especially when it comes to handling mis
 
 In this article, you learnt about the three types of missing values you are likely to encounter in a dataset, examples, their statistical implications, and how to handle them. You have also learned how to identify missing values statistically and visually.
 
-If you want to practice handling various missing values, you can use [Chaos](https://chaos.learndata.xyz/) - a tool designed to convert clean datasets to dirty data. You can upload clean data and introduce missing values to it to practice what you have learned in this article.
+## Resources
+
+-  [Handling Missing Data in R - Udemy Course](https://www.udemy.com/course/handling-missing-data-in-r/?referralCode=F3DAAE2C227BAF5429CD)
 
 ### **Need Help with Data? Let’s Make It Simple.**
 

@@ -2,12 +2,6 @@
 title: "Courses"
 listing:
   contents: 
-    - path: https://www.udemy.com/course/power-bi-dax-practice-test-and-solutions/?referralCode=ADCE2EFFBB1C7548B824
-      author: Adejumo Ridwan Suleiman
-      image: "blog_images/dax.png"
-      title: "Power BI DAX Practice Test and Solutions"
-      description: "This is a comprehensive practice test for Power BI DAX, designed to help you assess and improve your skills in data analysis and modeling using DAX functions. The test includes a variety of questions covering key concepts and techniques in Power BI DAX, along with detailed solutions to help you understand the correct answers."
-      categories: [power bi, dax, data visualization, data storytelling, data analysis]
     - path: https://www.udemy.com/course/building-user-interfaces-with-r-shiny-html-js-and-css/?referralCode=6A61833497008D5A53AF
       author: Adejumo Ridwan Suleiman
       image: "blog_images/shiny_css.png"
@@ -50,6 +44,12 @@ listing:
       title: "Building Interactive Shiny Web Apps with R Programming"
       description: "This course walks you how to build web applications using the R Shiny framework."
       categories: [R, Shiny, app development]
+    - path: https://www.udemy.com/course/handling-missing-data-in-r/?referralCode=F3DAAE2C227BAF5429CD
+      author: Adejumo Ridwan Suleiman
+      image: "blog_images/missing.png"
+      title: "Handling Missing Data in R"
+      description: "This course walks you how to recognise and handle various types of missing data in R."
+      categories: [R, data cleaning, data wrangling, data visualization]
       
   
   sort: "date desc"

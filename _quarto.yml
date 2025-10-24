@@ -7,12 +7,12 @@ project:
 
 website:
   google-analytics: "G-N6FNR4EYSZ"
-  announcement:
-      icon: info-circle
-      dismissable: true
-      content: 'The Uber Eats Google Play Store 2025 Report is out, click <strong><a href="https://payhip.com/b/fzrRx" target="_blank"> here </a></strong> to read'
-      type: info
-      position: below-navbar
+  # announcement:
+  #     icon: info-circle
+  #     dismissable: true
+  #     content: 'The Uber Eats Google Play Store 2025 Report is out, click <strong><a href="https://payhip.com/b/fzrRx" target="_blank"> here </a></strong> to read'
+  #     type: info
+  #     position: below-navbar
   title: "LearnData"
   page-footer: 
     left: © 2024 LearnData
@@ -37,7 +37,7 @@ website:
       - icon: github
         text: GitHUB
         href: https://www.github.com/learndataxyz
-  margin-header: subscribe.html
+  #margin-header: subscribe.html
   favicon: assets/learn_data.png
   twitter-card: true
   reader-mode: true
@@ -58,10 +58,10 @@ website:
       #- sidebar:resources
       #- sidebar:products
       - sidebar:open_source
-      - text: "Reports"
-        file: reports.qmd
-      - text: "Visuals"
-        file: visuals.qmd
+      # - text: "Reports"
+      #   file: reports.qmd
+      # - text: "Visuals"
+      #   file: visuals.qmd
       - text: "Store"
         href: "https://payhip.com/LearnData"
       - text: "About"
