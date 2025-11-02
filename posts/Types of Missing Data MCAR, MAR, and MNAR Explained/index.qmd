@@ -103,7 +103,7 @@ In this article, you learnt about the three types of missing values you are like
 
 ## Resources
 
--  [Handling Missing Data in R - Udemy Course](https://www.udemy.com/course/handling-missing-data-in-r/?referralCode=F3DAAE2C227BAF5429CD)
+-   [Handling Missing Data in R - Udemy Course](https://www.udemy.com/course/handling-missing-data-in-r/?referralCode=F3DAAE2C227BAF5429CD)
 
 ### **Need Help with Data? Let’s Make It Simple.**
 

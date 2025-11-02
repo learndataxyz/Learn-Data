@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html</loc>
-    <lastmod>2025-10-24T13:47:57.777Z</lastmod>
+    <lastmod>2025-10-31T13:43:02.244Z</lastmod>
   </url>
   <url>
     <loc>https://learndata.xyz/posts/Test Driven Development with Python Shiny/index.html</loc>
@@ -175,5 +175,9 @@
   <url>
     <loc>https://learndata.xyz/reports/Uber Eats Google Playstore Report 2025/index.html</loc>
     <lastmod>2025-10-14T11:25:03.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://learndata.xyz/posts/The Hidden Cost of Missing Data in Machine Learning Models/index.html</loc>
+    <lastmod>2025-10-31T13:46:43.277Z</lastmod>
   </url>
 </urlset>

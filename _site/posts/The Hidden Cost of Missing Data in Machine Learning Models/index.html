@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Adejumo Ridwan Suleiman">
+<meta name="description" content="Discover the hidden costs of missing data in machine learning models and learn effective strategies to mitigate its impact on model performance and bias.">
 
-<title>Types of Missing Data: MCAR, MAR, and MNAR Explained – LearnData</title>
+<title>The Hidden Cost of Missing Data in Machine Learning Models – LearnData</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,15 +98,15 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1227869158734119');
 fbq('track', 'PageView');
 </script>
-<noscript></noscript><meta property="og:title" content="Types of Missing Data: MCAR, MAR, and MNAR Explained – LearnData">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://learndata.xyz/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/LearnData_Branding_(5).png">
+<noscript></noscript><meta property="og:title" content="The Hidden Cost of Missing Data in Machine Learning Models – LearnData">
+<meta property="og:description" content="Discover the hidden costs of missing data in machine learning models and learn effective strategies to mitigate its impact on model performance and bias.">
+<meta property="og:image" content="https://learndata.xyz/posts/The Hidden Cost of Missing Data in Machine Learning Models/LearnData_Branding_(1).png">
 <meta property="og:site_name" content="LearnData">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="Types of Missing Data: MCAR, MAR, and MNAR Explained – LearnData">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://learndata.xyz/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/LearnData_Branding_(5).png">
+<meta name="twitter:title" content="The Hidden Cost of Missing Data in Machine Learning Models – LearnData">
+<meta name="twitter:description" content="Discover the hidden costs of missing data in machine learning models and learn effective strategies to mitigate its impact on model performance and bias.">
+<meta name="twitter:image" content="https://learndata.xyz/posts/The Hidden Cost of Missing Data in Machine Learning Models/LearnData_Branding_(1).png">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
@@ -350,11 +351,16 @@ fbq('track', 'PageView');
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Types of Missing Data: MCAR, MAR, and MNAR Explained</h1>
-                                <div class="quarto-categories">
+      <h1 class="title">The Hidden Cost of Missing Data in Machine Learning Models</h1>
+                  <div>
+        <div class="description">
+          Discover the hidden costs of missing data in machine learning models and learn effective strategies to mitigate its impact on model performance and bias.
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">statistics</div>
-                <div class="quarto-category">machine learning</div>
                 <div class="quarto-category">data science</div>
+                <div class="quarto-category">machine learning</div>
                 <div class="quarto-category">data cleaning</div>
               </div>
                   </div>
@@ -383,20 +389,15 @@ fbq('track', 'PageView');
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#types-of-missing-data" id="toc-types-of-missing-data" class="nav-link active" data-scroll-target="#types-of-missing-data"><strong>Types of Missing Data</strong></a>
+  <li><a href="#what-is-missing-data" id="toc-what-is-missing-data" class="nav-link active" data-scroll-target="#what-is-missing-data"><strong>What Is Missing Data?</strong></a></li>
+  <li><a href="#the-hidden-costs" id="toc-the-hidden-costs" class="nav-link" data-scroll-target="#the-hidden-costs"><strong>The Hidden Costs</strong></a>
   <ul class="collapse">
-  <li><a href="#missing-completely-at-random-mcar" id="toc-missing-completely-at-random-mcar" class="nav-link" data-scroll-target="#missing-completely-at-random-mcar"><strong>Missing Completely at Random (MCAR)</strong></a></li>
-  <li><a href="#missing-at-random-mar" id="toc-missing-at-random-mar" class="nav-link" data-scroll-target="#missing-at-random-mar"><strong>Missing at Random (MAR)</strong></a></li>
-  <li><a href="#missing-not-at-random-mnar" id="toc-missing-not-at-random-mnar" class="nav-link" data-scroll-target="#missing-not-at-random-mnar"><strong>Missing Not at Random (MNAR)</strong></a></li>
+  <li><a href="#model-performance-degradation" id="toc-model-performance-degradation" class="nav-link" data-scroll-target="#model-performance-degradation"><strong>Model performance degradation</strong></a></li>
+  <li><a href="#bias-amplification" id="toc-bias-amplification" class="nav-link" data-scroll-target="#bias-amplification"><strong>Bias amplification</strong></a></li>
+  <li><a href="#operational-financial-costs" id="toc-operational-financial-costs" class="nav-link" data-scroll-target="#operational-financial-costs"><strong>Operational &amp; Financial Costs</strong></a></li>
   </ul></li>
-  <li><a href="#differences-between-mcar-mnar-and-mar" id="toc-differences-between-mcar-mnar-and-mar" class="nav-link" data-scroll-target="#differences-between-mcar-mnar-and-mar">Differences between MCAR, MNAR, and MAR</a></li>
-  <li><a href="#identifying-the-type-of-missing-data" id="toc-identifying-the-type-of-missing-data" class="nav-link" data-scroll-target="#identifying-the-type-of-missing-data"><strong>Identifying the Type of Missing Data</strong></a>
-  <ul class="collapse">
-  <li><a href="#statistical-tests-to-determine-missing-data-mechanism" id="toc-statistical-tests-to-determine-missing-data-mechanism" class="nav-link" data-scroll-target="#statistical-tests-to-determine-missing-data-mechanism">Statistical Tests to Determine Missing Data Mechanism</a></li>
-  <li><a href="#visualizing-missing-data-patterns" id="toc-visualizing-missing-data-patterns" class="nav-link" data-scroll-target="#visualizing-missing-data-patterns">Visualizing Missing Data Patterns</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies"><strong>Mitigation Strategies</strong></a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a>
   <ul class="collapse">
   <li><a href="#need-help-with-data-lets-make-it-simple." id="toc-need-help-with-data-lets-make-it-simple." class="nav-link" data-scroll-target="#need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></a></li>
   </ul></li>
@@ -412,129 +413,74 @@ fbq('track', 'PageView');
 
 
 
-<p><img src="LearnData_Branding_(5).png" class="img-fluid" alt="data cleaning services data cleaning tools data cleaning steps data cleaning in Python"></p>
-<p>In the real world, it’s not always possible to have a complete dataset. For several reasons, cases might arrive where some observations will have missing values.</p>
-<p>Understanding the source of these missing values determines how you handle them. This article will teach you about the three types of missing values, their characteristics, statistical implications, and handling methods.</p>
-<section id="types-of-missing-data" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-missing-data"><strong>Types of Missing Data</strong></h2>
-<p>A missing value refers to the absence of data in a dataset. It occurs when no observation is recorded for a particular variable. Missing values can arise for reasons such as survey errors, system failures, respondents skipping survey questions, and so on. There are various types of missing values;</p>
+<p><img src="LearnData_Branding_(1).png" class="img-fluid" alt="hidded cost of missing data in machine learning"></p>
+<p>An ML model is only as good as the data it comes from. Imagine training an image recognition model on blurry images, or a forecasting model on data with 50% of the values missing. The model will perform poorly because they were trained on bad data</p>
+<p>Missing data is common but often underestimated. While some ML algorithms can train data with missing values, this is not encouraged. It’s best to find the cause of the missing data and, if possible, impute the missing values.</p>
+<p>Training an ML model on missing data can reduce your model accuracy, giving you the impression of selecting the wrong model, or you need more hyperparameter tuning to achieve better results, whereas the problem was with the data itself.</p>
+<p>In this article, you will learn some of the hidden costs of missing data in ML models, ways to approach such kinds of data.</p>
+<section id="what-is-missing-data" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-missing-data"><strong>What Is Missing Data?</strong></h2>
+<p>Missing data are observations in our data that are missing either due to systematic issues, such as data collection errors, equipment malfunction, or survey design flaws, or due to random factors like non-response, recording mistakes, or accidental data loss.</p>
+<p><a href="https://learndata.xyz/posts/types%20of%20missing%20data%20mcar,%20mar,%20and%20mnar%20explained/">Missing datasets are of different types</a>:</p>
 <ul>
-<li>Missing Completely at Random (MCAR)</li>
-<li>Missing at Random (MAR)</li>
-<li>Missing Not at Random (MNAR)</li>
+<li><strong>Missing Completely at Random (MCAR):</strong> Missing observations are unrelated to the data. For example, a researcher accidentally loses some survey responses because of a computer glitch. In this case, the missing responses have nothing to do with the participants or their answers.</li>
+<li><strong>Missing at Random (MAR):</strong> Missing observations are related to the observed data, but not to the missing data itself. For example, in a health survey, younger people are less likely to report their income. Here, missing income depends on age, which is already recorded, but not on the income value itself.</li>
+<li><strong>Missing Not at Random (MNAR):</strong> In this case, missing observations are related to the data itself, even after accounting for the observed data. For example, People with higher incomes are less likely to report their income; the missing data depends on unobserved values.</li>
 </ul>
-<section id="missing-completely-at-random-mcar" class="level3">
-<h3 class="anchored" data-anchor-id="missing-completely-at-random-mcar"><strong>Missing Completely at Random (MCAR)</strong></h3>
-<p>MCAR refers to a scenario where the missing observations in a dataset are independent of the observed and unobserved data. This implies that the missingness is purely random and does not depend on any systematic factor related to the dataset.</p>
-<p>An example is a survey in which a respondent skips a question due to a software glitch or a lab experiment in which test results are missing due to random equipment failure.</p>
-<p>MCAR can occur due to technical data collection issues, survey non-response unrelated to systematic reasons, or randomly lost or corrupted data without any pattern. MCAR does not introduce bias into a statistical analysis because it is a random occurrence.</p>
-<p>Inferences still remain valid when data is MCAR, but the sample size is greatly reduced, which can lead to wider confidence intervals and lower power in hypothesis tests. Statistical tests like <em>Little’s MCAR</em> tests can help verify whether data is MCAR or not.</p>
-<p>Since MCAR does not introduce bias, you can use several methods to handle the missing values:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image.png" class="img-fluid figure-img" alt="image showing the types of missing data"></p>
+<figcaption>Types of Missing Data. Image by Author.</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-hidden-costs" class="level2">
+<h2 class="anchored" data-anchor-id="the-hidden-costs"><strong>The Hidden Costs</strong></h2>
+<p>Missing data is not something that you should take trivial when training your data; there are a lot of hidden consequences that one can encounter if one does not handle them properly.</p>
+<section id="model-performance-degradation" class="level3">
+<h3 class="anchored" data-anchor-id="model-performance-degradation"><strong>Model performance degradation</strong></h3>
+<p>If some classes or groups have more missing values than others, your training data becomes skewed toward the classes that are more complete.</p>
+<p>For example, in a medical dataset, older patients may have more missing lab test results, and if those patients are more likely to have a disease, your model ends up learning from healthier (younger) samples more often. This results in a skewed training, making the model underrepresent older or diseased individuals.</p>
+</section>
+<section id="bias-amplification" class="level3">
+<h3 class="anchored" data-anchor-id="bias-amplification"><strong>Bias amplification</strong></h3>
+<p>Missing data rarely appear at random; most times they come from an underrepresented group. For example, minority populations may have less access to medical services, so their health outcomes are underrecorded.</p>
+<p>Or, data collected via smartphones or online platforms often underrepresents groups with limited internet access. So, you can see that the data is not missing at random, but it’s instead tied to inequality in who gets seen or counted.</p>
+<p>This makes the issue of missing data sensitive and can lead to bias in a machine learning model, reducing model accuracy.</p>
+<p>If missing data has groups that are underrepresented, it would not have sufficient data to learn from that group, and become less confident and less accurate when making predictions about them.</p>
+<p>A simple example is a facial recognition model trained mostly on images of light-skinned people; this model will perform worse on dark-skinned individuals, not because of bad algorithms, but because of missing or imbalanced data.</p>
+</section>
+<section id="operational-financial-costs" class="level3">
+<h3 class="anchored" data-anchor-id="operational-financial-costs"><strong>Operational &amp; Financial Costs</strong></h3>
+<p>A lot of time and money is usually spent trying to clean and impute missing data, especially when the proportion of missing data is high. Not doing all these before training your data can incur operational loss.</p>
+<p>A trained model on missing data can offer wrong classification or prediction to users, which can lead to regulatory risks and also breach of trust in the organization’s services.</p>
+<p>If the data was not imputed well, this can distort importance scores or SHAP values, making it harder to trust model insights.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ec2cbaf7-2801-4325-9f25-c64812fde43f.png" class="img-fluid figure-img" alt="Image showing the hidden costs of missing data."></p>
+<figcaption>Costs of missing data. Image by Author.</figcaption>
+</figure>
+</div>
+<p>Costs of missing data. Image by Author.</p>
+</section>
+</section>
+<section id="mitigation-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="mitigation-strategies"><strong>Mitigation Strategies</strong></h2>
+<p>There are various ways to avoid the costs that come with missing data when training an ML model. Here are some:</p>
 <ul>
-<li><strong>Listwise Deletion:</strong> Remove cases with missing values since the missing values are random.</li>
-<li><strong>Pairwise Deletion:</strong> Use the available data in calculations without deleting any observation.</li>
-<li><strong>Mean/Median/Mode Imputation:</strong> Replace missing values with the mean/median for numerical variables or mode for categorical variables.</li>
-<li><strong>Multiple Imputation:</strong> Use statistical methods to estimate and replace missing values while accounting for uncertainty.</li>
-<li><strong>Maximum Likelihood Estimation:</strong> A more advanced approach that estimates parameters directly using the likelihood function.</li>
+<li><strong>Prevention:</strong> Avoiding errors during data collection ensures that your data is as clean as possible. If the data is coming through pipelines, ensure that the pipeline components are working properly to avoid components breaking and resulting in missing values in the final dataset. Ensure you also have validation checks to ensure that the right data is always passed; for example, numeric fields should not accept characters, and so on.</li>
+<li><strong>Imputation:</strong> In the presence of missing data, it’s always encouraged to use advanced imputation techniques where applicable instead of mean, median, or mode imputation. These techniques take into account the relationship of variables in the dataset, ensuring that at least the closest possible values are imputed.</li>
+<li><strong>Monitoring:</strong> After deploying your machine learning model, ensure you always have post-deployment checks to check your model’s performance. Model drifts can happen, which can occur as a result of bad or missing data from new updates.</li>
 </ul>
-</section>
-<section id="missing-at-random-mar" class="level3">
-<h3 class="anchored" data-anchor-id="missing-at-random-mar"><strong>Missing at Random (MAR)</strong></h3>
-<p>MAR is a situation in which the missing values are dependent on observed variables; that is, the probability of missingness depends on the observed data but not on the missing data itself.</p>
-<p>For example, older patients might miss blood pressure readings more frequently. If age is recorded, the missingness depends on an observed variable (age) but not on the blood pressure values.</p>
-<p>In MAR, the missing data is conditional on observed data, indicating it is random. This makes it easier for better statistical handling compared to Missing Not at Random (MNAR), which we will see in the next section.</p>
-<p>MAR can result from respondents skipping sensitive questions or non-response patterns influenced by observed data by education, age, or location.</p>
-<p>Because one can predict MAR values based on observed data, you can use the following statistical methods to handle them:</p>
-<ul>
-<li><strong>Multiple Imputation:</strong> Predicts missing values based on observed data.</li>
-<li><strong>Maximum Likelihood Estimation (MLE):</strong> Estimate parameters without imputing missing values, just like it is common in regression and Structural Equation Modelling (SEM)</li>
-<li><strong>Weighting Methods:</strong> Adjusts for missing data by assigning weights to observed data; this is often used in survey analysis.</li>
-</ul>
-</section>
-<section id="missing-not-at-random-mnar" class="level3">
-<h3 class="anchored" data-anchor-id="missing-not-at-random-mnar"><strong>Missing Not at Random (MNAR)</strong></h3>
-<p>MNAR occurs when the probability of missing data depends on unobserved data. This indicates that the missing data is systematically related and not random.</p>
-<p>A typical example in a medical study is if patients with severe symptoms are more likely to drop out of a clinical trial and their severity is not recorded. This is a scenario of MNAR.</p>
-<p>Conducting analysis on data with MNAR can lead to biased estimates since the missing values are not dependent on any of the observed values. MNAR also reduces the dataset’s representativeness since a significant portion is missing.</p>
-<p>Unlike MCAR and MAR, which one can handle using traditional imputation methods, such as mean or regression-based imputation, MNAR needs an advanced approach such as:</p>
-<ul>
-<li><strong>Modeling the Missing Data Mechanism:</strong> You can use external information to develop a model and estimate the missing values based on known relationships. This external information will convert the data from MNAR to MAR, where you can now use any of their respective handling methods to fill in the missing values.</li>
-<li><strong>Sensitivity Analysis:</strong> Conducting sensitivity analysis helps assess the impact of different assumptions about missing data.</li>
-<li><strong>Multiple Imputation with MNAR Models:</strong> Using imputation techniques that account for MNAR patterns, such as Heckman selection or pattern-mixture models.</li>
-<li><strong>Using Domain Knowledge:</strong> Subject-matter expertise can guide adjustments and improve estimation techniques.</li>
-</ul>
-</section>
-</section>
-<section id="differences-between-mcar-mnar-and-mar" class="level2">
-<h2 class="anchored" data-anchor-id="differences-between-mcar-mnar-and-mar">Differences between MCAR, MNAR, and MAR</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>MCAR</strong></th>
-<th><strong>MAR</strong></th>
-<th><strong>MNAR</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Missing values occur completely at random, unrelated to any data.</td>
-<td>Missing values depend on observed data but not on the missing values themselves.</td>
-<td>Missing values depend on the unobserved/missing data itself</td>
-</tr>
-<tr class="even">
-<td>No systematic pattern in missingness.</td>
-<td>Systematic pattern based on observed variables.</td>
-<td>Systematic pattern based on unobserved variables.</td>
-</tr>
-<tr class="odd">
-<td>Least biased if missingness is handled properly.</td>
-<td>Can be handled using statistical methods like multiple imputation.</td>
-<td>Can lead to serious bias if not properly addressed.</td>
-</tr>
-<tr class="even">
-<td><em>Example:</em> A machine randomly fails to record a value.</td>
-<td><em>Example:</em> Missing income data depends on age but not on income itself.</td>
-<td><em>Example:</em> People with higher incomes are less likely to report earnings.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="identifying-the-type-of-missing-data" class="level2">
-<h2 class="anchored" data-anchor-id="identifying-the-type-of-missing-data"><strong>Identifying the Type of Missing Data</strong></h2>
-<p>It’s important to know the type of missingness in a dataset to help you choose the right imputation technique. You can either use statistical tests or visualization to determine the nature of the missing data. In most cases, you can even combine the two methods to achieve better results.</p>
-<section id="statistical-tests-to-determine-missing-data-mechanism" class="level3">
-<h3 class="anchored" data-anchor-id="statistical-tests-to-determine-missing-data-mechanism">Statistical Tests to Determine Missing Data Mechanism</h3>
-<ul>
-<li><strong>Littles’s MCAR Test:</strong> This chi-square test checks if missingness is dependent on both observed and unobserved values. If the test fails, the null hypothesis is rejected, signifying that the data is MCAR. Otherwise, the missingness is either MAR or MNAR.</li>
-<li><strong>t-Tests or ANOVA for MAR vs MCAR:</strong> Comparing observed values between missing and non-missing groups can help determine if missingness depends on available data.</li>
-<li><strong>Logistic Regression of Missingness Indicators:</strong> You can use a ****binary missingness indicator (1 = missing, 0 = observed) to regress on observed variables. If the missingness is significantly related to observed data, it suggests MAR. If no relationships are found, it suggests MCAR.</li>
-</ul>
-</section>
-<section id="visualizing-missing-data-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="visualizing-missing-data-patterns">Visualizing Missing Data Patterns</h3>
-<ul>
-<li><strong>Missingness Matrix (Heatmap):</strong> You can use a statistical software to create a heatmap to display where values are missing in a dataset.</li>
-<li><strong>Bar Charts of Missing Values:</strong> Plotting the missing values per variable to show which variables are most affected.</li>
-<li><strong>Pairwise Missingness Scatterplots:</strong> Visualizing whether missing values in one variable correlate with missing values in another.</li>
-<li><strong>Pattern Plots (Upset Plots or Venn Diagrams):</strong> These show combinations of missing values in different variables and can help detect dependencies.</li>
-</ul>
-</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
-<p>Data cleaning is a time consuming task, especially when it comes to handling missing values. But it’s important one treats them with caution. You can’t just discard them, they might introduce bias to your data, leading to wrong insights.</p>
-<p>In this article, you learnt about the three types of missing values you are likely to encounter in a dataset, examples, their statistical implications, and how to handle them. You have also learned how to identify missing values statistically and visually.</p>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<ul>
-<li><a href="https://www.udemy.com/course/handling-missing-data-in-r/?referralCode=F3DAAE2C227BAF5429CD">Handling Missing Data in R - Udemy Course</a></li>
-</ul>
+<p>Missing data at times can be easily ignored, but the costs they carry are heavy. It causes a lot of harm than good, especially for the model and the users of the model.</p>
+<p>Bad imputation practices, discarding them when there are many, are reasons that can make you have a bad model fit.</p>
+<p>You must treat missing data imputation as the first step in your ML lifecycle, and spend enough time imputing it.</p>
+<p>Before imputation, you should find out the relationship between the missing values and the data to know how best to handle them. This ensures you don’t impute a missing value when it’s actually supposed to be missing.</p>
+<p>Even though algorithms can now handle data with missing values, too much of disappeared values might prevent the model not to learn some information, which can bias predictions when predicting on the test set.</p>
+<p>In summary, treat data completeness as a first-class citizen in your ML lifecycle.</p>
 <section id="need-help-with-data-lets-make-it-simple." class="level3">
 <h3 class="anchored" data-anchor-id="need-help-with-data-lets-make-it-simple."><strong>Need Help with Data? Let’s Make It Simple.</strong></h3>
 <p><em>At <strong>LearnData.xyz</strong>, we’re here to help you solve tough data challenges and make sense of your numbers. Whether you need custom data science solutions or hands-on training to upskill your team, we’ve got your back.</em></p>
