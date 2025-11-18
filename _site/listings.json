@@ -15,6 +15,7 @@
     "listing": "/blog.html",
     "items": [
       "/posts/20 Python Frameworks for Frontend Development Java/index.html",
+      "/posts/9 Python Libraries for Managing Missing Data Efficiently/index.html",
       "/posts/A Comprehensive Guide to Plotting and Interpreting Histogram with Python Seaborn/index.html",
       "/posts/Adding User Authentication to Python Shiny Applications using JWT/index.html",
       "/posts/Building Your First ML Model API with FastAPI A Step-by-Step Guide/index.html",
@@ -33,6 +34,7 @@
       "/posts/Model Deployment in R with Plumber/index.html",
       "/posts/Monitoring Model Performance and Data Drift for Diabetes Classification/index.html",
       "/posts/Parametric vs Non-parametric Statistics/index.html",
+      "/posts/related.html",
       "/posts/Securing ML APIs with FastAPI/index.html",
       "/posts/Test Driven Development with Python Shiny/index.html",
       "/posts/The Engineer's Guide to Low Code/index.html",

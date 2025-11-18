@@ -52,48 +52,39 @@ website:
         #file: navs/index.qmd
       - text: "Blog"
         file: blog.qmd
-      - text: "Courses"
-        file: courses.qmd
-      #- sidebar:learn
-      #- sidebar:resources
-      #- sidebar:products
-      - sidebar:open_source
+      # - text: "Courses"
+      #   file: courses.qmd
+      # - sidebar:learn
+      - sidebar:products
+      - sidebar:resources
+      # - sidebar:open_source
       # - text: "Reports"
       #   file: reports.qmd
       # - text: "Visuals"
       #   file: visuals.qmd
-      - text: "Store"
-        href: "https://payhip.com/LearnData"
       - text: "About"
         file: navs/about.qmd
+  page-navigation: true
         
 
   sidebar:
-    - id: learn
-      title: "Learn"
-      background: light
-      collapse-level: 2
-      contents: 
-        - file: navs/learn.qmd
-
     - id: resources
       title: "Resources"
       contents:
-        - navs/resources.qmd
+        - courses.qmd
+        - text: YouTube Channel
+          href: "https://www.youtube.com/@learndata_xyz"
+        - text: "Store"
+          href: "https://payhip.com/LearnData"
         
     - id: products
       title: "Products"
       contents:
-        - text: "Chaos"
-          href: "https://chaos.learndata.xyz"  # or whatever your product URL is
-        - text: "CorrelateAI" 
-          href: "https://correlateai.learndata.xyz"
-
-    - id: open_source
-      title: "Open Source"
-      contents: 
+        - text: "LearnFacebookAdsInsights"
+          href: "https://lfai.learndata.xyz"  # or whatever your product URL is
         - text: "pdhs"
           href: "https://learndataxyz.github.io/pdhs/"
+
           
  
 format:

@@ -1,12 +1,9 @@
-# options specified here will apply to all posts in this folder
+# posts/_metadata.yml
 
-# freeze computational output
-# (see https://quarto.org/docs/projects/code-execution.html#freeze)
+# 1. General Settings for all posts
 freeze: true
-
-# Enable banner style title blocks
 title-block-banner: true
 comments:
-  giscus: 
+  giscus:
     repo: adejumoridwan/comments
-    
+
