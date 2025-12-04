@@ -105,6 +105,7 @@ In this article, you learnt about the three types of missing values you are like
 
 - [9 Python Libraries for Managing Missing Data Efficiently](/posts/9 Python Libraries for Managing Missing Data Efficiently)
 -   [Handling Missing Data in R](https://www.udemy.com/course/handling-missing-data-in-r/?referralCode=F3DAAE2C227BAF5429CD)
+- [10 AI Data Analysis Tools That Will Redefine How You Make Decisions](/posts/10 AI Data Analysis Tools That Will Redefine How You Make Decisions)
 
 
 ### **Need Help with Data? Let’s Make It Simple.**
