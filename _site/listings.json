@@ -12,6 +12,10 @@
     ]
   },
   {
+    "listing": "/courses.html",
+    "items": []
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/10 AI Data Analysis Tools That Will Redefine How You Make Decisions/index.html",
@@ -44,9 +48,5 @@
       "/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html",
       "/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html"
     ]
-  },
-  {
-    "listing": "/courses.html",
-    "items": []
   }
 ]

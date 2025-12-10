@@ -37,7 +37,7 @@ website:
       - icon: github
         text: GitHUB
         href: https://www.github.com/learndataxyz
-  #margin-header: subscribe.html
+  margin-header: subscribe.html
   favicon: assets/learn_data.png
   twitter-card: true
   reader-mode: true
@@ -76,6 +76,8 @@ website:
           href: "https://www.youtube.com/@learndata_xyz"
         - text: "Store"
           href: "https://payhip.com/LearnData"
+        - text: "Subscribe to Newsletter"
+          href: "https://zc.vg/6uRvT"
         
     - id: products
       title: "Products"
