@@ -1,0 +1,13 @@
+---
+title: "Nobel Prize Winners by Country"
+author: Adejumo Ridwan Suleiman 
+categories: [nigeria, oil price, time series, forecast]
+image: "image_1.png" 
+draft: false
+---
+
+![](image_1.png){fig-alt="Top Countries with the highest number of Nobel Prize winners"}
+
+Data Source: Wikipedia
+
+

@@ -27,6 +27,9 @@ website:
         href: navs/privacy.qmd
       - text: Terms of Service 
         href: navs/tos.qmd
+      - text: Subscribe to Newsletter
+        href: "https://zc.vg/6uRvT"
+      
     right: 
       - icon: twitter
         text: Twitter
@@ -35,8 +38,11 @@ website:
         text: LinkedIn
         href: https://www.linkedin.com/company/learndataxyz
       - icon: github
-        text: GitHUB
+        text: GitHub
         href: https://www.github.com/learndataxyz
+      - icon: youtube
+        text: YouTube
+        href: https://www.youtube.com/@learndata_xyz
   margin-header: subscribe.html
   favicon: assets/learn_data.png
   twitter-card: true
@@ -78,6 +84,8 @@ website:
           href: "https://payhip.com/LearnData"
         - text: "Subscribe to Newsletter"
           href: "https://zc.vg/6uRvT"
+        - text: "Visual Gallery"
+          href: "visuals.qmd"
         
     - id: products
       title: "Products"
