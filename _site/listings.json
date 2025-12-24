@@ -2,18 +2,9 @@
   {
     "listing": "/visuals.html",
     "items": [
+      "/visuals/gdp_by_country/index.html",
       "/visuals/nobel_prize_winners/index.html"
     ]
-  },
-  {
-    "listing": "/reports.html",
-    "items": [
-      "/reports/Uber Eats Google Playstore Report 2025/index.html"
-    ]
-  },
-  {
-    "listing": "/courses.html",
-    "items": []
   },
   {
     "listing": "/blog.html",
@@ -47,6 +38,16 @@
       "/posts/Types of Missing Data MCAR, MAR, and MNAR Explained/index.html",
       "/posts/Why Traditional Web Development Skills Matter for Modern ML Engineers/index.html",
       "/posts/Z-Score vs IQR vs DBSCAN Choosing the Right Outlier Detection Method/index.html"
+    ]
+  },
+  {
+    "listing": "/courses.html",
+    "items": []
+  },
+  {
+    "listing": "/reports.html",
+    "items": [
+      "/reports/Uber Eats Google Playstore Report 2025/index.html"
     ]
   }
 ]

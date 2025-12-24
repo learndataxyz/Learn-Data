@@ -1,0 +1,11 @@
+---
+title: "Top Countries By GDP from 2016 - 2024"
+author: Adejumo Ridwan Suleiman 
+categories: [visuals, bar chart, GDP, country comparison]
+image: "gdp.png" 
+draft: false
+---
+
+![](gdp.png){fig-alt="Top Countries with the highest GDP from 2016 - 2024"}
+
+Data Source: World Bank
