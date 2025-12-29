@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adejumo Ridwan Suleiman">
 
-<title>Visuals – LearnData</title>
+<title>Distribution of Happiness Scores across Different Regions – LearnData</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,31 +24,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./courses.html" rel="prev">
-<link href="./assets/learn_data.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8bc3bc87e0b1491d8be3109e58e82b4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b6a338e60bd4e34ad037ad032da5c562.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-8bc3bc87e0b1491d8be3109e58e82b4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/learn_data.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8bc3bc87e0b1491d8be3109e58e82b4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b6a338e60bd4e34ad037ad032da5c562.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-8bc3bc87e0b1491d8be3109e58e82b4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N6FNR4EYSZ"></script>
 
 <script type="text/javascript">
@@ -128,17 +97,19 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1227869158734119');
 fbq('track', 'PageView');
 </script>
-<noscript></noscript><meta property="og:title" content="Visuals – LearnData">
-<meta property="og:image" content="https://learndata.xyz/visuals/gdp_by_country/gdp.png">
+<noscript></noscript><meta property="og:title" content="Distribution of Happiness Scores across Different Regions – LearnData">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://learndata.xyz/visuals/whr/image_1.png">
 <meta property="og:site_name" content="LearnData">
 <meta property="og:image:height" content="833">
 <meta property="og:image:width" content="1600">
-<meta name="twitter:title" content="Visuals – LearnData">
-<meta name="twitter:image" content="https://learndata.xyz/visuals/gdp_by_country/gdp.png">
+<meta name="twitter:title" content="Distribution of Happiness Scores across Different Regions – LearnData">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://learndata.xyz/visuals/whr/image_1.png">
 <meta name="twitter:image-height" content="833">
 <meta name="twitter:image-width" content="1600">
 <meta name="twitter:card" content="summary_large_image">
-</head><body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+</head><body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -314,37 +285,8 @@ fbq('track', 'PageView');
     ]);
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 
 
 
@@ -354,7 +296,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">LearnData</span>
     </a>
   </div>
@@ -365,7 +307,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -389,7 +331,7 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="./courses.html">
+    <a class="dropdown-item" href="../../courses.html">
  <span class="dropdown-text">Courses</span></a>
   </li>  
         <li>
@@ -405,13 +347,13 @@ window.Quarto = {
  <span class="dropdown-text">Subscribe to Newsletter</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./visuals.html">
+    <a class="dropdown-item" href="../../visuals.html">
  <span class="dropdown-text">Visual Gallery</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./navs/about.html"> 
+    <a class="nav-link" href="../../navs/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -426,205 +368,57 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./visuals.html">Visual Gallery</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Visuals</h1>
-                      </div>
+      <h1 class="title">Distribution of Happiness Scores across Different Regions</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">visuals</div>
+                <div class="quarto-category">geospatial</div>
+                <div class="quarto-category">maps</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-body">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Adejumo Ridwan Suleiman </p>
+            </div>
+    </div>
       
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./courses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Courses</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.youtube.com/@learndata_xyz" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YouTube Channel</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://payhip.com/LearnData" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Store</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://zc.vg/6uRvT" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Subscribe to Newsletter</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./visuals.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Visual Gallery</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <!--Zoho Campaigns Embed Button Starts--> <script type="text/javascript" src="https://zgnp-zngp.maillist-manage.com/js/jquery-1.11.0.min.js"></script> <script type="text/javascript" src="https://zgnp-zngp.maillist-manage.com/js/jquery-migrate-1.2.1.min.js"></script> <script type="text/javascript" src="https://zgnp-zngp.maillist-manage.com/js/jquery-ui-1.10.4.custom.min.js"></script> <div id="zc_popoverlay" style="display:none;background: radial-gradient(50% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);height: 100%;left: 0px;overflow-x: hidden;overflow-y: auto;position: fixed;top: 0px;width: 100%;z-index: 2;"> <div style="height: 100%;display:table;margin: 0px auto;position: static;"> <div style="display: table-cell;vertical-align: middle;"> <div style="position:relative;background-color: #fff;box-shadow: 1px 2px 5px #555;border-radius: 3px;padding: 10px;margin: 15px 0px;" id="signUpFormInline"> </div> </div> </div> </div> <div id="embedLink"> <button type="button" purpose="nrmlBtn" class="" style="outline: none 0px; background-color: rgb(90, 21, 189); color: rgb(255, 255, 255); border: 1px solid rgb(153, 153, 153); font-size: 14px; padding: 6px 10px; border-radius: 5px; font-family: Arial; text-align: center; width: auto; cursor: pointer;" changetype="EMBED_BUTTON" id="EMBED_BUTTON" name="EMBED_BUTTON" value="Join Our Newsletter" formopenin="Popup" btntype="nrmlBtn" onclick="zc_loadForm('campaigns.zoho.com','https://zgnp-zngp.maillist-manage.com/ua/Optin?od=11287ecd4312da&amp;zx=1304dd231&amp;tD=115e8f322c1d96b91&amp;sD=115e8f322c1d99b87')" bgcolor="#5a15bd"> <span class="zceditcnt" style="">Join Our Newsletter</span> </button> </div> <input type="hidden" id="zc_Url" value="zgnp-zngp.maillist-manage.com"> <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zf11ff316d28fd063f65911e387327ebe340c5a34ae60ecd2a0f98c1550708c23"> <input type="hidden" id="cmpZuid" name="zx" value="undefined"> <input type="hidden" id="viewFrom" name="viewFrom" value="BUTTON_ACTION"> <input type="hidden" id="button_tc_codeVal" name="button_tc_codeVal" value="ZCFORMVIEW"> <script type="text/javascript" src="https://zgnp-zngp.maillist-manage.com/js/optin_min.js"></script> <script> var trackingText='ZCFORMVIEW'; var $ZC = jQuery.noConflict(); $ZC('[id=embedLink]').append("<input type='hidden' id='tc_code"+$ZC('[id=embedLink]').size()+"' value="+trackingText+">"); var elemSize = parseInt($ZC('[id=embedLink]').size())-1; var embedLink = $ZC($ZC('[id=embedLink]')[elemSize]).attr('href'); if(embedLink!=undefined && embedLink!=null && embedLink!='null'){ var dynamicCodeVal = $ZC("#tc_code"+$ZC('[id=embedLink]').size()).val(); embedLink = embedLink+'&trackingcode='+dynamicCodeVal; $ZC($ZC('[id=embedLink]')[elemSize]).attr('href',embedLink); $ZC('[id=button_tc_codeVal]').val(dynamicCodeVal); trackSignupEvent(dynamicCodeVal,'buttonView'); } </script> <!-- Zoho Campaigns Embed Button End -->
 </div></div>
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YmFyJTIwY2hhcnQ=">bar chart <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y291bnRyeSUyMGNvbXBhcmlzb24=">country comparison <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R0RQ">GDP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2Vvc3BhdGlhbA==">geospatial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFwcw==">maps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmlzdWFscw==">visuals <span class="quarto-category-count">(3)</span></div></div></div>
-<!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
-
-
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
     </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="dmlzdWFscyUyQ2JhciUyMGNoYXJ0JTJDR0RQJTJDY291bnRyeSUyMGNvbXBhcmlzb24=" data-listing-file-modified-sort="1766565833323" data-listing-reading-time-sort="1" data-listing-word-count-sort="13">
-<a href="./visuals/gdp_by_country/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./visuals/gdp_by_country/gdp.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Top Countries By GDP from 2016 - 2024
-</h5>
-<div class="listing-categories">
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFscw=='); return false;">visuals</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('YmFyJTIwY2hhcnQ='); return false;">bar chart</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('R0RQ'); return false;">GDP</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Y291bnRyeSUyMGNvbXBhcmlzb24='); return false;">country comparison</div>
 
-</div>
-<div class="card-text listing-description delink">
-Data Source: World Bank
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Adejumo Ridwan Suleiman
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="dmlzdWFscyUyQ2JhciUyMGNoYXJ0" data-listing-file-modified-sort="1766565665262" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
-<a href="./visuals/nobel_prize_winners/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./visuals/nobel_prize_winners/image_1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Nobel Prize Winners by Country
-</h5>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFscw=='); return false;">visuals</div>
+<p><img src="image_1.png" class="img-fluid">{fig-alt=“Distribution of Happiness Scores across Different Regions”, width=“80%”}</p>
+<p>Data Source: World Happiness Report</p>
 
-<div class="listing-category" onclick="window.quartoListingCategory('YmFyJTIwY2hhcnQ='); return false;">bar chart</div>
 
-</div>
-<div class="card-text listing-description delink">
-Data Source: Wikipedia
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Adejumo Ridwan Suleiman
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="dmlzdWFscyUyQ2dlb3NwYXRpYWwlMkNtYXBz" data-listing-file-modified-sort="1767006476807" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
-<a href="./visuals/whr/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./visuals/whr/image_1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Distribution of Happiness Scores across Different Regions
-</h5>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFscw=='); return false;">visuals</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2Vvc3BhdGlhbA=='); return false;">geospatial</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWFwcw=='); return false;">maps</div>
-
-</div>
-<div class="card-text listing-description delink">
-{fig-alt=“Distribution of Happiness Scores across Different Regions”, width=“80%”}
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Adejumo Ridwan Suleiman
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1037,15 +831,30 @@ Adejumo Ridwan Suleiman
     }
   });
   </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
-      <a href="./courses.html" class="pagination-link" aria-label="Courses">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Courses</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
+<script src="https://giscus.app/client.js" data-repo="adejumoridwan/comments" data-repo-id="R_kgDOMp4Jsg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script type="application/javascript">
+  const giscusIframeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (addedNode) {
+        if (addedNode.matches && addedNode.matches('div.giscus')) {
+          const giscusIframe = addedNode.querySelector('iframe.giscus-frame');
+          if(giscusIframe) {
+            giscusIframe.addEventListener("load", function() {
+              window.setTimeout(() => {
+                toggleGiscusIfUsed(hasAlternateSentinel(), authorPrefersDark);
+              }, 100);
+            });
+            giscusIframeObserver.disconnect();
+          }
+        }
+      });
+    });
+  });
+  giscusIframeObserver.observe(document.body, { childList: true, subtree: true });
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1055,7 +864,7 @@ Adejumo Ridwan Suleiman
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./navs/about.html">
+    <a class="nav-link" href="../../navs/about.html">
 <p>About</p>
 </a>
   </li>  
@@ -1065,22 +874,22 @@ Adejumo Ridwan Suleiman
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./navs/services.html">
+    <a class="nav-link" href="../../navs/services.html">
 <p>Services</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./navs/privacy.html">
+    <a class="nav-link" href="../../navs/privacy.html">
 <p>Privacy</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./navs/tos.html">
+    <a class="nav-link" href="../../navs/tos.html">
 <p>Terms of Service</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link active" href="https://zc.vg/6uRvT" aria-current="page">
+    <a class="nav-link" href="https://zc.vg/6uRvT">
 <p>Subscribe to Newsletter</p>
 </a>
   </li>  

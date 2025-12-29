@@ -1,0 +1,11 @@
+---
+title: "Distribution of Happiness Scores across Different Regions"
+author: Adejumo Ridwan Suleiman 
+categories: [visuals, geospatial, maps]
+image: "image_1.png" 
+draft: false
+---
+
+![](image_1.png){fig-alt="Distribution of Happiness Scores across Different Regions", width="80%"}
+
+Data Source: World Happiness Report
